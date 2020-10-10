@@ -1,2 +1,2 @@
 # Island
-you set this description :)
+Server backend for [ClubPenguin](https://github.com/clubpenguin-html5/ClubPenguin).
