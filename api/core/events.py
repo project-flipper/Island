@@ -4,11 +4,14 @@ from fastapi import FastAPI
 from loguru import logger
 import aioredis
 
+from api.database import database
+
 
 def create_start_app_handler(app: FastAPI) -> Callable:
     async def start_app() -> None:
         logger.info("Connecting to database")
-        #TODO: Connect to database
+        app.state.database = database
+        await app.state.database.connect()
         logger.info("Database connection established")
 
         logger.info("Connecting to redis")
@@ -22,7 +25,7 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
     @logger.catch
     async def stop_app() -> None:
         logger.info("Disconnecting from database")
-        #TODO: Disconnect from database
+        await app.state.database.disconnect()
         logger.info("Disconnected database connection")
 
         logger.info("Closing redis connection")
