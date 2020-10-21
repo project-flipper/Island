@@ -6,7 +6,7 @@ from loguru import logger
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret, URL
 
-from api.core.logging import InterceptHandler # pylint: disable=import-error
+from island.core.logging import InterceptHandler # pylint: disable=import-error
 
 config = Config(".env")
 
