@@ -3,6 +3,7 @@ from graphene import relay
 from graphene_gino import GinoConnectionField, GinoObjectType
 
 from island.database.schema.user import User
+from island.database import db
 
 class UserDataType(GinoObjectType):
     class Meta:
@@ -18,13 +19,14 @@ class UserQuery(graphene.ObjectType):
         id = graphene.Int(required=False), 
         username = graphene.String(required=False)
     )
-
+    users = GinoConnectionField(UserDataType.connection)
     current_user = graphene.Field(
         UserDataType
     )
     
     async def resolve_users(ctx, info):
-        return UserDataType.get_query(info)
+        async with db.transaction():
+            return await UserDataType.get_query(info).gino.all()
 
     async def resolve_user(ctx, info, id:int=None, username:str=None):
         query = User.query

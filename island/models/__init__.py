@@ -1,5 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, GenericModel
+from typing import TypeVar, Optional
 
-class ORM_Model(BaseModel):
-    class Config:
-        orm_mode = True
+T = TypeVar("T")
+
+class Response(GenericModel[T]):
+    data: Optional[T] = None
+    error: Optional = None 
+
+    success:bool 
