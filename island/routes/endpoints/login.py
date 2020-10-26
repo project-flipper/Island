@@ -1,16 +1,19 @@
+from datetime import  timedelta
+
 from fastapi import Depends, HTTPException, status, APIRouter, Response
 from fastapi.security import OAuth2PasswordRequestForm
 
-from island.core import config 
+from island.core.config import config
 from island.core.constants.scope import Scope
-from island.database.schema.User import User 
-from island.database.utils.user import get_user
+from island.database.schema.user import User 
 from island.models.token import TokenResponse, TokenError, Token
-from island.utils.auth import verify_password, get_user_scopes
+from island.utils.auth import verify_password, get_user_scopes, create_access_token
 
-login = APIRouter()
+router = APIRouter()
 
-@login.post("/auth")
+ACCESS_TOKEN_EXPIRE_MINUTES = config("ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, default=15*60) # seconds
+
+@router.post("/auth", response_model=TokenResponse)
 async def handle_authenticate_user(response: Response, auth_input: OAuth2PasswordRequestForm = Depends()) -> TokenResponse:
     user = await User.query.where(User.username == auth_input.username).gino.first()
     if user is None or not verify_password(auth_input.password, user.password):
@@ -21,12 +24,13 @@ async def handle_authenticate_user(response: Response, auth_input: OAuth2Passwor
                     error_code = 101,
                     error_description = "User authentication failed. Incorrect username or password."
             ),
-            success = False
+            success = False,
+            hasError = True
         )
     
 
-    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = get_user_scopes(user, [Scope.UserLogin])
+    access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
+    user_scopes = await get_user_scopes(user, defualt_scopes = [Scope.UserLogin])
 
     access_token = create_access_token(
         data = {

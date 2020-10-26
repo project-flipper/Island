@@ -1,10 +1,12 @@
-from pydantic import BaseModel, GenericModel
-from typing import TypeVar, Optional
+from pydantic import BaseModel
+from pydantic.generics import GenericModel
+from typing import TypeVar, Optional, Generic, Any
 
 T = TypeVar("T")
 
-class Response(GenericModel[T]):
+class Response(GenericModel, Generic[T]):
     data: Optional[T] = None
-    error: Optional = None 
+    error: Any = None 
 
-    success:bool 
+    success: bool 
+    hasError: bool = False

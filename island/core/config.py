@@ -13,6 +13,8 @@ config = Config(".env")
 API_PREFIX = config("API_PREFIX", cast=str, default="/api")
 API_VERSION = config("API_VERSION", cast=str, default="0.0.1")
 API_SUFFIX_VERSION = config("API_SUFFIX_VERSION", cast=bool, default=True)
+if API_SUFFIX_VERSION:
+    API_PREFIX = f"{API_PREFIX.strip('/')}/{API_VERSION.strip('/')}"
 DEBUG = config("DEBUG", cast=bool, default=False)
 SECRET_KEY: Secret = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
 ALLOWED_HOSTS: List[str] = config("ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[])

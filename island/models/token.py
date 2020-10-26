@@ -1,8 +1,5 @@
 from pydantic import BaseModel
-
 from island.models import Response
-
-T = TypeVar("T")
 
 class Token(BaseModel):
     access_token: str

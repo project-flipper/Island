@@ -15,12 +15,20 @@ class Scope(Base):
     group_id = Column(Integer, ForeignKey('scopes.id'), nullable=True)
     group = relationship("Scope")
 
+    def __str__(self):
+        return self.tag.lower()
+
 
 class UserScope(Base):
     __tablename__ = "user_scopes"
 
-    user_id = Column(Integer, ForeignKey("users.id", onupdate="CASCADE", ondelete="CASCADE"), nullable=False)
-    scope_id = Column(Integer, ForeignKey("scopes.id", onupdate="CASCADE", ondelete="CASCADE"), nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id", onupdate="CASCADE", ondelete="CASCADE"), nullable=False, primary_key=True)
+    scope_id = Column(Integer, ForeignKey("scopes.id", onupdate="CASCADE", ondelete="CASCADE"), nullable=False, primary_key=True)
 
-    user = relationship("User")
-    scope = relationship("Scope")
+    @property
+    async def scope(self):
+        return await Scope.query.where(Scope.id == self.scope_id).gino.first()
+    
+    @property
+    async def tag(self):
+        return str(await self.scope)

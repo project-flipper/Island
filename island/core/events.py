@@ -12,10 +12,7 @@ def create_start_app_handler(app: FastAPI) -> Callable:
     async def start_app() -> None:
         logger.info("Connecting to database")
         app.state.database = db
-        await app.state.database.set_bind(DB_DSN,
-            echo=DB_ECHO,
-            ssl=DB_SSL
-        )
+        await app.state.database.set_bind(DB_DSN)
         logger.info("Database connection established")
 
         logger.info("Connecting to redis")
