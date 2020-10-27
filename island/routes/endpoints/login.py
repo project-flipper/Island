@@ -27,10 +27,9 @@ async def handle_authenticate_user(response: Response, auth_input: OAuth2Passwor
             success = False,
             hasError = True
         )
-    
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = await get_user_scopes(user, defualt_scopes = [Scope.UserLogin])
+    user_scopes = await get_user_scopes(user, default_scopes = [Scope.UserLogin])
 
     access_token = create_access_token(
         data = {
