@@ -12,4 +12,3 @@ class Scope(Enum):
 
     WorldAccess = "world:access"
     WorldDev    = "world:dev"
-    

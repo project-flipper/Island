@@ -15,15 +15,15 @@ class UserQuery(graphene.ObjectType):
     node = relay.Node.Field()
 
     user = graphene.Field(
-        UserDataType, 
-        id = graphene.Int(required=False), 
+        UserDataType,
+        id = graphene.Int(required=False),
         username = graphene.String(required=False)
     )
     users = GinoConnectionField(UserDataType.connection)
     current_user = graphene.Field(
         UserDataType
     )
-    
+
     async def resolve_users(ctx, info):
         async with db.transaction():
             return await UserDataType.get_query(info).gino.all()
@@ -33,10 +33,10 @@ class UserQuery(graphene.ObjectType):
         print(str(query))
         if id is not None:
             query = query.where(User.id == id)
-        
+
         if username is not None:
             query = query.where(User.username == username)
-        
+
         if id is None and username is None:
             return None
 
@@ -44,4 +44,3 @@ class UserQuery(graphene.ObjectType):
 
 
 UserQuerySchema = graphene.Schema(query=UserQuery)
-        

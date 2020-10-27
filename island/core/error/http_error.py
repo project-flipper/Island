@@ -6,7 +6,6 @@ from pydantic import BaseModel
 
 
 async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
-
     if isinstance(exc.detail, BaseModel):
         return JSONResponse(
             {
@@ -14,7 +13,7 @@ async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
                 "success": False,
                 "data": None,
                 "error": jsonable_encoder(exc.detail)
-            }, 
+            },
             status_code=exc.status_code
         )
 
@@ -24,6 +23,6 @@ async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
             "success": False,
             "data": None,
             "error": str(exc.detail)
-        }, 
+        },
         status_code=exc.status_code
     )

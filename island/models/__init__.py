@@ -6,7 +6,7 @@ T = TypeVar("T")
 
 class Response(GenericModel, Generic[T]):
     data: Optional[T] = None
-    error: Any = None 
+    error: Any = None
 
-    success: bool 
+    success: bool
     hasError: bool = False

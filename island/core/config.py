@@ -18,7 +18,7 @@ if API_SUFFIX_VERSION:
 DEBUG = config("DEBUG", cast=bool, default=False)
 SECRET_KEY: Secret = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
 ALLOWED_HOSTS: List[str] = config("ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[])
-LOGGING_LEVEL = logging.DEBUG if DEBUG else config("LOGGING_LEVEL", cast=lambda x: getattr(logging, x), default="INFO") 
+LOGGING_LEVEL = logging.DEBUG if DEBUG else config("LOGGING_LEVEL", cast=lambda x: getattr(logging, x), default="INFO")
 DATABASE_URL = config("DATABASE_URL", cast=URL, default="postgresql://root:@localhost:5432/island")
 
 logging.getLogger().handlers = [InterceptHandler()]

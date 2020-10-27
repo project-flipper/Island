@@ -6,7 +6,7 @@ class Token(BaseModel):
     token_type: str
 
 class TokenError(BaseModel):
-    error_type: str 
+    error_type: str
     error_code: int
     error_description: str
 

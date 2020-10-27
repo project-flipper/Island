@@ -18,10 +18,9 @@ async def http422_error_handler(
             "success": False,
             "data" : None,
             "error": exc.errors()
-        }, 
+        },
         status_code=HTTP_422_UNPROCESSABLE_ENTITY
     )
-
 
 validation_error_response_definition["properties"] = {
     "errors": {

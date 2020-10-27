@@ -27,7 +27,7 @@ def verify_password(plain_password:str, hashed_password:str):
 def get_password_hash(password:str):
     return PASSWORD_CONTEXT.hash(password)
 
-def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, None]] = None):
+def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, None]]=None):
     to_encode = data.copy()
 
     if expires_delta:
@@ -35,12 +35,12 @@ def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, Non
     else:
         expire = datetime.utcnow() + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
 
-    to_encode.update({"exp": expire, 'iat': datetime.utcnow(), })
+    to_encode.update({"exp": expire, 'iat': datetime.utcnow()})
     encoded_jwt = jwt.encode(to_encode, str(SECRET_KEY), algorithm=JWT_ALGORITHM.value)
 
     return encoded_jwt
 
-async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelta, None]] = None) -> List[Scope]:
+async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelta, None]]=None) -> List[Scope]:
     user_scopes = await user.scopes
 
     scopes = [
@@ -48,15 +48,15 @@ async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelt
         for s in user_scopes
     ]
 
-    return scopes if not default_scopes else (default_scopes + scopes)
+    return scopes if not default_scopes else default_scopes + scopes
 
-async def get_current_user(response: Response, token: str = Depends(OAUTH2_SCHEME)) -> User:
+async def get_current_user(response: Response, token: str=Depends(OAUTH2_SCHEME)) -> User:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    
+
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
