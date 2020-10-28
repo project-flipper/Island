@@ -1,6 +1,7 @@
 import graphene
 from graphene import relay
 from graphene_gino import GinoConnectionField, GinoObjectType
+from typing import Union
 
 from island.database.schema.user import User
 from island.database import db
@@ -28,7 +29,18 @@ class UserQuery(graphene.ObjectType):
         async with db.transaction():
             return await UserDataType.get_query(info).gino.all()
 
-    async def resolve_user(ctx, info, id:int=None, username:str=None):
+    async def resolve_user(ctx, info, id:int=None, username:str=None) -> Union[User, None]:
+        """Get user data based on given data.
+
+        Args:
+            ctx: 
+            info:
+            id (int, optional): Filter by user id. Defaults to None.
+            username (str, optional): Filter by username. Defaults to None.
+
+        Returns:
+            Union[User, None]
+        """
         query = User.query
         print(str(query))
         if id is not None:

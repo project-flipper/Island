@@ -21,13 +21,39 @@ JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default="HS256
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
 OAUTH2_SCHEME = OAuth2PasswordBearer(tokenUrl="auth")
 
-def verify_password(plain_password:str, hashed_password:str):
+def verify_password(plain_password:str, hashed_password:str) -> bool:
+    """Verify plain_text against hashed bcrypt hash_password
+
+    Args:
+        plain_password (str)
+        hashed_password (str)
+
+    Returns:
+        bool
+    """
     return PASSWORD_CONTEXT.verify(plain_password, hashed_password)
 
-def get_password_hash(password:str):
+def get_password_hash(password:str) -> str:
+    """Generate bcrypt hash for given plain text password.
+
+    Args:
+        password (str)
+
+    Returns:
+        str
+    """
     return PASSWORD_CONTEXT.hash(password)
 
-def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, None]]=None):
+def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, None]]=None) -> str:
+    """Generate OAuth2 token with given data, and expiry
+
+    Args:
+        data (dict)
+        expires_delta (Optional[Union[timedelta, None]], optional): Defaults to None.
+
+    Returns:
+        str: OAuth2 encoded token
+    """
     to_encode = data.copy()
 
     if expires_delta:
@@ -41,6 +67,15 @@ def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, Non
     return encoded_jwt
 
 async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelta, None]]=None) -> List[Scope]:
+    """Get list of user scopes from database, along with default_scopes if any given. `default_scopes` is added to beginning of the result.
+
+    Args:
+        user (User)
+        default_scopes (Optional[Union[timedelta, None]], optional): Defaults to None.
+
+    Returns:
+        List[Scope]
+    """
     user_scopes = await user.scopes
 
     scopes = [
@@ -51,6 +86,8 @@ async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelt
     return scopes if not default_scopes else default_scopes + scopes
 
 async def get_current_user(response: Response, token: str=Depends(OAUTH2_SCHEME)) -> User:
+    """ UNDER CONSTRUCTION """
+    #TODO: THIS
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",

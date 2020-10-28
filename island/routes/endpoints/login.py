@@ -15,6 +15,15 @@ ACCESS_TOKEN_EXPIRE_MINUTES = config("ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, de
 
 @router.post("/auth", response_model=TokenResponse)
 async def handle_authenticate_user(response: Response, auth_input: OAuth2PasswordRequestForm=Depends()) -> TokenResponse:
+    """Authenticate user data and generate OAuth token.
+
+    Args:
+        response (Response)
+        auth_input (OAuth2PasswordRequestForm, optional): Defaults to Depends().
+
+    Returns:
+        TokenResponse
+    """
     user = await User.query.where(User.username == auth_input.username).gino.first()
     if user is None or not verify_password(auth_input.password, user.password):
         response.status_code = status.HTTP_401_UNAUTHORIZED

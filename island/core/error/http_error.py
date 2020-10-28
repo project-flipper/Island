@@ -6,6 +6,15 @@ from pydantic import BaseModel
 
 
 async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
+    """Intercept any/all HTTPExceptions from FastAPI, and return a CP compatible JSON response.
+
+    Args:
+        _ (Request)
+        exc (HTTPException)
+
+    Returns:
+        JSONResponse
+    """
     if isinstance(exc.detail, BaseModel):
         return JSONResponse(
             {

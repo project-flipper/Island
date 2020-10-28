@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text
 from sqlalchemy.orm import relationship
 from citext import CIText
+from typing import List
 
 from island.database import Base # pylint: disable=import-error
 from island.database.schema.scope import UserScope
@@ -15,5 +16,10 @@ class User(Base):
     email = Column(CIText(), nullable=False)
 
     @property
-    async def scopes(self):
+    async def scopes(self) -> List[UserScope]:
+        """Get list of all children UserScope, joined by `UserScope.user_id == User.id`
+
+        Returns:
+            List[UserScope]
+        """
         return await UserScope.query.where(UserScope.user_id == self.id).gino.all()

@@ -25,9 +25,19 @@ class UserScope(Base):
     scope_id = Column(Integer, ForeignKey("scopes.id", onupdate="CASCADE", ondelete="CASCADE"), nullable=False, primary_key=True)
 
     @property
-    async def scope(self):
+    async def scope(self) -> Scope:
+        """Get parent scope reference, joined by `Scope.id == UserScope.scope_id`
+
+        Returns:
+            Scope
+        """
         return await Scope.query.where(Scope.id == self.scope_id).gino.first()
 
     @property
-    async def tag(self):
+    async def tag(self) -> str:
+        """Get string representation of parent scope reference.
+
+        Returns:
+            str
+        """
         return str(await self.scope)

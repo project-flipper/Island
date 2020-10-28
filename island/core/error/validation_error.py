@@ -12,6 +12,15 @@ from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 async def http422_error_handler(
     _: Request, exc: Union[RequestValidationError, ValidationError],
 ) -> JSONResponse:
+    """Intercept any/all ValidationError and return a CP-compatible JSON response.
+
+    Args:
+        _ (Request)
+        exc (Union[RequestValidationError, ValidationError])
+
+    Returns:
+        JSONResponse
+    """
     return JSONResponse(
         {
             "hasError": True,

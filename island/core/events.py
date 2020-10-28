@@ -9,6 +9,14 @@ from island.core.config import DATABASE_URL
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:
+    """FastAPI start app event
+
+    Args:
+        app (FastAPI)
+
+    Returns:
+        Callable
+    """
     async def start_app() -> None:
         logger.info("Connecting to database")
         app.state.database = db
@@ -23,6 +31,14 @@ def create_start_app_handler(app: FastAPI) -> Callable:
 
 
 def create_stop_app_handler(app: FastAPI) -> Callable:
+    """FastAPI shutdown event
+
+    Args:
+        app (FastAPI)
+
+    Returns:
+        Callable
+    """
     @logger.catch
     async def stop_app() -> None:
         logger.info("Disconnecting from database")
