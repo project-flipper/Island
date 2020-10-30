@@ -33,7 +33,7 @@ print ("""
 
 def get_application() -> FastAPI:
     application = FastAPI(
-    debug=DEBUG,
+        debug=DEBUG,
         title="Island Server",
         description="Web API and WS endpoint for ClubPenguin HTML5 client",
         version=API_VERSION,
