@@ -1,4 +1,3 @@
-from pydantic import BaseModel
 from pydantic.generics import GenericModel
 from typing import TypeVar, Optional, Generic, Any
 
