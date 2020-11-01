@@ -11,6 +11,7 @@ from island.core.error.validation_error import http422_error_handler
 from island.routes import router
 from island.core.config import ALLOWED_HOSTS, API_PREFIX, DEBUG, SECRET_KEY, API_VERSION
 from island.core.events import create_start_app_handler, create_stop_app_handler
+from island.core.world import WorldMiddleware
 
 print ("""
 
@@ -46,6 +47,9 @@ def get_application() -> FastAPI:
     logger.info(f"Island setting up")
 
     logger.info("Island adding middlewares")
+
+    logger.debug("Adding WorldManager middleware")
+    application.add_middleware(WorldMiddleware)
 
     logger.debug("Island adding CORSMiddleware")
     application.add_middleware(

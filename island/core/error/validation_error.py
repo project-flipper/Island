@@ -23,7 +23,7 @@ async def http422_error_handler(
     """
     return JSONResponse(
         {
-            "hasError": True,
+            "has_error": True,
             "success": False,
             "data" : None,
             "error": exc.errors()

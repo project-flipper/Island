@@ -19,7 +19,7 @@ DEBUG = config("DEBUG", cast=bool, default=False)
 SECRET_KEY: Secret = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
 ALLOWED_HOSTS: List[str] = config("ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[])
 LOGGING_LEVEL = logging.DEBUG if DEBUG else config("LOGGING_LEVEL", cast=lambda x: getattr(logging, x), default="INFO")
-DATABASE_URL = config("DATABASE_URL", cast=URL, default="postgresql://root:@localhost:5432/island")
+WORLD_ACCESS_KEY = config("WORLD_ACCESS_KEY", cast=str, default="earlyDevelopmentTesting01")
 
 logging.getLogger().handlers = [InterceptHandler()]
 LOGGERS = ("uvicorn.asgi", "uvicorn.access")

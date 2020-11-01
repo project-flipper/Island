@@ -18,7 +18,7 @@ async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
     if isinstance(exc.detail, BaseModel):
         return JSONResponse(
             {
-                "hasError": True,
+                "has_error": True,
                 "success": False,
                 "data": None,
                 "error": jsonable_encoder(exc.detail)
@@ -28,7 +28,7 @@ async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
 
     return JSONResponse(
         {
-            "hasError": True,
+            "has_error": True,
             "success": False,
             "data": None,
             "error": str(exc.detail)

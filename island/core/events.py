@@ -5,7 +5,6 @@ from loguru import logger
 import aioredis
 
 from island.database import *
-from island.core.config import DATABASE_URL
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:

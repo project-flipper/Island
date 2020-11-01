@@ -12,3 +12,4 @@ class TokenError(BaseModel):
 
 class TokenResponse(Response[Token]):
     error: TokenError = None
+    has_error: bool = False

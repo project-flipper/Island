@@ -14,7 +14,12 @@ class World(Base):
     lang = Column(Integer, nullable=False, default=1)
     
     access_key = Column(String(32), unique=True, nullable=False)
+    _grant_scopes = Column("grant_scopes", ARRAY(String(30)), nullable=False, server_default="{}")
     _scopes = Column("scopes", ARRAY(String(30)), nullable=False, server_default="{}")
+
+    @property
+    def grant_scopes(self):
+        return list(map(Scope, self._grant_scopes))
 
     @property
     def scopes(self) -> List[Scope]:

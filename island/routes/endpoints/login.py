@@ -34,7 +34,7 @@ async def handle_authenticate_user(response: Response, auth_input: OAuth2Passwor
                 error_description="User authentication failed. Incorrect username or password."
             ),
             success = False,
-            hasError = True
+            has_error = True
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)

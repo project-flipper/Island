@@ -1,16 +1,16 @@
 from pydantic import BaseModel
 from typing import List
 from starlette.websockets import WebSocket
-import asyncio
 
 from island.core.constants.scope import Scope
 
 class WorldMeta(BaseModel):
     id: int
     name: str
-    max_users: int
+    capacity: int
     lang: int
     scopes: List[Scope]
+    grant_scopes: List[Scope]
     access_key: str
 
     class Config:
@@ -24,3 +24,6 @@ class WorldBase(BaseModel):
 
     def __init__(self):
         pass
+
+    class Config:
+        arbitrary_types_allowed = True
