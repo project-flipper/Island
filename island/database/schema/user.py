@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Text, ARRAY, Enum
 from citext import CIText
 from typing import List
 
-from island.database import Base # pylint: disable=import-error
+from island.database import Base
 from island.core.constants.scope import Scope
 
 class User(Base):

@@ -9,7 +9,7 @@ class WorldMeta(BaseModel):
     id: int
     name: str
     max_users: int
-    lang: str
+    lang: int
     scopes: List[Scope]
     access_key: str
 
