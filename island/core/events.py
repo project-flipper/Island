@@ -5,6 +5,7 @@ from loguru import logger
 import aioredis
 
 from island.database import *
+from island.core.world.events import world_setup, world_unset
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:
@@ -26,6 +27,8 @@ def create_start_app_handler(app: FastAPI) -> Callable:
         app.state.redis = await aioredis.create_redis_pool('redis://localhost')
         logger.info("Redis connection established")
 
+        await world_setup(app.state.redis)
+
     return start_app
 
 
@@ -43,6 +46,8 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
         logger.info("Disconnecting from database")
         await app.state.database.pop_bind().close()
         logger.info("Disconnected database connection")
+
+        await world_unset(app.state.redis)
 
         logger.info("Closing redis connection")
         app.state.redis.close()

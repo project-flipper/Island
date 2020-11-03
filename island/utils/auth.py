@@ -95,7 +95,7 @@ async def get_current_user(response: Response, token: str=Depends(OAUTH2_SCHEME)
     )
 
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[JWT_ALGORITHM])
         username: str = payload.get("sub")
         if username is None:
             raise credentials_exception

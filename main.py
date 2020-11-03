@@ -1,3 +1,4 @@
+import sys
 from loguru import logger
 
 from fastapi import FastAPI
@@ -12,6 +13,7 @@ from island.routes import router
 from island.core.config import ALLOWED_HOSTS, API_PREFIX, DEBUG, SECRET_KEY, API_VERSION
 from island.core.events import create_start_app_handler, create_stop_app_handler
 from island.core.world import WorldMiddleware
+
 
 print ("""
 
@@ -32,7 +34,12 @@ print ("""
 
        """)
 
+def catch_exceptions():
+    sys.excepthook = lambda _type, message, stack: logger.opt(exception=(_type, message, stack)).error("Uncaught Exception")
+
 def get_application() -> FastAPI:
+    catch_exceptions()
+
     application = FastAPI(
         debug=DEBUG,
         title="Island Server",
@@ -48,7 +55,7 @@ def get_application() -> FastAPI:
 
     logger.info("Island adding middlewares")
 
-    logger.debug("Adding WorldManager middleware")
+    logger.debug("Island adding WorldManager")
     application.add_middleware(WorldMiddleware)
 
     logger.debug("Island adding CORSMiddleware")
