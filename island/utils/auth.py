@@ -2,24 +2,48 @@ from datetime import datetime, timedelta
 from typing import Optional, List, Union
 from enum import Enum
 
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from fastapi import Response, HTTPException, Depends
-from jose import JWTError, jwt
+from fastapi.security import OAuth2PasswordBearer
+from fastapi import HTTPException, Depends, status, Request
+from jose import jwt
 from passlib.context import CryptContext
 
 from island.core.config import config, SECRET_KEY
 from island.database.schema.user import User
-from island.core.constants.scope import Scope
+from island.core.constants.scope import Scope as ScopeEnum
+from island.models.token import TokenError
 
 class JWTTokenType(Enum):
     HS256 = "HS256"
     RS256 = "RS256"
 
+class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
+    async def __call__(self, request: Request) -> Optional[str]:
+        try:
+            return await super().__call__(request)
+        except HTTPException:
+            raise HTTPException(
+                status_code = status.HTTP_401_UNAUTHORIZED,
+                detail = TokenError(
+                    error_type="oauth.failed",
+                    error_code=103,
+                    error_description="Unable to verify OAuth. OAuth invalid or expired."
+                )
+            )
+
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15*60)
 JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default="HS256")
 
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
-OAUTH2_SCHEME = OAuth2PasswordBearer(tokenUrl="auth")
+OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
+
+oauth_error = HTTPException(
+    status_code = status.HTTP_401_UNAUTHORIZED,
+    detail = TokenError(
+        error_type="user.token.failed",
+        error_code=102,
+        error_description="OAuth token doesn't have required scope or expired."
+    )
+)
 
 def verify_password(plain_password:str, hashed_password:str) -> bool:
     """Verify plain_text against hashed bcrypt hash_password
@@ -61,12 +85,12 @@ def create_access_token(data: dict, expires_delta: Optional[Union[timedelta, Non
     else:
         expire = datetime.utcnow() + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
 
-    to_encode.update({"exp": expire, 'iat': datetime.utcnow()})
+    to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, str(SECRET_KEY), algorithm=JWT_ALGORITHM.value)
 
     return encoded_jwt
 
-async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelta, None]]=None) -> List[Scope]:
+async def get_user_scopes(user: User, *, default_scopes: Optional[List[ScopeEnum]]=None) -> List[ScopeEnum]:
     """Get list of user scopes from database, along with default_scopes if any given. `default_scopes` is added to beginning of the result.
 
     Args:
@@ -76,33 +100,33 @@ async def get_user_scopes(user: User, *, default_scopes: Optional[Union[timedelt
     Returns:
         List[Scope]
     """
-    user_scopes = await user.scopes
+    
+    return user.scopes if not default_scopes else default_scopes + user.scopes
 
-    scopes = [
-        Scope(await s.tag)
-        for s in user_scopes
-    ]
+async def get_oauth_data(request: Request) -> dict:
+    oauth_data = request.scope['oauth']
 
-    return scopes if not default_scopes else default_scopes + scopes
+    if oauth_data is None:
+        raise oauth_error
+    
+    return oauth_data
 
-async def get_current_user(response: Response, token: str=Depends(OAUTH2_SCHEME)) -> User:
-    """ UNDER CONSTRUCTION """
-    #TODO: THIS
-    credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
-        headers={"WWW-Authenticate": "Bearer"},
-    )
+async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> User:    
+    username, user_id = oauth_data['data']['sub'].split("#")
+    user = await User.query.where(User.username == username).gino.first()
 
-    try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[JWT_ALGORITHM])
-        username: str = payload.get("sub")
-        if username is None:
-            raise credentials_exception
-        token_data = TokenData(username=username)
-    except JWTError:
-        raise credentials_exception
-    user = get_user(fake_users_db, username=token_data.username)
-    if user is None:
-        raise credentials_exception
+    if user is None or str(user.id) != user_id:
+        raise oauth_error
+    
     return user
+
+def require_oauth_scopes(*scopes: List[ScopeEnum]):
+    scopes_req = set(map(str, scopes))
+
+    def __check_oauth_scope(oauth_data: dict = Depends(get_oauth_data)):
+        available_scopes = set(oauth_data['scopes'])
+        
+        if not scopes_req.issubset(available_scopes):
+            raise oauth_error
+
+    return Depends(__check_oauth_scope)

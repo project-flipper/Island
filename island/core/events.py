@@ -2,6 +2,7 @@ from typing import Callable
 
 from fastapi import FastAPI
 from loguru import logger
+from broadcaster import Broadcast
 import aioredis
 
 from island.database import *
@@ -27,6 +28,16 @@ def create_start_app_handler(app: FastAPI) -> Callable:
         app.state.redis = await aioredis.create_redis_pool('redis://localhost')
         logger.info("Redis connection established")
 
+        logger.info("Connecting to REDIS-Broadcast")
+        app.state.redis_broadcast = Broadcast("redis://localhost:6379")
+        await app.state.redis_broadcast.connect()
+        logger.info("REDIS-Broadcast connection established")
+
+        logger.info("Connecting to PostgreSQL-Broadcast")
+        app.state.postgres_broadcast = Broadcast(str(DB_DSN))
+        await app.state.postgres_broadcast.connect()
+        logger.info("PostgreSQL-Broadcast connection established")
+
         await world_setup(app.state.redis)
 
     return start_app
@@ -43,6 +54,12 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
     """
     @logger.catch
     async def stop_app() -> None:
+        logger.info("Disconnecting REDIS-Broadcast")
+        await app.state.redis_broadcast.disconnect()
+
+        logger.info("Disconnecting PostgreSQL-Broadcast")
+        await app.state.postgres_broadcast.disconnect()
+
         logger.info("Disconnecting from database")
         await app.state.database.pop_bind().close()
         logger.info("Disconnected database connection")

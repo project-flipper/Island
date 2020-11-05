@@ -12,3 +12,6 @@ class Scope(Enum):
 
     WorldAccess = "world:access"
     WorldDev    = "world:dev"
+
+    def __str__(self):
+        return str(self.value)

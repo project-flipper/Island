@@ -24,3 +24,4 @@ class World(Base):
     @property
     def scopes(self) -> List[Scope]:
         return list(map(Scope, self._scopes))
+    
