@@ -76,7 +76,7 @@ async def handle_authenticate_user(response: Response,
 
     return token_response
 
-@router.post("/auth", response_model=TokenResponse, dependencies=[require_oauth_scopes(Scope.UserAuth)])
+@router.post("/resume", response_model=TokenResponse, dependencies=[require_oauth_scopes(Scope.UserAuth)])
 async def handle_authenticate_user(response: Response, data: dict = Depends(get_oauth_data)) -> TokenResponse:
     username, password = data['data']['sub'].split("#")
 
