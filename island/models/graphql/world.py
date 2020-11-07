@@ -32,10 +32,13 @@ class WorldQuery(graphene.ObjectType):
 
         if user_scopes is None:
             return None
+        
+        user_scopes = set(user_scopes)
 
         worlds = list(
             WorldMetaModel(world_key=key, user_count=len(world.clients), **world.meta.dict())
             for key, world in WorldMiddleware.worlds.items()
+            if world.meta.scopes.issubset(user_scopes)
         )
 
         return worlds

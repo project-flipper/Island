@@ -1,5 +1,6 @@
 from enum import unique
-from sqlalchemy import Column, Integer, String, Text, ARRAY, Enum
+from sqlalchemy import Column, Integer, String, Text, Enum
+from sqlalchemy.dialects.postgresql import ARRAY
 from typing import List
 
 from island.database import Base

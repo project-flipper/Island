@@ -10,8 +10,8 @@ class WorldMeta(BaseModel):
     name: str
     capacity: int
     lang: int
-    scopes: List[Scope]
-    grant_scopes: List[Scope]
+    scopes: Set[Scope]
+    grant_scopes: Set[Scope]
     access_key: str
 
     class Config:
