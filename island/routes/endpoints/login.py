@@ -9,7 +9,7 @@ from island.core.config import config
 from island.core.constants.scope import Scope
 from island.database.schema.user import User
 from island.models.token import TokenResponse, TokenError, Token
-from island.utils.auth import verify_password, get_user_scopes, create_access_token, require_oauth_scopes
+from island.utils.auth import verify_password, get_user_scopes, create_access_token, require_oauth_scopes, get_oauth_data, oauth_error
 
 router = APIRouter()
 
@@ -76,8 +76,35 @@ async def handle_authenticate_user(response: Response,
 
     return token_response
 
+@router.post("/auth", response_model=TokenResponse, dependencies=[require_oauth_scopes(Scope.UserAuth)])
+async def handle_authenticate_user(response: Response, data: dict = Depends(get_oauth_data)) -> TokenResponse:
+    username, password = data['data']['sub'].split("#")
+
+    user = await User.query.where(User.username == username).gino.first()
+    if user is None or not verify_password(password, user.password):
+        raise oauth_error
+    
+    access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
+    user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin])
+
+    access_token = create_access_token(
+        data = {
+            "sub": f"{user.username}#{user.id}",
+            "scopes": list(map(str, user_scopes))
+        },
+        expires_delta=access_token_expires
+    )
+
+    return TokenResponse(
+        data=Token(
+            access_token=access_token,
+            token_type="bearer"
+        ),
+        success=True
+    )
+    
 
 @router.get("/test", dependencies=[require_oauth_scopes(Scope.UserLogin)])
 async def test_oauth(request: Request):
     scope = request.scope
-    return JSONResponse(scope['oauth'])
+    return JSONResponse({"scopes": scope['oauth']['scopes']})

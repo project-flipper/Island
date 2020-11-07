@@ -1,4 +1,3 @@
-from island.models.graphql import user
 import graphene
 from graphene import relay
 from graphene_pydantic import PydanticObjectType
@@ -6,6 +5,7 @@ from typing import List
 
 from island.core.world import WorldMeta
 from island.core.world import WorldMiddleware
+from island.core.constants.scope import Scope
 
 class WorldMetaModel(WorldMeta):
     world_key: str
@@ -33,8 +33,7 @@ class WorldQuery(graphene.ObjectType):
         if user_scopes is None:
             return None
         
-        user_scopes = set(user_scopes)
-
+        user_scopes = set(map(Scope, user_scopes))
         worlds = list(
             WorldMetaModel(world_key=key, user_count=len(world.clients), **world.meta.dict())
             for key, world in WorldMiddleware.worlds.items()

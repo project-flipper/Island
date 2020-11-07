@@ -14,4 +14,5 @@ class Scope(Enum):
     WorldDev    = "world:dev"
 
     def __str__(self):
-        return str(self.value)
+        return str(self.value)  
+        
