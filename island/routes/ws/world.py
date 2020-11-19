@@ -1,4 +1,4 @@
-'''
+"""
 
 CLIENT -> Authorization Header  [Verify, //Login//]
        -> event system
@@ -15,4 +15,4 @@ scope => single string/Scope, list or tuple or iterable of string/Scope, or call
 async def handle_ping(ctx, *args, **kwargs):
     pass 
 
-'''
+"""
