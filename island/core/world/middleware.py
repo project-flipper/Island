@@ -10,7 +10,7 @@ from island.utils.auth import SECRET_KEY, JWT_ALGORITHM
 
 class WorldMiddleware:
 
-    worlds: Dict[str, WorldBase] = dict()
+    worlds: Dict[str, WorldBase] = {}
 
     def __init__(self, app: ASGIApp):
         self._app = app
