@@ -21,17 +21,13 @@ async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
                 "has_error": True,
                 "success": False,
                 "data": None,
-                "error": jsonable_encoder(exc.detail)
+                "error": jsonable_encoder(exc.detail),
             },
-            status_code=exc.status_code
+            status_code=exc.status_code,
         )
 
     return JSONResponse(
-        {
-            "has_error": True,
-            "success": False,
-            "data": None,
-            "error": str(exc.detail)
-        },
-        status_code=exc.status_code
+        {"has_error": True, "success": False,
+            "data": None, "error": str(exc.detail)},
+        status_code=exc.status_code,
     )
