@@ -3,6 +3,7 @@ from typing import TypeVar, Optional, Generic, Any
 
 T = TypeVar("T")
 
+
 class Response(GenericModel, Generic[T]):
     data: Optional[T] = None
     error: Any = None

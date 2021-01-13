@@ -6,6 +6,7 @@ from typing import List
 from island.database import Base
 from island.core.constants.scope import Scope
 
+
 class World(Base):
     __tablename__ = "worlds"
 
@@ -13,10 +14,13 @@ class World(Base):
     name = Column(String, unique=True, nullable=False)
     capacity = Column(Integer, nullable=False, default=200)
     lang = Column(Integer, nullable=False, default=1)
-    
+
     access_key = Column(String(32), unique=True, nullable=False)
-    _grant_scopes = Column("grant_scopes", ARRAY(String(30)), nullable=False, server_default="{}")
-    _scopes = Column("scopes", ARRAY(String(30)), nullable=False, server_default="{}")
+    _grant_scopes = Column(
+        "grant_scopes", ARRAY(String(30)), nullable=False, server_default="{}"
+    )
+    _scopes = Column("scopes", ARRAY(String(30)),
+                     nullable=False, server_default="{}")
 
     @property
     def grant_scopes(self):
@@ -25,4 +29,3 @@ class World(Base):
     @property
     def scopes(self) -> List[Scope]:
         return list(map(Scope, self._scopes))
-    

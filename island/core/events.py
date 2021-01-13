@@ -18,6 +18,7 @@ def create_start_app_handler(app: FastAPI) -> Callable:
     Returns:
         Callable
     """
+
     async def start_app() -> None:
         logger.info("Connecting to database")
         app.state.database = db
@@ -25,7 +26,7 @@ def create_start_app_handler(app: FastAPI) -> Callable:
         logger.info("Database connection established")
 
         logger.info("Connecting to redis")
-        app.state.redis = await aioredis.create_redis_pool('redis://localhost')
+        app.state.redis = await aioredis.create_redis_pool("redis://localhost")
         logger.info("Redis connection established")
 
         logger.info("Connecting to REDIS-Broadcast")
@@ -52,6 +53,7 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
     Returns:
         Callable
     """
+
     @logger.catch
     async def stop_app() -> None:
         logger.info("Disconnecting REDIS-Broadcast")

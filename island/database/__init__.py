@@ -21,7 +21,7 @@ DB_DSN = config(
         host=DB_HOST,
         port=DB_PORT,
         database=DB_DATABASE,
-    )
+    ),
 )
 
 

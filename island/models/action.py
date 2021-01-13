@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 
+
 class Action(BaseModel):
     """Generic Action-model for incoming and outgoing event(s).
 
@@ -10,12 +11,12 @@ class Action(BaseModel):
         about the data being received/sent.
 
         Example:
-        
+
         class ExampleData(BaseModel):
             example_string_data: str
             example_optional_data: int = 100
             example_optional_list: Optional[List[int]]
-        
+
         class ExampleAction(Action): # <-- inherit from [Action] class
             d: ExampleData # <-- giving more information on data structure for [d].
 
@@ -23,6 +24,8 @@ class Action(BaseModel):
         BaseModel ([type]): [description]
     """
 
-    op: str # action [category:event]
-    d: Optional[Dict[str, Any]] # event data
-    e: Optional[Dict[str, Any]] # event error data, almost only used on replies to action-request
+    op: str  # action [category:event]
+    d: Optional[Dict[str, Any]]  # event data
+    e: Optional[
+        Dict[str, Any]
+    ]  # event error data, almost only used on replies to action-request
