@@ -7,9 +7,11 @@ from island.core.world import WorldMeta
 from island.core.world import WorldMiddleware
 from island.core.constants.scope import Scope
 
+
 class WorldMetaModel(WorldMeta):
     world_key: str
     user_count: int
+
 
 class WorldDataType(PydanticObjectType):
     population = graphene.Int(required=True, max_count=graphene.Int())
@@ -19,7 +21,14 @@ class WorldDataType(PydanticObjectType):
 
     class Meta:
         model = WorldMetaModel
-        exclude_fields = ("access_key", "_grant_scopes", "_scopes", "grant_scopes", "scopes")
+        exclude_fields = (
+            "access_key",
+            "_grant_scopes",
+            "_scopes",
+            "grant_scopes",
+            "scopes",
+        )
+
 
 class WorldQuery(graphene.ObjectType):
     node = relay.Node.Field()
@@ -27,15 +36,17 @@ class WorldQuery(graphene.ObjectType):
     worlds = graphene.List(WorldDataType)
 
     async def resolve_worlds(ctx, info) -> List[WorldMetaModel]:
-        user_scopes = info.context['request'].scope['oauth'] or {}
-        user_scopes = user_scopes.get('scopes', None)
+        user_scopes = info.context["request"].scope["oauth"] or {}
+        user_scopes = user_scopes.get("scopes", None)
 
         if user_scopes is None:
             return None
-        
+
         user_scopes = set(map(Scope, user_scopes))
         worlds = list(
-            WorldMetaModel(world_key=key, user_count=len(world.clients), **world.meta.dict())
+            WorldMetaModel(
+                world_key=key, user_count=len(world.clients), **world.meta.dict()
+            )
             for key, world in WorldMiddleware.worlds.items()
             if world.meta.scopes.issubset(user_scopes)
         )

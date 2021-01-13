@@ -10,7 +10,8 @@ from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 
 
 async def http422_error_handler(
-    _: Request, exc: Union[RequestValidationError, ValidationError],
+    _: Request,
+    exc: Union[RequestValidationError, ValidationError],
 ) -> JSONResponse:
     """Intercept any/all ValidationError and return a CP-compatible JSON response.
 
@@ -22,14 +23,10 @@ async def http422_error_handler(
         JSONResponse
     """
     return JSONResponse(
-        {
-            "has_error": True,
-            "success": False,
-            "data" : None,
-            "error": exc.errors()
-        },
-        status_code=HTTP_422_UNPROCESSABLE_ENTITY
+        {"has_error": True, "success": False, "data": None, "error": exc.errors()},
+        status_code=HTTP_422_UNPROCESSABLE_ENTITY,
     )
+
 
 validation_error_response_definition["properties"] = {
     "errors": {
