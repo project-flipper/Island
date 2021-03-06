@@ -1,4 +1,4 @@
-pydantic==1.6.1
+pydantic==1.6.0
 loguru==0.5.2
 graphene==2.1.8
 starlette==0.13.6
