@@ -17,10 +17,10 @@ env\Scripts\activate
 source "./env/bin/activate"
 ```
 
-Make sure to install all required Python dependencies:
+Install [Poetry](https://python-poetry.org/) python dependency manager, [install instructions here](https://python-poetry.org/docs/#installation). Install required python dependencies:
+
 ```bash
-pip install -r requirements.txt
-pip install uvicorn
+poetry install
 ```
 Your environment is ready to run **Island** :)
 
