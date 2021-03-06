@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "island"
+version = "0.1.0"
+description = "Server backend for ClubPenguin"
+authors = ["dote", "dan", "ro"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "1.6.0"
+loguru = "0.5.2"
+graphene = "2.1.8"
+starlette = "0.13.6"
+databases = "0.3.2"
+SQLAlchemy = "1.3.18"
+aioredis = "1.3.1"
+broadcaster = "0.2.0"
+fastapi = "0.61.2"
+gino = "1.0.1"
+graphene-gino = "0.2.1"
+graphene-pydantic = "0.1.0"
+jose = "1.0.0"
+passlib = "1.7.4"
+secrets = "1.0.2"
+sqlalchemy-citext = "^1.8.0"
+python-jose = {extras = ["cryptography"], version = "^3.2.0"}
+uvicorn = "^0.13.4"
+singledispatch = "^3.6.1"
+alembic = "^1.5.6"
+python-multipart = "^0.0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
