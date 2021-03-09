@@ -27,6 +27,8 @@ uvicorn = "^0.13.4"
 singledispatch = "^3.6.1"
 alembic = "^1.5.6"
 python-multipart = "^0.0.5"
+pyOpenSSL = "^20.0.1"
+asyncio-redis = "^0.16.0"
 
 [tool.poetry.dev-dependencies]
 
