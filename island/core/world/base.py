@@ -23,44 +23,35 @@ class WorldBase(BaseModel):
 
     meta: WorldMeta
     world_key: str
-    clients: Set[int]
 
     redis: Redis
     redis_key: Optional[str]
 
     def __init__(self, redis, *, key: str, meta: WorldMeta):
-        super().__init__(world_key=key, meta=meta, clients=set(), redis=redis)
+        super().__init__(world_key=key, meta=meta, redis=redis)
 
     async def setup(self):
         # first check if this world is already running in same broadcast env
         self.redis_key = f"world:{self.meta.id}"
-        running_key = await self.redis.hget(self.redis_key, "key")
-        if running_key is not None:
-            raise RuntimeWarning(f"The server {str(self)} is already running")
-
-        data = self.meta.dict(exclude={"scopes", "grant_scopes", "access_key"})
-        data["key"] = self.world_key
-        data["count"] = 0
-
-        await self.redis.hmset_dict(self.redis_key, data)
+        world_count = await self.redis.scard(self.redis_key)
+        if world_count > 0:
+            logger.warn(f"Server {str(self)} is already running, and has ({world_count}) members in it. Not overriding existing data.")
+        else:
+            logger.debug(f"Server {str(self)} doesn't exist in memory.")
 
         logger.info(f"Server {str(self)} setup successfully.")
 
     async def client_connected(self, client_id: int):
-        if client_id in self.clients:
+        if await self.redis.sismember(self.redis_key, client_id):
             raise ValueError(
                 f"client_id: {client_id} already in the world server.")
 
-        self.clients.add(client_id)
-        await self.redis.hset(self.redis_key, "count", len(self.clients))
+        await self.redis.redis_key.sadd(client_id)
 
         logger.debug(f"client_id: {client_id} added to {str(self)}")
 
     async def client_disconnected(self, client_id: int):
-        if client_id in self.clients:
-            self.clients.remove(client_id)
-            await self.redis.hset(self.redis_key, "count", len(self.clients))
-
+        if await self.redis.srem(self.redis_key, client_id):
             logger.debug(f"client_id: {client_id} removed from {str(self)}")
 
     def __str__(self):
