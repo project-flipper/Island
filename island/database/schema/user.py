@@ -16,7 +16,8 @@ class User(Base):
     password = Column(Text(), nullable=False)
     email = Column(CIText(), nullable=False)
 
-    user_created = Column(DateTime, server_default=sql.func.now(), nullable=False)
+    user_created = Column(
+        DateTime, server_default=sql.func.now(), nullable=False)
     user_updated = Column(DateTime, onupdate=sql.func.now())
 
     _scopes = Column("scopes", ARRAY(String(30)),

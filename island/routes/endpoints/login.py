@@ -67,10 +67,10 @@ async def handle_authenticate_user(
             error=BanError(
                 error_code=user_ban.ban_type.value,
                 error_description=str(ban_dur),
-                ban_dur=round(ban_dur.total_seconds()/60)
+                ban_dur=round(ban_dur.total_seconds() / 60),
             ),
             success=False,
-            has_error=True
+            has_error=True,
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
@@ -118,10 +118,10 @@ async def handle_authenticate_user(
             error=BanError(
                 error_code=user_ban.ban_type.value,
                 error_description=str(ban_dur),
-                ban_dur=round(ban_dur.total_seconds()/60)
+                ban_dur=round(ban_dur.total_seconds() / 60),
             ),
             success=False,
-            has_error=True
+            has_error=True,
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)

@@ -19,6 +19,7 @@ class WorldDataType(PydanticObjectType):
 
     def resolve_population(ctx, info, max_count: int) -> int:
         return int(ctx.user_count / ctx.capacity) * max_count
+
     class Meta:
         model = WorldMetaModel
         exclude_fields = (
