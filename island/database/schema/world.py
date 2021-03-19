@@ -1,5 +1,5 @@
 from enum import unique
-from sqlalchemy import Column, Integer, String, Text, Enum
+from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.dialects.postgresql import ARRAY
 from typing import List
 
@@ -14,6 +14,7 @@ class World(Base):
     name = Column(String, unique=True, nullable=False)
     capacity = Column(Integer, nullable=False, default=200)
     lang = Column(Integer, nullable=False, default=1)
+    is_safe = Column(Boolean, nullable=False, default=False)
 
     access_key = Column(String(32), unique=True, nullable=False)
     _grant_scopes = Column(

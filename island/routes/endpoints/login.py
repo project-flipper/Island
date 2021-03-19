@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from fastapi import Depends, status, APIRouter, Response, Request
 from fastapi.security import OAuth2PasswordRequestForm
@@ -9,6 +9,7 @@ from island.core.config import config
 from island.core.constants.scope import Scope
 from island.database.schema.user import User
 from island.models.token import TokenResponse, TokenError, Token
+from island.models.error import BanError
 from island.utils.auth import (
     verify_password,
     get_user_scopes,
@@ -16,6 +17,8 @@ from island.utils.auth import (
     require_oauth_scopes,
     get_oauth_data,
     oauth_error,
+    get_current_user,
+    get_user_ban,
 )
 
 router = APIRouter()
@@ -56,6 +59,20 @@ async def handle_authenticate_user(
             has_error=True,
         )
 
+    user_ban = await get_user_ban(user)
+    if user_ban is not None:
+        response.status_code = status.HTTP_403_FORBIDDEN
+        ban_dur = user_ban.ban_expire - datetime.now()
+        return TokenResponse(
+            error=BanError(
+                error_code=user_ban.ban_type.value,
+                error_description=str(ban_dur),
+                ban_dur=round(ban_dur.total_seconds()/60)
+            ),
+            success=False,
+            has_error=True
+        )
+
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
     user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin])
 
@@ -90,13 +107,22 @@ async def handle_authenticate_user(
     dependencies=[require_oauth_scopes(Scope.UserAuth)],
 )
 async def handle_authenticate_user(
-    response: Response, data: dict = Depends(get_oauth_data)
+    response: Response, user: User = Depends(get_current_user)
 ) -> TokenResponse:
-    username, password = data["data"]["sub"].split("#")
 
-    user = await User.query.where(User.username == username).gino.first()
-    if user is None or not verify_password(password, user.password):
-        raise oauth_error
+    user_ban = await get_user_ban(user)
+    if user_ban is not None:
+        response.status_code = status.HTTP_403_FORBIDDEN
+        ban_dur = user_ban.ban_expire - datetime.now()
+        return TokenResponse(
+            error=BanError(
+                error_code=user_ban.ban_type.value,
+                error_description=str(ban_dur),
+                ban_dur=round(ban_dur.total_seconds()/60)
+            ),
+            success=False,
+            has_error=True
+        )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
     user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin])

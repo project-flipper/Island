@@ -14,6 +14,7 @@ class WorldMeta(BaseModel):
     scopes: Set[Scope]
     grant_scopes: Set[Scope]
     access_key: str
+    is_safe: bool
 
     class Config:
         orm_mode = True

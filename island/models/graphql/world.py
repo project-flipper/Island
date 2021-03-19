@@ -14,11 +14,11 @@ class WorldMetaModel(WorldMeta):
 
 
 class WorldDataType(PydanticObjectType):
-    population = graphene.Int(required=True, max_count=graphene.Int())
+    population = graphene.Int(max_count=graphene.Int(required=True))
+    has_buddies = graphene.Boolean(default_value=False)
 
     def resolve_population(ctx, info, max_count: int) -> int:
         return int(ctx.user_count / ctx.capacity) * max_count
-
     class Meta:
         model = WorldMetaModel
         exclude_fields = (
