@@ -36,7 +36,9 @@ class WorldBase(BaseModel):
         self.redis_key = f"world:{self.meta.id}"
         world_count = await self.redis.scard(self.redis_key)
         if world_count > 0:
-            logger.warn(f"Server {str(self)} is already running, and has ({world_count}) members in it. Not overriding existing data.")
+            logger.warn(
+                f"Server {str(self)} is already running, and has ({world_count}) members in it. Not overriding existing data."
+            )
         else:
             logger.debug(f"Server {str(self)} doesn't exist in memory.")
 
