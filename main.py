@@ -101,4 +101,5 @@ app = get_application()
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run("main:app", log_level="debug", reload=True)
