@@ -40,17 +40,25 @@ class UserQuery(graphene.ObjectType):
             Union[User, None]
         """
         query = User.query
-        print(str(query))
+
         if id is not None:
             query = query.where(User.id == id)
-
-        if username is not None:
+        elif username is not None:
             query = query.where(User.username == username)
-
-        if id is None and username is None:
+        else:
             return None
 
         return await query.gino.first()
+
+    async def resolve_me(ctx, info) -> Union[User, None]:
+        user_data = info.context["request"].scope.get(
+            "oauth", {}).get("data", None)
+
+        if user_data is None:
+            return None
+
+        username, _ = user_data["sub"].split("#")
+        return await User.query.where(User.username == username).gino.first()
 
 
 UserQuerySchema = graphene.Schema(query=UserQuery)

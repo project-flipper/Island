@@ -65,7 +65,7 @@ async def handle_authenticate_user(
         ban_dur = user_ban.ban_expire - datetime.now()
         return TokenResponse(
             error=BanError(
-                error_code=user_ban.ban_type.value,
+                error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds()/60)
             ),

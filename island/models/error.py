@@ -1,4 +1,6 @@
+from island.database.schema.ban import Ban
 from pydantic import BaseModel
+from island.core.constants.ban import BanType
 
 
 class Error(BaseModel):
@@ -9,4 +11,5 @@ class Error(BaseModel):
 
 class BanError(Error):
     error_type = "user.banned"
+    error_code: BanType
     ban_dur: int

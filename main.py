@@ -51,12 +51,14 @@ def get_application() -> FastAPI:
         title="Island Server",
         description="Web API and WS endpoint for ClubPenguin HTML5 client",
         version=API_VERSION,
-        docs_url=f"/{API_PREFIX.strip('/')}/docs",
-        redoc_url=f"/{API_PREFIX.strip('/')}/redocs",
+        docs_url=f"{API_PREFIX.rstrip('/')}/docs".lstrip("/"),
+        redoc_url=f"{API_PREFIX.rstrip('/')}/redocs".lstrip("/"),
     )
 
+    _prefix = f"/{API_PREFIX.rstrip('/')}".lstrip("/")
+
     logger.info(f"Island version {API_VERSION}")
-    logger.info(f"Island API endpoint prefix /{API_PREFIX}/")
+    logger.info(f"Island API endpoint prefix {_prefix}")
     logger.info(f"Island setting up")
 
     logger.info("Island adding middlewares")
@@ -88,7 +90,7 @@ def get_application() -> FastAPI:
 
     logger.info("Island adding routers")
 
-    application.include_router(router, prefix=f"/{API_PREFIX.strip('/')}")
+    application.include_router(router, prefix=_prefix)
 
     logger.info("Island setup complete")
 
@@ -96,3 +98,7 @@ def get_application() -> FastAPI:
 
 
 app = get_application()
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", log_level="debug", reload=True)
