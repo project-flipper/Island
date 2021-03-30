@@ -22,6 +22,16 @@ Install [Poetry](https://python-poetry.org/) python dependency manager, [install
 ```bash
 poetry install
 ```
+
+## Database
+Install PostgreSQL server, create a file `.env` in same directory as `main.py` and add in the database details (ref: https://github.com/clubpenguin-html5/Island/blob/main/island/database/__init__.py)
+
+Setup the database by running the following command
+
+```bash
+alembic upgrade head
+```
+
 Your environment is ready to run **Island** :)
 
 # Usage
