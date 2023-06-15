@@ -5,7 +5,7 @@ from loguru import logger
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret, URL
 from sqlalchemy.engine.url import URL, make_url
-from island.core.logging import InterceptHandler 
+from island.core.logging import InterceptHandler
 
 config = Config(".env")
 

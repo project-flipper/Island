@@ -1,3 +1,3 @@
 from .middleware import WorldMiddleware
 
-__all__ = ("WorldMiddleware")
+__all__ = "WorldMiddleware"

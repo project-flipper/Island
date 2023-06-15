@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, Dict, Any
 from island.models.error import Error
 
+
 class Action(BaseModel):
     """Generic Action-model for incoming and outgoing event(s).
 
@@ -26,4 +27,6 @@ class Action(BaseModel):
 
     op: str  # action [category:event]
     d: Optional[Dict[str, Any]]  # event data
-    e: Optional[Error]  # event error data, almost only used on replies to action-request
+    e: Optional[
+        Error
+    ]  # event error data, almost only used on replies to action-request
