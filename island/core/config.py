@@ -1,7 +1,7 @@
 import logging
 from typing import List
 from starlette.config import Config
-from starlette.datastructures import CommaSeparatedStrings, Secret, URL
+from starlette.datastructures import CommaSeparatedStrings, Secret
 from sqlalchemy.engine.url import URL, make_url
 from island.core.logging import InterceptHandler
 
