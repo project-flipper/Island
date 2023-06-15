@@ -8,7 +8,14 @@ from starlette.middleware.cors import CORSMiddleware
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
 from island.routes import router
-from island.core.config import ALLOWED_HOSTS, API_PREFIX, DEBUG, SECRET_KEY, API_VERSION, SENTRY_DSN
+from island.core.config import (
+    ALLOWED_HOSTS,
+    API_PREFIX,
+    DEBUG,
+    SECRET_KEY,
+    API_VERSION,
+    SENTRY_DSN,
+)
 from island.core.events import create_start_app_handler, create_stop_app_handler
 from island.core.world import WorldMiddleware
 
@@ -44,7 +51,7 @@ def catch_exceptions():
 def initialize_sentry():
     sentry_sdk.init(
         dsn=str(SENTRY_DSN),
-        traces_sample_rate=1.0, # 1.0 => 100% capture rate
+        traces_sample_rate=1.0,  # 1.0 => 100% capture rate
     )
 
 
@@ -107,9 +114,11 @@ def get_application() -> FastAPI:
 
 app = get_application()
 
+
 @app.get("/sentry-test")
 async def trigger_error_error():
     division_by_zero = 1 / 0
+
 
 if __name__ == "__main__":
     import uvicorn

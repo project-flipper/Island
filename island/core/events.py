@@ -3,7 +3,12 @@ from fastapi import FastAPI
 from loguru import logger
 import aioredis
 from island.database import *
-from island.core.config import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, REDIS_SSL_REQUIRED
+from island.core.config import (
+    REDIS_HOST,
+    REDIS_PASSWORD,
+    REDIS_PORT,
+    REDIS_SSL_REQUIRED,
+)
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:
@@ -20,15 +25,15 @@ def create_start_app_handler(app: FastAPI) -> Callable:
         logger.info("Connecting to database")
         app.state.db_engine = ASYNC_ENGINE
         app.state.db_session = ASYNC_SESSION
-        
+
         async with ASYNC_ENGINE.begin() as conn:
             logger.info("Database connection successful")
 
         logger.info("Connecting to redis")
         app.state.redis = await aioredis.create_redis_pool(
             address=(REDIS_HOST, REDIS_PORT),
-            password= REDIS_PASSWORD,
-            ssl=REDIS_SSL_REQUIRED
+            password=REDIS_PASSWORD,
+            ssl=REDIS_SSL_REQUIRED,
         )
         logger.info("Redis connection established")
 
