@@ -12,7 +12,6 @@ from island.core.config import (
     ALLOWED_HOSTS,
     API_PREFIX,
     DEBUG,
-    SECRET_KEY,
     API_VERSION,
     SENTRY_DSN,
 )
