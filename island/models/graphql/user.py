@@ -11,4 +11,4 @@ class User(BaseModel):
 
 @strawberry.experimental.pydantic.type(model=User, all_fields=True)
 class UserType:
-    pass 
+    pass

@@ -109,7 +109,6 @@ async def handle_authenticate_user(
 async def handle_authenticate_user(
     response: Response, user: User = Depends(get_current_user)
 ) -> TokenResponse:
-
     user_ban = await get_user_ban(user)
     if user_ban is not None:
         response.status_code = status.HTTP_403_FORBIDDEN
