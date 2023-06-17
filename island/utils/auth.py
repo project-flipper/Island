@@ -11,7 +11,7 @@ from island.core.config import config, SECRET_KEY
 from island.database.schema.user import User
 from island.database.schema.ban import Ban
 from island.core.constants.scope import Scope as ScopeEnum
-from island.models.token import TokenError
+from island.models.error import Error
 
 
 class JWTTokenType(Enum):
@@ -26,7 +26,7 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
         except HTTPException:
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
-                detail=TokenError(
+                detail=Error(
                     error_type="oauth.failed",
                     error_code=103,
                     error_description="Unable to verify OAuth. OAuth invalid or expired.",
@@ -44,7 +44,7 @@ OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
 
 oauth_error = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
-    detail=TokenError(
+    detail=Error(
         error_type="user.token.failed",
         error_code=102,
         error_description="OAuth token doesn't have required scope or expired.",

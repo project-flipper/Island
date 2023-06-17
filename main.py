@@ -107,6 +107,7 @@ def get_application() -> FastAPI:
     application.include_router(router, prefix=_prefix)
 
     logger.info("Island setup complete")
+    logger.info("Island is ready to be started in a ASGI service")
 
     return application
 

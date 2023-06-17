@@ -8,8 +8,8 @@ from starlette.responses import JSONResponse
 from island.core.config import config
 from island.core.constants.scope import Scope
 from island.database.schema.user import User
-from island.models.token import TokenResponse, TokenError, Token
-from island.models.error import BanError
+from island.models.token import TokenResponse, Token
+from island.models.error import BanError, Error
 from island.utils.auth import (
     verify_password,
     get_user_scopes,
@@ -50,7 +50,7 @@ async def handle_authenticate_user(
     if user is None or not verify_password(auth_input.password, user.password):
         response.status_code = status.HTTP_401_UNAUTHORIZED
         return TokenResponse(
-            error=TokenError(
+            error=Error(
                 error_type="user.auth.failed",
                 error_code=101,
                 error_description="User authentication failed. Incorrect username or password.",

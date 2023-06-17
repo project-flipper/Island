@@ -1,19 +1,21 @@
-from fastapi import APIRouter, Request
-from starlette.graphql import GraphQLApp
-from graphql.execution.executors.asyncio import AsyncioExecutor
-
-from island.models.graphql.user import UserQuerySchema
-from island.core.constants.scope import Scope
-from island.utils.auth import require_oauth_scopes
-
-router = APIRouter()
-userQLApp = GraphQLApp(schema=UserQuerySchema, executor_class=AsyncioExecutor)
+import strawberry
+from strawberry.types import Info
+from island.models.graphql.user import UserType
 
 
-@router.get("/")
-@router.post(
-    "/", dependencies=[require_oauth_scopes(Scope.UserRead)]
-)  # comment this for testing
-# @router.post("/") # uncomment this for testing
-async def handle_user_data_request(request: Request):
-    return await userQLApp.handle_graphql(request=request)
+@strawberry.type
+class Query:
+    @strawberry.field
+    async def ping(self) -> str:
+        return "pong"
+
+
+@strawberry.type
+class Mutation:
+    @strawberry.mutation
+    def create(self) -> UserType:
+        return UserType(
+            id=1,
+            username="test",
+            nickname="test",
+        )
