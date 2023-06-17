@@ -157,7 +157,7 @@ async def get_user_ban(user: User = Depends(get_current_user)) -> Union[Ban, Non
 
 
 def require_oauth_scopes(*scopes: List[ScopeEnum]):
-    """Checks if user has required scope/permission. 
+    """Checks if user has required scope/permission.
 
     Raises:
         oauth_error: If user doesn't have sufficient scope/perms.

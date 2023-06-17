@@ -6,7 +6,7 @@ from strawberry import Schema
 from strawberry.fastapi import GraphQLRouter
 
 
-def get_graphql_routers(module = None) -> APIRouter:
+def get_graphql_routers(module=None) -> APIRouter:
     """dynamically imoport all routers under `graphql` under a common `APIRouter`.
     The directory & folder structural naming will be used as prefix.
 
@@ -19,17 +19,20 @@ def get_graphql_routers(module = None) -> APIRouter:
     module = module.strip()
     if not module:
         return APIRouter()
-        
+
     _prefix = f"{('/' + module.__name__.split('.')[-1]) if module else ''}"
     module_path = str(module.__file__)
-    
+
     if module_path.endswith("__init__.py"):
         module_path = module_path.split("__init__.py")[0]
 
-    route = APIRouter(prefix=f"/{module.__prefix__.strip('/')}") \
-        if hasattr(module, '__prefix__') else APIRouter(prefix=_prefix)
+    route = (
+        APIRouter(prefix=f"/{module.__prefix__.strip('/')}")
+        if hasattr(module, "__prefix__")
+        else APIRouter(prefix=_prefix)
+    )
 
-    for (a, module_name, is_pkg) in iter_modules([module_path]):
+    for a, module_name, is_pkg in iter_modules([module_path]):
         m_name = f"{module.__name__}.{module_name}"
         prefix = ""
 
@@ -37,20 +40,26 @@ def get_graphql_routers(module = None) -> APIRouter:
         module_imp = import_module(m_name, package=module_path)
 
         if hasattr(module_imp, "__skip__"):
-            logger.debug(f"Skipping import GraphQL from module: {m_name}. Reason: __skip__ is set to True")
-            continue 
-
-        if is_pkg:
-            logger.warning(f"Skipping import GraphQL from module: {m_name}. Reason: it is not a package")
-            continue 
-
-        if not hasattr(module_imp, 'schema'):
-            logger.warning(f"Skipping import GraphQL from module: {m_name}. Reason: it doesn't have a schema")
+            logger.debug(
+                f"Skipping import GraphQL from module: {m_name}. Reason: __skip__ is set to True"
+            )
             continue
 
-        if hasattr(module_imp, '__prefix__'):
+        if is_pkg:
+            logger.warning(
+                f"Skipping import GraphQL from module: {m_name}. Reason: it is not a package"
+            )
+            continue
+
+        if not hasattr(module_imp, "schema"):
+            logger.warning(
+                f"Skipping import GraphQL from module: {m_name}. Reason: it doesn't have a schema"
+            )
+            continue
+
+        if hasattr(module_imp, "__prefix__"):
             prefix += f"/{module_imp.__prefix__}"
-        else :
+        else:
             prefix += f"/{module_name}"
 
         logger.info(f"Including router: {prefix}")
@@ -59,6 +68,8 @@ def get_graphql_routers(module = None) -> APIRouter:
             router = GraphQLRouter(module_imp.schema)
             route.include_router(router, prefix=prefix)
         except Exception as e:
-            logger.warning(f"Skipping import GraphQL from module: {m_name}. Reason: Error when trying to create router for schema")
+            logger.warning(
+                f"Skipping import GraphQL from module: {m_name}. Reason: Error when trying to create router for schema"
+            )
 
     return route
