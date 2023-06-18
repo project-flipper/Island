@@ -31,6 +31,9 @@ SECRET_KEY: Secret = config(
 WORLD_ACCESS_KEY = config(
     "WORLD_ACCESS_KEY", cast=str, default="earlyDevelopmentTesting01"
 )
+DATABASE_SECRET_KEY = config(
+    "DATABASE_SECRET_KEY", cast=Secret, default="change_me1234"
+)
 
 # Database config
 DB_DRIVER = config("DB_DRIVER", default="postgresql+asyncpg")
