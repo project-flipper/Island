@@ -27,9 +27,13 @@ LOGGING_LEVEL = (
 
 # Security config
 SECRET_KEY: Secret = config(
-    "SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
+    "SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1"
+)
 WORLD_ACCESS_KEY = config(
     "WORLD_ACCESS_KEY", cast=str, default="earlyDevelopmentTesting01"
+)
+DATABASE_SECRET_KEY = config(
+    "DATABASE_SECRET_KEY", cast=Secret, default="change_me1234"
 )
 
 # Database config
