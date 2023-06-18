@@ -16,7 +16,7 @@ def get_graphql_routers(module=None) -> APIRouter:
     Returns:
         GraphQLRouter: GraphQL router
     """
-    
+
     _prefix = f"{('/' + module.__name__.split('.')[-1]) if module else ''}"
     module_path = str(module.__file__)
 
