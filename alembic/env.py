@@ -8,7 +8,7 @@ from alembic import context
 
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from island.database import DB_DSN, db
+from island.database import DB_DSN, Base
 from island.database.schema import *
 
 # this is the Alembic Config object, which provides
@@ -24,7 +24,7 @@ config.set_main_option('sqlalchemy.url', str(DB_DSN))
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = db
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
