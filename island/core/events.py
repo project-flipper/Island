@@ -1,7 +1,8 @@
+import redis.asyncio as redis_async
 from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
-import aioredis
+from island.core.realtime import redis
 from island.database import *
 from island.core.config import (
     REDIS_HOST,
@@ -30,11 +31,13 @@ def create_start_app_handler(app: FastAPI) -> Callable:
             logger.info("Database connection successful")
 
         logger.info("Connecting to redis")
-        app.state.redis = await aioredis.create_redis_pool(
-            address=(REDIS_HOST, REDIS_PORT),
-            password=REDIS_PASSWORD,
-            ssl=REDIS_SSL_REQUIRED,
+        app.state.redis = redis.REDIS_CLIENT_POOL = redis_async.Redis(
+            host=REDIS_HOST,
+            port=REDIS_PORT,
+            password=str(REDIS_PASSWORD),
+            ssl=REDIS_SSL_REQUIRED
         )
+        await app.state.redis.ping()
         logger.info("Redis connection established")
 
     return start_app
@@ -57,8 +60,7 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
         logger.info("Disconnected database connection")
 
         logger.info("Closing redis connection")
-        app.state.redis.close()
-        await app.state.redis.wait_closed()
+        await app.state.redis.close()
         logger.info("Redis connection closed")
 
     return stop_app
