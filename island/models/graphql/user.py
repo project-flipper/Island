@@ -23,20 +23,25 @@ class CreateUserModel(BaseModel):
     password: str
     email: EmailStr
 
-    @validator('name')
+    @validator("name")
     def username_alphanum(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
-            raise ValueError("name can only contain alphabets, numbers, space and a dash (_)")
+            raise ValueError(
+                "name can only contain alphabets, numbers, space and a dash (_)"
+            )
 
         return value
 
-    @validator('password')
+    @validator("password")
     def password_strength_check(cls, value: str):
         if not len(value) > 7:
-            raise ValueError("password must be a minimum of 8 characters long") #TODO: implement i18n for these strings
+            raise ValueError(
+                "password must be a minimum of 8 characters long"
+            )  # TODO: implement i18n for these strings
 
         return value
+
 
 @strawberry.experimental.pydantic.input(CreateUserModel, all_fields=True)
 class CreateUserType:

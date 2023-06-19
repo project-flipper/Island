@@ -17,18 +17,15 @@ class BaseConfig:
     def get_cache_key(cls, *keys: List[str]) -> Union[List[str], str]:
         if not keys:
             raise ValueError("No keys provided")
-        
+
         prefix = cls.__get_cache_prefix()
 
-        return [
-            prefix + k for k in keys
-        ] if len(keys) > 1 else prefix + keys[0]
+        return [prefix + k for k in keys] if len(keys) > 1 else prefix + keys[0]
 
     @classmethod
     async def cache_exists(cls, cache_key: str) -> bool:
         key = cls.get_cache_key(cache_key)
         return await get_redis_pool().exists(key)
-
 
     @classmethod
     async def get_cache(cls, key, /, *subkeys, command):

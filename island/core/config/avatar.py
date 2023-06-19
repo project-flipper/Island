@@ -13,8 +13,8 @@ class AvatarConfig(BaseConfig):
     async def get_all_colors() -> Set[int]:
         colors_cache_exists = await AvatarConfig.cache_exists("colors")
         if not colors_cache_exists:
-            #TODO: Populate the cache from database
-            raise NotImplementedError() 
+            # TODO: Populate the cache from database
+            raise NotImplementedError()
 
         colors = await AvatarConfig.get_cache("colors", command="smembers")
         return set(map(int, colors))
