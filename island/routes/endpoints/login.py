@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 
-from sqlalchemy.orm import joinedload
-from fastapi import Depends, status, APIRouter, Response, Request
-from fastapi.security import OAuth2PasswordRequestForm
+from fastapi import APIRouter, Depends, Request, Response, status
 from fastapi.param_functions import Form
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 from starlette.responses import JSONResponse
 
 from island.core.config import config
@@ -12,18 +12,12 @@ from island.core.constants.scope import Scope
 from island.database import ASYNC_SESSION
 from island.database.schema.ban import Ban
 from island.database.schema.user import User
-from island.models.token import TokenResponse, Token
 from island.models.error import BanError, Error
-from island.utils.auth import (
-    verify_password,
-    get_user_scopes,
-    create_access_token,
-    require_oauth_scopes,
-    get_oauth_data,
-    oauth_error,
-    get_current_user,
-    get_user_ban,
-)
+from island.models.token import Token, TokenResponse
+from island.utils.auth import (create_access_token, get_current_user,
+                               get_oauth_data, get_user_scopes,
+                               oauth_error, require_oauth_scopes,
+                               verify_password)
 
 router = APIRouter()
 

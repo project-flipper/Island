@@ -1,6 +1,7 @@
 import sys
 from loguru import logger
 import sentry_sdk
+from sentry_sdk.integrations.loguru import LoguruIntegration
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException
@@ -51,6 +52,9 @@ def initialize_sentry():
     sentry_sdk.init(
         dsn=str(SENTRY_DSN),
         traces_sample_rate=1.0,  # 1.0 => 100% capture rate
+        integrations=[
+            LoguruIntegration()
+        ]
     )
 
 

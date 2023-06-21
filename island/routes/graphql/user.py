@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr, validator
 import strawberry
 from strawberry.types import Info
 from island.models.graphql.avatar import Avatar
-from island.models.graphql.user import CreateUserType, UserType
+from island.models.graphql.user import CreateUserModel, CreateUserType, UserType
 
 
 @strawberry.type
@@ -16,7 +16,7 @@ class Query:
 class Mutation:
     @strawberry.mutation
     async def create(self, user_data: CreateUserType) -> UserType:
-        user = CreateUserType.to_pydantic()
+        user = user_data.to_pydantic()
         
         return UserType(
             id=1,
