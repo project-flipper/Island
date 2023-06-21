@@ -3,6 +3,7 @@ from pydantic import BaseModel, EmailStr, validator
 import strawberry
 
 from island.models.graphql.avatar import Avatar
+from island.core.i18n import _
 
 
 class User(BaseModel):
@@ -22,19 +23,20 @@ class CreateUserModel(BaseModel):
     color: int
     password: str
     email: EmailStr
+    color: int
 
     @validator('name')
     def username_alphanum(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
-            raise ValueError("name can only contain alphabets, numbers, space and a dash (_)")
+            raise ValueError(_("error.username.alphanum"))
 
         return value
 
     @validator('password')
     def password_strength_check(cls, value: str):
         if not len(value) > 7:
-            raise ValueError("password must be a minimum of 8 characters long") #TODO: implement i18n for these strings
+            raise ValueError(_("error.password.lngth"))
 
         return value
 

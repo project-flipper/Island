@@ -4,12 +4,12 @@ from unittest.mock import Base
 from island.core.realtime.redis import get_redis_pool
 
 
-class BaseConfig:
+class BaseEntity:
     __prefix__ = ""
 
     @classmethod
     def __get_cache_prefix(cls) -> str:
-        prefix = (BaseConfig.__prefix__ + ":") if BaseConfig.__prefix__ else ""
+        prefix = (BaseEntity.__prefix__ + ":") if BaseEntity.__prefix__ else ""
 
         return prefix + cls.__name__ + ":"
 

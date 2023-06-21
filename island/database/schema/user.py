@@ -1,8 +1,9 @@
-from sqlalchemy import Column, Integer, String, Text, ARRAY, DateTime, sql
+from sqlalchemy import Column, ForeignKey, Integer, String, Text, ARRAY, DateTime, null, sql
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import StringEncryptedType
 from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
 from citext import CIText
-from typing import List
+from typing import List, Optional
 
 from island.database import Base
 from island.core.constants.scope import Scope
@@ -12,21 +13,18 @@ from island.core.config import DATABASE_SECRET_KEY
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True)
-    username = Column(String(12), nullable=False, unique=True)
-    nickname = Column(String(20), nullable=False)
-    password = Column(Text(), nullable=False)
-    email = Column(
-        StringEncryptedType(String, DATABASE_SECRET_KEY, AesEngine, "pkcs5"),
-        nullable=False,
-    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    username: Mapped[str] = mapped_column(String(12), unique=True)
+    nickname: Mapped[str] = mapped_column(String(20))
+    password: Mapped[str] = mapped_column(Text())
+    email: Mapped[str] = mapped_column(StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5"))
 
-    created_timestamp = Column(
-        DateTime, server_default=sql.func.now(), nullable=False)
-    updated_timestamp = Column(DateTime, onupdate=sql.func.now())
+    _scopes: Mapped[List[str]] = mapped_column("scopes", ARRAY(String(30)), server_default="{}")
+    
+    avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
-    _scopes = Column("scopes", ARRAY(String(30)),
-                     nullable=False, server_default="{}")
+    bans: Mapped[List["Ban"]] = relationship(back_populates="user")
+    avatar: Mapped["Avatar"] = relationship(back_populates="user")
 
     @property
     def scopes(self) -> List[Scope]:

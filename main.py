@@ -91,10 +91,10 @@ def get_application() -> FastAPI:
 
     logger.info("Island adding startup and shutdown events")
 
-    # application.add_event_handler(
-    #     "startup", create_start_app_handler(application))
-    # application.add_event_handler(
-    #     "shutdown", create_stop_app_handler(application))
+    application.add_event_handler(
+        "startup", create_start_app_handler(application))
+    application.add_event_handler(
+        "shutdown", create_stop_app_handler(application))
 
     logger.info("Island adding exception handlers")
 

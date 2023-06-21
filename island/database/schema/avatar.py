@@ -1,10 +1,12 @@
 from sqlalchemy import Column, ForeignKey, Integer
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from island.database import Base
 
 
 class Avatar(Base):
     __tablename__ = "avatars"
 
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    color = Column(Integer, default=1, nullable=False)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    color: Mapped[int] = mapped_column(default=1)
+
+    user: Mapped["User"] = relationship(back_populates="avatar")

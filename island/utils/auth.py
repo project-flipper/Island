@@ -6,8 +6,11 @@ from fastapi.security import OAuth2PasswordBearer
 from fastapi import HTTPException, Depends, status, Request
 from jose import jwt
 from passlib.context import CryptContext
+from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 
 from island.core.config import config, SECRET_KEY
+from island.database import ASYNC_SESSION
 from island.database.schema.user import User
 from island.database.schema.ban import Ban
 from island.core.constants.scope import Scope as ScopeEnum
@@ -130,30 +133,18 @@ async def get_oauth_data(request: Request) -> dict:
 
 async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> User:
     username, user_id = oauth_data["data"]["sub"].split("#")
-    user = await User.query.where(User.username == username).gino.first()
+    
+    async with ASYNC_SESSION() as session:
+        user_query = select(User) \
+            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now()))) \
+            .where(User.username == username)
+        
+        user: User = (await session.execute(user_query)).scalar().first()
 
     if user is None or str(user.id) != user_id:
         raise oauth_error
 
     return user
-
-
-async def get_user_ban(user: User = Depends(get_current_user)) -> Union[Ban, None]:
-    """Get user active `Ban` object, `None` otherwise
-
-    Args:
-        user (User, optional): [`User` object]. Defaults to Depends(get_current_user).
-
-    Returns:
-        Union[Ban, None]: User' active ban
-    """
-    user_ban: Ban = await Ban.load(user=user).order_by(Ban.ban_expire).limit(1).first()
-    if user_ban is None:
-        return
-
-    now = datetime.now()
-    if user_ban.ban_expire > now:
-        return user_ban
 
 
 def require_oauth_scopes(*scopes: List[ScopeEnum]):

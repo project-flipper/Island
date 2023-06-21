@@ -1,4 +1,6 @@
+import datetime
 from sqlalchemy import Column, Integer, Text, Enum, DateTime, ForeignKey, sql
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from citext import CIText
 from typing import List
 
@@ -11,11 +13,13 @@ from island.core.constants.ban import BanType
 class Ban(Base):
     __tablename__ = "bans"
 
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False) # banned user
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
 
-    ban_type = Column(Enum(BanType), nullable=False, default=BanType.MANUAL_BAN)
-    ban_date = Column(DateTime, server_default=sql.func.now(), nullable=False)
-    ban_expire = Column(DateTime, nullable=False)
-    ban_user = Column(Integer, default=0, nullable=False) # moderator who banned (0 for sys)
-    ban_comment = Column(Text, nullable=False)
+    ban_type: Mapped[BanType] = mapped_column(default=BanType.MANUAL_BAN)
+    ban_date: Mapped[datetime.datetime] = mapped_column(server_default=sql.func.now())
+    ban_expire: Mapped[datetime.datetime]
+    ban_user: Mapped[int] = mapped_column(default=0)
+    ban_comment: Mapped[str]
+
+    user: Mapped["User"] = relationship(back_populates="bans")

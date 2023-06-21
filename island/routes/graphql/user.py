@@ -15,7 +15,7 @@ class Query:
 @strawberry.type
 class Mutation:
     @strawberry.mutation
-    def create(self, user_data: CreateUserType) -> UserType:
+    async def create(self, user_data: CreateUserType) -> UserType:
         user = CreateUserType.to_pydantic()
         
         return UserType(

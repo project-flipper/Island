@@ -65,6 +65,9 @@ REDIS_PORT = config("REDIS_PORT", cast=int, default=6379)
 REDIS_PASSWORD = config("REDIS_PASSWORD", cast=Secret, default=None)
 REDIS_SSL_REQUIRED = config("REDIS_SSL_REQUIRED", cast=bool, default=True)
 
+# General
+I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
+
 logging.getLogger().handlers = [InterceptHandler()]
 LOGGERS = ("uvicorn.asgi", "uvicorn.access")
 for logger_name in LOGGERS:

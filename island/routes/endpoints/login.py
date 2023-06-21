@@ -1,12 +1,16 @@
 from datetime import datetime, timedelta
 
+from sqlalchemy.orm import joinedload
 from fastapi import Depends, status, APIRouter, Response, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.param_functions import Form
+from sqlalchemy import select
 from starlette.responses import JSONResponse
 
 from island.core.config import config
 from island.core.constants.scope import Scope
+from island.database import ASYNC_SESSION
+from island.database.schema.ban import Ban
 from island.database.schema.user import User
 from island.models.token import TokenResponse, Token
 from island.models.error import BanError, Error
@@ -46,7 +50,15 @@ async def handle_authenticate_user(
     Returns:
         TokenResponse
     """
-    user = await User.query.where(User.username == auth_input.username).gino.first()
+
+    async with ASYNC_SESSION() as session:
+        now = datetime.now()
+        user_query = select(User) \
+            .options(joinedload(User.bans.and_(Ban.ban_expire > now))) \
+            .where(User.username == auth_input.username)
+        
+        user: User = (await session.execute(user_query)).scalar().first()
+
     if user is None or not verify_password(auth_input.password, user.password):
         response.status_code = status.HTTP_401_UNAUTHORIZED
         return TokenResponse(
@@ -59,7 +71,7 @@ async def handle_authenticate_user(
             has_error=True,
         )
 
-    user_ban = await get_user_ban(user)
+    user_ban = user.bans[0] if user.bans else None
     if user_ban is not None:
         response.status_code = status.HTTP_403_FORBIDDEN
         ban_dur = user_ban.ban_expire - datetime.now()
@@ -106,10 +118,10 @@ async def handle_authenticate_user(
     response_model=TokenResponse,
     dependencies=[require_oauth_scopes(Scope.UserAuth)],
 )
-async def handle_authenticate_user(
+async def handle_reauthenticate_user(
     response: Response, user: User = Depends(get_current_user)
 ) -> TokenResponse:
-    user_ban = await get_user_ban(user)
+    user_ban = user.bans[0] if user.bans else None
     if user_ban is not None:
         response.status_code = status.HTTP_403_FORBIDDEN
         ban_dur = user_ban.ban_expire - datetime.now()
