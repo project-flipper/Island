@@ -25,7 +25,7 @@ class CreateUserModel(BaseModel):
     email: EmailStr
     color: int
 
-    @validator('name')
+    @validator("name")
     def username_alphanum(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
@@ -33,12 +33,13 @@ class CreateUserModel(BaseModel):
 
         return value
 
-    @validator('password')
+    @validator("password")
     def password_strength_check(cls, value: str):
         if not len(value) > 7:
             raise ValueError(_("error.password.lngth"))
 
         return value
+
 
 @strawberry.experimental.pydantic.input(CreateUserModel, all_fields=True)
 class CreateUserType:

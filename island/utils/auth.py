@@ -133,12 +133,14 @@ async def get_oauth_data(request: Request) -> dict:
 
 async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> User:
     username, user_id = oauth_data["data"]["sub"].split("#")
-    
+
     async with ASYNC_SESSION() as session:
-        user_query = select(User) \
-            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now()))) \
+        user_query = (
+            select(User)
+            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now())))
             .where(User.username == username)
-        
+        )
+
         user: User = (await session.execute(user_query)).scalar().first()
 
     if user is None or str(user.id) != user_id:

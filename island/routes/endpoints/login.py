@@ -53,10 +53,12 @@ async def handle_authenticate_user(
 
     async with ASYNC_SESSION() as session:
         now = datetime.now()
-        user_query = select(User) \
-            .options(joinedload(User.bans.and_(Ban.ban_expire > now))) \
+        user_query = (
+            select(User)
+            .options(joinedload(User.bans.and_(Ban.ban_expire > now)))
             .where(User.username == auth_input.username)
-        
+        )
+
         user: User = (await session.execute(user_query)).scalar().first()
 
     if user is None or not verify_password(auth_input.password, user.password):
