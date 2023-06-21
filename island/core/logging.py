@@ -17,7 +17,7 @@ class InterceptHandler(logging.Handler):
         while frame.f_code.co_filename == logging.__file__:
             frame = cast(FrameType, frame.f_back)
             depth += 1
-        
+
         logger.opt(depth=depth, exception=record.exc_info).log(
             level,
             record.getMessage(),

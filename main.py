@@ -52,9 +52,7 @@ def initialize_sentry():
     sentry_sdk.init(
         dsn=str(SENTRY_DSN),
         traces_sample_rate=1.0,  # 1.0 => 100% capture rate
-        integrations=[
-            LoguruIntegration()
-        ]
+        integrations=[LoguruIntegration()],
     )
 
 

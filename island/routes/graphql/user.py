@@ -17,12 +17,8 @@ class Mutation:
     @strawberry.mutation
     async def create(self, user_data: CreateUserType) -> UserType:
         user = user_data.to_pydantic()
-        
-        return UserType(
-            id=1,
-            username="test",
-            nickname="test",
-            avatar = Avatar(color = 1)
-        )
+
+        return UserType(id=1, username="test", nickname="test", avatar=Avatar(color=1))
+
 
 schema = strawberry.Schema(Query, Mutation)
