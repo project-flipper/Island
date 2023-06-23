@@ -1,8 +1,10 @@
 import logging
 from typing import List
+
+from sqlalchemy.engine.url import URL, make_url
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret
-from sqlalchemy.engine.url import URL, make_url
+
 from island.core.logging import InterceptHandler
 
 config = Config(".env")
@@ -26,8 +28,7 @@ LOGGING_LEVEL = (
 )
 
 # Security config
-SECRET_KEY: Secret = config(
-    "SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
+SECRET_KEY: Secret = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
 WORLD_ACCESS_KEY = config(
     "WORLD_ACCESS_KEY", cast=str, default="earlyDevelopmentTesting01"
 )
@@ -67,6 +68,10 @@ REDIS_SSL_REQUIRED = config("REDIS_SSL_REQUIRED", cast=bool, default=True)
 
 # General
 I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
+I18N_DIR = config("I18N_DIR", cast=str, default="./config/locale")
+FASTAPI_EVENTS_MIDDLEWARE_ID = config(
+    "FASTAPI_EVENTS_MIDDLEWARE_ID", cast=int, default=id("fastapi-events")
+)
 
 logging.getLogger().handlers = [InterceptHandler()]
 LOGGERS = ("uvicorn.asgi", "uvicorn.access")

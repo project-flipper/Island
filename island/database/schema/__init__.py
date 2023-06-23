@@ -1,5 +1,5 @@
-from os import path
 import glob
+from os import path
 
 modules = glob.glob(path.join(path.dirname(__file__), "*.py"))
 __all__ = [

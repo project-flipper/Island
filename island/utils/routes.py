@@ -1,13 +1,43 @@
+import builtins
 from importlib import import_module
 from pkgutil import iter_modules
-from loguru import logger
+from types import ModuleType
+
 from fastapi import APIRouter
-from strawberry import Schema
+from loguru import logger
 from strawberry.fastapi import GraphQLRouter
 
 
-def get_graphql_routers(module=None) -> APIRouter:
-    """dynamically imoport all routers under `graphql` under a common `APIRouter`.
+def get_modules(module: ModuleType, /, *, global_namespace: str):
+    """Import all modules and add them to the global namesapce, which can be accessed
+    by the key set by `global_namespace`.
+    """
+    module_path = str(module.__file__)
+
+    if module_path.endswith("__init__.py"):
+        module_path = module_path.split("__init__.py")[0]
+
+    if global_namespace is not None:
+        if not hasattr(builtins, global_namespace):
+            setattr(builtins, global_namespace, [])
+
+    for a, module_name, is_pkg in iter_modules([module_path]):
+        m_name = f"{module.__name__}.{module_name}"
+        prefix = ""
+
+        logger.debug(f"Importing module: {m_name}")
+        module_imp = import_module(m_name, package=module_path)
+
+        if is_pkg:
+            get_modules(module_imp)
+            continue
+
+        if global_namespace is not None:
+            getattr(builtins, global_namespace).append(module_imp)
+
+
+def get_graphql_routers(module: ModuleType) -> APIRouter:
+    """dynamically import all routers under `graphql` under a common `APIRouter`.
     The directory & folder structural naming will be used as prefix.
 
     Args:
@@ -16,7 +46,7 @@ def get_graphql_routers(module=None) -> APIRouter:
     Returns:
         GraphQLRouter: GraphQL router
     """
-    
+
     _prefix = f"{('/' + module.__name__.split('.')[-1]) if module else ''}"
     module_path = str(module.__file__)
 

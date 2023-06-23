@@ -1,10 +1,11 @@
 from enum import unique
-from sqlalchemy import Column, Integer, String, Boolean
-from sqlalchemy.dialects.postgresql import ARRAY
 from typing import List
 
-from island.database import Base
+from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy.dialects.postgresql import ARRAY
+
 from island.core.constants.scope import Scope
+from island.database import Base
 
 
 class World(Base):
@@ -20,8 +21,7 @@ class World(Base):
     _grant_scopes = Column(
         "grant_scopes", ARRAY(String(30)), nullable=False, server_default="{}"
     )
-    _scopes = Column("scopes", ARRAY(String(30)),
-                     nullable=False, server_default="{}")
+    _scopes = Column("scopes", ARRAY(String(30)), nullable=False, server_default="{}")
 
     @property
     def grant_scopes(self):

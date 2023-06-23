@@ -1,7 +1,10 @@
 import logging
 from types import FrameType
 from typing import cast
+
+from fastapi.exceptions import RequestValidationError
 from loguru import logger
+from pydantic import ValidationError
 
 
 class InterceptHandler(logging.Handler):
@@ -17,7 +20,18 @@ class InterceptHandler(logging.Handler):
         while frame.f_code.co_filename == logging.__file__:
             frame = cast(FrameType, frame.f_back)
             depth += 1
-        
+
+        debug = False
+        if (
+            not debug
+            and record.exc_info is not None
+            and issubclass(
+                record.exc_info[0], (ValidationError, RequestValidationError)
+            )
+        ):
+            logger.error("Validation error occured")
+            return
+
         logger.opt(depth=depth, exception=record.exc_info).log(
             level,
             record.getMessage(),

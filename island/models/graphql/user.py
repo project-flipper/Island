@@ -1,9 +1,10 @@
 from typing import Optional
-from pydantic import BaseModel, EmailStr, validator
-import strawberry
 
-from island.models.graphql.avatar import Avatar
+import strawberry
+from pydantic import BaseModel, EmailStr, validator
+
 from island.core.i18n import _
+from island.models.graphql.avatar import Avatar
 
 
 class User(BaseModel):
@@ -24,21 +25,26 @@ class CreateUserModel(BaseModel):
     password: str
     email: EmailStr
     color: int
+    token: str
 
-    @validator('name')
+    @validator("name")
     def username_alphanum(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
             raise ValueError(_("error.username.alphanum"))
 
+        if not 3 < len(value) < 13:
+            raise ValueError(_("error.username.length"))
+
         return value
 
-    @validator('password')
+    @validator("password")
     def password_strength_check(cls, value: str):
         if not len(value) > 7:
-            raise ValueError(_("error.password.lngth"))
+            raise ValueError(_("error.password.length"))
 
         return value
+
 
 @strawberry.experimental.pydantic.input(CreateUserModel, all_fields=True)
 class CreateUserType:

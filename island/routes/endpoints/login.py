@@ -14,10 +14,15 @@ from island.database.schema.ban import Ban
 from island.database.schema.user import User
 from island.models.error import BanError, Error
 from island.models.token import Token, TokenResponse
-from island.utils.auth import (create_access_token, get_current_user,
-                               get_oauth_data, get_user_scopes,
-                               oauth_error, require_oauth_scopes,
-                               verify_password)
+from island.utils.auth import (
+    create_access_token,
+    get_current_user,
+    get_oauth_data,
+    get_user_scopes,
+    oauth_error,
+    require_oauth_scopes,
+    verify_password,
+)
 
 router = APIRouter()
 
@@ -47,10 +52,12 @@ async def handle_authenticate_user(
 
     async with ASYNC_SESSION() as session:
         now = datetime.now()
-        user_query = select(User) \
-            .options(joinedload(User.bans.and_(Ban.ban_expire > now))) \
+        user_query = (
+            select(User)
+            .options(joinedload(User.bans.and_(Ban.ban_expire > now)))
             .where(User.username == auth_input.username)
-        
+        )
+
         user: User = (await session.execute(user_query)).scalar().first()
 
     if user is None or not verify_password(auth_input.password, user.password):

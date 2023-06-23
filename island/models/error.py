@@ -1,5 +1,5 @@
-from island.models import Error
 from island.core.constants.ban import BanType
+from island.models import Error
 
 
 class BanError(Error):

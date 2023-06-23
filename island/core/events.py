@@ -1,15 +1,19 @@
-import redis.asyncio as redis_async
 from typing import Callable
+
+import redis.asyncio as redis_async
 from fastapi import FastAPI
 from loguru import logger
-from island.core.realtime import redis
-from island.database import *
+
 from island.core.config import (
     REDIS_HOST,
     REDIS_PASSWORD,
     REDIS_PORT,
     REDIS_SSL_REQUIRED,
 )
+from island.core.constants.events import EventEnum
+from island.core.realtime import redis
+from island.database import *
+from island.events import dispatch
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:
@@ -35,10 +39,13 @@ def create_start_app_handler(app: FastAPI) -> Callable:
             host=REDIS_HOST,
             port=REDIS_PORT,
             password=str(REDIS_PASSWORD),
-            ssl=REDIS_SSL_REQUIRED
+            ssl=REDIS_SSL_REQUIRED,
         )
         await app.state.redis.ping()
         logger.info("Redis connection established")
+
+        logger.info("Dispatching APP_START_EVENT")
+        dispatch(EventEnum.APP_START_EVENT)
 
     return start_app
 
@@ -62,5 +69,8 @@ def create_stop_app_handler(app: FastAPI) -> Callable:
         logger.info("Closing redis connection")
         await app.state.redis.close()
         logger.info("Redis connection closed")
+
+        logger.info("Dispatching APP_STOP_EVENT")
+        dispatch(EventEnum.APP_STOP_EVENT)
 
     return stop_app

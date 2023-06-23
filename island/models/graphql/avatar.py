@@ -1,6 +1,7 @@
 from typing import Optional
-from pydantic import BaseModel
+
 import strawberry
+from pydantic import BaseModel
 
 
 class Avatar(BaseModel):

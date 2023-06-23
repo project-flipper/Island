@@ -1,13 +1,13 @@
 import datetime
-from sqlalchemy import Column, Integer, Text, Enum, DateTime, ForeignKey, sql
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from citext import CIText
 from typing import List
 
+from citext import CIText
+from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, Text, sql
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql.sqltypes import Date
 
-from island.database import Base
 from island.core.constants.ban import BanType
+from island.database import Base
 
 
 class Ban(Base):

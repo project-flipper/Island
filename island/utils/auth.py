@@ -1,19 +1,19 @@
 from datetime import datetime, timedelta
-from typing import Optional, List, Union
 from enum import Enum
+from typing import List, Optional, Union
 
+from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
-from fastapi import HTTPException, Depends, status, Request
 from jose import jwt
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 
-from island.core.config import config, SECRET_KEY
-from island.database import ASYNC_SESSION
-from island.database.schema.user import User
-from island.database.schema.ban import Ban
+from island.core.config import SECRET_KEY, config
 from island.core.constants.scope import Scope as ScopeEnum
+from island.database import ASYNC_SESSION
+from island.database.schema.ban import Ban
+from island.database.schema.user import User
 from island.models.error import Error
 
 
@@ -37,10 +37,8 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
             )
 
 
-DEFAULT_TOKEN_EXPIRE = config(
-    "DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
-JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE",
-                       cast=JWTTokenType, default="HS256")
+DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
+JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default="HS256")
 
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
@@ -100,8 +98,7 @@ def create_access_token(
         expire = datetime.utcnow() + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
 
     to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, str(
-        SECRET_KEY), algorithm=JWT_ALGORITHM.value)
+    encoded_jwt = jwt.encode(to_encode, str(SECRET_KEY), algorithm=JWT_ALGORITHM.value)
 
     return encoded_jwt
 
@@ -133,12 +130,14 @@ async def get_oauth_data(request: Request) -> dict:
 
 async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> User:
     username, user_id = oauth_data["data"]["sub"].split("#")
-    
+
     async with ASYNC_SESSION() as session:
-        user_query = select(User) \
-            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now()))) \
+        user_query = (
+            select(User)
+            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now())))
             .where(User.username == username)
-        
+        )
+
         user: User = (await session.execute(user_query)).scalar().first()
 
     if user is None or str(user.id) != user_id:

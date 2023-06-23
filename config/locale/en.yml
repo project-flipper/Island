@@ -1,6 +1,9 @@
 en:
-  island_info: Island server v1.0.0
+  island_info: Island server
 
   error:
-    username.alphanum: "name can only contain alphabets, numbers, space and a dash (_)"
+    username:
+      alphanum: "name can only contain alphabets, numbers, space and a dash (_)"
+      length: "name should be a minimum of 4 and can be a maximum of 12 characters long"
+      
     password.length: "password must be a minimum of 8 characters long"
