@@ -3,6 +3,7 @@ from typing import Optional
 import strawberry
 from pydantic import BaseModel, EmailStr, validator
 
+from island.core.entities.avatar import AvatarEntity
 from island.core.i18n import _
 from island.models.graphql.avatar import Avatar
 
@@ -28,7 +29,7 @@ class CreateUserModel(BaseModel):
     token: str
 
     @validator("name")
-    def username_alphanum(cls, value: str):
+    def username_check(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
             raise ValueError(_("error.username.invalid"))

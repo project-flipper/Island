@@ -1,4 +1,8 @@
-from fastapi import APIRouter
+from typing import Callable
+
+from fastapi import APIRouter, Request, Response
+from fastapi.routing import APIRoute
+from loguru import logger
 from pydantic import ValidationError
 from strawberry import Schema as StrawberrySchema
 
@@ -19,5 +23,17 @@ class Schema(StrawberrySchema):
                 raise getattr(error, "original_error")
 
 
-router = APIRouter()
+class GraphQLAPIRoute(APIRoute):
+    def get_route_handler(self) -> Callable:
+        original_route_handler = super().get_route_handler()
+
+        async def custom_route_handler(request: Request) -> Response:
+            response: Response = await original_route_handler(request)
+            print("hello", response)
+            return response
+
+        return custom_route_handler
+
+
+router = APIRouter(route_class=GraphQLAPIRoute)
 router.include_router(get_graphql_routers(graphql))

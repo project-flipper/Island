@@ -1,12 +1,12 @@
 from typing import Set
 
-from island.core.config import BaseEntity
+from island.core.entities import BaseEntity
 
 
 class AvatarEntity(BaseEntity):
     @staticmethod
     async def check_color_exists(color_id: int) -> bool:
-        colors = AvatarEntity.get_all_colors()
+        colors = await AvatarEntity.get_all_colors()
         return color_id in colors
 
     @staticmethod

@@ -10,7 +10,7 @@ from island.core.constants.ban import BanType
 from island.database import Base
 
 
-class Ban(Base):
+class BanTable(Base):
     __tablename__ = "bans"
 
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -22,4 +22,4 @@ class Ban(Base):
     ban_user: Mapped[int] = mapped_column(default=0)
     ban_comment: Mapped[str]
 
-    user: Mapped["User"] = relationship(back_populates="bans")
+    user: Mapped["UserTable"] = relationship(back_populates="bans")

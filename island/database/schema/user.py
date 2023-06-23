@@ -21,7 +21,7 @@ from island.core.constants.scope import Scope
 from island.database import Base
 
 
-class User(Base):
+class UserTable(Base):
     __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -38,8 +38,8 @@ class User(Base):
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
-    bans: Mapped[List["Ban"]] = relationship(back_populates="user")
-    avatar: Mapped["Avatar"] = relationship(back_populates="user")
+    bans: Mapped[List["BanTable"]] = relationship(back_populates="user")
+    avatar: Mapped["AvatarTable"] = relationship(back_populates="user")
 
     @property
     def scopes(self) -> List[Scope]:

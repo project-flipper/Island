@@ -24,8 +24,9 @@ from island.core.config import (
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
 from island.core.events import create_start_app_handler, create_stop_app_handler
-from island.core.world import WorldMiddleware
 from island.database.schema import *
+from island.middlwares.graphql import GraphQLResponseMiddleware
+from island.middlwares.world import WorldMiddleware
 from island.routes import router
 from island.utils.routes import get_modules
 
@@ -92,9 +93,6 @@ def get_application() -> FastAPI:
 
     logger.info("Island adding middlewares")
 
-    logger.debug("Island adding World Manager Middleware")
-    application.add_middleware(WorldMiddleware)
-
     logger.debug("Island adding CORS Middleware")
     application.add_middleware(
         CORSMiddleware,
@@ -104,15 +102,21 @@ def get_application() -> FastAPI:
         allow_headers=["*"],
     )
 
-    logger.debug("Adding Event Handler ASGI Middleware")
+    logger.debug("Island adding Event Handler ASGI Middleware")
     application.add_middleware(
         EventHandlerASGIMiddleware,
         handlers=[local_handler],
         middleware_id=FASTAPI_EVENTS_MIDDLEWARE_ID,
     )
 
-    logger.debug("Adding Starlette Context Middleware")
+    logger.debug("Island adding Starlette Context Middleware")
     application.add_middleware(RawContextMiddleware)
+
+    logger.debug("Island adding World Manager Middleware")
+    application.add_middleware(WorldMiddleware)
+
+    logger.debug("Island adding GraphQL Response Middleware")
+    application.middleware("http")(GraphQLResponseMiddleware())
 
     logger.info("Island adding startup and shutdown events")
 

@@ -10,9 +10,10 @@ from starlette.responses import JSONResponse
 from island.core.config import config
 from island.core.constants.scope import Scope
 from island.database import ASYNC_SESSION
-from island.database.schema.ban import Ban
-from island.database.schema.user import User
-from island.models.error import BanError, Error
+from island.database.schema.ban import BanTable
+from island.database.schema.user import UserTable
+from island.models import Error
+from island.models.errors.ban import BanError
 from island.models.token import Token, TokenResponse
 from island.utils.auth import (
     create_access_token,
@@ -53,12 +54,12 @@ async def handle_authenticate_user(
     async with ASYNC_SESSION() as session:
         now = datetime.now()
         user_query = (
-            select(User)
-            .options(joinedload(User.bans.and_(Ban.ban_expire > now)))
-            .where(User.username == auth_input.username)
+            select(UserTable)
+            .options(joinedload(UserTable.bans.and_(BanTable.ban_expire > now)))
+            .where(UserTable.username == auth_input.username)
         )
 
-        user: User = (await session.execute(user_query)).scalar().first()
+        user: UserTable = (await session.execute(user_query)).scalar().first()
 
     if user is None or not verify_password(auth_input.password, user.password):
         response.status_code = status.HTTP_401_UNAUTHORIZED
@@ -120,7 +121,7 @@ async def handle_authenticate_user(
     dependencies=[require_oauth_scopes(Scope.UserAuth)],
 )
 async def handle_reauthenticate_user(
-    response: Response, user: User = Depends(get_current_user)
+    response: Response, user: UserTable = Depends(get_current_user)
 ) -> TokenResponse:
     user_ban = user.bans[0] if user.bans else None
     if user_ban is not None:

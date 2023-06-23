@@ -1,7 +1,9 @@
-from enum import Enum
+from enum import IntEnum
+
+from island.core.constants.error import ErrorEnum
 
 
-class BanType(Enum):
-    MANUAL_BAN = 601
-    AUTO_BAN = 610
-    CHEATING_BAN = 611
+class BanType(IntEnum):
+    MANUAL_BAN = ErrorEnum.MANUAL_BAN.value
+    AUTO_BAN = ErrorEnum.AUTO_BAN.value
+    CHEATING_BAN = ErrorEnum.CHEATING_BAN.value

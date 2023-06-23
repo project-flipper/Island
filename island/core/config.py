@@ -66,12 +66,22 @@ REDIS_PORT = config("REDIS_PORT", cast=int, default=6379)
 REDIS_PASSWORD = config("REDIS_PASSWORD", cast=Secret, default=None)
 REDIS_SSL_REQUIRED = config("REDIS_SSL_REQUIRED", cast=bool, default=True)
 
+# Google recaptcha
+GOOGLE_RECAPTCHA_V3_SECRET = config(
+    "GOOGLE_RECAPTCHA_V3_SECRET", cast=Secret, default=None
+)
+SKIP_RECAPTCHA_ON_DEVELOPMENT = config(
+    "SKIP_RECAPTCHA_ON_DEVELOPMENT", cast=bool, default=True
+)
+
 # General
 I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
 I18N_DIR = config("I18N_DIR", cast=str, default="./config/locale")
 FASTAPI_EVENTS_MIDDLEWARE_ID = config(
     "FASTAPI_EVENTS_MIDDLEWARE_ID", cast=int, default=id("fastapi-events")
 )
+ENVIRONMENT_TYPE = config("ENVIRONMENT_TYPE", cast=str, default="dev")
+IS_DEVELOPMENT_MODE = ENVIRONMENT_TYPE == "dev"
 
 logging.getLogger().handlers = [InterceptHandler()]
 LOGGERS = ("uvicorn.asgi", "uvicorn.access")

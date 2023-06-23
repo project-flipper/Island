@@ -29,7 +29,7 @@ def get_modules(module: ModuleType, /, *, global_namespace: str):
         module_imp = import_module(m_name, package=module_path)
 
         if is_pkg:
-            get_modules(module_imp)
+            get_modules(module_imp, global_namespace=global_namespace)
             continue
 
         if global_namespace is not None:

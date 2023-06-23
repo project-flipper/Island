@@ -12,9 +12,9 @@ from sqlalchemy.orm import joinedload
 from island.core.config import SECRET_KEY, config
 from island.core.constants.scope import Scope as ScopeEnum
 from island.database import ASYNC_SESSION
-from island.database.schema.ban import Ban
-from island.database.schema.user import User
-from island.models.error import Error
+from island.database.schema.ban import BanTable
+from island.database.schema.user import UserTable
+from island.models import Error
 
 
 class JWTTokenType(Enum):
@@ -104,7 +104,7 @@ def create_access_token(
 
 
 async def get_user_scopes(
-    user: User, *, default_scopes: Optional[List[ScopeEnum]] = None
+    user: UserTable, *, default_scopes: Optional[List[ScopeEnum]] = None
 ) -> List[ScopeEnum]:
     """Get list of user scopes from database, along with default_scopes if any given. `default_scopes` is added to beginning of the result.
 
@@ -128,17 +128,19 @@ async def get_oauth_data(request: Request) -> dict:
     return oauth_data
 
 
-async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> User:
+async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTable:
     username, user_id = oauth_data["data"]["sub"].split("#")
 
     async with ASYNC_SESSION() as session:
         user_query = (
-            select(User)
-            .options(joinedload(User.bans.and_(Ban.ban_expire > datetime.now())))
-            .where(User.username == username)
+            select(UserTable)
+            .options(
+                joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
+            )
+            .where(UserTable.username == username)
         )
 
-        user: User = (await session.execute(user_query)).scalar().first()
+        user: UserTable = (await session.execute(user_query)).scalar().first()
 
     if user is None or str(user.id) != user_id:
         raise oauth_error

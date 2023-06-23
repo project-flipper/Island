@@ -10,5 +10,9 @@ en:
     password.length: "Password must be between 4 and 32 characters long"
 
     email:
-      invalid: "E-mail is invalid. Try again"
+      invalid: "E-mail is invalid"
       max-usage: "There are too many accounts assigned to this email address to add a new one."
+
+    color.notexist: "Color does not exists"
+  
+    recaptcha.verification.failed: "Recaptcha invalid or expired"
