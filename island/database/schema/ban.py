@@ -17,7 +17,8 @@ class Ban(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
 
     ban_type: Mapped[BanType] = mapped_column(default=BanType.MANUAL_BAN)
-    ban_date: Mapped[datetime.datetime] = mapped_column(server_default=sql.func.now())
+    ban_date: Mapped[datetime.datetime] = mapped_column(
+        server_default=sql.func.now())
     ban_expire: Mapped[datetime.datetime]
     ban_user: Mapped[int] = mapped_column(default=0)
     ban_comment: Mapped[str]

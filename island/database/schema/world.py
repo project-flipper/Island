@@ -21,7 +21,8 @@ class World(Base):
     _grant_scopes = Column(
         "grant_scopes", ARRAY(String(30)), nullable=False, server_default="{}"
     )
-    _scopes = Column("scopes", ARRAY(String(30)), nullable=False, server_default="{}")
+    _scopes = Column("scopes", ARRAY(String(30)),
+                     nullable=False, server_default="{}")
 
     @property
     def grant_scopes(self):
