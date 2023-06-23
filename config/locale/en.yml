@@ -3,7 +3,12 @@ en:
 
   error:
     username:
-      alphanum: "name can only contain alphabets, numbers, space and a dash (_)"
-      length: "name should be a minimum of 4 and can be a maximum of 12 characters long"
-      
-    password.length: "password must be a minimum of 8 characters long"
+      invalid: "Names must only contain alphanumeric characters, spaces or dashes"
+      length: "Name must be between 4 and 12 characters long"
+      taken: "Name is already taken. Try again"
+
+    password.length: "Password must be between 4 and 32 characters long"
+
+    email:
+      invalid: "E-mail is invalid. Try again"
+      max-usage: "There are too many accounts assigned to this email address to add a new one."

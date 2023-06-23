@@ -23,7 +23,7 @@ class CreateUserModel(BaseModel):
     name: str
     color: int
     password: str
-    email: EmailStr
+    email: str
     color: int
     token: str
 
@@ -31,7 +31,7 @@ class CreateUserModel(BaseModel):
     def username_alphanum(cls, value: str):
         value = value.strip()
         if not value.isidentifier():
-            raise ValueError(_("error.username.alphanum"))
+            raise ValueError(_("error.username.invalid"))
 
         if not 3 < len(value) < 13:
             raise ValueError(_("error.username.length"))
@@ -40,11 +40,19 @@ class CreateUserModel(BaseModel):
 
     @validator("password")
     def password_strength_check(cls, value: str):
-        if not len(value) > 7:
+        if not 3 < len(value) < 33:
             raise ValueError(_("error.password.length"))
 
         return value
 
+    @validator("email")
+    def email_valid(cls, value: str):
+        try:
+            EmailStr.validate(value)
+        except ValueError as e:
+            raise ValueError(_("error.email.invalid")) from e
+
+        return value
 
 @strawberry.experimental.pydantic.input(CreateUserModel, all_fields=True)
 class CreateUserType:
