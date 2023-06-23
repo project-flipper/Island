@@ -20,9 +20,9 @@ class GraphQLResponseMiddleware:
 
         response_body = [chunk async for chunk in response.body_iterator]
         res_json = json.loads(response_body[0])
-        res_model = GraphQLResponse(
-            **res_json, hasError="error" in res_json, success="data" in res_json
-        )
+        res_json["hasError"] = "error" in res_json
+        res_json["success"] = "data" in res_json
+        res_model = GraphQLResponse(**res_json)
         json_data = json.dumps(jsonable_encoder(res_model)).encode()
         response_body[0] = json_data
         response.body_iterator = iterate_in_threadpool(iter(response_body))
