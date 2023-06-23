@@ -39,7 +39,8 @@ class Mutation:
 
         if not await AvatarEntity.check_color_exists(create.color):
             raise ValidationError(
-                errors=[ErrorWrapper(ValueError(_("error.color.notexist")), "color")],
+                errors=[ErrorWrapper(ValueError(
+                    _("error.color.notexist")), "color")],
                 model=CreateUserModel,
             )
 

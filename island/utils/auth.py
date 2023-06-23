@@ -37,8 +37,10 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
             )
 
 
-DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
-JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default="HS256")
+DEFAULT_TOKEN_EXPIRE = config(
+    "DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
+JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE",
+                       cast=JWTTokenType, default="HS256")
 
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
@@ -98,7 +100,8 @@ def create_access_token(
         expire = datetime.utcnow() + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
 
     to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, str(SECRET_KEY), algorithm=JWT_ALGORITHM.value)
+    encoded_jwt = jwt.encode(to_encode, str(
+        SECRET_KEY), algorithm=JWT_ALGORITHM.value)
 
     return encoded_jwt
 
@@ -135,7 +138,8 @@ async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTa
         user_query = (
             select(UserTable)
             .options(
-                joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
+                joinedload(UserTable.bans.and_(
+                    BanTable.ban_expire > datetime.now()))
             )
             .where(UserTable.username == username)
         )

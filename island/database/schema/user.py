@@ -29,7 +29,8 @@ class UserTable(Base):
     nickname: Mapped[str] = mapped_column(String(20))
     password: Mapped[str] = mapped_column(Text())
     email: Mapped[str] = mapped_column(
-        StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5")
+        StringEncryptedType(String, str(
+            DATABASE_SECRET_KEY), AesEngine, "pkcs5")
     )
 
     _scopes: Mapped[List[str]] = mapped_column(
