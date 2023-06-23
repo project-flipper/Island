@@ -54,6 +54,7 @@ class CreateUserModel(BaseModel):
 
         return value
 
+
 @strawberry.experimental.pydantic.input(CreateUserModel, all_fields=True)
 class CreateUserType:
     pass
