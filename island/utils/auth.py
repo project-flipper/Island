@@ -1,6 +1,6 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, UTC
 from enum import Enum
-from typing import Annotated
+from typing import Annotated, Any
 
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
@@ -9,12 +9,14 @@ import bcrypt
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 
-from island.core.config import SECRET_KEY, config
+from island.core.config import DATABASE_SECRET_KEY, SECRET_KEY, config
 from island.core.constants.scope import Scope as ScopeEnum
 from island.database import ASYNC_SESSION
 from island.database.schema.ban import BanTable
 from island.database.schema.user import UserTable
 from island.models import Error
+
+from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
 
 
 class JWTTokenType(Enum):
@@ -27,14 +29,7 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
         try:
             return await super().__call__(request)
         except HTTPException:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail=Error(
-                    error_type="oauth.failed",
-                    error_code=103,
-                    error_description="Unable to verify OAuth. OAuth invalid or expired.",
-                ),
-            )
+            raise oauth_error
 
 
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
@@ -42,14 +37,23 @@ JWT_ALGORITHM = config(
     "DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256
 )
 
-OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
+OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="/auth/login")
 
 oauth_error = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
     detail=Error(
-        error_type="user.token.failed",
-        error_code=102,
-        error_description="OAuth token doesn't have required scope or expired.",
+        error_type="user.token.invalid",
+        error_code=101,
+        error_description="OAuth token invalid or expired.",
+    ),
+)
+
+scope_error = HTTPException(
+    status_code=status.HTTP_403_FORBIDDEN,
+    detail=Error(
+        error_type="user.token.scope",
+        error_code=103,
+        error_description="OAuth does not meet the required scopes.",
     ),
 )
 
@@ -79,6 +83,16 @@ def get_password_hash(password: str) -> str:
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
 
+def encrypt_email(email: str) -> str:
+    """Encrypts an email using AES.
+    
+    """
+    engine = AesEngine()
+    engine._update_key(str(DATABASE_SECRET_KEY))
+    engine._set_padding_mechanism("pkcs5")
+    return engine.encrypt(email)
+
+
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     """Generate OAuth2 token with given data, and expiry
 
@@ -92,9 +106,9 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
     to_encode = data.copy()
 
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = datetime.now(UTC) + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
+        expire = datetime.now(UTC) + timedelta(seconds=DEFAULT_TOKEN_EXPIRE)
 
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, str(SECRET_KEY), algorithm=JWT_ALGORITHM.value)
@@ -117,27 +131,26 @@ async def get_user_scopes(
 
     return user.scopes if not default_scopes else default_scopes + user.scopes
 
-
-async def get_oauth_data(request: Request) -> dict:
-    oauth = request.scope["oauth"]
-
-    if oauth is None:
+async def get_oauth_data(oauth: Annotated[str, Depends(OAUTH2_SCHEME)]) -> dict[str, Any]:
+    try:
+        data = jwt.decode(oauth, str(SECRET_KEY), algorithms=[JWT_ALGORITHM.value])
+    except (jwt.DecodeError, jwt.ExpiredSignatureError):
         raise oauth_error
 
-    data = jwt.decode(oauth, str(SECRET_KEY), algorithms=[JWT_ALGORITHM.value])
     return data
 
+async def get_current_user_id(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]) -> str:
+    _, user_id = oauth_data["sub"].split("#")
+    return user_id
 
-async def get_current_user(oauth_data: Annotated[dict, Depends(get_oauth_data)]) -> UserTable:
-    username, user_id = oauth_data["sub"].split("#")
-
+async def get_current_user(user_id: Annotated[str, Depends(get_current_user_id)]) -> UserTable:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
             .options(
                 joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
             )
-            .where(UserTable.username == username)
+            .where(UserTable.id == int(user_id))
         )
 
         user = (await session.execute(user_query)).scalar()
@@ -151,17 +164,17 @@ def require_oauth_scopes(*scopes: ScopeEnum):
     """Checks if user has required scope/permission.
 
     Raises:
-        oauth_error: If user doesn't have sufficient scope/perms.
+        scope_error: If user doesn't have sufficient scope/perms.
 
     Returns:
         Depends: FastAPI dependency
     """
     scopes_req = set(map(str, scopes))
 
-    def __check_oauth_scope(oauth_data: Annotated[dict, Depends(get_oauth_data)]):
+    def __check_oauth_scope(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]):
         available_scopes = set(oauth_data["scopes"])
 
         if not scopes_req.issubset(available_scopes):
-            raise oauth_error
+            raise scope_error
 
     return Depends(__check_oauth_scope)

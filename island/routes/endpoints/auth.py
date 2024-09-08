@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Request, Response, status
+from fastapi import APIRouter, Depends, Response, status
 from fastapi.param_functions import Form
 from fastapi.security import OAuth2PasswordRequestForm
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import joinedload
 from fastapi.responses import JSONResponse
 
@@ -21,7 +21,6 @@ from island.utils.auth import (
     get_current_user,
     get_oauth_data,
     get_user_scopes,
-    oauth_error,
     require_oauth_scopes,
     verify_password,
 )
@@ -32,6 +31,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = config(
     "ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, default=15 * 60
 )  # seconds
 
+DEFAULT_USER_SCOPES = [Scope.UserLogin, Scope.UserRead, Scope.WorldAccess]
 
 @router.post("/login")
 async def handle_authenticate_user(
@@ -57,7 +57,7 @@ async def handle_authenticate_user(
         user_query = (
             select(UserTable)
             .options(joinedload(UserTable.bans.and_(BanTable.ban_expire > now)))
-            .where(UserTable.username == auth_input.username)
+            .where(func.lower(UserTable.username) == auth_input.username.lower())
         )
 
         user = (await session.execute(user_query)).scalar()
@@ -67,7 +67,7 @@ async def handle_authenticate_user(
         return TokenResponse(
             error=Error(
                 error_type="user.auth.credentials",
-                error_code=101,
+                error_code=100,
                 error_description="User authentication failed. Incorrect username or password.",
             ),
             success=False,
@@ -89,7 +89,7 @@ async def handle_authenticate_user(
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin, Scope.WorldAccess])
+    user_scopes = await get_user_scopes(user, default_scopes=DEFAULT_USER_SCOPES)
 
     access_token = create_access_token(
         data={
@@ -98,24 +98,22 @@ async def handle_authenticate_user(
         },
         expires_delta=access_token_expires,
     )
-
+    
     token = Token(access_token=access_token, token_type="bearer")
-
     if save_session:
-        session_token = create_access_token(
+        token.session_key = create_access_token(
             data={
-                "sub": f"{user.username}#{auth_input.password}",
-                "scopes": [Scope.UserAuth],
+                "sub": f"{user.username}#{user.id}",
+                "scopes": [str(Scope.UserAuth)],
             },
             expires_delta=timedelta(days=180),
         )
-        token.session_key = session_token
 
-    return TokenResponse(data=token, success=True)
+    return TokenResponse(data=token, access_token=token.access_token, session_key=token.session_key, token_type=token.token_type, success=True)
 
 
 @router.post(
-    "/resume",
+    "/refresh",
     dependencies=[require_oauth_scopes(Scope.UserAuth)],
 )
 async def handle_reauthenticate_user(
@@ -136,7 +134,7 @@ async def handle_reauthenticate_user(
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin, Scope.WorldAccess])
+    user_scopes = await get_user_scopes(user, default_scopes=DEFAULT_USER_SCOPES)
 
     access_token = create_access_token(
         data={
@@ -146,12 +144,10 @@ async def handle_reauthenticate_user(
         expires_delta=access_token_expires,
     )
 
-    return TokenResponse(
-        data=Token(access_token=access_token, token_type="bearer"), success=True
-    )
+    token = Token(access_token=access_token, token_type="bearer")
+    return TokenResponse(data=token, access_token=token.access_token, session_key=token.session_key, token_type=token.token_type, success=True)
 
 
 @router.get("/test", dependencies=[require_oauth_scopes(Scope.UserLogin)])
-async def test_oauth(request: Request):
-    scope = request.scope
-    return JSONResponse({"scopes": scope["oauth"]["scopes"]})
+async def test_oauth(oauth_data: Annotated[dict, Depends(get_oauth_data)]):
+    return JSONResponse({"scopes": oauth_data["scopes"]})
