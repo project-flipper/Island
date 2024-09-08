@@ -3,7 +3,7 @@ from sqlalchemy import (
     ARRAY,
     ForeignKey,
     String,
-    Text,
+    Text
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import StringEncryptedType
@@ -28,11 +28,13 @@ class UserTable(Base):
         StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5")
     )
 
-    scopes: Mapped[list[Scope]] = mapped_column(
-        "scopes", ARRAY(String(30)), server_default="{}"
-    )
+    _scopes: Mapped[list[str]] = mapped_column("scopes", ARRAY(String(30)), server_default="{}")
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
     bans: Mapped[list["BanTable"]] = relationship(back_populates="user")
     avatar: Mapped["AvatarTable"] = relationship(back_populates="user")
+
+    @property
+    def scopes(self) -> list[Scope]:
+        return list(map(lambda s: Scope(s), self._scopes))
