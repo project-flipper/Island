@@ -13,7 +13,7 @@ from island.core.config import (
 )
 from island.core.constants.events import EventEnum
 from island.core.realtime import redis
-from island.database import *
+from island.database import ASYNC_ENGINE, ASYNC_SESSION
 from island.events import dispatch
 
 
