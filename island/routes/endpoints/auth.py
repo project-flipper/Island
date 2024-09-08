@@ -89,7 +89,9 @@ async def handle_authenticate_user(
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin, Scope.WorldAccess])
+    user_scopes = await get_user_scopes(
+        user, default_scopes=[Scope.UserLogin, Scope.WorldAccess]
+    )
 
     access_token = create_access_token(
         data={
@@ -136,7 +138,9 @@ async def handle_reauthenticate_user(
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
-    user_scopes = await get_user_scopes(user, default_scopes=[Scope.UserLogin, Scope.WorldAccess])
+    user_scopes = await get_user_scopes(
+        user, default_scopes=[Scope.UserLogin, Scope.WorldAccess]
+    )
 
     access_token = create_access_token(
         data={

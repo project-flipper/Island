@@ -128,7 +128,9 @@ async def get_oauth_data(request: Request) -> dict:
     return data
 
 
-async def get_current_user(oauth_data: Annotated[dict, Depends(get_oauth_data)]) -> UserTable:
+async def get_current_user(
+    oauth_data: Annotated[dict, Depends(get_oauth_data)]
+) -> UserTable:
     username, user_id = oauth_data["sub"].split("#")
 
     async with ASYNC_SESSION() as session:
@@ -146,6 +148,7 @@ async def get_current_user(oauth_data: Annotated[dict, Depends(get_oauth_data)])
         raise oauth_error
 
     return user
+
 
 def require_oauth_scopes(*scopes: ScopeEnum):
     """Checks if user has required scope/permission.

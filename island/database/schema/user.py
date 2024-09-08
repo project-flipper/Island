@@ -30,7 +30,9 @@ class UserTable(Base):
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
-    bans: Mapped[list["BanTable"]] = relationship(back_populates="user", lazy="selectin")
+    bans: Mapped[list["BanTable"]] = relationship(
+        back_populates="user", lazy="selectin"
+    )
     avatar: Mapped["AvatarTable"] = relationship(back_populates="user", lazy="selectin")
 
     @property
