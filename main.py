@@ -21,6 +21,7 @@ from island.core.config import (
     FASTAPI_EVENTS_MIDDLEWARE_ID,
     SENTRY_DSN,
 )
+from island.database.schema import *
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
 from island.core.lifespan import manage_app_lifespan
