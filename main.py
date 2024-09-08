@@ -80,7 +80,7 @@ def get_application() -> FastAPI:
         version=API_VERSION,
         docs_url=f"{API_PREFIX}/docs",
         redoc_url=f"{API_PREFIX}/redocs",
-        lifespan=manage_app_lifespan
+        lifespan=manage_app_lifespan,
     )
 
     _prefix = f"{API_PREFIX}"

@@ -16,9 +16,7 @@ if API_SUFFIX_VERSION:
     API_PREFIX = f"/{API_PREFIX.strip('/')}/{API_VERSION.strip('/')}"
 else:
     API_PREFIX = ""
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[]
-)
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[])
 
 # Logging config
 DEBUG = config("DEBUG", cast=bool, default=False)

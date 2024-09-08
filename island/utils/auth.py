@@ -37,7 +37,9 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
 
 
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
-JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256)
+JWT_ALGORITHM = config(
+    "DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256
+)
 
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
 
@@ -76,9 +78,7 @@ def get_password_hash(password: str) -> str:
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
 
-def create_access_token(
-    data: dict, expires_delta: timedelta | None = None
-) -> str:
+def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
     """Generate OAuth2 token with given data, and expiry
 
     Args:

@@ -16,12 +16,17 @@ class World(Base):
     is_safe: Mapped[bool] = mapped_column(default=False)
 
     access_key: Mapped[str] = mapped_column(String(32), unique=True)
-    _grant_scopes: Mapped[list[str]] = mapped_column("grant_scopes", ARRAY(String(30)), server_default="{}")
-    _scopes: Mapped[list[str]] = mapped_column("scopes", ARRAY(String(30)), server_default="{}")
+    _grant_scopes: Mapped[list[str]] = mapped_column(
+        "grant_scopes", ARRAY(String(30)), server_default="{}"
+    )
+    _scopes: Mapped[list[str]] = mapped_column(
+        "scopes", ARRAY(String(30)), server_default="{}"
+    )
 
     @property
     def grant_scopes(self) -> list[Scope]:
-        return list(map(lambda s: Scope(s), self._grant_scopes)) # type: ignore
+        # type: ignore
+        return list(map(lambda s: Scope(s), self._grant_scopes))
 
     @property
     def scopes(self) -> list[Scope]:
