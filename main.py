@@ -23,7 +23,7 @@ from island.core.config import (
 )
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
-from island.core.events import create_start_app_handler, create_stop_app_handler
+from island.core.lifespan import manage_app_lifespan
 from island.middlwares.world import WorldMiddleware
 from island.routes import router
 from island.utils.routes import get_modules
@@ -79,6 +79,7 @@ def get_application() -> FastAPI:
         version=API_VERSION,
         docs_url=f"{API_PREFIX}/docs",
         redoc_url=f"{API_PREFIX}/redocs",
+        lifespan=manage_app_lifespan
     )
 
     _prefix = f"{API_PREFIX}"
@@ -112,9 +113,6 @@ def get_application() -> FastAPI:
     application.add_middleware(WorldMiddleware)
 
     logger.info("Island adding startup and shutdown events")
-
-    application.add_event_handler("startup", create_start_app_handler(application))
-    application.add_event_handler("shutdown", create_stop_app_handler(application))
 
     logger.info("Island adding exception handlers")
 
