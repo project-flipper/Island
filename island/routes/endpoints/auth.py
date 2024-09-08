@@ -32,7 +32,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = config(
 )  # seconds
 
 
-@router.post("/auth", response_model=TokenResponse)
+@router.post("/login", response_model=TokenResponse)
 async def handle_authenticate_user(
     response: Response,
     auth_input: OAuth2PasswordRequestForm = Depends(),
@@ -98,9 +98,7 @@ async def handle_authenticate_user(
         expires_delta=access_token_expires,
     )
 
-    token_response = TokenResponse(
-        data=Token(access_token=access_token, token_type="bearer"), success=True
-    )
+    token = Token(access_token=access_token, token_type="bearer")
 
     if save_session:
         session_token = create_access_token(
@@ -110,9 +108,11 @@ async def handle_authenticate_user(
             },
             expires_delta=timedelta(days=180),
         )
-        token_response.session_key = session_token
+        token.session_key = session_token
 
-    return token_response
+    return TokenResponse(
+        data=token, success=True
+    )
 
 
 @router.post(
