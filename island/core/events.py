@@ -38,7 +38,7 @@ def create_start_app_handler(app: FastAPI) -> Callable:
         app.state.redis = redis.REDIS_CLIENT_POOL = redis_async.Redis(
             host=REDIS_HOST,
             port=REDIS_PORT,
-            password=str(REDIS_PASSWORD),
+            password=str(REDIS_PASSWORD) if REDIS_PASSWORD is not None else REDIS_PASSWORD,
             ssl=REDIS_SSL_REQUIRED,
         )
         await app.state.redis.ping()
