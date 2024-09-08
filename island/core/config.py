@@ -13,7 +13,9 @@ API_PREFIX = config("API_PREFIX", cast=str, default="")
 API_VERSION = config("API_VERSION", cast=str, default="0.0.1")
 API_SUFFIX_VERSION = config("API_SUFFIX_VERSION", cast=bool, default=True)
 if API_SUFFIX_VERSION:
-    API_PREFIX = f"{API_PREFIX.strip('/')}/{API_VERSION.strip('/')}"
+    API_PREFIX = f"/{API_PREFIX.strip('/')}/{API_VERSION.strip('/')}"
+else:
+    API_PREFIX = ""
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[]
 )

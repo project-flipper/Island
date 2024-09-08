@@ -70,18 +70,18 @@ def get_application() -> FastAPI:
     catch_exceptions()
     initialize_sentry()
 
-    logger.debug("docs_url: {}", f"/{API_PREFIX.strip('/')}/docs")
-    logger.debug("redoc_url: {}", f"/{API_PREFIX.strip('/')}/redocs")
+    logger.debug("docs_url: {}", f"{API_PREFIX}/docs")
+    logger.debug("redoc_url: {}", f"{API_PREFIX}/redocs")
     application = FastAPI(
         debug=DEBUG,
         title="Island Server",
         description="Web API and WS endpoint for ClubPenguin HTML5 client",
         version=API_VERSION,
-        docs_url=f"/{API_PREFIX.strip('/')}/docs",
-        redoc_url=f"/{API_PREFIX.strip('/')}/redocs",
+        docs_url=f"{API_PREFIX}/docs",
+        redoc_url=f"{API_PREFIX}/redocs",
     )
 
-    _prefix = f"/{API_PREFIX.strip('/')}"
+    _prefix = f"{API_PREFIX}"
 
     logger.info(f"Island version {API_VERSION}")
     logger.info(f"Island API endpoint prefix {_prefix}")
