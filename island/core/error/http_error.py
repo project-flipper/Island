@@ -1,8 +1,8 @@
 from starlette.exceptions import HTTPException
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
-from starlette.requests import Request
-from starlette.responses import JSONResponse
+from fastapi import Request
+from fastapi.responses import JSONResponse
 
 
 async def http_error_handler(_: Request, exc: Exception) -> JSONResponse:
