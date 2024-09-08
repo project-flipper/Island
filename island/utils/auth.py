@@ -4,7 +4,7 @@ from enum import Enum
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
 import jwt
-from passlib.context import CryptContext
+import bcrypt
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 
@@ -39,7 +39,6 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
 JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256)
 
-PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
 
 oauth_error = HTTPException(
@@ -62,7 +61,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     Returns:
         bool
     """
-    return PASSWORD_CONTEXT.verify(plain_password, hashed_password)
+    return bcrypt.checkpw(plain_password.encode(), hashed_password.encode())
 
 
 def get_password_hash(password: str) -> str:
@@ -74,7 +73,7 @@ def get_password_hash(password: str) -> str:
     Returns:
         str
     """
-    return PASSWORD_CONTEXT.hash(password)
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
 
 def create_access_token(
