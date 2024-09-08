@@ -1,4 +1,5 @@
 import alembic_postgresql_enum
+import sqlalchemy_utils.types.encrypted
 
 import asyncio
 from logging.config import fileConfig
@@ -13,6 +14,7 @@ import asyncio
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
+from island.database.schema import *
 from island.database import DB_DSN, Base
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
