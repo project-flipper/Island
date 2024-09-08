@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from island.models import Error, Response
+from island.models import Response
 
 
 class Token(BaseModel):
@@ -10,4 +10,6 @@ class Token(BaseModel):
 
 
 class TokenResponse(Response[Token]):
-    pass
+    access_token: str | None = None
+    token_type: str | None = None
+    session_key: str | None = None
