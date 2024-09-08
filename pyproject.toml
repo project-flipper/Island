@@ -15,7 +15,6 @@ alembic = "^1.13.2"
 sentry-sdk = {extras = ["loguru"], version = "^1.25.1"}
 asyncpg = "^0.29.0"
 psycopg2 = "^2.9.9"
-passlib = "^1.7.4"
 sqlalchemy-utils = "^0.41.2"
 redis = "^5.0.8"
 fastapi-events = "^0.12.0"
