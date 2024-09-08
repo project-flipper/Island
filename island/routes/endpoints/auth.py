@@ -32,7 +32,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = config(
 )  # seconds
 
 
-@router.post("/login", response_model=TokenResponse)
+@router.post("/login")
 async def handle_authenticate_user(
     response: Response,
     auth_input: OAuth2PasswordRequestForm = Depends(),
@@ -117,7 +117,6 @@ async def handle_authenticate_user(
 
 @router.post(
     "/resume",
-    response_model=TokenResponse,
     dependencies=[require_oauth_scopes(Scope.UserAuth)],
 )
 async def handle_reauthenticate_user(
