@@ -53,10 +53,8 @@ print(
 
 
 def catch_exceptions():
-    sys.excepthook = (
-        lambda _type, message, stack: logger.opt(
-            exception=(_type, message, stack)
-        ).error("Uncaught Exception")
+    sys.excepthook = lambda _type, message, stack: (
+        logger.opt(exception=(_type, message, stack)).error("Uncaught Exception")
         if not issubclass(_type, (ValidationError, RequestValidationError))
         else logger.error("Validation error occured")
     )
