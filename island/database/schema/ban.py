@@ -23,4 +23,4 @@ class BanTable(Base):
     ban_user: Mapped[int] = mapped_column(default=0)
     ban_comment: Mapped[str]
 
-    user: Mapped["UserTable"] = relationship(back_populates="bans")
+    user: Mapped["UserTable"] = relationship(back_populates="bans", lazy="selectin")

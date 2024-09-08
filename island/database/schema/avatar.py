@@ -23,4 +23,4 @@ class AvatarTable(Base):
     flag: Mapped[int] = mapped_column(default=0)
     transformation: Mapped[str] = mapped_column(nullable=True)
 
-    user: Mapped["UserTable"] = relationship(back_populates="avatar")
+    user: Mapped["UserTable"] = relationship(back_populates="avatar", lazy="selectin")
