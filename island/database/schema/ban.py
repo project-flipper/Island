@@ -1,13 +1,14 @@
 import datetime
-from typing import List
+from typing import TYPE_CHECKING
 
-from citext import CIText
-from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, Text, sql
+from sqlalchemy import ForeignKey, sql
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy.sql.sqltypes import Date
 
 from island.core.constants.ban import BanType
 from island.database import Base
+
+if TYPE_CHECKING:
+    from island.database.schema.user import UserTable
 
 
 class BanTable(Base):

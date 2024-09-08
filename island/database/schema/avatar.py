@@ -1,7 +1,11 @@
-from sqlalchemy import Column, ForeignKey, Integer
+from typing import TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from island.database import Base
+
+
+if TYPE_CHECKING:
+    from island.database.schema.user import UserTable
 
 
 class AvatarTable(Base):

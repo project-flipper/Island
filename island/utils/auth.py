@@ -1,10 +1,9 @@
 from datetime import datetime, timedelta
 from enum import Enum
-from typing import List, Optional, Union
 
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
-from jose import jwt
+import jwt
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
@@ -23,7 +22,7 @@ class JWTTokenType(Enum):
 
 
 class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
-    async def __call__(self, request: Request) -> Optional[str]:
+    async def __call__(self, request: Request) -> str | None:
         try:
             return await super().__call__(request)
         except HTTPException:
@@ -38,7 +37,7 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
 
 
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
-JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default="HS256")
+JWT_ALGORITHM = config("DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256)
 
 PASSWORD_CONTEXT = CryptContext(schemes=["bcrypt"], deprecated="auto")
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="auth")
@@ -79,7 +78,7 @@ def get_password_hash(password: str) -> str:
 
 
 def create_access_token(
-    data: dict, expires_delta: Optional[Union[timedelta, None]] = None
+    data: dict, expires_delta: timedelta | None = None
 ) -> str:
     """Generate OAuth2 token with given data, and expiry
 
@@ -104,8 +103,8 @@ def create_access_token(
 
 
 async def get_user_scopes(
-    user: UserTable, *, default_scopes: Optional[List[ScopeEnum]] = None
-) -> List[ScopeEnum]:
+    user: UserTable, *, default_scopes: list[ScopeEnum] | None = None
+) -> list[ScopeEnum]:
     """Get list of user scopes from database, along with default_scopes if any given. `default_scopes` is added to beginning of the result.
 
     Args:
@@ -140,7 +139,7 @@ async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTa
             .where(UserTable.username == username)
         )
 
-        user: UserTable = (await session.execute(user_query)).scalar().first()
+        user = (await session.execute(user_query)).scalar()
 
     if user is None or str(user.id) != user_id:
         raise oauth_error
@@ -148,7 +147,7 @@ async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTa
     return user
 
 
-def require_oauth_scopes(*scopes: List[ScopeEnum]):
+def require_oauth_scopes(*scopes: ScopeEnum):
     """Checks if user has required scope/permission.
 
     Raises:

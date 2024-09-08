@@ -1,5 +1,3 @@
-from typing import Set
-
 from island.core.entities import BaseEntity
 
 
@@ -10,7 +8,7 @@ class AvatarEntity(BaseEntity):
         return color_id in colors
 
     @staticmethod
-    async def get_all_colors() -> Set[int]:
+    async def get_all_colors() -> set[int]:
         colors_cache_exists = await AvatarEntity.cache_exists("colors")
         if not colors_cache_exists:
             # TODO: Populate the cache from database

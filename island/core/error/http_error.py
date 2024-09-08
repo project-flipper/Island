@@ -5,16 +5,18 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 
 
-async def http_error_handler(_: Request, exc: HTTPException) -> JSONResponse:
+async def http_error_handler(_: Request, exc: Exception) -> JSONResponse:
     """Intercept any/all HTTPExceptions from FastAPI, and return a CP compatible JSON response.
 
     Args:
         _ (Request)
-        exc (HTTPException)
+        exc (Exception)
 
     Returns:
         JSONResponse
     """
+    assert isinstance(exc, HTTPException)
+
     if isinstance(exc.detail, BaseModel):
         return JSONResponse(
             {

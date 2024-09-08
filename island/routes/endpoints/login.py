@@ -59,7 +59,7 @@ async def handle_authenticate_user(
             .where(UserTable.username == auth_input.username)
         )
 
-        user: UserTable = (await session.execute(user_query)).scalar().first()
+        user = (await session.execute(user_query)).scalar()
 
     if user is None or not verify_password(auth_input.password, user.password):
         response.status_code = status.HTTP_401_UNAUTHORIZED
@@ -129,7 +129,7 @@ async def handle_reauthenticate_user(
         ban_dur = user_ban.ban_expire - datetime.now()
         return TokenResponse(
             error=BanError(
-                error_code=user_ban.ban_type.value,
+                error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds() / 60),
             ),

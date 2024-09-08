@@ -21,12 +21,15 @@ class InterceptHandler(logging.Handler):
             frame = cast(FrameType, frame.f_back)
             depth += 1
 
+        exc_info = record.exc_info
+
         debug = False
         if (
             not debug
-            and record.exc_info is not None
+            and exc_info is not None
+            and exc_info[0] is not None
             and issubclass(
-                record.exc_info[0], (ValidationError, RequestValidationError)
+                exc_info[0], (ValidationError, RequestValidationError)
             )
         ):
             logger.error("Validation error occured")

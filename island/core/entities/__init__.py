@@ -1,5 +1,4 @@
-from typing import List, Union
-from unittest.mock import Base
+from typing import overload
 
 from island.core.realtime.redis import get_redis_pool
 
@@ -13,14 +12,24 @@ class BaseEntity:
 
         return prefix + cls.__name__ + ":"
 
+    @overload
     @classmethod
-    def get_cache_key(cls, *keys: List[str]) -> Union[List[str], str]:
-        if not keys:
+    def get_cache_key(cls, keys: str, /) -> str: ...
+
+    @overload
+    @classmethod
+    def get_cache_key(cls, *keys: str) -> list[str]: ...
+
+    @classmethod
+    def get_cache_key(cls, *keys: str) -> list[str] | str:
+        if len(keys) == 0:
             raise ValueError("No keys provided")
+        else:
+            fkey = keys[0]
 
         prefix = cls.__get_cache_prefix()
 
-        return [prefix + k for k in keys] if len(keys) > 1 else prefix + keys[0]
+        return [prefix + k for k in keys] if len(keys) > 1 else prefix + fkey
 
     @classmethod
     async def cache_exists(cls, cache_key: str) -> bool:

@@ -1,8 +1,8 @@
-from typing import Any, Dict, Optional
+from typing import Any
 
 from pydantic import BaseModel
 
-from island.models.error import Error
+from island.models import Error
 
 
 class Action(BaseModel):
@@ -28,7 +28,5 @@ class Action(BaseModel):
     """
 
     op: str  # action [category:event]
-    d: Optional[Dict[str, Any]]  # event data
-    e: Optional[
-        Error
-    ]  # event error data, almost only used on replies to action-request
+    d: dict[str, Any] | None  # event data
+    e: Error | None  # event error data, almost only used on replies to action-request

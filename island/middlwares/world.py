@@ -1,5 +1,3 @@
-from typing import Dict, Optional, Tuple
-
 from fastapi.security.utils import get_authorization_scheme_param
 from starlette.requests import Request
 from starlette.types import ASGIApp, Receive, Scope, Send
@@ -18,8 +16,8 @@ class WorldMiddleware:
 
         await self._app(scope, receive, send)
 
-    async def retrieve_oauth_token(self, request: Request) -> Optional[str]:
-        authorization: str = request.headers.get("Authorization")
+    async def retrieve_oauth_token(self, request: Request) -> str | None:
+        authorization = request.headers.get("Authorization")
         scheme, param = get_authorization_scheme_param(authorization)
         if not authorization or scheme.lower() != "bearer":
             return None
