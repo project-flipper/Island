@@ -33,12 +33,13 @@ async def manage_app_lifespan(app: FastAPI):
         logger.info("Database connection successful")
 
     logger.info("Connecting to redis")
-    app.state.redis = redis.REDIS_CLIENT_POOL = redis_async.Redis(
+    app.state.redis = redis_pool = redis_async.Redis(
         host=REDIS_HOST,
         port=REDIS_PORT,
         password=str(REDIS_PASSWORD) if REDIS_PASSWORD is not None else REDIS_PASSWORD,
         ssl=REDIS_SSL_REQUIRED,
     )
+    redis.set_redis_pool(redis_pool)
     await app.state.redis.ping()
     logger.info("Redis connection established")
 
