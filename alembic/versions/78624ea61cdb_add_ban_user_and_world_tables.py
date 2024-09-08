@@ -24,7 +24,7 @@ def upgrade() -> None:
     sa.Column('username', sa.String(length=12), nullable=False),
     sa.Column('nickname', sa.String(length=20), nullable=False),
     sa.Column('password', sa.Text(), nullable=False),
-    sa.Column('email', sqlalchemy_utils.types.encrypted.encrypted_type.StringEncryptedType(), nullable=False),
+    sa.Column('email', sqlalchemy_utils.types.StringEncryptedType(), nullable=False),
     sa.Column('created_timestamp', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_timestamp', sa.DateTime(), nullable=True),
     sa.Column('scopes', sa.ARRAY(sa.String(length=30)), server_default='{}', nullable=False),

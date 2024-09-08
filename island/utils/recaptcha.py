@@ -24,8 +24,8 @@ async def verify_google_recaptcha(token: str, /) -> bool:
     async with AsyncClient() as client:
         try:
             r = await client.post(
-                URLConstantsEnum.GOOGLE_RECAPTCHA_V3_VERIFY_ENDPOINT, data=data
+                str(URLConstantsEnum.GOOGLE_RECAPTCHA_V3_VERIFY_ENDPOINT), data=data
             )
-            return r["success"]
+            return r.is_success
         except:
             return False

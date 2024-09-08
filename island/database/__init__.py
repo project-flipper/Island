@@ -18,7 +18,6 @@ class Base(DeclarativeBase):
         server_default=sql.func.now(), onupdate=sql.func.now()
     )
 
-
-async def create_all(self):
-    async with ASYNC_ENGINE.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    async def create_all(self):
+        async with ASYNC_ENGINE.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)

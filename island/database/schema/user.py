@@ -1,16 +1,9 @@
-from typing import List, Optional
-
-from citext import CIText
+from typing import TYPE_CHECKING
 from sqlalchemy import (
     ARRAY,
-    Column,
-    DateTime,
     ForeignKey,
-    Integer,
     String,
     Text,
-    null,
-    sql,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import StringEncryptedType
@@ -20,6 +13,9 @@ from island.core.config import DATABASE_SECRET_KEY
 from island.core.constants.scope import Scope
 from island.database import Base
 
+if TYPE_CHECKING:
+    from island.database.schema.ban import BanTable
+    from island.database.schema.avatar import AvatarTable
 
 class UserTable(Base):
     __tablename__ = "users"
@@ -32,15 +28,11 @@ class UserTable(Base):
         StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5")
     )
 
-    _scopes: Mapped[List[str]] = mapped_column(
+    scopes: Mapped[list[Scope]] = mapped_column(
         "scopes", ARRAY(String(30)), server_default="{}"
     )
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
-    bans: Mapped[List["BanTable"]] = relationship(back_populates="user")
+    bans: Mapped[list["BanTable"]] = relationship(back_populates="user")
     avatar: Mapped["AvatarTable"] = relationship(back_populates="user")
-
-    @property
-    def scopes(self) -> List[Scope]:
-        return list(map(Scope, self._scopes))

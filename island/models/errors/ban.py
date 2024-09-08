@@ -3,6 +3,6 @@ from island.models import Error
 
 
 class BanError(Error):
-    error_type = "user.banned"
+    error_type: str = "user.banned"
     error_code: BanType
     ban_dur: int

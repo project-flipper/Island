@@ -1,5 +1,4 @@
 import logging
-from typing import List
 
 from sqlalchemy.engine.url import URL, make_url
 from starlette.config import Config
@@ -15,7 +14,7 @@ API_VERSION = config("API_VERSION", cast=str, default="0.0.1")
 API_SUFFIX_VERSION = config("API_SUFFIX_VERSION", cast=bool, default=True)
 if API_SUFFIX_VERSION:
     API_PREFIX = f"{API_PREFIX.strip('/')}/{API_VERSION.strip('/')}"
-ALLOWED_HOSTS: List[str] = config(
+ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS", cast=CommaSeparatedStrings, default=[]
 )
 
@@ -28,7 +27,7 @@ LOGGING_LEVEL = (
 )
 
 # Security config
-SECRET_KEY: Secret = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
+SECRET_KEY = config("SECRET_KEY", cast=Secret, default="5df9db467ed2c905bcc1")
 WORLD_ACCESS_KEY = config(
     "WORLD_ACCESS_KEY", cast=str, default="earlyDevelopmentTesting01"
 )
@@ -49,7 +48,7 @@ DB_DSN = config(
     default=URL.create(
         drivername=DB_DRIVER,
         username=DB_USER,
-        password=DB_PASSWORD,
+        password=str(DB_PASSWORD),
         host=DB_HOST,
         port=DB_PORT,
         database=DB_DATABASE,
@@ -75,8 +74,6 @@ SKIP_RECAPTCHA_ON_DEVELOPMENT = config(
 )
 
 # General
-I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
-I18N_DIR = config("I18N_DIR", cast=str, default="./config/locale")
 FASTAPI_EVENTS_MIDDLEWARE_ID = config(
     "FASTAPI_EVENTS_MIDDLEWARE_ID", cast=int, default=id("fastapi-events")
 )
