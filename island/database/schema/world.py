@@ -1,6 +1,4 @@
-from enum import unique
-
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import String, Enum
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import ARRAY
 
@@ -18,7 +16,13 @@ class World(Base):
     is_safe: Mapped[bool] = mapped_column(default=False)
 
     access_key: Mapped[str] = mapped_column(String(32), unique=True)
-    grant_scopes: Mapped[list[Scope]] = mapped_column(
-        ARRAY(String(30)), server_default="{}"
-    )
-    scopes: Mapped[list[Scope]] = mapped_column(ARRAY(String(30)), server_default="{}")
+    _grant_scopes: Mapped[list[str]] = mapped_column("grant_scopes", ARRAY(String(30)), server_default="{}")
+    _scopes: Mapped[list[str]] = mapped_column("scopes", ARRAY(String(30)), server_default="{}")
+
+    @property
+    def grant_scopes(self) -> list[Scope]:
+        return list(map(lambda s: Scope(s), self._grant_scopes)) # type: ignore
+
+    @property
+    def scopes(self) -> list[Scope]:
+        return list(map(lambda s: Scope(s), self._scopes))
