@@ -1,5 +1,5 @@
 from fastapi.security.utils import get_authorization_scheme_param
-from starlette.requests import Request
+from fastapi import Request
 from starlette.types import ASGIApp, Receive, Scope, Send
 
 
