@@ -18,7 +18,7 @@ config = context.config
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 fileConfig(str(config.config_file_name))
-config.set_main_option('sqlalchemy.url', str(DB_DSN))
+config.set_main_option('sqlalchemy.url', DB_DSN.render_as_string(hide_password=False))
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
