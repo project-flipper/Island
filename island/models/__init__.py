@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from pydantic.generics import GenericModel
 
 from island.core.constants.error import ErrorEnum
 
@@ -11,9 +10,9 @@ class Error(BaseModel):
     error_description: str
 
 
-class Response[T](GenericModel):
+class Response[T](BaseModel):
     data: T | None = None
     error: Error | None = None
 
     success: bool
-    hasError: bool = False
+    has_error: bool = False
