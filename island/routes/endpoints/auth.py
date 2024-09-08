@@ -110,9 +110,7 @@ async def handle_authenticate_user(
         )
         token.session_key = session_token
 
-    return TokenResponse(
-        data=token, success=True
-    )
+    return TokenResponse(data=token, success=True)
 
 
 @router.post(

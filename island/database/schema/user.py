@@ -1,10 +1,5 @@
 from typing import TYPE_CHECKING
-from sqlalchemy import (
-    ARRAY,
-    ForeignKey,
-    String,
-    Text
-)
+from sqlalchemy import ARRAY, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import StringEncryptedType
 from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
@@ -17,6 +12,7 @@ if TYPE_CHECKING:
     from island.database.schema.ban import BanTable
     from island.database.schema.avatar import AvatarTable
 
+
 class UserTable(Base):
     __tablename__ = "users"
 
@@ -28,7 +24,9 @@ class UserTable(Base):
         StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5")
     )
 
-    _scopes: Mapped[list[str]] = mapped_column("scopes", ARRAY(String(30)), server_default="{}")
+    _scopes: Mapped[list[str]] = mapped_column(
+        "scopes", ARRAY(String(30)), server_default="{}"
+    )
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
