@@ -24,14 +24,12 @@ from island.core.config import (
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
 from island.core.events import create_start_app_handler, create_stop_app_handler
-from island.database.schema import *
-from island.middlwares.graphql import GraphQLResponseMiddleware
 from island.middlwares.world import WorldMiddleware
 from island.routes import router
 from island.utils.routes import get_modules
 
 print(
-    """
+    r"""
 
 
    ,---,              ,--,
@@ -48,15 +46,13 @@ print(
 '---'     `--'---'   ---`-' |  ,     .-./'---'        \   \  /
                              `--`---'                  `----'
 
-       """
+"""
 )
 
 
 def catch_exceptions():
-    sys.excepthook = (
-        lambda _type, message, stack: logger.opt(
-            exception=(_type, message, stack)
-        ).error("Uncaught Exception")
+    sys.excepthook = lambda _type, message, stack: (
+        logger.opt(exception=(_type, message, stack)).error("Uncaught Exception")
         if not issubclass(_type, (ValidationError, RequestValidationError))
         else logger.error("Validation error occured")
     )
@@ -114,9 +110,6 @@ def get_application() -> FastAPI:
 
     logger.debug("Island adding World Manager Middleware")
     application.add_middleware(WorldMiddleware)
-
-    logger.debug("Island adding GraphQL Response Middleware")
-    application.middleware("http")(GraphQLResponseMiddleware())
 
     logger.info("Island adding startup and shutdown events")
 
