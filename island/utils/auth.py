@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from enum import Enum
+from typing import Annotated
 
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
@@ -118,16 +119,17 @@ async def get_user_scopes(
 
 
 async def get_oauth_data(request: Request) -> dict:
-    oauth_data = request.scope["oauth"]
+    oauth = request.scope["oauth"]
 
-    if oauth_data is None:
+    if oauth is None:
         raise oauth_error
 
-    return oauth_data
+    data = jwt.decode(oauth, str(SECRET_KEY), algorithms=[JWT_ALGORITHM.value])
+    return data
 
 
-async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTable:
-    username, user_id = oauth_data["data"]["sub"].split("#")
+async def get_current_user(oauth_data: Annotated[dict, Depends(get_oauth_data)]) -> UserTable:
+    username, user_id = oauth_data["sub"].split("#")
 
     async with ASYNC_SESSION() as session:
         user_query = (
@@ -145,7 +147,6 @@ async def get_current_user(oauth_data: dict = Depends(get_oauth_data)) -> UserTa
 
     return user
 
-
 def require_oauth_scopes(*scopes: ScopeEnum):
     """Checks if user has required scope/permission.
 
@@ -157,7 +158,7 @@ def require_oauth_scopes(*scopes: ScopeEnum):
     """
     scopes_req = set(map(str, scopes))
 
-    def __check_oauth_scope(oauth_data: dict = Depends(get_oauth_data)):
+    def __check_oauth_scope(oauth_data: Annotated[dict, Depends(get_oauth_data)]):
         available_scopes = set(oauth_data["scopes"])
 
         if not scopes_req.issubset(available_scopes):
