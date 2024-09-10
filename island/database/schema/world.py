@@ -6,7 +6,7 @@ from island.core.constants.scope import Scope
 from island.database import Base
 
 
-class World(Base):
+class WorldTable(Base):
     __tablename__ = "worlds"
 
     id: Mapped[int] = mapped_column(primary_key=True)
