@@ -24,6 +24,8 @@ class UserTable(Base):
         StringEncryptedType(String, str(DATABASE_SECRET_KEY), AesEngine, "pkcs5")
     )
 
+    lang: Mapped[int] = mapped_column(default=0)
+
     _scopes: Mapped[list[str]] = mapped_column(
         "scopes", ARRAY(String(30)), server_default="{}"
     )
