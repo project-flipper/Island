@@ -29,7 +29,7 @@ MIN_PASSWORD_LENGTH = 4
 MAX_PASSWORD_LENGTH = 32
 MAX_EMAIL_USAGE = 5
 
-@router.post("/")
+@router.put("/")
 async def create_user(r: HTTPResponse, user_form: CreateUser) -> Response[Create]:
     if not await verify_google_recaptcha(user_form.token):
         raise HTTPException(
