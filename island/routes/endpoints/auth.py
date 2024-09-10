@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Response, status
 from fastapi.param_functions import Form
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy import func, select
@@ -63,29 +63,25 @@ async def handle_authenticate_user(
         user = (await session.execute(user_query)).scalar()
 
     if user is None or not verify_password(auth_input.password, user.password):
-        response.status_code = status.HTTP_401_UNAUTHORIZED
-        return TokenResponse(
-            error=Error(
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=Error(
                 error_type="user.auth.credentials",
                 error_code=100,
                 error_description="User authentication failed. Incorrect username or password.",
-            ),
-            success=False,
-            has_error=True,
+            )
         )
 
     user_ban = user.bans[0] if user.bans else None
     if user_ban is not None:
-        response.status_code = status.HTTP_403_FORBIDDEN
         ban_dur = user_ban.ban_expire - datetime.now()
-        return TokenResponse(
-            error=BanError(
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=BanError(
                 error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds() / 60),
-            ),
-            success=False,
-            has_error=True,
+            )
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
@@ -121,16 +117,14 @@ async def handle_reauthenticate_user(
 ) -> TokenResponse:
     user_ban = user.bans[0] if user.bans else None
     if user_ban is not None:
-        response.status_code = status.HTTP_403_FORBIDDEN
         ban_dur = user_ban.ban_expire - datetime.now()
-        return TokenResponse(
-            error=BanError(
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=BanError(
                 error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds() / 60),
-            ),
-            success=False,
-            has_error=True,
+            )
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
