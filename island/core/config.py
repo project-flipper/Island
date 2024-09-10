@@ -74,6 +74,8 @@ SKIP_RECAPTCHA_ON_DEVELOPMENT = config(
 )
 
 # General
+I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
+I18N_DIR = config("I18N_DIR", cast=str, default="./config/locale")
 FASTAPI_EVENTS_MIDDLEWARE_ID = config(
     "FASTAPI_EVENTS_MIDDLEWARE_ID", cast=int, default=id("fastapi-events")
 )

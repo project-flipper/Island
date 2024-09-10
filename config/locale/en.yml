@@ -1,0 +1,22 @@
+en:
+  island_info: Island server
+
+  error:
+    username:
+      missing: You need to name your penguin.
+      invalid: That penguin name is not allowed.
+      short: Penguin name is too short.
+      long: Penguin name is too long.
+      taken: That penguin name is already taken.
+
+    password:
+      length: "Password must be between 4 and 32 characters long"
+      short: Password is too short.
+
+    email:
+      invalid: Invalid email address.
+      max-usage: There are too many accounts assigned to this email address.
+
+    color.notexist: This color does not exist.
+
+    recaptcha.verification.failed: "ReCaptcha invalid or expired. Please try again"
