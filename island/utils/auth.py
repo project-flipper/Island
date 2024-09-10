@@ -84,9 +84,7 @@ def get_password_hash(password: str) -> str:
 
 
 def encrypt_email(email: str) -> str:
-    """Encrypts an email using AES.
-    
-    """
+    """Encrypts an email using AES."""
     engine = AesEngine()
     engine._update_key(str(DATABASE_SECRET_KEY))
     engine._set_padding_mechanism("pkcs5")
@@ -131,7 +129,10 @@ async def get_user_scopes(
 
     return user.scopes if not default_scopes else default_scopes + user.scopes
 
-async def get_oauth_data(oauth: Annotated[str, Depends(OAUTH2_SCHEME)]) -> dict[str, Any]:
+
+async def get_oauth_data(
+    oauth: Annotated[str, Depends(OAUTH2_SCHEME)]
+) -> dict[str, Any]:
     try:
         data = jwt.decode(oauth, str(SECRET_KEY), algorithms=[JWT_ALGORITHM.value])
     except (jwt.DecodeError, jwt.ExpiredSignatureError):
@@ -139,11 +140,17 @@ async def get_oauth_data(oauth: Annotated[str, Depends(OAUTH2_SCHEME)]) -> dict[
 
     return data
 
-async def get_current_user_id(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]) -> str:
+
+async def get_current_user_id(
+    oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]
+) -> str:
     _, user_id = oauth_data["sub"].split("#")
     return user_id
 
-async def get_current_user(user_id: Annotated[str, Depends(get_current_user_id)]) -> UserTable:
+
+async def get_current_user(
+    user_id: Annotated[str, Depends(get_current_user_id)]
+) -> UserTable:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
@@ -160,6 +167,7 @@ async def get_current_user(user_id: Annotated[str, Depends(get_current_user_id)]
 
     return user
 
+
 def require_oauth_scopes(*scopes: ScopeEnum):
     """Checks if user has required scope/permission.
 
@@ -171,7 +179,9 @@ def require_oauth_scopes(*scopes: ScopeEnum):
     """
     scopes_req = set(map(str, scopes))
 
-    def __check_oauth_scope(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]):
+    def __check_oauth_scope(
+        oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]
+    ):
         available_scopes = set(oauth_data["scopes"])
 
         if not scopes_req.issubset(available_scopes):
