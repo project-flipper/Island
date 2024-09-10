@@ -8,7 +8,7 @@ from island.core.constants.events import EventEnum
 from island.core.i18n import _
 
 
-@local_handler.register(event_name=EventEnum.APP_START_EVENT.value)
+@local_handler.register(event_name=str(EventEnum.APP_START_EVENT))
 async def setup_i18n(event: Event):
     i18n.set("filename_format", "{locale}.{format}")
     i18n.load_path.append(I18N_DIR)

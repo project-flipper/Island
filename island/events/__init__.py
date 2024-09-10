@@ -12,5 +12,5 @@ def dispatch(
     middleware_id: int | None = None,
 ):
     return event_dispatcher(
-        event_name, payload, middleware_id=FASTAPI_EVENTS_MIDDLEWARE_ID
+        str(event_name), payload, middleware_id=FASTAPI_EVENTS_MIDDLEWARE_ID
     )
