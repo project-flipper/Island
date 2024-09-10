@@ -19,7 +19,7 @@ from island.utils.recaptcha import verify_google_recaptcha
 
 router = APIRouter()
 
-VALID_USERNAME_REGEX = r"^[a-zA-Z ]+$"
+VALID_USERNAME_REGEX = r"^[a-zA-Z 0-9]+$"
 ONLY_NUMBERS_REGEX = r"^[0-9]+$"
 HAS_LETTERS_REGEX = r"[a-zA-Z]"
 
