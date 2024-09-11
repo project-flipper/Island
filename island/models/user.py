@@ -7,17 +7,6 @@ from island.models.presence import Presence
 from island.models.relationship import Relationship
 from island.models.membership import Membership
 
-class CreateUser(BaseModel):
-    name: str
-    color: int
-    password: str
-    email: str
-    token: str
-
-class Create(BaseModel):
-    user_id: str | None
-    validation_errors: dict[str, str]
-
 class BaseUser(BaseModel):
     id: str
     username: str

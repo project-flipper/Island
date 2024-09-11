@@ -1,28 +1,26 @@
-import re
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response as HTTPResponse
 from sqlalchemy import insert, select, func
 from starlette import status
 
-import email_validator
-
-from island.core.config import HAS_LETTERS_REGEX, MAX_EMAIL_USAGE, MAX_PASSWORD_LENGTH, MAX_USERNAME_LENGTH, MIN_PASSWORD_LENGTH, MIN_USERNAME_LENGTH, ONLY_NUMBERS_REGEX, VALID_USERNAME_REGEX
+from island.core.config import MAX_EMAIL_USAGE
 from island.core.i18n import _
 from island.database import ASYNC_SESSION
 from island.database.schema.avatar import AvatarTable
 from island.database.schema.user import UserTable
 from island.models import Error, Response
 from island.models.errors.recaptcha import RecaptchaVerificationError
-from island.models.user import CreateUser, Create, MyUser, User
+from island.models.user import MyUser, User
+from island.models.create import CreateUser, Create
 from island.utils.auth import get_current_user, get_current_user_id, require_oauth_scopes, encrypt_email, get_password_hash
 from island.utils.recaptcha import verify_google_recaptcha
 
 router = APIRouter()
 
 @router.put("/")
-async def create_user(r: HTTPResponse, user_form: CreateUser) -> Response[Create]:
-    if not await verify_google_recaptcha(user_form.token):
+async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[Create]:
+    if not await verify_google_recaptcha(create_form.token):
         raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail=RecaptchaVerificationError(),
@@ -31,67 +29,34 @@ async def create_user(r: HTTPResponse, user_form: CreateUser) -> Response[Create
     async with ASYNC_SESSION() as session:
         await session.begin()
 
-        errors = {}
-        user_id = None
-
-        username = user_form.name.strip()
+        username = create_form.name.strip()
         find_username_query = select(UserTable).where(func.lower(UserTable.username) == username.lower())
 
-        email = user_form.email.strip()
-        encoded_email = encrypt_email(email)
+        if ((await session.execute(find_username_query)).scalar()) is not None:
+            raise ValueError(_("error.username.taken"))
 
-        try:
-            valid_email = email_validator.validate_email(email)
-        except email_validator.EmailNotValidError:
-            valid_email = None
-
+        encoded_email = encrypt_email(create_form.email.strip())
         count_email_usage_query = select(func.count()).select_from(UserTable).where(UserTable.email == encoded_email)
 
-        # errors["name"]
-        if len(username) < MIN_USERNAME_LENGTH:
-            errors["name"] = _("error.username.short")
-        elif len(username) > MAX_USERNAME_LENGTH:
-            errors["name"] = _("error.username.long")
-        elif not re.match(VALID_USERNAME_REGEX, username):
-            errors["name"] = _("error.username.invalid")
-        elif re.match(ONLY_NUMBERS_REGEX, username):
-            errors["name"] = _("error.username.invalid")
-        elif not re.match(HAS_LETTERS_REGEX, username):
-            errors["name"] = _("error.username.invalid")
-        elif ((await session.execute(find_username_query)).scalar()) is not None:
-            errors["name"] = _("error.username.taken")
+        emails = (await session.execute(count_email_usage_query)).scalar()
+        if emails is not None and emails > MAX_EMAIL_USAGE:
+            raise ValueError(_("error.email.max-usage"))
 
-        # errors["password"]
-        if len(user_form.password) < MIN_PASSWORD_LENGTH:
-            errors["password"] = _("error.password.short")
-        elif len(user_form.password) > MAX_PASSWORD_LENGTH:
-            errors["password"] = _("error.password.long")
-
-        # errors["email"]
-        if valid_email is None:
-            errors["email"] = _("error.email.invalid")
-        elif (emails := (await session.execute(count_email_usage_query)).scalar()) is not None and emails > MAX_EMAIL_USAGE:
-            errors["email"] = _("error.email.max-usage")
-
-        if errors:
-            r.status_code = status.HTTP_400_BAD_REQUEST
-            return Response(data=Create(user_id=None, validation_errors=errors), success=False)
-
-        avatar_query = insert(AvatarTable).values(color=user_form.color).returning(AvatarTable.id)
+        avatar_query = insert(AvatarTable).values(color=create_form.color).returning(AvatarTable.id)
         avatar_id = (await session.execute(avatar_query)).scalar()
 
         create_uesr_query = insert(UserTable).values(
             username=username,
             nickname=username,
             email=encoded_email,
-            password=get_password_hash(user_form.password),
+            password=get_password_hash(create_form.password),
             avatar_id=avatar_id
         ).returning(UserTable.id)
         user_id = str((await session.execute(create_uesr_query)).scalar())
 
         await session.commit()
 
-        return Response(data=Create(user_id=user_id, validation_errors=errors), success=True)
+        return Response(data=Create(user_id=user_id, validation_errors={}), success=True)
 
 @router.get("/@me", dependencies=[require_oauth_scopes()])
 async def get_my_user(user: Annotated[UserTable, Depends(get_current_user)]) -> Response[MyUser]:
