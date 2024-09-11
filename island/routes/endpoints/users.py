@@ -20,7 +20,7 @@ from island.utils.recaptcha import verify_google_recaptcha
 router = APIRouter()
 
 @router.put("/")
-async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[Create]:
+async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[str]:
     if not await verify_google_recaptcha(create_form.token):
         raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
@@ -75,11 +75,11 @@ async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[Crea
             password=get_password_hash(create_form.password),
             avatar_id=avatar_id
         ).returning(UserTable.id)
-        user_id = str((await session.execute(create_user_query)).scalar())
+        user_id = (await session.execute(create_user_query)).scalar()
 
         await session.commit()
 
-        return Response(data=Create(user_id=user_id, validation_errors={}), success=True)
+        return Response(data=str(user_id), success=True)
 
 @router.get("/", dependencies=[require_oauth_scopes()])
 async def get_my_user(user: Annotated[UserTable, Depends(get_current_user)]) -> Response[MyUser]:

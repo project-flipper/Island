@@ -57,4 +57,3 @@ class CreateUser(BaseModel):
 
 class Create(BaseModel):
     user_id: str | None
-    validation_errors: dict[str, str]
