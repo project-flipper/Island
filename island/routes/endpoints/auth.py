@@ -139,7 +139,3 @@ async def handle_reauthenticate_user(
     token = Token(access_token=access_token, token_type="bearer")
     return TokenResponse(data=token, access_token=token.access_token, session_key=token.session_key, token_type=token.token_type, success=True)
 
-
-@router.get("/test", dependencies=[require_oauth_scopes(Scope.UserLogin)])
-async def test_oauth(oauth_data: Annotated[dict, Depends(get_oauth_data)]):
-    return JSONResponse({"scopes": oauth_data["scopes"]})
