@@ -10,11 +10,11 @@ from island.models import Error
 router = APIRouter()
 
 @router.get("/")
-async def get_my_user_avatar(user_id: str, size: int, language: str, photo: bool, bypassPlayerSettingCache: bool) -> HTTPResponse:
+async def get_my_user_avatar(user_id: int, size: int, language: str, photo: bool, bypassPlayerSettingCache: bool) -> HTTPResponse:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
-            .where(UserTable.id == int(user_id))
+            .where(UserTable.id == user_id)
         )
 
         user = (await session.execute(user_query)).scalar()
@@ -34,11 +34,11 @@ async def get_my_user_avatar(user_id: str, size: int, language: str, photo: bool
         return HTTPResponse(content=b"", media_type="image/png")
 
 @router.get("/{user_id}")
-async def get_user_avatar(user_id: str, size: int, language: str, photo: bool, bypassPlayerSettingCache: bool) -> HTTPResponse:
+async def get_user_avatar(user_id: int, size: int, language: str, photo: bool, bypassPlayerSettingCache: bool) -> HTTPResponse:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
-            .where(UserTable.id == int(user_id))
+            .where(UserTable.id == user_id)
         )
 
         user = (await session.execute(user_query)).scalar()

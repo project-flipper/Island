@@ -128,23 +128,23 @@ async def get_oauth_data(oauth: Annotated[str, Depends(OAUTH2_SCHEME)]) -> dict[
 
     return data
 
-async def get_current_user_id(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]) -> str:
+async def get_current_user_id(oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]) -> int:
     _, user_id = oauth_data["sub"].split("#")
-    return user_id
+    return int(user_id)
 
-async def get_current_user(user_id: Annotated[str, Depends(get_current_user_id)]) -> UserTable:
+async def get_current_user(user_id: Annotated[int, Depends(get_current_user_id)]) -> UserTable:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
             .options(
                 joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
             )
-            .where(UserTable.id == int(user_id))
+            .where(UserTable.id == user_id)
         )
 
         user = (await session.execute(user_query)).scalar()
 
-    if user is None or str(user.id) != user_id:
+    if user is None or user.id != user_id:
         raise oauth_error
 
     return user

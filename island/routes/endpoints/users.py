@@ -64,12 +64,12 @@ async def get_my_user(user: Annotated[UserTable, Depends(get_current_user)]) -> 
     return Response(data=my_user, success=True)
 
 @router.get("/{user_id}", dependencies=[require_oauth_scopes()])
-async def get_user_by_id(user_id: str, my_user_id: Annotated[str, Depends(get_current_user_id)]) -> Response[User | MyUser]:
+async def get_user_by_id(user_id: int, my_user_id: Annotated[int, Depends(get_current_user_id)]) -> Response[User | MyUser]:
     if user_id == my_user_id:
         async with ASYNC_SESSION() as session:
             user_query = (
                 select(UserTable)
-                .where(UserTable.id == int(user_id))
+                .where(UserTable.id == user_id)
             )
 
             user = (await session.execute(user_query)).scalar()
@@ -82,7 +82,7 @@ async def get_user_by_id(user_id: str, my_user_id: Annotated[str, Depends(get_cu
         async with ASYNC_SESSION() as session:
             user_query = (
                 select(UserTable)
-                .where(UserTable.id == int(user_id))
+                .where(UserTable.id == user_id)
             )
 
             user = (await session.execute(user_query)).scalar()
@@ -101,7 +101,7 @@ async def get_user_by_id(user_id: str, my_user_id: Annotated[str, Depends(get_cu
             return Response(data=user_model, success=True)
 
 @router.get("/", dependencies=[require_oauth_scopes()])
-async def get_user_by_name(username: str, my_user_id: Annotated[str, Depends(get_current_user_id)]) -> Response[User | MyUser]:
+async def get_user_by_name(username: str, my_user_id: Annotated[int, Depends(get_current_user_id)]) -> Response[User | MyUser]:
     async with ASYNC_SESSION() as session:
         user_query = (
             select(UserTable)
