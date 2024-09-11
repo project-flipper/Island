@@ -7,6 +7,7 @@ from starlette import status
 
 import email_validator
 
+from island.core.config import HAS_LETTERS_REGEX, MAX_EMAIL_USAGE, MAX_PASSWORD_LENGTH, MAX_USERNAME_LENGTH, MIN_PASSWORD_LENGTH, MIN_USERNAME_LENGTH, ONLY_NUMBERS_REGEX, VALID_USERNAME_REGEX
 from island.core.i18n import _
 from island.database import ASYNC_SESSION
 from island.database.schema.avatar import AvatarTable
@@ -18,16 +19,6 @@ from island.utils.auth import get_current_user, get_current_user_id, require_oau
 from island.utils.recaptcha import verify_google_recaptcha
 
 router = APIRouter()
-
-VALID_USERNAME_REGEX = r"^[a-zA-Z 0-9]+$"
-ONLY_NUMBERS_REGEX = r"^[0-9]+$"
-HAS_LETTERS_REGEX = r"[a-zA-Z]"
-
-MIN_USERNAME_LENGTH = 4
-MAX_USERNAME_LENGTH = 12
-MIN_PASSWORD_LENGTH = 4
-MAX_PASSWORD_LENGTH = 32
-MAX_EMAIL_USAGE = 5
 
 @router.put("/")
 async def create_user(r: HTTPResponse, user_form: CreateUser) -> Response[Create]:

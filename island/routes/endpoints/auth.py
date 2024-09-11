@@ -8,7 +8,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import joinedload
 from fastapi.responses import JSONResponse
 
-from island.core.config import config
+from island.core.config import ACCESS_TOKEN_EXPIRE_MINUTES
 from island.core.constants.scope import Scope
 from island.database import ASYNC_SESSION
 from island.database.schema.ban import BanTable
@@ -26,10 +26,6 @@ from island.utils.auth import (
 )
 
 router = APIRouter()
-
-ACCESS_TOKEN_EXPIRE_MINUTES = config(
-    "ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, default=15 * 60
-)  # seconds
 
 DEFAULT_USER_SCOPES = [Scope.UserLogin, Scope.UserRead, Scope.WorldAccess]
 

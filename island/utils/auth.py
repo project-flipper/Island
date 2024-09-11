@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta, UTC
-from enum import Enum
 from typing import Annotated, Any
 
 from fastapi import Depends, HTTPException, Request, status
@@ -9,7 +8,7 @@ import bcrypt
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 
-from island.core.config import DATABASE_SECRET_KEY, SECRET_KEY, config
+from island.core.config import DATABASE_SECRET_KEY, DEFAULT_TOKEN_EXPIRE, JWT_ALGORITHM, SECRET_KEY
 from island.core.constants.scope import Scope as ScopeEnum
 from island.database import ASYNC_SESSION
 from island.database.schema.ban import BanTable
@@ -19,11 +18,6 @@ from island.models import Error
 from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
 
 
-class JWTTokenType(Enum):
-    HS256 = "HS256"
-    RS256 = "RS256"
-
-
 class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
     async def __call__(self, request: Request) -> str | None:
         try:
@@ -31,11 +25,6 @@ class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
         except HTTPException:
             raise oauth_error
 
-
-DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
-JWT_ALGORITHM = config(
-    "DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256
-)
 
 OAUTH2_SCHEME = IslandOAuth2PasswordBearer(tokenUrl="/auth/login")
 

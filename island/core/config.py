@@ -1,10 +1,12 @@
 import logging
+import re
 
 from sqlalchemy.engine.url import URL, make_url
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret
 
 from island.core.logging import InterceptHandler
+from island.core.constants.token import JWTTokenType
 
 config = Config(".env")
 
@@ -33,6 +35,13 @@ WORLD_ACCESS_KEY = config(
 )
 DATABASE_SECRET_KEY = config(
     "DATABASE_SECRET_KEY", cast=Secret, default="change_me1234"
+)
+ACCESS_TOKEN_EXPIRE_MINUTES = config(
+    "ACCESS_TOKEN_EXPIRE_MINUTES", cast=int, default=15 * 60
+)  # seconds
+DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
+JWT_ALGORITHM = config(
+    "DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256
 )
 
 # Database config
@@ -88,3 +97,14 @@ for logger_name in LOGGERS:
     logging_logger = logging.getLogger(logger_name)
     logging_logger.setLevel(logging.INFO)
     logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
+
+# User creation
+VALID_USERNAME_REGEX = config("VALID_USERNAME_REGEX", cast=re.compile, default=r"^[a-zA-Z 0-9]+$")
+ONLY_NUMBERS_REGEX = config("ONLY_NUMBERS_REGEX", cast=re.compile, default=r"^[0-9]+$")
+HAS_LETTERS_REGEX = config("HAS_LETTERS_REGEX", cast=re.compile, default=r"[a-zA-Z]")
+
+MIN_USERNAME_LENGTH = config("MIN_USERNAME_LENGTH", default=4)
+MAX_USERNAME_LENGTH = config("MAX_USERNAME_LENGTH", default=12)
+MIN_PASSWORD_LENGTH = config("MIN_PASSWORD_LENGTH", default=4)
+MAX_PASSWORD_LENGTH = config("MAX_PASSWORD_LENGTH", default=32)
+MAX_EMAIL_USAGE = config("MAX_EMAIL_USAGE", default=5)
