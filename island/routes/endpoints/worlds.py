@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from sqlalchemy import select
+from sqlalchemy import func, select
 from starlette.endpoints import WebSocketEndpoint
 
 from island.core.constants.scope import Scope
@@ -14,7 +14,7 @@ router = APIRouter()
 @router.get("/", dependencies=[require_oauth_scopes(Scope.WorldAccess)])
 async def get_worlds(lang: int) -> Response[list[World]]:
     async with ASYNC_SESSION() as session:
-        world_query = select(WorldTable).where(WorldTable.lang == lang)
+        world_query = select(WorldTable).where(WorldTable.lang.op('&')(lang) == lang)
         worlds = (await session.execute(world_query)).scalars()
 
     return Response(data=[await World.from_orm(w) for w in worlds], success=True)
