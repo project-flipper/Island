@@ -29,6 +29,7 @@ router = APIRouter()
 
 DEFAULT_USER_SCOPES = [Scope.UserLogin, Scope.UserRead, Scope.WorldAccess]
 
+
 @router.post("/login")
 async def handle_authenticate_user(
     response: Response,
@@ -65,7 +66,7 @@ async def handle_authenticate_user(
                 error_type="user.auth.credentials",
                 error_code=100,
                 error_description="User authentication failed. Incorrect username or password.",
-            )
+            ),
         )
 
     user_ban = user.bans[0] if user.bans else None
@@ -77,7 +78,7 @@ async def handle_authenticate_user(
                 error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds() / 60),
-            )
+            ),
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
@@ -90,7 +91,7 @@ async def handle_authenticate_user(
         },
         expires_delta=access_token_expires,
     )
-    
+
     token = Token(access_token=access_token, token_type="bearer")
     if save_session:
         token.session_key = create_access_token(
@@ -101,7 +102,13 @@ async def handle_authenticate_user(
             expires_delta=timedelta(days=180),
         )
 
-    return TokenResponse(data=token, access_token=token.access_token, session_key=token.session_key, token_type=token.token_type, success=True)
+    return TokenResponse(
+        data=token,
+        access_token=token.access_token,
+        session_key=token.session_key,
+        token_type=token.token_type,
+        success=True,
+    )
 
 
 @router.post(
@@ -120,7 +127,7 @@ async def handle_reauthenticate_user(
                 error_code=user_ban.ban_type,
                 error_description=str(ban_dur),
                 ban_dur=round(ban_dur.total_seconds() / 60),
-            )
+            ),
         )
 
     access_token_expires = timedelta(seconds=ACCESS_TOKEN_EXPIRE_MINUTES)
@@ -135,7 +142,13 @@ async def handle_reauthenticate_user(
     )
 
     token = Token(access_token=access_token, token_type="bearer")
-    return TokenResponse(data=token, access_token=token.access_token, session_key=token.session_key, token_type=token.token_type, success=True)
+    return TokenResponse(
+        data=token,
+        access_token=token.access_token,
+        session_key=token.session_key,
+        token_type=token.token_type,
+        success=True,
+    )
 
 
 @router.get("/test", dependencies=[require_oauth_scopes(Scope.UserLogin)])

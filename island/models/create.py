@@ -1,9 +1,16 @@
-
 import re
 import email_validator
 from pydantic import BaseModel, field_validator
 
-from island.core.config import HAS_LETTERS_REGEX, MAX_PASSWORD_LENGTH, MAX_USERNAME_LENGTH, MIN_PASSWORD_LENGTH, MIN_USERNAME_LENGTH, ONLY_NUMBERS_REGEX, VALID_USERNAME_REGEX
+from island.core.config import (
+    HAS_LETTERS_REGEX,
+    MAX_PASSWORD_LENGTH,
+    MAX_USERNAME_LENGTH,
+    MIN_PASSWORD_LENGTH,
+    MIN_USERNAME_LENGTH,
+    ONLY_NUMBERS_REGEX,
+    VALID_USERNAME_REGEX,
+)
 from island.core.i18n import _
 
 
@@ -53,6 +60,7 @@ class CreateUser(BaseModel):
             raise ValueError(_("error.email.invalid")) from e
 
         return value
+
 
 class Create(BaseModel):
     user_id: str | None

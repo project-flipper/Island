@@ -7,6 +7,7 @@ from island.models.presence import Presence
 from island.models.relationship import Relationship
 from island.models.membership import Membership
 
+
 class BaseUser(BaseModel):
     id: str
     username: str
@@ -15,6 +16,7 @@ class BaseUser(BaseModel):
     member: Membership | None
     iglooId: int | None
     mascotId: int | None
+
 
 class User(BaseUser):
     relationship: Relationship | None
@@ -36,8 +38,9 @@ class User(BaseUser):
                 mascotId=None,
                 relationship=None,
                 publicStampbook=False,
-                presence=None
+                presence=None,
             )
+
 
 class MyUser(BaseUser):
     moderator: bool
@@ -58,5 +61,5 @@ class MyUser(BaseUser):
                 iglooId=0,
                 mascotId=None,
                 moderator=True,
-                stealth=False
+                stealth=False,
             )
