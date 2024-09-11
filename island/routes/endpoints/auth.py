@@ -1,3 +1,4 @@
+import asyncio
 from datetime import datetime, timedelta
 from typing import Annotated
 
@@ -47,6 +48,7 @@ async def handle_authenticate_user(
     Returns:
         TokenResponse
     """
+    loop = asyncio.get_event_loop()
 
     async with ASYNC_SESSION() as session:
         now = datetime.now()
@@ -58,7 +60,7 @@ async def handle_authenticate_user(
 
         user = (await session.execute(user_query)).scalar()
 
-    if user is None or not verify_password(auth_input.password, user.password):
+    if user is None or not await loop.run_in_executor(None, verify_password, auth_input.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=Error(
