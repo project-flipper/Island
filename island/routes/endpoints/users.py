@@ -58,22 +58,10 @@ async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[Crea
 
         return Response(data=Create(user_id=user_id, validation_errors={}), success=True)
 
-@router.get("/@me", dependencies=[require_oauth_scopes()])
+@router.get("/", dependencies=[require_oauth_scopes()])
 async def get_my_user(user: Annotated[UserTable, Depends(get_current_user)]) -> Response[MyUser]:
     my_user = await MyUser.from_orm(user)
     return Response(data=my_user, success=True)
-
-@router.get("/@me/friends", dependencies=[require_oauth_scopes()])
-async def get_friends() -> Response[list[User]]:
-    return Response(data=[], success=True)
-
-@router.post("/@me/friends", dependencies=[require_oauth_scopes()])
-async def add_friends(friend: dict[str, str]) -> HTTPResponse:
-    return HTTPResponse(status_code=200)
-
-@router.delete("/@me/friends/{user_id}", dependencies=[require_oauth_scopes()])
-async def remove_friend(user_id: str) -> HTTPResponse:
-    return HTTPResponse(status_code=200)
 
 @router.get("/{user_id}", dependencies=[require_oauth_scopes()])
 async def get_user_by_id(user_id: str, my_user_id: Annotated[str, Depends(get_current_user_id)]) -> Response[User | MyUser]:
@@ -111,30 +99,6 @@ async def get_user_by_id(user_id: str, my_user_id: Annotated[str, Depends(get_cu
 
             user_model = await User.from_orm(user)
             return Response(data=user_model, success=True)
-
-@router.get("/{user_id}/avatar")
-async def get_user_avatar(user_id: str, size: int, language: str, photo: bool, bypassPlayerSettingCache: bool) -> HTTPResponse:
-    async with ASYNC_SESSION() as session:
-        user_query = (
-            select(UserTable)
-            .where(UserTable.id == int(user_id))
-        )
-
-        user = (await session.execute(user_query)).scalar()
-
-        if user is None:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=Error(
-                    error_type="users.query.not_found",
-                    error_code=404,
-                    error_description="User not found",
-                ),
-            )
-
-        # TODO: render user avatar for Disney friends
-        #avatar = user.avatar
-        return HTTPResponse(content=b"", media_type="image/png")
 
 @router.get("/", dependencies=[require_oauth_scopes()])
 async def get_user_by_name(username: str, my_user_id: Annotated[str, Depends(get_current_user_id)]) -> Response[User | MyUser]:
