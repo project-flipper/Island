@@ -1,3 +1,4 @@
+from typing import Any
 from pydantic import BaseModel
 
 from island.core.constants.error import ErrorEnum
@@ -15,3 +16,10 @@ class Response[T](BaseModel):
 
     success: bool
     has_error: bool = False
+
+class RuntimeValidationError(BaseModel):
+    type: str
+    loc: list[str]
+    msg: str
+    input: Any
+    ctx: dict[str, Any]

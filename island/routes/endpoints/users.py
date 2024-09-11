@@ -1,5 +1,6 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.encoders import jsonable_encoder
 from fastapi.responses import Response as HTTPResponse
 from sqlalchemy import insert, select, func
 from starlette import status
@@ -9,7 +10,7 @@ from island.core.i18n import _
 from island.database import ASYNC_SESSION
 from island.database.schema.avatar import AvatarTable
 from island.database.schema.user import UserTable
-from island.models import Error, Response
+from island.models import Error, Response, RuntimeValidationError
 from island.models.errors.recaptcha import RecaptchaVerificationError
 from island.models.user import MyUser, User
 from island.models.create import CreateUser, Create
@@ -33,26 +34,48 @@ async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[Crea
         find_username_query = select(UserTable).where(func.lower(UserTable.username) == username.lower())
 
         if ((await session.execute(find_username_query)).scalar()) is not None:
-            raise ValueError(_("error.username.taken"))
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=[
+                        RuntimeValidationError(
+                        input=create_form.name,
+                        type="value_error",
+                        msg=_("error.username.taken"),
+                        loc=["body", "name"],
+                        ctx={}
+                    )
+                ]
+            )
 
         encoded_email = encrypt_email(create_form.email.strip())
         count_email_usage_query = select(func.count()).select_from(UserTable).where(UserTable.email == encoded_email)
 
         emails = (await session.execute(count_email_usage_query)).scalar()
         if emails is not None and emails > MAX_EMAIL_USAGE:
-            raise ValueError(_("error.email.max-usage"))
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=[
+                        RuntimeValidationError(
+                        input=create_form.name,
+                        type="value_error",
+                        msg=_("error.email.max-usage"),
+                        loc=["body", "email"],
+                        ctx={}
+                    )
+                ]
+            )
 
         avatar_query = insert(AvatarTable).values(color=create_form.color).returning(AvatarTable.id)
         avatar_id = (await session.execute(avatar_query)).scalar()
 
-        create_uesr_query = insert(UserTable).values(
+        create_user_query = insert(UserTable).values(
             username=username,
             nickname=username,
             email=encoded_email,
             password=get_password_hash(create_form.password),
             avatar_id=avatar_id
         ).returning(UserTable.id)
-        user_id = str((await session.execute(create_uesr_query)).scalar())
+        user_id = str((await session.execute(create_user_query)).scalar())
 
         await session.commit()
 
