@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, HTTPException, Response as HTTPResponse, status
 from sqlalchemy import select
 
@@ -9,13 +8,11 @@ from island.models import Error
 
 router = APIRouter()
 
+
 @router.get("/")
 async def get_my_user_avatar(user_id: int, size: int, photo: bool) -> HTTPResponse:
     async with ASYNC_SESSION() as session:
-        user_query = (
-            select(UserTable)
-            .where(UserTable.id == user_id)
-        )
+        user_query = select(UserTable).where(UserTable.id == user_id)
 
         user = (await session.execute(user_query)).scalar()
 
@@ -30,16 +27,14 @@ async def get_my_user_avatar(user_id: int, size: int, photo: bool) -> HTTPRespon
             )
 
         # TODO: render user avatar for Disney friends
-        #avatar = user.avatar
+        # avatar = user.avatar
         return HTTPResponse(content=b"", media_type="image/png")
+
 
 @router.get("/{user_id}")
 async def get_user_avatar(user_id: int, size: int, photo: bool) -> HTTPResponse:
     async with ASYNC_SESSION() as session:
-        user_query = (
-            select(UserTable)
-            .where(UserTable.id == user_id)
-        )
+        user_query = select(UserTable).where(UserTable.id == user_id)
 
         user = (await session.execute(user_query)).scalar()
 
@@ -54,5 +49,5 @@ async def get_user_avatar(user_id: int, size: int, photo: bool) -> HTTPResponse:
             )
 
         # TODO: render user avatar for Disney friends
-        #avatar = user.avatar
+        # avatar = user.avatar
         return HTTPResponse(content=b"", media_type="image/png")
