@@ -1,10 +1,17 @@
-
 import re
 import email_validator
 from pydantic import BaseModel, field_validator
 from pydantic_core import PydanticCustomError
 
-from island.core.config import HAS_LETTERS_REGEX, MAX_PASSWORD_LENGTH, MAX_USERNAME_LENGTH, MIN_PASSWORD_LENGTH, MIN_USERNAME_LENGTH, ONLY_NUMBERS_REGEX, VALID_USERNAME_REGEX
+from island.core.config import (
+    HAS_LETTERS_REGEX,
+    MAX_PASSWORD_LENGTH,
+    MAX_USERNAME_LENGTH,
+    MIN_PASSWORD_LENGTH,
+    MIN_USERNAME_LENGTH,
+    ONLY_NUMBERS_REGEX,
+    VALID_USERNAME_REGEX,
+)
 from island.core.i18n import _
 
 
@@ -21,15 +28,25 @@ class CreateUser(BaseModel):
         value = value.strip()
 
         if len(value) < MIN_USERNAME_LENGTH:
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.username.short")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.username.short")}
+            )
         elif len(value) > MAX_USERNAME_LENGTH:
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.username.long")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.username.long")}
+            )
         elif not VALID_USERNAME_REGEX.match(value):
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.username.invalid")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.username.invalid")}
+            )
         elif ONLY_NUMBERS_REGEX.match(value):
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.username.invalid")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.username.invalid")}
+            )
         elif not HAS_LETTERS_REGEX.match(value):
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.username.invalid")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.username.invalid")}
+            )
 
         return value
 
@@ -37,9 +54,13 @@ class CreateUser(BaseModel):
     @classmethod
     def password_strength_check(cls, value: str):
         if len(value) < MIN_PASSWORD_LENGTH:
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.password.short")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.password.short")}
+            )
         elif len(value) > MAX_PASSWORD_LENGTH:
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.password.long")})
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.password.long")}
+            )
 
         return value
 
@@ -51,9 +72,12 @@ class CreateUser(BaseModel):
         try:
             email_validator.validate_email(value)
         except email_validator.EmailNotValidError as e:
-            raise PydanticCustomError("value_error", "{message}", {"message": _("error.email.invalid")}) from e
+            raise PydanticCustomError(
+                "value_error", "{message}", {"message": _("error.email.invalid")}
+            ) from e
 
         return value
+
 
 class Create(BaseModel):
     user_id: str | None

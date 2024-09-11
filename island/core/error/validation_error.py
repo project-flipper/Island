@@ -24,7 +24,9 @@ async def http422_error_handler(
     assert isinstance(exc, (RequestValidationError, ValidationError))
 
     return JSONResponse(
-        jsonable_encoder({"has_error": True, "success": False, "data": None, "error": exc.errors()}),
+        jsonable_encoder(
+            {"has_error": True, "success": False, "data": None, "error": exc.errors()}
+        ),
         status_code=HTTP_422_UNPROCESSABLE_ENTITY,
     )
 
