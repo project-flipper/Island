@@ -1,3 +1,4 @@
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.openapi.constants import REF_PREFIX
 from fastapi.openapi.utils import validation_error_response_definition
@@ -23,7 +24,7 @@ async def http422_error_handler(
     assert isinstance(exc, (RequestValidationError, ValidationError))
 
     return JSONResponse(
-        {"has_error": True, "success": False, "data": None, "error": exc.errors()},
+        jsonable_encoder({"has_error": True, "success": False, "data": None, "error": exc.errors()}),
         status_code=HTTP_422_UNPROCESSABLE_ENTITY,
     )
 
