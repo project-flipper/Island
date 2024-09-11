@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from island.models import Error
 
 
-class Action(BaseModel):
+class Action[T](BaseModel):
     """Generic Action-model for incoming and outgoing event(s).
 
     Usage:
@@ -28,5 +28,5 @@ class Action(BaseModel):
     """
 
     op: str  # action [category:event]
-    d: dict[str, Any] | None  # event data
+    d: T  # event data
     e: Error | None  # event error data, almost only used on replies to action-request
