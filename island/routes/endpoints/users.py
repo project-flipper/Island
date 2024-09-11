@@ -123,7 +123,7 @@ async def get_user_by_id(user_id: int, my_user_id: Annotated[int, Depends(get_cu
             user_model = await User.from_orm(user)
             return Response(data=user_model, success=True)
 
-@router.get("/", dependencies=[require_oauth_scopes()])
+@router.get("/search", dependencies=[require_oauth_scopes()])
 async def get_user_by_name(username: str, my_user_id: Annotated[int, Depends(get_current_user_id)]) -> Response[User | MyUser]:
     async with ASYNC_SESSION() as session:
         user_query = (
