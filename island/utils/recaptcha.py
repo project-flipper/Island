@@ -1,4 +1,4 @@
-from httpx import AsyncClient
+from httpx import AsyncClient, HTTPError
 
 from island.core.config import (
     GOOGLE_RECAPTCHA_V3_SECRET,
@@ -27,5 +27,5 @@ async def verify_google_recaptcha(token: str, /) -> bool:
                 str(URLConstantsEnum.GOOGLE_RECAPTCHA_V3_VERIFY_ENDPOINT), data=data
             )
             return r.is_success
-        except:
+        except Exception:
             return False
