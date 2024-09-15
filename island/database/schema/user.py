@@ -37,4 +37,4 @@ class UserTable(Base):
 
     @property
     def scopes(self) -> list[Scope]:
-        return list(map(lambda s: Scope(s), self._scopes))
+        return list(map(Scope, self._scopes))

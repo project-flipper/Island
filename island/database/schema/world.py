@@ -26,8 +26,8 @@ class WorldTable(Base):
     @property
     def grant_scopes(self) -> list[Scope]:
         # type: ignore
-        return list(map(lambda s: Scope(s), self._grant_scopes))
+        return list(map(Scope, self._grant_scopes))
 
     @property
     def scopes(self) -> list[Scope]:
-        return list(map(lambda s: Scope(s), self._scopes))
+        return list(map(Scope, self._scopes))
