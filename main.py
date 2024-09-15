@@ -87,7 +87,7 @@ def get_application() -> FastAPI:
 
     logger.info(f"Island version {API_VERSION}")
     logger.info(f"Island API endpoint prefix {_prefix}")
-    logger.info(f"Island setting up")
+    logger.info("Island setting up")
 
     logger.info("Island adding middlewares")
 
