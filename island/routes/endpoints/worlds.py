@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from sqlalchemy import func, select
+from sqlalchemy import select
 from starlette.endpoints import WebSocketEndpoint
 
 from island.core.constants.scope import Scope

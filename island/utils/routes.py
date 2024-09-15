@@ -3,7 +3,6 @@ from importlib import import_module
 from pkgutil import iter_modules
 from types import ModuleType
 
-from fastapi import APIRouter
 from loguru import logger
 
 

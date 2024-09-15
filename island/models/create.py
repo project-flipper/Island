@@ -1,5 +1,4 @@
 
-import re
 import email_validator
 from pydantic import BaseModel, field_validator
 from pydantic_core import PydanticCustomError

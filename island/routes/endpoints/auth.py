@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime, timedelta
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.param_functions import Form
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy import func, select
