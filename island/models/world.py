@@ -20,7 +20,7 @@ class World(BaseModel):
         return max(round(5 * (population / capacity)), 1)
 
     @classmethod
-    async def from_orm(cls, world: WorldTable) -> 'World':
+    async def from_table(cls, world: WorldTable) -> 'World':
         # TODO: get population, buddies and url
         return cls(
             id=world.id,

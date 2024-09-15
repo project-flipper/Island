@@ -104,7 +104,7 @@ async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[str]
 async def get_my_user(
     user: Annotated[UserTable, Depends(get_current_user)]
 ) -> Response[MyUser]:
-    my_user = await MyUser.from_orm(user)
+    my_user = await MyUser.from_table(user)
     return Response(data=my_user, success=True)
 
 
@@ -130,9 +130,9 @@ async def get_user_by_name(
             )
 
         if user.id == my_user_id:
-            user_model = await MyUser.from_orm(user)
+            user_model = await MyUser.from_table(user)
         else:
-            user_model = await User.from_orm(user)
+            user_model = await User.from_table(user)
 
         return Response(data=user_model, success=True)
 
@@ -149,7 +149,7 @@ async def get_user_by_id(
 
             assert user is not None
 
-            my_user = await MyUser.from_orm(user)
+            my_user = await MyUser.from_table(user)
             return Response(data=my_user, success=True)
     else:
         async with ASYNC_SESSION() as session:
@@ -167,5 +167,5 @@ async def get_user_by_id(
                     ),
                 )
 
-            user_model = await User.from_orm(user)
+            user_model = await User.from_table(user)
             return Response(data=user_model, success=True)

@@ -22,7 +22,7 @@ class User(BaseUser):
     presence: Presence | None
 
     @classmethod
-    async def from_orm(cls, user: UserTable) -> "User":
+    async def from_table(cls, user: UserTable) -> "User":
         async with ASYNC_SESSION() as session:
             user = await session.merge(user)
 
@@ -45,7 +45,7 @@ class MyUser(BaseUser):
     stealth: bool
 
     @classmethod
-    async def from_orm(cls, user: UserTable) -> "MyUser":
+    async def from_table(cls, user: UserTable) -> "MyUser":
         async with ASYNC_SESSION() as session:
             user = await session.merge(user)
 

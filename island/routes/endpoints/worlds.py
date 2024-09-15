@@ -18,7 +18,7 @@ async def get_worlds(lang: int) -> Response[list[World]]:
         world_query = select(WorldTable).where(WorldTable.lang.op("&")(lang) == lang)
         worlds = (await session.execute(world_query)).scalars()
 
-    return Response(data=[await World.from_orm(w) for w in worlds], success=True)
+    return Response(data=[await World.from_table(w) for w in worlds], success=True)
 
 
 @router.websocket_route("/<world_key>")
