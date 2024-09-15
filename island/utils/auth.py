@@ -8,14 +8,12 @@ import bcrypt
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
 
-from island.core.config import DATABASE_SECRET_KEY, DEFAULT_TOKEN_EXPIRE, JWT_ALGORITHM, SECRET_KEY
+from island.core.config import DEFAULT_TOKEN_EXPIRE, JWT_ALGORITHM, SECRET_KEY
 from island.core.constants.scope import Scope as ScopeEnum
 from island.database import ASYNC_SESSION
 from island.database.schema.ban import BanTable
 from island.database.schema.user import UserTable
 from island.models import Error
-
-from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
 
 
 class IslandOAuth2PasswordBearer(OAuth2PasswordBearer):
@@ -70,16 +68,6 @@ def get_password_hash(password: str) -> str:
         str
     """
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-
-
-def encrypt_email(email: str) -> str:
-    """Encrypts an email using AES.
-    
-    """
-    engine = AesEngine()
-    engine._update_key(str(DATABASE_SECRET_KEY))
-    engine._set_padding_mechanism("pkcs5")
-    return engine.encrypt(email)
 
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
