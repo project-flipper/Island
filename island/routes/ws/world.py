@@ -19,17 +19,14 @@ async def handle_ping(ctx, *args, **kwargs):
 
 import asyncio
 from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect, WebSocketException
+from loguru import logger
 from pydantic import BaseModel, ValidationError
-from sqlalchemy import select
 
 from island.core.constants.close import CloseCode
 from island.core.constants.events import EventEnum
 from island.handlers import dispatch as dispatch_packet
-from island.database import ASYNC_SESSION
-from island.database.schema.user import UserTable
 from island.events import _force_fastapi_events_dispatch_as_task, dispatch as global_dispatch
 from island.models.packet import Packet
-from island.models.user import MyUser
 from island.utils.auth import get_current_user_id, get_oauth_data
 
 router = APIRouter()
@@ -49,8 +46,8 @@ async def handle_authentication(ws: WebSocket) -> int | None:
 
     try:
         token = packet.d.token
-        oauth = await get_oauth_data(token)
-        return await get_current_user_id(oauth)
+        oauth = get_oauth_data(token)
+        return get_current_user_id(oauth)
     except HTTPException:
         raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
 
@@ -69,7 +66,9 @@ async def world_connection(ws: WebSocket):
 
         # TODO: Validate connection while invalidating others
 
-        global_dispatch(EventEnum.WORLD_CLIENT_CONNECT, ws)
+        ws.state.user_id = user_id
+
+        global_dispatch(EventEnum.WORLD_CLIENT_AUTH, ws)
 
         while True:
             packet = await receive_packet(ws)
@@ -79,7 +78,7 @@ async def world_connection(ws: WebSocket):
         raise WebSocketException(CloseCode.INVALID_DATA, "Invalid data received")
     except WebSocketDisconnect:
         pass
-    except Exception:
-        pass
+    except Exception as e:
+        logger.opt(exception=e).error("An error has occurred inside a WebSocket connection")
 
     global_dispatch(EventEnum.WORLD_CLIENT_DISCONNECT, ws)

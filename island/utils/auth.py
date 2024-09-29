@@ -109,7 +109,7 @@ async def get_user_scopes(
     return user.scopes if not default_scopes else default_scopes + user.scopes
 
 
-async def get_oauth_data(
+def get_oauth_data(
     oauth: Annotated[str, Depends(OAUTH2_SCHEME)]
 ) -> dict[str, Any]:
     try:
@@ -120,7 +120,7 @@ async def get_oauth_data(
     return data
 
 
-async def get_current_user_id(
+def get_current_user_id(
     oauth_data: Annotated[dict[str, Any], Depends(get_oauth_data)]
 ) -> int:
     _, user_id = oauth_data["sub"].split("#")
@@ -130,16 +130,7 @@ async def get_current_user_id(
 async def get_current_user(
     user_id: Annotated[int, Depends(get_current_user_id)]
 ) -> UserTable:
-    async with ASYNC_SESSION() as session:
-        user_query = (
-            select(UserTable)
-            .options(
-                joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
-            )
-            .where(UserTable.id == user_id)
-        )
-
-        user = (await session.execute(user_query)).scalar()
+    user = await UserTable.query_by_id(user_id)
 
     if user is None or user.id != user_id:
         raise oauth_error

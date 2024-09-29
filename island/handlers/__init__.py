@@ -24,6 +24,7 @@ from pydantic import ValidationError
 
 from island.core.config import WORLD_PACKETS_MIDDLEWARE_ID
 from island.core.constants.close import CloseCode
+from island.database.schema.user import UserTable
 from island.models.packet import Packet
 
 _event: ContextVar[Event] = ContextVar("event")
@@ -123,7 +124,7 @@ class PacketHandler(BaseEventHandler):
                 except WebSocketException as e:
                     await ws.close(e.code, e.reason)
                 except Exception as e:
-                    logger.opt(exception=e).error(e)
+                    logger.opt(exception=e).error("An error occurred when dispatching a packet")
 
     def _register_handler(
         self,
@@ -220,6 +221,16 @@ def get_event() -> Event:
 
 EventDep = Annotated[Event, Depends(get_event)]
 
+def get_user_id(ws: WebSocket) -> int:
+    return ws.state.user_id
+
+async def get_current_user(user_id: Annotated[int, Depends(get_user_id)]) -> UserTable:
+    user = await UserTable.query_by_id(user_id)
+
+    if user is None or user.id != user_id:
+        raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
+
+    return user
 
 def get_packet(event=Depends(get_event)) -> Packet:
     return event[1][1]

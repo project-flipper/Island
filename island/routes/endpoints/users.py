@@ -26,7 +26,7 @@ router = APIRouter()
 
 
 @router.put("/")
-async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[str]:
+async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[int]:
     if not await verify_google_recaptcha(create_form.token):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -97,7 +97,7 @@ async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[str]
 
         await session.commit()
 
-        return Response(data=str(user_id), success=True)
+        return Response(data=user_id, success=True)
 
 
 @router.get("/", dependencies=[require_oauth_scopes()])
@@ -112,60 +112,45 @@ async def get_my_user(
 async def get_user_by_name(
     username: str, my_user_id: Annotated[int, Depends(get_current_user_id)]
 ) -> Response[User | MyUser]:
-    async with ASYNC_SESSION() as session:
-        user_query = select(UserTable).where(
-            func.lower(UserTable.nickname) == username.lower()
+    user = await UserTable.query_by_username(username)
+
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=Error(
+                error_type="users.query.not_found",
+                error_code=404,
+                error_description="User not found",
+            ),
         )
 
-        user = (await session.execute(user_query)).scalar()
+    if user.id == my_user_id:
+        user_model = await MyUser.from_table(user)
+    else:
+        user_model = await User.from_table(user)
 
-        if user is None:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=Error(
-                    error_type="users.query.not_found",
-                    error_code=404,
-                    error_description="User not found",
-                ),
-            )
-
-        if user.id == my_user_id:
-            user_model = await MyUser.from_table(user)
-        else:
-            user_model = await User.from_table(user)
-
-        return Response(data=user_model, success=True)
+    return Response(data=user_model, success=True)
 
 
 @router.get("/{user_id}", dependencies=[require_oauth_scopes()])
 async def get_user_by_id(
     user_id: int, my_user_id: Annotated[int, Depends(get_current_user_id)]
 ) -> Response[User | MyUser]:
-    if user_id == my_user_id:
-        async with ASYNC_SESSION() as session:
-            user_query = select(UserTable).where(UserTable.id == user_id)
+    user = await UserTable.query_by_id(user_id)
 
-            user = (await session.execute(user_query)).scalar()
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=Error(
+                error_type="users.query.not_found",
+                error_code=404,
+                error_description="User not found",
+            ),
+        )
 
-            assert user is not None
-
-            my_user = await MyUser.from_table(user)
-            return Response(data=my_user, success=True)
+    if user.id == my_user_id:
+        my_user = await MyUser.from_table(user)
+        return Response(data=my_user, success=True)
     else:
-        async with ASYNC_SESSION() as session:
-            user_query = select(UserTable).where(UserTable.id == user_id)
-
-            user = (await session.execute(user_query)).scalar()
-
-            if user is None:
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail=Error(
-                        error_type="users.query.not_found",
-                        error_code=404,
-                        error_description="User not found",
-                    ),
-                )
-
-            user_model = await User.from_table(user)
-            return Response(data=user_model, success=True)
+        user_model = await User.from_table(user)
+        return Response(data=user_model, success=True)
