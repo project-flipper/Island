@@ -48,15 +48,7 @@ async def handle_authenticate_user(
     """
     loop = asyncio.get_event_loop()
 
-    async with ASYNC_SESSION() as session:
-        now = datetime.now()
-        user_query = (
-            select(UserTable)
-            .options(joinedload(UserTable.bans.and_(BanTable.ban_expire > now)))
-            .where(func.lower(UserTable.username) == auth_input.username.lower())
-        )
-
-        user = (await session.execute(user_query)).scalar()
+    user = await UserTable.query_by_username(auth_input.username)
 
     if user is None or not await loop.run_in_executor(
         None, verify_password, auth_input.password, user.password
