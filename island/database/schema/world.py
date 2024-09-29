@@ -14,6 +14,7 @@ class WorldTable(Base):
     capacity: Mapped[int] = mapped_column(default=200)
     lang: Mapped[int] = mapped_column(default=1)
     is_safe: Mapped[bool] = mapped_column(default=False)
+    url: Mapped[str] = mapped_column()
 
     access_key: Mapped[str] = mapped_column(String(32), unique=True)
     _grant_scopes: Mapped[list[str]] = mapped_column(
