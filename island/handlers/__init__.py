@@ -90,7 +90,12 @@ class PacketHandler(BaseEventHandler):
 
         ws = player.ws
 
-        for handler in self._get_handlers_for_event(event_name=event_name):
+        handlers = self._get_handlers_for_event(event_name=event_name)
+
+        if len(handlers) == 0:
+            logger.warning(f"No handlers found for {event_name}")
+
+        for handler in handlers:
             async with AsyncExitStack() as cm:
                 # resolve dependencies
                 dependant: Dependant = getattr(handler, "__dependant__")
@@ -116,7 +121,7 @@ class PacketHandler(BaseEventHandler):
                             None, functools.partial(dependant.call, **solved.values)
                         )
                 except ValidationError:
-                    await ws.close(CloseCode.INVALID_DATA, 'Invalid data received')
+                    await ws.close(CloseCode.INVALID_DATA, "Invalid data received")
                 except WebSocketException as e:
                     await ws.close(e.code, e.reason)
                 except Exception as e:
@@ -154,7 +159,7 @@ class PacketHandler(BaseEventHandler):
             Event: EventDep,
             Player: PlayerDep,
             Packet: PacketDep,
-            'packet': DelayedInjection(lambda p: Annotated[p.annotation, Depends(get_custom_packet(p.annotation))])
+            "packet": DelayedInjection(lambda p: Annotated[p.annotation, Depends(get_custom_packet(p.annotation))])
         }
 
     def _inject_params(self, func: Callable) -> None:

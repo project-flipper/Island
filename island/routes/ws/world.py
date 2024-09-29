@@ -8,7 +8,7 @@ CLIENT -> Authorization Header  [Verify, //Login//]
 
 scope => single string/Scope, list or tuple or iterable of string/Scope, or callable
 
-@island_event.on(Event(type='PING', scopes=_or(['user:world:auth', 'user:world:init'])))
+@island_event.on(Event(type="PING", scopes=_or(["user:world:auth", "user:world:init"])))
 @has_scope()
 @allow_once
 @disable
@@ -46,14 +46,14 @@ async def handle_authentication(ws: WebSocket) -> int | None:
         async with asyncio.timeout(15):
             packet = await receive_packet(ws, cls=Packet[AuthData])
     except asyncio.TimeoutError:
-        raise WebSocketException(CloseCode.AUTHENTICATION_TIMEOUT, 'Client did not respond within the required time')
+        raise WebSocketException(CloseCode.AUTHENTICATION_TIMEOUT, "Client did not respond within the required time")
 
     try:
         token = packet.d.token
         oauth = await get_oauth_data(token)
         return await get_current_user_id(oauth)
     except HTTPException:
-        raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, 'Authentication failed')
+        raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
 
 
 @router.websocket("/world")
@@ -87,7 +87,7 @@ async def world_connection(ws: WebSocket):
             with _force_fastapi_events_dispatch_as_task():
                 dispatch_packet(player, packet)
     except ValidationError:
-        raise WebSocketException(CloseCode.INVALID_DATA, 'Invalid data received')
+        raise WebSocketException(CloseCode.INVALID_DATA, "Invalid data received")
     except WebSocketDisconnect:
         pass
     except Exception:
