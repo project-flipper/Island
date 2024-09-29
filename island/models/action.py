@@ -8,4 +8,3 @@ class Action(BaseModel):
     fromY: float | None
     destinationX: float | None
     destinationY: float | None
-

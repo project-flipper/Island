@@ -36,6 +36,7 @@ class DelayedInjection:
     def __call__(self, param) -> Any:
         return self._callback(param)
 
+
 class PacketHandler(BaseEventHandler):
     def __init__(self):
         self._registry: dict[str, list[Callable]] = {}
@@ -156,7 +157,11 @@ class PacketHandler(BaseEventHandler):
         return {
             Event: EventDep,
             Packet: PacketDep,
-            "packet": DelayedInjection(lambda p: Annotated[p.annotation, Depends(get_custom_packet(p.annotation))])
+            "packet": DelayedInjection(
+                lambda p: Annotated[
+                    p.annotation, Depends(get_custom_packet(p.annotation))
+                ]
+            ),
         }
 
     def _inject_params(self, func: Callable) -> None:
@@ -224,14 +229,19 @@ EventDep = Annotated[Event, Depends(get_event)]
 def get_packet(event=Depends(get_event)) -> Packet:
     return event[1][1]
 
+
 PacketDep = Annotated[Packet, Depends(get_packet)]
 
-def get_custom_packet(cls = Packet):
+
+def get_custom_packet(cls=Packet):
     def _wrap(p: PacketDep) -> Packet:
         return cls.model_validate(p.model_dump())
+
     return _wrap
 
+
 packet_handlers = PacketHandler()
+
 
 async def send_packet(ws: WebSocket, op: str, d: Any) -> None:
     await ws.send_text(Packet(op=op, d=d).model_dump_json())
