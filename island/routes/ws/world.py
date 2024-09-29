@@ -31,25 +31,30 @@ from island.utils.auth import get_current_user_id, get_oauth_data
 
 router = APIRouter()
 
+
 class AuthData(BaseModel):
     token: str
 
+
 async def receive_packet[P: Packet](ws: WebSocket, *, cls: type[P] = Packet) -> P:
     return cls.model_validate(await ws.receive_json())
+
 
 async def handle_authentication(ws: WebSocket) -> int | None:
     try:
         async with asyncio.timeout(15):
             packet = await receive_packet(ws, cls=Packet[AuthData])
     except asyncio.TimeoutError:
-        raise WebSocketException(CloseCode.AUTHENTICATION_TIMEOUT, "Client did not respond within the required time")
+        raise WebSocketException(
+            CloseCode.AUTHENTICATION_TIMEOUT, "Client did not respond within the required time")
 
     try:
         token = packet.d.token
         oauth = get_oauth_data(token)
         return get_current_user_id(oauth)
     except HTTPException:
-        raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
+        raise WebSocketException(
+            CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
 
 
 @router.websocket("/world")
@@ -75,10 +80,12 @@ async def world_connection(ws: WebSocket):
             with _force_fastapi_events_dispatch_as_task():
                 dispatch_packet(ws, packet)
     except ValidationError:
-        raise WebSocketException(CloseCode.INVALID_DATA, "Invalid data received")
+        raise WebSocketException(
+            CloseCode.INVALID_DATA, "Invalid data received")
     except WebSocketDisconnect:
         pass
     except Exception as e:
-        logger.opt(exception=e).error("An error has occurred inside a WebSocket connection")
+        logger.opt(exception=e).error(
+            "An error has occurred inside a WebSocket connection")
 
     global_dispatch(EventEnum.WORLD_CLIENT_DISCONNECT, ws)
