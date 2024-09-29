@@ -1,7 +1,7 @@
-from island.core.entities import BaseEntity
+from island.entities import LocalEntity
 
 
-class AvatarEntity(BaseEntity):
+class AvatarEntity(LocalEntity):
     @staticmethod
     async def check_color_exists(color_id: int) -> bool:
         colors = await AvatarEntity.get_all_colors()
@@ -14,5 +14,4 @@ class AvatarEntity(BaseEntity):
             # TODO: Populate the cache from database
             raise NotImplementedError()
 
-        colors = await AvatarEntity.get_cache("colors", command="smembers")
-        return set(map(int, colors))
+        return await AvatarEntity.get_cache("colors")
