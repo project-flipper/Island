@@ -7,7 +7,7 @@ from loguru import logger
 
 
 def get_modules(module: ModuleType, /, *, global_namespace: str):
-    """Import all modules and add them to the global namesapce, which can be accessed
+    """Import all modules and add them to the global namespace, which can be accessed
     by the key set by `global_namespace`.
     """
     module_path = str(module.__file__)
