@@ -37,6 +37,7 @@ class DelayedInjection:
     def __call__(self, param) -> Any:
         return self._callback(param)
 
+
 class PacketHandler(BaseEventHandler):
     def __init__(self):
         self._registry: dict[str, list[Callable]] = {}
@@ -124,7 +125,9 @@ class PacketHandler(BaseEventHandler):
                 except WebSocketException as e:
                     await ws.close(e.code, e.reason)
                 except Exception as e:
-                    logger.opt(exception=e).error("An error occurred when dispatching a packet")
+                    logger.opt(exception=e).error(
+                        "An error occurred when dispatching a packet"
+                    )
 
     def _register_handler(
         self,
@@ -157,7 +160,11 @@ class PacketHandler(BaseEventHandler):
         return {
             Event: EventDep,
             Packet: PacketDep,
-            "packet": DelayedInjection(lambda p: Annotated[p.annotation, Depends(get_custom_packet(p.annotation))])
+            "packet": DelayedInjection(
+                lambda p: Annotated[
+                    p.annotation, Depends(get_custom_packet(p.annotation))
+                ]
+            ),
         }
 
     def _inject_params(self, func: Callable) -> None:
@@ -221,28 +228,38 @@ def get_event() -> Event:
 
 EventDep = Annotated[Event, Depends(get_event)]
 
+
 def get_user_id(ws: WebSocket) -> int:
     return ws.state.user_id
+
 
 async def get_current_user(user_id: Annotated[int, Depends(get_user_id)]) -> UserTable:
     user = await UserTable.query_by_id(user_id)
 
     if user is None or user.id != user_id:
-        raise WebSocketException(CloseCode.AUTHENTICATION_FAILED, "Authentication failed")
+        raise WebSocketException(
+            CloseCode.AUTHENTICATION_FAILED, "Authentication failed"
+        )
 
     return user
+
 
 def get_packet(event=Depends(get_event)) -> Packet:
     return event[1][1]
 
+
 PacketDep = Annotated[Packet, Depends(get_packet)]
 
-def get_custom_packet(cls = Packet):
+
+def get_custom_packet(cls=Packet):
     def _wrap(p: PacketDep) -> Packet:
         return cls.model_validate(p.model_dump())
+
     return _wrap
 
+
 packet_handlers = PacketHandler()
+
 
 async def send_packet(ws: WebSocket, op: str, d: Any) -> None:
     await ws.send_text(Packet(op=op, d=d).model_dump_json())

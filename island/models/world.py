@@ -21,7 +21,9 @@ class World(BaseModel):
         return max(round(5 * (population / capacity)), 1)
 
     @classmethod
-    async def from_table(cls, world: WorldTable, *, population: int, has_buddies: bool) -> World:
+    async def from_table(
+        cls, world: WorldTable, *, population: int, has_buddies: bool
+    ) -> World:
         # TODO: get population and buddies
         return cls(
             id=world.id,

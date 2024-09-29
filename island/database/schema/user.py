@@ -35,9 +35,7 @@ class UserTable(Base):
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
 
-    bans: Mapped[list[BanTable]] = relationship(
-        back_populates="user", lazy="selectin"
-    )
+    bans: Mapped[list[BanTable]] = relationship(back_populates="user", lazy="selectin")
     avatar: Mapped[AvatarTable] = relationship(back_populates="user", lazy="joined")
 
     @property
@@ -47,11 +45,14 @@ class UserTable(Base):
     @classmethod
     async def query_by_id(cls, user_id: int) -> UserTable | None:
         from island.database.schema.ban import BanTable
+
         async with ASYNC_SESSION() as session:
             user_query = (
                 select(UserTable)
                 .options(
-                    joinedload(UserTable.bans.and_(BanTable.ban_expire > datetime.now()))
+                    joinedload(
+                        UserTable.bans.and_(BanTable.ban_expire > datetime.now())
+                    )
                 )
                 .where(UserTable.id == user_id)
             )
@@ -61,6 +62,7 @@ class UserTable(Base):
     @classmethod
     async def query_by_username(cls, username: str) -> UserTable | None:
         from island.database.schema.ban import BanTable
+
         async with ASYNC_SESSION() as session:
             now = datetime.now()
             user_query = (
