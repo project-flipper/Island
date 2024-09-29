@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -23,4 +25,4 @@ class AvatarTable(Base):
     flag: Mapped[int] = mapped_column(default=0)
     transformation: Mapped[str] = mapped_column(nullable=True)
 
-    user: Mapped["UserTable"] = relationship(back_populates="avatar", lazy="selectin")
+    user: Mapped[UserTable] = relationship(back_populates="avatar", lazy="selectin")

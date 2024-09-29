@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import datetime
 from typing import TYPE_CHECKING
 
@@ -23,4 +25,4 @@ class BanTable(Base):
     ban_user: Mapped[int] = mapped_column(default=0)
     ban_comment: Mapped[str]
 
-    user: Mapped["UserTable"] = relationship(back_populates="bans", lazy="selectin")
+    user: Mapped[UserTable] = relationship(back_populates="bans", lazy="selectin")
