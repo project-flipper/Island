@@ -8,7 +8,7 @@ from contextlib import AsyncExitStack
 from contextvars import ContextVar
 from typing import Annotated, Any, Callable
 
-from fastapi import Depends, WebSocketException
+from fastapi import Depends, WebSocket, WebSocketException
 from fastapi.dependencies.models import Dependant
 from fastapi.dependencies.utils import (
     get_dependant,
@@ -24,7 +24,6 @@ from pydantic import ValidationError
 
 from island.core.config import WORLD_PACKETS_MIDDLEWARE_ID
 from island.core.constants.close import CloseCode
-from island.core.world.player import Player
 from island.models.packet import Packet
 
 _event: ContextVar[Event] = ContextVar("event")
@@ -85,10 +84,8 @@ class PacketHandler(BaseEventHandler):
         _event.set(event)
 
         event_name, payload = event
-        player: Player = payload[0]
+        ws: WebSocket = payload[0]
         packet: Packet = payload[1]
-
-        ws = player.ws
 
         handlers = self._get_handlers_for_event(event_name=event_name)
 
@@ -121,6 +118,7 @@ class PacketHandler(BaseEventHandler):
                             None, functools.partial(dependant.call, **solved.values)
                         )
                 except ValidationError:
+                    logger.opt(exception=e).error(e)
                     await ws.close(CloseCode.INVALID_DATA, "Invalid data received")
                 except WebSocketException as e:
                     await ws.close(e.code, e.reason)
@@ -157,7 +155,6 @@ class PacketHandler(BaseEventHandler):
     def _get_injection_params(self) -> dict[Any, Any]:
         return {
             Event: EventDep,
-            Player: PlayerDep,
             Packet: PacketDep,
             "packet": DelayedInjection(lambda p: Annotated[p.annotation, Depends(get_custom_packet(p.annotation))])
         }
@@ -211,9 +208,9 @@ class PacketHandler(BaseEventHandler):
         self._registry[event_name].remove(func)
 
 
-def dispatch(player: Player, packet: Packet):
+def dispatch(ws: WebSocket, packet: Packet):
     return event_dispatcher(
-        str(packet.op), [player, packet], middleware_id=WORLD_PACKETS_MIDDLEWARE_ID
+        str(packet.op), [ws, packet], middleware_id=WORLD_PACKETS_MIDDLEWARE_ID
     )
 
 
@@ -222,13 +219,6 @@ def get_event() -> Event:
 
 
 EventDep = Annotated[Event, Depends(get_event)]
-
-
-def get_player(event=Depends(get_event)) -> Player:
-    return event[1][0]
-
-
-PlayerDep = Annotated[Player, Depends(get_player)]
 
 
 def get_packet(event=Depends(get_event)) -> Packet:
