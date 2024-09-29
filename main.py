@@ -56,7 +56,8 @@ print(
 
 def catch_exceptions():
     sys.excepthook = lambda _type, message, stack: (
-        logger.opt(exception=(_type, message, stack)).error("Uncaught Exception")
+        logger.opt(exception=(_type, message, stack)
+                   ).error("Uncaught Exception")
         if not issubclass(_type, (ValidationError, RequestValidationError))
         else logger.error("Validation error occured")
     )
@@ -119,22 +120,24 @@ def get_application() -> FastAPI:
     logger.debug("Island adding Starlette Context Middleware")
     application.add_middleware(RawContextMiddleware)
 
-    #logger.debug("Island adding World Manager Middleware")
-    #application.add_middleware(WorldMiddleware)
+    # logger.debug("Island adding World Manager Middleware")
+    # application.add_middleware(WorldMiddleware)
 
     logger.info("Island adding startup and shutdown events")
 
     logger.info("Island adding exception handlers")
 
     application.add_exception_handler(HTTPException, http_error_handler)
-    application.add_exception_handler(RequestValidationError, http422_error_handler)
+    application.add_exception_handler(
+        RequestValidationError, http422_error_handler)
     application.add_exception_handler(ValidationError, http422_error_handler)
 
     if ISLAND_TYPE is IslandType.REST:
         logger.info("Island adding web API routers")
         application.include_router(router, prefix=_prefix)
     else:
-        logger.debug(f"Island adding Packet Handler ASGI Middleware for {WORLD_PACKETS_MIDDLEWARE_ID}")
+        logger.debug(
+            f"Island adding Packet Handler ASGI Middleware for {WORLD_PACKETS_MIDDLEWARE_ID}")
         application.add_middleware(
             EventHandlerASGIMiddleware,
             handlers=[handlers.packet_handlers],

@@ -107,7 +107,9 @@ for logger_name in LOGGERS:
     logging_logger.handlers = [InterceptHandler(level=LOGGING_LEVEL)]
 
 # User creation
-VALID_USERNAME_REGEX = config("VALID_USERNAME_REGEX", cast=re.compile, default=r"^[a-zA-Z 0-9]+$")
+VALID_USERNAME_REGEX = config(
+    "VALID_USERNAME_REGEX", cast=re.compile, default=r"^[a-zA-Z 0-9]+$"
+)
 ONLY_NUMBERS_REGEX = config("ONLY_NUMBERS_REGEX", cast=re.compile, default=r"^[0-9]+$")
 HAS_LETTERS_REGEX = config("HAS_LETTERS_REGEX", cast=re.compile, default=r"[a-zA-Z]")
 

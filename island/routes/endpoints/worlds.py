@@ -24,4 +24,3 @@ async def get_worlds(lang: int) -> Response[list[World]]:
         world_models.append(world)
 
     return Response(data=world_models, success=True)
-

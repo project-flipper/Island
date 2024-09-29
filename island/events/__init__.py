@@ -7,13 +7,15 @@ from fastapi_events.dispatcher import dispatch as event_dispatcher
 
 from island.core.config import FASTAPI_EVENTS_MIDDLEWARE_ID
 
-__all__ = ('_force_fastapi_events_dispatch_as_task', 'dispatch')
+__all__ = ("_force_fastapi_events_dispatch_as_task", "dispatch")
+
 
 @contextmanager
 def _force_fastapi_events_dispatch_as_task() -> Generator:
     token = in_req_res_cycle.set(False)
     yield
     in_req_res_cycle.reset(token)
+
 
 def dispatch(
     event_name: str | Enum,

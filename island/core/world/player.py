@@ -8,14 +8,19 @@ from fastapi_events.typing import Event
 from island.models.packet import Packet
 from island.models.user import MyUser
 
-_default_check = lambda e: True
+
+def _default_check(e):
+    return True
+
 
 class Player:
     def __init__(self, ws: WebSocket, *, user: MyUser) -> None:
         self.ws = ws
         self.user = user
 
-    async def wait(self, op: str, *, check: Callable[[Event], bool] = _default_check) -> Event:
+    async def wait(
+        self, op: str, *, check: Callable[[Event], bool] = _default_check
+    ) -> Event:
         from island.handlers import packet_handlers
 
         loop = asyncio.get_event_loop()

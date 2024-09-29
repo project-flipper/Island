@@ -7,10 +7,8 @@ from island.routes import endpoints
 from island.routes.ws.world import router as world_router
 
 
-__all__ = (
-    'router',
-    'world_router'
-)
+__all__ = ("router", "world_router")
+
 
 async def language_context_dependency(
     accept_language: Annotated[str | None, Header()] = None
