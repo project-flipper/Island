@@ -9,57 +9,51 @@ from island.models.membership import Membership
 
 
 class BaseUser(BaseModel):
-    id: str
+    id: int
     username: str
     nickname: str
     avatar: Avatar
     member: Membership | None
-    iglooId: int | None
-    mascotId: int | None
+    igloo_id: int | None
+    mascot_id: int | None
 
 
 class User(BaseUser):
     relationship: Relationship | None
-    publicStampbook: bool
+    public_stampbook: bool
     presence: Presence | None
 
     @classmethod
     async def from_table(cls, user: UserTable) -> "User":
-        async with ASYNC_SESSION() as session:
-            user = await session.merge(user)
-
-            return User(
-                id=str(user.id),
-                username=user.username,
-                nickname=user.nickname,
-                avatar=Avatar.model_validate(user.avatar, from_attributes=True),
-                member=None,
-                iglooId=0,
-                mascotId=None,
-                relationship=None,
-                publicStampbook=False,
-                presence=None,
-            )
+        return User(
+            id=user.id,
+            username=user.username,
+            nickname=user.nickname,
+            avatar=Avatar.model_validate(user.avatar, from_attributes=True),
+            member=None,
+            igloo_id=0,
+            mascot_id=None,
+            relationship=None,
+            public_stampbook=False,
+            presence=None,
+        )
 
 
 class MyUser(BaseUser):
-    moderator: bool
-    iglooId: int
-    stealth: bool
+    igloo_id: int
+    is_moderator: bool
+    is_stealth: bool
 
     @classmethod
     async def from_table(cls, user: UserTable) -> "MyUser":
-        async with ASYNC_SESSION() as session:
-            user = await session.merge(user)
-
-            return MyUser(
-                id=str(user.id),
-                username=user.username,
-                nickname=user.nickname,
-                avatar=Avatar.model_validate(user.avatar, from_attributes=True),
-                member=None,
-                iglooId=0,
-                mascotId=None,
-                moderator=True,
-                stealth=False,
-            )
+        return MyUser(
+            id=user.id,
+            username=user.username,
+            nickname=user.nickname,
+            avatar=Avatar.model_validate(user.avatar, from_attributes=True),
+            member=None,
+            igloo_id=0,
+            mascot_id=None,
+            is_moderator=True,
+            is_stealth=False,
+        )

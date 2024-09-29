@@ -2,6 +2,6 @@ from pydantic import BaseModel
 
 
 class Presence(BaseModel):
-    worldId: int
-    roomId: int
-    isMobile: bool
+    world_id: int
+    room_id: int
+    is_mobile: bool
