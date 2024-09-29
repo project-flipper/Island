@@ -109,9 +109,7 @@ async def get_user_scopes(
     return user.scopes if not default_scopes else default_scopes + user.scopes
 
 
-def get_oauth_data(
-    oauth: Annotated[str, Depends(OAUTH2_SCHEME)]
-) -> dict[str, Any]:
+def get_oauth_data(oauth: Annotated[str, Depends(OAUTH2_SCHEME)]) -> dict[str, Any]:
     try:
         data = jwt.decode(oauth, str(SECRET_KEY), algorithms=[JWT_ALGORITHM.value])
     except (jwt.DecodeError, jwt.ExpiredSignatureError):

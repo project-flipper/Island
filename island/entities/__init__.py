@@ -42,6 +42,7 @@ class BaseEntity:
     async def set_cache(cls, key: str, value: Any):
         raise NotImplementedError
 
+
 class Entity(BaseEntity):
     @classmethod
     async def cache_exists(cls, cache_key: str) -> bool:
@@ -66,7 +67,9 @@ class Entity(BaseEntity):
     async def set_cache(cls, key: str, /, *subkeys, command: str):
         return await cls.execute_cache(key, *subkeys, command=command)
 
+
 local_cache = {}
+
 
 class LocalEntity(BaseEntity):
     @classmethod

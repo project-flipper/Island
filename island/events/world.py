@@ -8,9 +8,11 @@ from island.core.constants.events import EventEnum
 async def on_world_connection(event: Event) -> None:
     pass
 
+
 @local_handler.register(event_name=str(EventEnum.WORLD_CLIENT_AUTH))
 async def on_world_auth(event: Event) -> None:
     pass
+
 
 @local_handler.register(event_name=str(EventEnum.WORLD_CLIENT_DISCONNECT))
 async def on_world_disconnection(event: Event) -> None:
