@@ -19,13 +19,13 @@ class World(BaseModel):
         return max(round(5 * (population / capacity)), 1)
 
     @classmethod
-    async def from_table(cls, world: WorldTable) -> "World":
-        # TODO: get population, buddies and url
+    async def from_table(cls, world: WorldTable, *, population: int, has_buddies: bool) -> "World":
+        # TODO: get population and buddies
         return cls(
             id=world.id,
             name=world.name,
-            population=cls.compute_population(0, world.capacity),
+            population=cls.compute_population(population, world.capacity),
             safeChat=world.is_safe,
-            buddies=False,
-            url="localhost",
+            buddies=has_buddies,
+            url=world.url,
         )

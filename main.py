@@ -12,21 +12,24 @@ from starlette.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
 from starlette_context.middleware import RawContextMiddleware
 
+from island.core.constants.type import IslandType
 import island.database.schema as _
-from island import events
+from island import events, handlers
 from island.core.config import (
     ALLOWED_HOSTS,
     API_PREFIX,
     API_VERSION,
     DEBUG,
     FASTAPI_EVENTS_MIDDLEWARE_ID,
+    ISLAND_TYPE,
+    WORLD_ID,
     SENTRY_DSN,
+    WORLD_PACKETS_MIDDLEWARE_ID,
 )
 from island.core.error.http_error import http_error_handler
 from island.core.error.validation_error import http422_error_handler
 from island.core.lifespan import manage_app_lifespan
-from island.middlwares.world import WorldMiddleware
-from island.routes import router
+from island.routes import router, world_router
 from island.utils.routes import get_modules
 
 print(
@@ -71,12 +74,18 @@ def get_application() -> FastAPI:
     catch_exceptions()
     initialize_sentry()
 
+    if ISLAND_TYPE is IslandType.REST:
+        logger.info("Running Island in web API mode")
+    else:
+        logger.info("Running Island in WS endpoint mode")
+        logger.info(f"Island World ID {WORLD_ID}")
+
     logger.debug("docs_url: {}", f"{API_PREFIX}/docs")
     logger.debug("redoc_url: {}", f"{API_PREFIX}/redocs")
     application = FastAPI(
         debug=DEBUG,
         title="Island Server",
-        description="Web API and WS endpoint for ClubPenguin HTML5 client",
+        description=f"{"Web API" if ISLAND_TYPE is IslandType.REST else "WS endpoint"} for ClubPenguin HTML5 client",
         version=API_VERSION,
         docs_url=f"{API_PREFIX}/docs",
         redoc_url=f"{API_PREFIX}/redocs",
@@ -110,8 +119,8 @@ def get_application() -> FastAPI:
     logger.debug("Island adding Starlette Context Middleware")
     application.add_middleware(RawContextMiddleware)
 
-    logger.debug("Island adding World Manager Middleware")
-    application.add_middleware(WorldMiddleware)
+    #logger.debug("Island adding World Manager Middleware")
+    #application.add_middleware(WorldMiddleware)
 
     logger.info("Island adding startup and shutdown events")
 
@@ -121,9 +130,23 @@ def get_application() -> FastAPI:
     application.add_exception_handler(RequestValidationError, http422_error_handler)
     application.add_exception_handler(ValidationError, http422_error_handler)
 
-    logger.info("Island adding routers")
+    if ISLAND_TYPE is IslandType.REST:
+        logger.info("Island adding web API routers")
+        application.include_router(router, prefix=_prefix)
+    else:
+        logger.debug(f"Island adding Packet Handler ASGI Middleware for {WORLD_PACKETS_MIDDLEWARE_ID}")
+        application.add_middleware(
+            EventHandlerASGIMiddleware,
+            handlers=[handlers.packet_handlers],
+            middleware_id=WORLD_PACKETS_MIDDLEWARE_ID,
+        )
 
-    application.include_router(router, prefix=_prefix)
+        logger.info("Island adding packet handlers")
+
+        get_modules(handlers, global_namespace="ISLAND_HANDLERS_LIST")
+
+        logger.info("Island adding WS endpoint routers")
+        application.include_router(world_router, prefix=_prefix)
 
     logger.info("Island adding events")
 
