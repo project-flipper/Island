@@ -232,3 +232,6 @@ def get_custom_packet(cls = Packet):
     return _wrap
 
 packet_handlers = PacketHandler()
+
+async def send_packet(ws: WebSocket, op: str, d: Any) -> None:
+    await ws.send_text(Packet(op=op, d=d).model_dump_json())
