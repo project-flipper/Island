@@ -11,6 +11,7 @@ from .world import WorldTable
 from .games import GameTable
 from .items import ItemTable
 from .jokes import JokeTable
+from .rooms import RoomTable
 from .card import CardTable
 from .user import UserTable
 from .ban import BanTable
@@ -37,4 +38,5 @@ __all__ = (
     'PostcardCollectionTable',
     'PuffleTable',
     'PuffleItemTable',
+    'RoomTable',
 )
