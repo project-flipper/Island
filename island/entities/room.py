@@ -4,8 +4,8 @@ from island.entities.world import BaseWorldEntity
 class RoomEntity(BaseWorldEntity):
     @classmethod
     async def check_player_exists(cls, player_id: int, *, room_id: int) -> bool:
-        colors = await cls.get_all_player_ids(room_id=room_id)
-        return player_id in colors
+        player_ids = await cls.get_all_player_ids(room_id=room_id)
+        return player_id in player_ids
 
     @classmethod
     async def get_all_player_ids(cls, *, room_id: int) -> set[int]:
