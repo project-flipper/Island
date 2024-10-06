@@ -14,3 +14,4 @@ class GameTable(Base):
     music_id: Mapped[int] = mapped_column(Integer)
     stamp_set_id: Mapped[int] = mapped_column(Integer)
     show_player_in_room: Mapped[bool] = mapped_column(default=False)
+    language: Mapped[int] = mapped_column(Integer, default=1)

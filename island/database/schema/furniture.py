@@ -15,4 +15,5 @@ class FurnitureTable(Base):
     member: Mapped[bool] = mapped_column(default=False)
     bait: Mapped[bool] = mapped_column(default=False)
     max_quantity: Mapped[int] = mapped_column(SmallInteger, default=100)
+    language: Mapped[int] = mapped_column(Integer, default=1)
 
