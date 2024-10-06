@@ -5,7 +5,7 @@ from fastapi.responses import Response as HTTPResponse
 from sqlalchemy import func, insert, select
 from starlette import status
 
-from island.core.config import MAX_EMAIL_USAGE
+from island.core.config import MAX_EMAIL_USAGE, SKIP_RECAPTCHA_ON_DEVELOPMENT
 from island.core.i18n import _
 from island.database import ASYNC_SESSION
 from island.database.schema.avatar import AvatarTable
@@ -27,7 +27,11 @@ router = APIRouter()
 
 @router.put("/")
 async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[int]:
-    if not await verify_google_recaptcha(create_form.token):
+    if (
+        (create_form.token is None and SKIP_RECAPTCHA_ON_DEVELOPMENT is not True)
+        or create_form.token is None
+        or not await verify_google_recaptcha(create_form.token)
+    ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail=RecaptchaVerificationError(),

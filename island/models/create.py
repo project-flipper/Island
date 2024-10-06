@@ -19,7 +19,7 @@ class CreateUser(BaseModel):
     color: int
     password: str
     email: str
-    token: str
+    token: str | None
 
     @field_validator("name")
     @classmethod
