@@ -13,11 +13,11 @@ class RoomTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     short_name: Mapped[str] = mapped_column(String(256))
     display_name: Mapped[str] = mapped_column(String(256))
-    music_id: Mapped[int] = mapped_column(Integer)
-    member: Mapped[bool] = mapped_column(default=False)
     path: Mapped[str] = mapped_column(String(256))
-    max_users: Mapped[int] = mapped_column(Integer, default=100)
+    member: Mapped[bool] = mapped_column(default=False)
     jump_enabled: Mapped[bool] = mapped_column(default=False)
+    music_id: Mapped[int] = mapped_column(Integer)
+    max_users: Mapped[int] = mapped_column(Integer, default=100)
     required_item: Mapped[int] = mapped_column(
         Integer, ForeignKey("items.id"), nullable=True
     )
