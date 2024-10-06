@@ -12,7 +12,9 @@ class IglooTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     cost: Mapped[int] = mapped_column(Integer, default=0)
 
-    locations: Mapped[list["IglooLocationTable"]] = relationship("IglooLocationTable", back_populates="igloo")
+    locations: Mapped[list["IglooLocationTable"]] = relationship(
+        "IglooLocationTable", back_populates="igloo"
+    )
 
 
 class IglooLocationTable(Base):

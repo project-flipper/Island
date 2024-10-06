@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, SmallInteger, ForeignKey
 from island.database import Base
 
+
 class PolaroidTable(Base):
     __tablename__ = "polaroids"
 
@@ -12,7 +13,10 @@ class PolaroidTable(Base):
     stamp_count: Mapped[int] = mapped_column(SmallInteger)
     description: Mapped[str] = mapped_column(String(256))
 
-    collection: Mapped["PolaroidCollectionTable"] = relationship("PolaroidCollectionTable", back_populates="polaroids")
+    collection: Mapped["PolaroidCollectionTable"] = relationship(
+        "PolaroidCollectionTable", back_populates="polaroids"
+    )
+
 
 class PolaroidCollectionTable(Base):
     __tablename__ = "polaroids_collection"
@@ -22,4 +26,6 @@ class PolaroidCollectionTable(Base):
     description: Mapped[str] = mapped_column(String(256))
     display: Mapped[str] = mapped_column(String(256))
 
-    polaroids: Mapped["PolaroidTable"] = relationship("PolaroidTable", back_populates="collection")
+    polaroids: Mapped["PolaroidTable"] = relationship(
+        "PolaroidTable", back_populates="collection"
+    )

@@ -13,7 +13,9 @@ class PostcardTable(Base):
     subject: Mapped[str] = mapped_column(String(256))
     in_catalog: Mapped[bool] = mapped_column(default=False)
 
-    collection: Mapped["PostcardCollectionTable"] = relationship("PostcardCollectionTable", back_populates="postcards")
+    collection: Mapped["PostcardCollectionTable"] = relationship(
+        "PostcardCollectionTable", back_populates="postcards"
+    )
 
 
 class PostcardCollectionTable(Base):
@@ -23,4 +25,6 @@ class PostcardCollectionTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     order_position: Mapped[int] = mapped_column(SmallInteger)
 
-    postcards: Mapped["PostcardTable"] = relationship("PostcardTable", back_populates="collection")
+    postcards: Mapped["PostcardTable"] = relationship(
+        "PostcardTable", back_populates="collection"
+    )
