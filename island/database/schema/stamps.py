@@ -19,10 +19,6 @@ class StampTable(Base):
         "StampCollectionTable", back_populates="stamps"
     )
 
-    @property
-    def rank_token(self) -> str:
-        return {1: "easy", 2: "medium", 3: "hard", 4: "extreme"}.get(self.rank, "")
-
 
 class StampCollectionTable(Base):
     __tablename__ = "stamps_collection"
