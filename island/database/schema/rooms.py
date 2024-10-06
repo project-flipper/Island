@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from sqlalchemy import String, SmallInteger, Integer, ForeignKey
+from sqlalchemy import String, Integer, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
