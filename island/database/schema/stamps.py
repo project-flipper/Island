@@ -13,7 +13,6 @@ class StampTable(Base):
     member: Mapped[bool] = mapped_column(default=False)
     rank: Mapped[int] = mapped_column(SmallInteger)
     description: Mapped[str] = mapped_column(String(256))
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
 
     @property
     def rank_token(self) -> str:
@@ -32,4 +31,3 @@ class StampCollectionTable(Base):
     display_name: Mapped[str] = mapped_column(String(256))
     description: Mapped[str] = mapped_column(String(256))
     parent_id: Mapped[int] = mapped_column(ForeignKey("stamps_collection.id"))
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

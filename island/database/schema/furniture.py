@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from sqlalchemy import String, SmallInteger, Integer
+from sqlalchemy import SmallInteger, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
@@ -15,4 +15,3 @@ class FurnitureTable(Base):
     member: Mapped[bool] = mapped_column(default=False)
     bait: Mapped[bool] = mapped_column(default=False)
     max_quantity: Mapped[int] = mapped_column(SmallInteger, default=100)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

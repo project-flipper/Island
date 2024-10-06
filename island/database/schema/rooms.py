@@ -18,7 +18,6 @@ class RoomTable(Base):
     max_users: Mapped[int] = mapped_column(Integer, default=100)
     jump_enabled: Mapped[bool] = mapped_column(default=False)
     required_item: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"), nullable=True)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
     safe_start_x: Mapped[int] = mapped_column(Integer)
     safe_end_x: Mapped[int] = mapped_column(Integer)
     safe_start_y: Mapped[int] = mapped_column(Integer)

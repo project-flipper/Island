@@ -11,7 +11,6 @@ class PostcardTable(Base):
     collection_id: Mapped[int] = mapped_column(ForeignKey("postcards_collection.id"))
     subject: Mapped[str] = mapped_column(String(256))
     in_catalog: Mapped[bool] = mapped_column(default=False)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
 
 class PostcardCollectionTable(Base):
     __tablename__ = "postcards_collection"
@@ -19,4 +18,3 @@ class PostcardCollectionTable(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(256))
     order_position: Mapped[int] = mapped_column(SmallInteger)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

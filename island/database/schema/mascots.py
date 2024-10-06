@@ -11,4 +11,3 @@ class MascotTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     title: Mapped[str] = mapped_column(String(256))
     gift_id: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"))
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

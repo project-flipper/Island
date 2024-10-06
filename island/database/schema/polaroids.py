@@ -19,4 +19,3 @@ class PolaroidCollectionTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     description: Mapped[str] = mapped_column(String(256))
     display: Mapped[str] = mapped_column(String(256))
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

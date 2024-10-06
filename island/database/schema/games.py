@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from sqlalchemy import String, Integer, SmallInteger
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import String, Integer, String
 from island.database import Base
 
 class GameTable(Base):
@@ -14,4 +14,3 @@ class GameTable(Base):
     music_id: Mapped[int] = mapped_column(Integer)
     stamp_set_id: Mapped[int] = mapped_column(Integer)
     show_player_in_room: Mapped[bool] = mapped_column(default=False)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

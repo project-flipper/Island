@@ -14,4 +14,3 @@ class NewspaperTable(Base):
     key: Mapped[str] = mapped_column(String(256))
     issue: Mapped[str] = mapped_column(String(256))
     date: Mapped[datetime] = mapped_column(DateTime, server_default='now()')
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

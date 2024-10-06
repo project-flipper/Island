@@ -12,7 +12,6 @@ class PuffleTable(Base):
     description: Mapped[str] = mapped_column(String(256))
     color: Mapped[int] = mapped_column(Integer)
     member: Mapped[bool] = mapped_column(default=False)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
 
 class PuffleItemTable(Base):
     __tablename__ = "puffle_items"
@@ -33,4 +32,3 @@ class PuffleItemTable(Base):
     effect_play: Mapped[int] = mapped_column(SmallInteger)
     effect_clean: Mapped[int] = mapped_column(SmallInteger)
     reaction: Mapped[list] = mapped_column(ARRAY(Integer))
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

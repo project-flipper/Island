@@ -9,4 +9,3 @@ class TourMessagesTable(Base):
     
     key: Mapped[str] = mapped_column(String(256), primary_key=True)
     message: Mapped[str] = mapped_column(Text)
-    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
