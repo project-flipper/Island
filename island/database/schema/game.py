@@ -11,3 +11,9 @@ class GameStringsTable(Base):
     value: Mapped[str] = mapped_column(Text)
     category: Mapped[str] = mapped_column(String(256))
     language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
+
+class GameOptionsTable(Base):
+    __tablename__ = "game_options"
+
+    key: Mapped[str] = mapped_column(String(256), primary_key=True)
+    value: Mapped[str] = mapped_column(Text)
