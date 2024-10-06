@@ -13,9 +13,6 @@ class FurnitureTable(Base):
     sort: Mapped[int] = mapped_column(SmallInteger, default=1)
     cost: Mapped[int] = mapped_column(Integer, default=0)
     member: Mapped[bool] = mapped_column(default=False)
-    patched: Mapped[bool] = mapped_column(default=False)
-    legacy_inventory: Mapped[bool] = mapped_column(default=False)
-    vanilla_inventory: Mapped[bool] = mapped_column(default=False)
     bait: Mapped[bool] = mapped_column(default=False)
     max_quantity: Mapped[int] = mapped_column(SmallInteger, default=100)
-    innocent: Mapped[bool] = mapped_column(default=False)
+
