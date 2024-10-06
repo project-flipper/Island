@@ -1,5 +1,6 @@
 from .igloo import IglooTable, IglooFloorTable, IglooLocationTable
 from .polaroids import PolaroidTable, PolaroidCollectionTable
+from .postcards import PostcardTable, PostcardCollectionTable
 from .game_strings import GameStringsTable
 from .newspapers import NewspaperTable
 from .furniture import FurnitureTable
@@ -31,4 +32,6 @@ __all__ = (
     'NewspaperTable',
     'PolaroidTable',
     'PolaroidCollectionTable',
+    'PostcardTable',
+    'PostcardCollectionTable',
 )
