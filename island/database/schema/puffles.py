@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from sqlalchemy import String, SmallInteger, Integer, ForeignKey, ARRAY
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from island.database import Base
 
 
@@ -13,6 +13,8 @@ class PuffleTable(Base):
     description: Mapped[str] = mapped_column(String(256))
     color: Mapped[int] = mapped_column(Integer)
     member: Mapped[bool] = mapped_column(default=False)
+
+    parent: Mapped["PuffleTable"] = relationship("PuffleTable", remote_side=[id])
 
 
 class PuffleItemTable(Base):

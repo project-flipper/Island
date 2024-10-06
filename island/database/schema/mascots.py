@@ -1,8 +1,12 @@
 from __future__ import annotations
+from typing import TYPE_CHECKING
 
-from sqlalchemy import String, SmallInteger, Integer, ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String, Integer, ForeignKey
 from island.database import Base
+
+if TYPE_CHECKING:
+    from island.database.schema.items import ItemTable
 
 
 class MascotTable(Base):
@@ -12,3 +16,5 @@ class MascotTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     title: Mapped[str] = mapped_column(String(256))
     gift_id: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"))
+
+    gift: Mapped[ItemTable] = relationship("ItemTable")
