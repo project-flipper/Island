@@ -5,7 +5,6 @@ from .stamps import StampTable, StampCollectionTable
 from .game import GameStringsTable, GameOptionsTable
 from .puffles import PuffleTable, PuffleItemTable
 from .penguins import PenguinColorTable
-from .newspapers import NewspaperTable
 from .furniture import FurnitureTable
 from .tour import TourMessagesTable
 from .mascots import MascotTable
@@ -35,7 +34,6 @@ __all__ = (
     "JokeTable",
     "ItemTable",
     "MascotTable",
-    "NewspaperTable",
     "PolaroidTable",
     "PolaroidCollectionTable",
     "PostcardTable",
