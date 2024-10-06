@@ -3,9 +3,10 @@ from .polaroids import PolaroidTable, PolaroidCollectionTable
 from .postcards import PostcardTable, PostcardCollectionTable
 from .stamps import StampTable, StampCollectionTable
 from .puffles import PuffleTable, PuffleItemTable
-from .game import GameStringsTable
 from .newspapers import NewspaperTable
 from .furniture import FurnitureTable
+from .tour import TourMessagesTable
+from .game import GameStringsTable
 from .mascots import MascotTable
 from .avatar import AvatarTable
 from .world import WorldTable
@@ -42,4 +43,5 @@ __all__ = (
     'RoomTable',
     'StampTable',
     'StampCollectionTable',
+    'TourMessagesTable',
 )
