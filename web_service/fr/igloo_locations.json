@@ -1,0 +1,66 @@
+{
+    "1": {
+        "igloo_location_id": 1,
+        "label": "##Default##",
+        "prompt": "##Defaul##",
+        "igloo_id": 45,
+        "name": "Default",
+        "cost": 0
+    },
+    "2": {
+        "igloo_location_id": 2,
+        "label": "L'Emplacement Plage",
+        "prompt": "L'Emplacement Plage",
+        "igloo_id": 46,
+        "name": "Beach",
+        "cost": 2800
+    },
+    "3": {
+        "igloo_location_id": 3,
+        "label": "L'Emplacement For\u00eat",
+        "prompt": "L'Emplacement For\u00eat",
+        "igloo_id": 47,
+        "name": "Forest",
+        "cost": 2700
+    },
+    "4": {
+        "igloo_location_id": 4,
+        "label": "L'Emplacement Montagne",
+        "prompt": "L'Emplacement Montagne",
+        "igloo_id": 48,
+        "name": "Mountain",
+        "cost": 2800
+    },
+    "5": {
+        "igloo_location_id": 5,
+        "label": "Le Temps des Dinosaures",
+        "prompt": "Le Temps des Dinosaures",
+        "igloo_id": 59,
+        "name": "Age Of Dinosaurs",
+        "cost": 0
+    },
+    "6": {
+        "igloo_location_id": 6,
+        "label": "L'Emplacement Plan\u00e8te Lointaine",
+        "prompt": "L'Emplacement Plan\u00e8te Lointaine",
+        "igloo_id": 72,
+        "name": "Distant Planet",
+        "cost": 1800
+    },
+    "7": {
+        "igloo_location_id": 7,
+        "label": "L'emplacement Terrain de Foot",
+        "prompt": "L'emplacement Terrain de Foot",
+        "igloo_id": 74,
+        "name": "Soccer Pitch",
+        "cost": 1800
+    },
+    "8": {
+        "igloo_location_id": 8,
+        "label": "L'Emplacement Sous l'Eau",
+        "prompt": "L'Emplacement Sous l'Eau",
+        "igloo_id": 80,
+        "name": "Undersea",
+        "cost": 1800
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "0": {
+        "igloo_floor_id": 0,
+        "label": "Servicio de cambio de piso",
+        "prompt": "Servicio de cambio de piso",
+        "cost": 20
+    },
+    "1": {
+        "igloo_floor_id": 1,
+        "label": "Azulejos color terracota",
+        "prompt": "Azulejos color terracota",
+        "cost": 680
+    },
+    "2": {
+        "igloo_floor_id": 2,
+        "label": "Parqu\u00e9 clarito",
+        "prompt": "Parqu\u00e9 clarito",
+        "cost": 620
+    },
+    "3": {
+        "igloo_floor_id": 3,
+        "label": "Alfombra verde",
+        "prompt": "Alfombra verde",
+        "cost": 530
+    },
+    "4": {
+        "igloo_floor_id": 4,
+        "label": "Alfombra color borgo\u00f1a",
+        "prompt": "Alfombra color borgo\u00f1a",
+        "cost": 530
+    },
+    "5": {
+        "igloo_floor_id": 5,
+        "label": "Tabla de ajedrez",
+        "prompt": "Tabla de ajedrez",
+        "cost": 510
+    },
+    "6": {
+        "igloo_floor_id": 6,
+        "label": "Cer\u00e1micos",
+        "prompt": "Cer\u00e1micos",
+        "cost": 540
+    },
+    "7": {
+        "igloo_floor_id": 7,
+        "label": "Pista de baile",
+        "prompt": "Pista de baile",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_floor_id": 8,
+        "label": "Pasos de baile",
+        "prompt": "Pasos de baile",
+        "cost": 280
+    },
+    "9": {
+        "igloo_floor_id": 9,
+        "label": "Piso de bamb\u00fa",
+        "prompt": "Piso de bamb\u00fa",
+        "cost": 370
+    },
+    "10": {
+        "igloo_floor_id": 10,
+        "label": "Hojas de oto\u00f1o",
+        "prompt": "Hojas de oto\u00f1o",
+        "cost": 400
+    },
+    "11": {
+        "igloo_floor_id": 11,
+        "label": "C\u00e9sped azul",
+        "prompt": "C\u00e9sped azul",
+        "cost": 530
+    },
+    "12": {
+        "igloo_floor_id": 12,
+        "label": "Remolino",
+        "prompt": "Remolino",
+        "cost": 750
+    },
+    "13": {
+        "igloo_floor_id": 13,
+        "label": "Parqu\u00e9 color cerezo",
+        "prompt": "Parqu\u00e9 color cerezo",
+        "cost": 620
+    },
+    "14": {
+        "igloo_floor_id": 14,
+        "label": "C\u00e9sped sint\u00e9tico",
+        "prompt": "C\u00e9sped sint\u00e9tico",
+        "cost": 700
+    },
+    "15": {
+        "igloo_floor_id": 15,
+        "label": "Alfombra negra",
+        "prompt": "Alfombra negra",
+        "cost": 530
+    },
+    "16": {
+        "igloo_floor_id": 16,
+        "label": "Azulejos oscuros",
+        "prompt": "Azulejos oscuros",
+        "cost": 800
+    },
+    "17": {
+        "igloo_floor_id": 17,
+        "label": "Alfombra rosa",
+        "prompt": "Alfombra rosa",
+        "cost": 530
+    },
+    "18": {
+        "igloo_floor_id": 18,
+        "label": "Piso de arena",
+        "prompt": "Piso de arena",
+        "cost": 400
+    },
+    "19": {
+        "igloo_floor_id": 19,
+        "label": "Piso cielo azulado",
+        "prompt": "Piso cielo azulado",
+        "cost": 530
+    },
+    "20": {
+        "igloo_floor_id": 20,
+        "label": "Caminito de adoquines",
+        "prompt": "Caminito de adoquines",
+        "cost": 1200
+    },
+    "21": {
+        "igloo_floor_id": 21,
+        "label": "Piso nevado",
+        "prompt": "Piso nevado",
+        "cost": 400
+    },
+    "22": {
+        "igloo_floor_id": 22,
+        "label": "Alfombra verde lima",
+        "prompt": "Alfombra verde lima",
+        "cost": 530
+    },
+    "23": {
+        "igloo_floor_id": 23,
+        "label": "Colchoneta tejida de arroz",
+        "prompt": "Colchoneta tejida de arroz",
+        "cost": 750
+    }
+}

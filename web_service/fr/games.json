@@ -1,0 +1,562 @@
+{
+    "aqua": {
+        "name": "Aquapince",
+        "room_id": 916,
+        "music_id": 0,
+        "stamp_group_id": 13,
+        "path": "sub/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "aqua",
+        "is_hybrid": true
+    },
+    "astro": {
+        "name": "Astrotorpille",
+        "room_id": 900,
+        "music_id": 0,
+        "stamp_group_id": 14,
+        "path": "astro/bootstrap.swf",
+        "show_player_in_room": true,
+        "game_key": "astro",
+        "is_hybrid": true
+    },
+    "balloon": {
+        "name": "Gare aux Cactus",
+        "room_id": 942,
+        "music_id": 613,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/balloon/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "balloon",
+        "is_hybrid": true
+    },
+    "beans": {
+        "name": "Rapido Expresso",
+        "room_id": 901,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "beans/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "beans",
+        "is_hybrid": true
+    },
+    "bell": {
+        "name": "Sonne la Cloche",
+        "room_id": 943,
+        "music_id": 614,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/bell/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "bell",
+        "is_hybrid": true
+    },
+    "bitsandbolts": {
+        "name": "Op. Boulons",
+        "room_id": 956,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "robots/BitsNBolts.swf",
+        "show_player_in_room": true,
+        "game_key": "bitsandbolts",
+        "is_hybrid": true
+    },
+    "book1": {
+        "name": "Peins Avec des Lettres",
+        "room_id": 917,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "book1/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "book1",
+        "is_hybrid": true
+    },
+    "book2": {
+        "name": "Peins Avec des Lettres",
+        "room_id": 918,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "book2/BurntOutBulbs.swf",
+        "show_player_in_room": false,
+        "game_key": "book2",
+        "is_hybrid": true
+    },
+    "book3": {
+        "name": "Peins Avec des Lettres",
+        "room_id": 919,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "book3/LimeGreenDojoClean.swf",
+        "show_player_in_room": false,
+        "game_key": "book3",
+        "is_hybrid": true
+    },
+    "cannon": {
+        "name": "A\u00e9ro Puffle ",
+        "room_id": 955,
+        "music_id": 0,
+        "stamp_group_id": 48,
+        "path": "cannon/cannon.swf",
+        "show_player_in_room": false,
+        "game_key": "cannon",
+        "is_hybrid": true
+    },
+    "card": {
+        "name": "Card-Jitsu",
+        "room_id": 998,
+        "music_id": 116,
+        "stamp_group_id": 38,
+        "path": "card/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "card",
+        "is_hybrid": true
+    },
+    "cart": {
+        "name": "Surf Mines",
+        "room_id": 905,
+        "music_id": 0,
+        "stamp_group_id": 28,
+        "path": "mine/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "cart",
+        "is_hybrid": true
+    },
+    "dancing": {
+        "name": "D\u00e9fi Disco",
+        "room_id": 952,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "dancing/dance.swf",
+        "show_player_in_room": false,
+        "game_key": "dancing",
+        "is_hybrid": true
+    },
+    "feed": {
+        "name": "##Feed A Puffle##",
+        "room_id": 944,
+        "music_id": 616,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/feed/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "feed",
+        "is_hybrid": true
+    },
+    "fire": {
+        "name": "Card-Jitsu Feu",
+        "room_id": 997,
+        "music_id": 118,
+        "stamp_group_id": 32,
+        "path": "fire/fire.swf",
+        "show_player_in_room": false,
+        "game_key": "fire",
+        "is_hybrid": true
+    },
+    "firesensei": {
+        "name": "Card-Jitsu Feu",
+        "room_id": 953,
+        "music_id": 405,
+        "stamp_group_id": 0,
+        "path": "senseiFire/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "firesensei",
+        "is_hybrid": true
+    },
+    "fish": {
+        "name": "Glaglasticot",
+        "room_id": 904,
+        "music_id": 0,
+        "stamp_group_id": 52,
+        "path": "fish/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "fish",
+        "is_hybrid": true
+    },
+    "four": {
+        "name": "4 \u00e0 la Suite",
+        "room_id": 0,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "four/FindFour.swf",
+        "show_player_in_room": false,
+        "game_key": "four",
+        "is_hybrid": true
+    },
+    "hydro": {
+        "name": "Aquabond",
+        "room_id": 903,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "hydro/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "hydro",
+        "is_hybrid": true
+    },
+    "icejam": {
+        "name": "D\u00e9fi",
+        "room_id": 960,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "icejam/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "icejam",
+        "is_hybrid": true
+    },
+    "igloo_card": {
+        "name": "##Igloo Card-Jitsu##",
+        "room_id": 994,
+        "music_id": 116,
+        "stamp_group_id": 38,
+        "path": "card/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "igloo_card",
+        "is_hybrid": true
+    },
+    "jetpack": {
+        "name": "Aventure Jet Pack",
+        "room_id": 906,
+        "music_id": 110,
+        "stamp_group_id": 11,
+        "path": "jetpack/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "jetpack",
+        "is_hybrid": true
+    },
+    "mancala": {
+        "name": "Mancala",
+        "room_id": 0,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "mancala/Mancala.swf",
+        "show_player_in_room": false,
+        "game_key": "mancala",
+        "is_hybrid": true
+    },
+    "memory": {
+        "name": "M\u00e9moire",
+        "room_id": 945,
+        "music_id": 619,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/memory/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "memory",
+        "is_hybrid": true
+    },
+    "mission1": {
+        "name": "##Case of the Missing Puffles##",
+        "room_id": 907,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q1/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission1",
+        "is_hybrid": true
+    },
+    "mission10": {
+        "name": "##Waddle Squad##",
+        "room_id": 923,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q10/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission10",
+        "is_hybrid": true
+    },
+    "mission11": {
+        "name": "##Veggie Villian##",
+        "room_id": 927,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q11/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission11",
+        "is_hybrid": true
+    },
+    "mission2": {
+        "name": "La mission secr\u00e8te de G",
+        "room_id": 908,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q2/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission2",
+        "is_hybrid": true
+    },
+    "mission3": {
+        "name": "Le cas des pi\u00e8ces disparues",
+        "room_id": 911,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q3/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission3",
+        "is_hybrid": true
+    },
+    "mission4": {
+        "name": "##Avalanche Rescue##",
+        "room_id": 913,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q4/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission4",
+        "is_hybrid": true
+    },
+    "mission5": {
+        "name": "##Secret of the Fur##",
+        "room_id": 914,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q5/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission5",
+        "is_hybrid": true
+    },
+    "mission6": {
+        "name": "##Questions for a Crab##",
+        "room_id": 915,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q6/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission6",
+        "is_hybrid": true
+    },
+    "mission7": {
+        "name": "R\u00e9parations de la Grande Horloge",
+        "room_id": 920,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q7/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission7",
+        "is_hybrid": true
+    },
+    "mission8": {
+        "name": "##Mysterious Tremors##",
+        "room_id": 921,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q8/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission8",
+        "is_hybrid": true
+    },
+    "mission9": {
+        "name": "##Operation: Spy and Seek##",
+        "room_id": 922,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "quests/q9/quest.swf",
+        "show_player_in_room": false,
+        "game_key": "mission9",
+        "is_hybrid": true
+    },
+    "mixmaster": {
+        "name": "DJ3K",
+        "room_id": 926,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "mixmaster/ChooseSong.swf",
+        "show_player_in_room": false,
+        "game_key": "mixmaster",
+        "is_hybrid": true
+    },
+    "paddle": {
+        "name": "Puffle Pong",
+        "room_id": 946,
+        "music_id": 615,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/paddle/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "paddle",
+        "is_hybrid": true
+    },
+    "pizzatron": {
+        "name": "Pizzatron 3000",
+        "room_id": 910,
+        "music_id": 0,
+        "stamp_group_id": 54,
+        "path": "pizzatron/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "pizzatron",
+        "is_hybrid": true
+    },
+    "pufflescape": {
+        "name": "Roule Puffle",
+        "room_id": 957,
+        "music_id": 0,
+        "stamp_group_id": 57,
+        "path": "pufflescape/RollerscapeCP_CP.swf",
+        "show_player_in_room": false,
+        "game_key": "pufflescape",
+        "is_hybrid": true
+    },
+    "rescue": {
+        "name": "SOS Puffles !",
+        "room_id": 949,
+        "music_id": 0,
+        "stamp_group_id": 19,
+        "path": "rescue/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "rescue",
+        "is_hybrid": true
+    },
+    "roundup": {
+        "name": "Grouper les Puffles",
+        "room_id": 902,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "roundup/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "roundup",
+        "is_hybrid": true
+    },
+    "scornbattle": {
+        "name": "Bataille de Scorn",
+        "room_id": 958,
+        "music_id": 0,
+        "stamp_group_id": 0,
+        "path": "scornbattle/ScornBattle.swf",
+        "show_player_in_room": false,
+        "game_key": "scornbattle",
+        "is_hybrid": true
+    },
+    "sensei": {
+        "name": "Card-Jitsu",
+        "room_id": 951,
+        "music_id": 403,
+        "stamp_group_id": 0,
+        "path": "sensei/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "sensei",
+        "is_hybrid": true
+    },
+    "shuffle": {
+        "name": "1, 2, 3...Puffle ! ",
+        "room_id": 947,
+        "music_id": 612,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/shuffle/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "shuffle",
+        "is_hybrid": true
+    },
+    "sled": {
+        "name": "Course de Luge",
+        "room_id": 999,
+        "music_id": 117,
+        "stamp_group_id": 0,
+        "path": "sled/SledRacer.swf",
+        "show_player_in_room": false,
+        "game_key": "sled",
+        "is_hybrid": true
+    },
+    "smoothie": {
+        "name": "Smoothie",
+        "room_id": 959,
+        "music_id": 0,
+        "stamp_group_id": 58,
+        "path": "smoothie/smoothie.swf",
+        "show_player_in_room": false,
+        "game_key": "smoothie",
+        "is_hybrid": true
+    },
+    "snow": {
+        "name": "Card-Jitsu Neige",
+        "room_id": 996,
+        "music_id": 0,
+        "stamp_group_id": 60,
+        "path": "snow/snowCP_MP.swf",
+        "show_player_in_room": false,
+        "game_key": "snow",
+        "is_hybrid": true
+    },
+    "soaker": {
+        "name": "Splash les Puffles",
+        "room_id": 941,
+        "music_id": 617,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/soaker/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "soaker",
+        "is_hybrid": true
+    },
+    "spin": {
+        "name": "##Spin The Wheel##",
+        "room_id": 948,
+        "music_id": 618,
+        "stamp_group_id": 0,
+        "path": "cp_party_games/spin/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "spin",
+        "is_hybrid": true
+    },
+    "spydrills": {
+        "name": "Entra\u00eenement d'\u00c9lite",
+        "room_id": 963,
+        "music_id": 397,
+        "stamp_group_id": 0,
+        "path": "spydrills/spydrills.swf",
+        "show_player_in_room": true,
+        "game_key": "spydrills",
+        "is_hybrid": true
+    },
+    "systemdefend": {
+        "name": "D\u00e9fenseur de Syst\u00e8me",
+        "room_id": 950,
+        "music_id": 0,
+        "stamp_group_id": 46,
+        "path": "tower/main.swf",
+        "show_player_in_room": true,
+        "game_key": "systemdefend",
+        "is_hybrid": true
+    },
+    "thinice": {
+        "name": "Chaud Devant",
+        "room_id": 909,
+        "music_id": 0,
+        "stamp_group_id": 16,
+        "path": "thinice/bootstrap.swf",
+        "show_player_in_room": true,
+        "game_key": "thinice",
+        "is_hybrid": true
+    },
+    "treasurehunt": {
+        "name": "Chasse au Tr\u00e9sor",
+        "room_id": 0,
+        "music_id": 0,
+        "stamp_group_id": 56,
+        "path": "treasurehunt/TreasureHunt.swf",
+        "show_player_in_room": false,
+        "game_key": "treasurehunt",
+        "is_hybrid": true
+    },
+    "water": {
+        "name": "Card-Jitsu Eau",
+        "room_id": 995,
+        "music_id": 0,
+        "stamp_group_id": 34,
+        "path": "water/water.swf",
+        "show_player_in_room": false,
+        "game_key": "water",
+        "is_hybrid": true
+    },
+    "watersensei": {
+        "name": "Card-Jitsu Eau",
+        "room_id": 954,
+        "music_id": 406,
+        "stamp_group_id": 0,
+        "path": "watersensei/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "watersensei",
+        "is_hybrid": true
+    },
+    "waves": {
+        "name": "Prendre la Vague",
+        "room_id": 912,
+        "music_id": 0,
+        "stamp_group_id": 15,
+        "path": "waves/bootstrap.swf",
+        "show_player_in_room": false,
+        "game_key": "waves",
+        "is_hybrid": true
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "0": {
+        "puffle_id": 0,
+        "description": "celeste",
+        "color": 3394815
+    },
+    "1": {
+        "puffle_id": 1,
+        "description": "rosa",
+        "color": 16764159
+    },
+    "2": {
+        "puffle_id": 2,
+        "description": "negro",
+        "color": 6710886
+    },
+    "3": {
+        "puffle_id": 3,
+        "description": "verde",
+        "color": 3394560
+    },
+    "4": {
+        "puffle_id": 4,
+        "description": "violeta",
+        "color": 11362246
+    },
+    "5": {
+        "puffle_id": 5,
+        "description": "rojo",
+        "color": 15615044
+    },
+    "6": {
+        "puffle_id": 6,
+        "description": "amarillo",
+        "color": 16776960
+    },
+    "7": {
+        "puffle_id": 7,
+        "description": "blanco",
+        "color": 16777198
+    },
+    "8": {
+        "puffle_id": 8,
+        "description": "naranja",
+        "color": 16750848
+    },
+    "9": {
+        "puffle_id": 9,
+        "description": "caf\u00e9",
+        "color": 7489821
+    },
+    "10": {
+        "puffle_id": 10,
+        "description": "multicolor",
+        "color": 0
+    },
+    "11": {
+        "puffle_id": 11,
+        "description": "##Gold##",
+        "color": 0
+    }
+}

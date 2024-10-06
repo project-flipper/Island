@@ -1,0 +1,152 @@
+{
+    "Cart\u00f5es Especiais": {
+        "order_position": 2,
+        "43": {
+            "subject": "Puffles Felizes",
+            "in_catalog": true
+        },
+        "36": {
+            "subject": "Voc\u00ea \u00e9 uma com\u00e9dia!",
+            "in_catalog": true
+        },
+        "62": {
+            "subject": "Vem brincar comigo!",
+            "in_catalog": true
+        },
+        "217": {
+            "subject": "Vamos explorar!",
+            "in_catalog": true
+        }
+    },
+    "Amizade": {
+        "order_position": 3,
+        "56": {
+            "subject": "E a\u00ed, pinguim?",
+            "in_catalog": true
+        },
+        "201": {
+            "subject": "Valeu!",
+            "in_catalog": true
+        },
+        "200": {
+            "subject": "Vamos contar hist\u00f3rias",
+            "in_catalog": true
+        },
+        "26": {
+            "subject": "Adorei a sua roupa",
+            "in_catalog": true
+        },
+        "88": {
+            "subject": "Passeio",
+            "in_catalog": true
+        },
+        "25": {
+            "subject": "Sua roupa \u00e9 demais",
+            "in_catalog": true
+        },
+        "64": {
+            "subject": "Visita",
+            "in_catalog": true
+        },
+        "24": {
+            "subject": "Que nome legal",
+            "in_catalog": true
+        },
+        "35": {
+            "subject": "Legal ver voc\u00ea",
+            "in_catalog": true
+        },
+        "32": {
+            "subject": "Voc\u00ea \u00e9 um amig\u00e3o",
+            "in_catalog": true
+        },
+        "57": {
+            "subject": "Quer ser meu amigo?",
+            "in_catalog": true
+        }
+    },
+    "Puffles": {
+        "order_position": 4,
+        "231": {
+            "subject": "Seus Puffles S\u00e3o Legais",
+            "in_catalog": true
+        },
+        "222": {
+            "subject": "Traga Seus Puffles",
+            "in_catalog": true
+        },
+        "219": {
+            "subject": "Melhores Amigos!!",
+            "in_catalog": true
+        }
+    },
+    "Iglu": {
+        "order_position": 5,
+        "1": {
+            "subject": "Redecorar meu iglu",
+            "in_catalog": true
+        },
+        "27": {
+            "subject": "Festa no meu iglu",
+            "in_catalog": true
+        },
+        "61": {
+            "subject": "Festa no Iglu",
+            "in_catalog": true
+        },
+        "202": {
+            "subject": "Passa l\u00e1 no meu iglu",
+            "in_catalog": true
+        }
+    },
+    "Jogos": {
+        "order_position": 6,
+        "10": {
+            "subject": "Mancala",
+            "in_catalog": true
+        },
+        "52": {
+            "subject": "Montanha",
+            "in_catalog": true
+        },
+        "218": {
+            "subject": "Olha s\u00f3!",
+            "in_catalog": true
+        },
+        "59": {
+            "subject": "Ligue-4",
+            "in_catalog": true
+        },
+        "206": {
+            "subject": "Livro de selos!",
+            "in_catalog": true
+        },
+        "19": {
+            "subject": "Valeu pelo Jogo",
+            "in_catalog": true
+        }
+    },
+    "Lugares": {
+        "order_position": 7,
+        "29": {
+            "subject": "Vamos Tentar Virar!",
+            "in_catalog": true
+        },
+        "55": {
+            "subject": "Dojo",
+            "in_catalog": true
+        },
+        "21": {
+            "subject": "Piscina",
+            "in_catalog": true
+        },
+        "20": {
+            "subject": "Forte Nevado",
+            "in_catalog": true
+        },
+        "30": {
+            "subject": "Lago Secreto",
+            "in_catalog": true
+        }
+    }
+}

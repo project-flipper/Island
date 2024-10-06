@@ -1,0 +1,146 @@
+{
+    "0": {
+        "igloo_floor_id": 0,
+        "label": "Remo\u00e7\u00e3o de Piso",
+        "prompt": "Remo\u00e7\u00e3o de Piso",
+        "cost": 20
+    },
+    "1": {
+        "igloo_floor_id": 1,
+        "label": "Piso Barra de Chocolate",
+        "prompt": "Piso Barra de Chocolate",
+        "cost": 680
+    },
+    "2": {
+        "igloo_floor_id": 2,
+        "label": "Piso Calda de A\u00e7\u00facar",
+        "prompt": "Piso Calda de A\u00e7\u00facar",
+        "cost": 620
+    },
+    "3": {
+        "igloo_floor_id": 3,
+        "label": "Carpete Verde",
+        "prompt": "Carpete Verde",
+        "cost": 530
+    },
+    "4": {
+        "igloo_floor_id": 4,
+        "label": "Carpete Bombom",
+        "prompt": "Carpete Bombom",
+        "cost": 530
+    },
+    "5": {
+        "igloo_floor_id": 5,
+        "label": "Piso Branco e Preto",
+        "prompt": "Piso Branco e Preto",
+        "cost": 510
+    },
+    "6": {
+        "igloo_floor_id": 6,
+        "label": "Piso Diamante Azul",
+        "prompt": "Piso Diamante Azul",
+        "cost": 540
+    },
+    "7": {
+        "igloo_floor_id": 7,
+        "label": "Pista de Dan\u00e7a",
+        "prompt": "Pista de Dan\u00e7a",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_floor_id": 8,
+        "label": "Passos de Dan\u00e7a",
+        "prompt": "Passos de Dan\u00e7a",
+        "cost": 280
+    },
+    "9": {
+        "igloo_floor_id": 9,
+        "label": "Piso de Bambu",
+        "prompt": "Piso de Bambu",
+        "cost": 370
+    },
+    "10": {
+        "igloo_floor_id": 10,
+        "label": "Terra e Folhas",
+        "prompt": "Terra e Folhas",
+        "cost": 400
+    },
+    "11": {
+        "igloo_floor_id": 11,
+        "label": "Carpete Azul do C\u00e9u",
+        "prompt": "Carpete Azul do C\u00e9u",
+        "cost": 530
+    },
+    "12": {
+        "igloo_floor_id": 12,
+        "label": "Redemoinho",
+        "prompt": "Redemoinho",
+        "cost": 750
+    },
+    "13": {
+        "igloo_floor_id": 13,
+        "label": "T\u00e1buas de Cerejeira",
+        "prompt": "T\u00e1buas de Cerejeira",
+        "cost": 620
+    },
+    "14": {
+        "igloo_floor_id": 14,
+        "label": "Grama Sint\u00e9tica",
+        "prompt": "Grama Sint\u00e9tica",
+        "cost": 700
+    },
+    "15": {
+        "igloo_floor_id": 15,
+        "label": "Carpete Preto",
+        "prompt": "Carpete Preto",
+        "cost": 530
+    },
+    "16": {
+        "igloo_floor_id": 16,
+        "label": "Piso Chocolate Meio Amargo",
+        "prompt": "Piso Chocolate Meio Amargo",
+        "cost": 800
+    },
+    "17": {
+        "igloo_floor_id": 17,
+        "label": "Carpete Rosa",
+        "prompt": "Carpete Rosa",
+        "cost": 530
+    },
+    "18": {
+        "igloo_floor_id": 18,
+        "label": "Areia",
+        "prompt": "Areia",
+        "cost": 400
+    },
+    "19": {
+        "igloo_floor_id": 19,
+        "label": "Piso dos Sonhos",
+        "prompt": "Piso dos Sonhos",
+        "cost": 530
+    },
+    "20": {
+        "igloo_floor_id": 20,
+        "label": "Piso P\u00e9 de Moleque",
+        "prompt": "Piso P\u00e9 de Moleque",
+        "cost": 1200
+    },
+    "21": {
+        "igloo_floor_id": 21,
+        "label": "Piso Nevado",
+        "prompt": "Piso Nevado",
+        "cost": 400
+    },
+    "22": {
+        "igloo_floor_id": 22,
+        "label": "Carpete Verde-Lim\u00e3o",
+        "prompt": "Carpete Verde-Lim\u00e3o",
+        "cost": 530
+    },
+    "23": {
+        "igloo_floor_id": 23,
+        "label": "Tapete de R\u00e1fia Org\u00e2nica",
+        "prompt": "Tapete de R\u00e1fia Org\u00e2nica",
+        "cost": 750
+    }
+}

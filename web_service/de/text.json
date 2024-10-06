@@ -1,0 +1,93 @@
+﻿{
+    "dynamic": {
+        "D1": "sind jetzt verfügbar!",
+        "D2": "ist jetzt verfügbar!",
+        "D3": "sind online!",
+        "D4": "ist online!",
+        "D5": "Du hast {0} Freundschaftsanfragen!",
+        "D6": "möchte dein Freund sein!",
+        "D7": "Besten Freund entfernen",
+        "D8": "Du bist jetzt mit {0} befreundet!",
+        "D9": "Freunde",
+        "D10": "Besten Freund hinzufügen",
+        "D11": "Wähle deine besten Freunde.",
+        "D12": "Du hast {0} neue Freunde!",
+        "D14": "Dieser Raum ist leider voll.",
+        "D15": "Offline",
+        "D17": "Sorry, dieser Spieler wurde nicht gefunden. Versuche es mit einem anderen Namen.",
+        "D18": "Hoppla! Du kannst dich nicht zu deiner eigenen Freundesliste hinzufügen.",
+        "D19": "Du bist schon mit {0} befreundet. Versuche es mit einem anderen Namen.",
+        "D20": "{0} ist bereits auf deiner Ignorieren-Liste. Gehe zu den Einstellungen, um diesen Spieler von der Ignorieren-Liste zu entfernen.",
+        "D21": "Neue Freunde!",
+        "D22": "Iglu",
+        "D23": "Online",
+        "D24": "Unterwegs",
+        "D25": "ist angemeldet!",
+        "D26": "Deine Eltern müssen deinen Pinguin aktivieren, bevor du Freunde hinzufügen kannst.",
+        "D27": "Zur Aktivierung"
+    },
+    "S1": {
+        "h": "Freunde"
+    },
+    "S2": {
+        "t": "Feld schließen"
+    },
+    "S3": {
+        "h": "Spieler finden"
+    },
+    "S4": {
+        "t": "Nach einem Freund suchen"
+    },
+    "S5": {
+        "h": "Finden"
+    },
+    "S6": {
+        "t": "Wieder verbinden…"
+    },
+    "S7": {
+        "t": "Spielerkarte anzeigen"
+    },
+    "S8": {
+        "h": "+ Hinzufügen"
+    },
+    "S9": {
+        "h": "Nein danke"
+    },
+    "S10": {
+        "t": "Gehe zu einem Freund im Spiel"
+    },
+    "S11": {
+        "h": "Akzeptiert"
+    },
+    "S12": {
+        "a": "*",
+        "t": "Besten Freund entfernen"
+    },
+    "S14": {
+        "h": "Offline"
+    },
+    "S15": {
+        "t": "Nach oben scrollen"
+    },
+    "S16": {
+        "t": "Nach unten scrollen"
+    },
+    "S17": {
+        "a": "Avatar"
+    },
+    "S18": {
+        "t": "Klicke das Widget an und bewege es"
+    },
+    "S19": {
+        "t": "Freundesliste"
+    },
+    "S20": {
+        "t": "Nach oben scrollen/Nach unten scrollen"
+    },
+    "S21": {
+        "h": "Spielernamen eingeben"
+    },
+    "S22": {
+        "t": "Hinzufügen"
+    }
+}

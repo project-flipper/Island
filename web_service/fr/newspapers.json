@@ -1,0 +1,51 @@
+{
+    "0": {
+        "title": "##LETTER FROM THE EDITOR##",
+        "path": "news/papers/20170322",
+        "issue": "N\u00b0566",
+        "date": "mars 22, 2017",
+        "key": "current_news"
+    },
+    "1": {
+        "title": "BONNES GLISSADES",
+        "path": "news/papers/20170201",
+        "issue": "N\u00b0565",
+        "date": "f\u00e9vrier 01, 2017",
+        "key": "old_news0"
+    },
+    "2": {
+        "title": "NOUVELLE ANN\u00c9E, NOUVEAUX HORIZONS\u00a0!",
+        "path": "news/papers/20170104",
+        "issue": "N\u00b0564",
+        "date": "janvier 04, 2017",
+        "key": "old_news1"
+    },
+    "3": {
+        "title": "UNE AVALANCHE DE PI\u00c8CES\u00a0!",
+        "path": "news/papers/20161214",
+        "issue": "N\u00b0563",
+        "date": "d\u00e9cembre 14, 2016",
+        "key": "old_news2"
+    },
+    "4": {
+        "title": "LES TRADITIONS DE NO\u00cbL SONT DE RETOUR\u00a0!",
+        "path": "news/papers/20161130",
+        "issue": "N\u00b0562",
+        "date": "novembre 30, 2016",
+        "key": "old_news3"
+    },
+    "5": {
+        "title": "COMMENT \u00c9CRIRE UN TUBE",
+        "path": "news/papers/20161116",
+        "issue": "N\u00b0561",
+        "date": "novembre 16, 2016",
+        "key": "old_news4"
+    },
+    "6": {
+        "title": "LE GROUPE EST DE RETOUR\u00a0!",
+        "path": "news/papers/20161102",
+        "issue": "N\u00b0560",
+        "date": "novembre 02, 2016",
+        "key": "old_news5"
+    }
+}

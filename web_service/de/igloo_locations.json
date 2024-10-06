@@ -1,0 +1,66 @@
+{
+    "1": {
+        "igloo_location_id": 1,
+        "label": "##Default##",
+        "prompt": "##Defaul##",
+        "igloo_id": 45,
+        "name": "Default",
+        "cost": 0
+    },
+    "2": {
+        "igloo_location_id": 2,
+        "label": "Strand",
+        "prompt": "Strand",
+        "igloo_id": 46,
+        "name": "Beach",
+        "cost": 2800
+    },
+    "3": {
+        "igloo_location_id": 3,
+        "label": "Wald",
+        "prompt": "Wald",
+        "igloo_id": 47,
+        "name": "Forest",
+        "cost": 2700
+    },
+    "4": {
+        "igloo_location_id": 4,
+        "label": "Berg",
+        "prompt": "Berg",
+        "igloo_id": 48,
+        "name": "Mountain",
+        "cost": 2800
+    },
+    "5": {
+        "igloo_location_id": 5,
+        "label": "Dino-Zeitalter",
+        "prompt": "Dino-Zeitalter",
+        "igloo_id": 59,
+        "name": "Age Of Dinosaurs",
+        "cost": 0
+    },
+    "6": {
+        "igloo_location_id": 6,
+        "label": "Entfernter Planet",
+        "prompt": "Entfernter Planet",
+        "igloo_id": 72,
+        "name": "Distant Planet",
+        "cost": 1800
+    },
+    "7": {
+        "igloo_location_id": 7,
+        "label": "Fu\u00dfballplatz",
+        "prompt": "Fu\u00dfballplatz",
+        "igloo_id": 74,
+        "name": "Soccer Pitch",
+        "cost": 1800
+    },
+    "8": {
+        "igloo_location_id": 8,
+        "label": "Unter Wasser",
+        "prompt": "Unter Wasser",
+        "igloo_id": 80,
+        "name": "Undersea",
+        "cost": 1800
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "0": {
+        "title": "##LETTER FROM THE EDITOR##",
+        "path": "news/papers/20170322",
+        "issue": "Edi\u00e7\u00e3o 566",
+        "date": "22/mar\u00e7o/2017",
+        "key": "current_news"
+    },
+    "1": {
+        "title": "PINGUINANDO",
+        "path": "news/papers/20170201",
+        "issue": "Edi\u00e7\u00e3o 565",
+        "date": "01/fevereiro/2017",
+        "key": "old_news0"
+    },
+    "2": {
+        "title": "NOVO ANO, NOVOS HORIZONTES!",
+        "path": "news/papers/20170104",
+        "issue": "Edi\u00e7\u00e3o 564",
+        "date": "04/janeiro/2017",
+        "key": "old_news1"
+    },
+    "3": {
+        "title": "VENHAM, MOEDAS!",
+        "path": "news/papers/20161214",
+        "issue": "Edi\u00e7\u00e3o 563",
+        "date": "14/dezembro/2016",
+        "key": "old_news2"
+    },
+    "4": {
+        "title": "A TRADI\u00c7\u00c3O DE FIM DE ANO EST\u00c1 DE VOLTA",
+        "path": "news/papers/20161130",
+        "issue": "Edi\u00e7\u00e3o 562",
+        "date": "30/novembro/2016",
+        "key": "old_news3"
+    },
+    "5": {
+        "title": "COMO COMPOR UM SUCESSO",
+        "path": "news/papers/20161116",
+        "issue": "Edi\u00e7\u00e3o 561",
+        "date": "16/novembro/2016",
+        "key": "old_news4"
+    },
+    "6": {
+        "title": "A BANDA EST\u00c1 DE VOLTA!",
+        "path": "news/papers/20161102",
+        "issue": "Edi\u00e7\u00e3o 560",
+        "date": "02/novembro/2016",
+        "key": "old_news5"
+    }
+}

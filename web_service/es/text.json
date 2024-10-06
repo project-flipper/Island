@@ -1,0 +1,93 @@
+﻿{
+    "dynamic": {
+        "D1": "¡ahora están disponibles!",
+        "D2": "¡ahora está disponible!",
+        "D3": "¡están conectados!",
+        "D4": "¡se ha conectado!",
+        "D5": "¡Tienes {0} pedidos de amistad!",
+        "D6": "¡quiere ser tu amigo!",
+        "D7": "Dejar de ser Mejor amigo",
+        "D8": "¡{0} y tú ahora son amigos!",
+        "D9": "Amigos",
+        "D10": "Ser Mejor amigo",
+        "D11": "Elige a tus mejores amigos.",
+        "D12": "¡Tienes {0} amigos nuevos!",
+        "D14": "¡Uy! La sala está completa.",
+        "D15": "Desconectado",
+        "D17": "¡Uy! No encontramos a ese jugador. Intenta con otro nombre.",
+        "D18": "¡Uy! No te puedes agregar a tu propia lista de amigos.",
+        "D19": "{0} ya es tu amigo. Intenta con otro nombre.",
+        "D20": "{0} ya está en tu lista de Ignorados. Para quitarlo de Ignorados, ve a Configuración.",
+        "D21": "amigos nuevos!",
+        "D22": "Iglú",
+        "D23": "en el sitio",
+        "D24": "en un móvil",
+        "D25": "se ha conectado!",
+        "D26": "Para poder agregar amigos, pídeles a tus padres que activen tu cuenta.",
+        "D27": "Acerca de la activación"
+    },
+    "S1": {
+        "h": "Amigos"
+    },
+    "S2": {
+        "t": "Cerrar ventana"
+    },
+    "S3": {
+        "h": "Buscar jugador"
+    },
+    "S4": {
+        "t": "Buscar amigo"
+    },
+    "S5": {
+        "h": "Buscar"
+    },
+    "S6": {
+        "t": "Reconectando.."
+    },
+    "S7": {
+        "t": "Mostrar carta de juego"
+    },
+    "S8": {
+        "h": "+ Agregar"
+    },
+    "S9": {
+        "h": "No, gracias."
+    },
+    "S10": {
+        "t": "Buscar amigo en el juego"
+    },
+    "S11": {
+        "h": "Aceptado"
+    },
+    "S12": {
+        "a": "*",
+        "t": "Ser de ser Mejor amigo"
+    },
+    "S14": {
+        "h": "Desconectado"
+    },
+    "S15": {
+        "t": "Subir"
+    },
+    "S16": {
+        "t": "Bajar"
+    },
+    "S17": {
+        "a": "Avatar"
+    },
+    "S18": {
+        "t": "Arrastra el panel y suéltalo"
+    },
+    "S19": {
+        "t": "Amigos"
+    },
+    "S20": {
+        "t": "Subir/Bajar"
+    },
+    "S21": {
+        "h": "Nombre"
+    },
+    "S22": {
+        "t": "Agregar"
+    }
+}

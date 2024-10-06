@@ -1,0 +1,535 @@
+{
+    "7": {
+        "name": "Activit\u00e9s",
+        "description": "##Doing things in-game##",
+        "display": "Activit\u00e9s",
+        "polaroids": [
+            {
+                "polaroid_id": 1,
+                "stamp_count": 1,
+                "description": "Activities_A"
+            },
+            {
+                "polaroid_id": 2,
+                "stamp_count": 9,
+                "description": "Activities_B"
+            },
+            {
+                "polaroid_id": 3,
+                "stamp_count": 17,
+                "description": "Activities_C"
+            }
+        ]
+    },
+    "13": {
+        "name": "Aquapince",
+        "description": "##Aqua Grabber related stamps##",
+        "display": "Jeux : Aquapince",
+        "polaroids": [
+            {
+                "polaroid_id": 4,
+                "stamp_count": 1,
+                "description": "aquagrabber_A"
+            },
+            {
+                "polaroid_id": 5,
+                "stamp_count": 10,
+                "description": "aquagrabber_B"
+            },
+            {
+                "polaroid_id": 6,
+                "stamp_count": 20,
+                "description": "aquagrabber_C"
+            }
+        ]
+    },
+    "14": {
+        "name": "Astrotorpille",
+        "description": "##Astro Barrier related stamps##",
+        "display": "Jeux : Astrotorpille",
+        "polaroids": [
+            {
+                "polaroid_id": 7,
+                "stamp_count": 1,
+                "description": "astrobarrier_A"
+            },
+            {
+                "polaroid_id": 8,
+                "stamp_count": 6,
+                "description": "astrobarrier_B"
+            },
+            {
+                "polaroid_id": 9,
+                "stamp_count": 12,
+                "description": "astrobarrier_C"
+            }
+        ]
+    },
+    "11": {
+        "name": "Aventure Jet Pack",
+        "description": "##All stamps for flying##",
+        "display": "Jeux : Aventure Jet Pack",
+        "polaroids": [
+            {
+                "polaroid_id": 13,
+                "stamp_count": 1,
+                "description": "jetpack_A"
+            },
+            {
+                "polaroid_id": 14,
+                "stamp_count": 7,
+                "description": "jetpack_B"
+            },
+            {
+                "polaroid_id": 15,
+                "stamp_count": 14,
+                "description": "jetpack_C"
+            },
+            {
+                "polaroid_id": 41,
+                "stamp_count": 18,
+                "description": "jetpack_D"
+            }
+        ]
+    },
+    "48": {
+        "name": "A\u00e9ro Puffle ",
+        "description": "A\u00e9ro Puffle ",
+        "display": "Jeux : A\u00e9ro Puffle ",
+        "polaroids": [
+            {
+                "polaroid_id": 56,
+                "stamp_count": 1,
+                "description": "pufflelaunch_1"
+            },
+            {
+                "polaroid_id": 57,
+                "stamp_count": 6,
+                "description": "pufflelaunch_2"
+            },
+            {
+                "polaroid_id": 58,
+                "stamp_count": 12,
+                "description": "pufflelaunch_3"
+            }
+        ]
+    },
+    "38": {
+        "name": "Card-Jitsu",
+        "description": "##Card-Jitsu Original##",
+        "display": "Jeux : Card-Jitsu",
+        "polaroids": [
+            {
+                "polaroid_id": 42,
+                "stamp_count": 1,
+                "description": "Card_Jitsu_Basic_A"
+            },
+            {
+                "polaroid_id": 43,
+                "stamp_count": 5,
+                "description": "Card_Jitsu_Basic_B"
+            },
+            {
+                "polaroid_id": 44,
+                "stamp_count": 10,
+                "description": "Card_Jitsu_Basic_C"
+            }
+        ]
+    },
+    "34": {
+        "name": "Card-Jitsu : Eau",
+        "description": "##Card-Jitsu Water##",
+        "display": "Jeux : Card-Jitsu : Eau",
+        "polaroids": [
+            {
+                "polaroid_id": 48,
+                "stamp_count": 1,
+                "description": "Card_Jitsu_Water_A"
+            },
+            {
+                "polaroid_id": 49,
+                "stamp_count": 4,
+                "description": "Card_Jitsu_Water_B"
+            },
+            {
+                "polaroid_id": 50,
+                "stamp_count": 8,
+                "description": "Card_Jitsu_Water_C"
+            }
+        ]
+    },
+    "32": {
+        "name": "Card-Jitsu : Feu",
+        "description": "##Card-Jitsu Fire##",
+        "display": "Jeux : Card-Jitsu : Feu",
+        "polaroids": [
+            {
+                "polaroid_id": 45,
+                "stamp_count": 1,
+                "description": "Card_Jitsu_Fire_A"
+            },
+            {
+                "polaroid_id": 46,
+                "stamp_count": 4,
+                "description": "Card_Jitsu_Fire_B"
+            },
+            {
+                "polaroid_id": 47,
+                "stamp_count": 8,
+                "description": "Card_Jitsu_Fire_C"
+            }
+        ]
+    },
+    "60": {
+        "name": "Card-Jitsu : Neige",
+        "description": "##Card-Jitsu Snow##",
+        "display": "Jeux : Card-Jitsu : Neige",
+        "polaroids": [
+            {
+                "polaroid_id": 77,
+                "stamp_count": 5,
+                "description": "polaroid 1"
+            },
+            {
+                "polaroid_id": 78,
+                "stamp_count": 12,
+                "description": "polaroid 2"
+            },
+            {
+                "polaroid_id": 79,
+                "stamp_count": 21,
+                "description": "polaroid 3"
+            }
+        ]
+    },
+    "56": {
+        "name": "Chasse au Tr\u00e9sor",
+        "description": "##Treasure Hunt Stamps##",
+        "display": "Jeux : Chasse Au Tr\u00e9sor",
+        "polaroids": [
+            {
+                "polaroid_id": 68,
+                "stamp_count": 1,
+                "description": ""
+            },
+            {
+                "polaroid_id": 69,
+                "stamp_count": 3,
+                "description": ""
+            },
+            {
+                "polaroid_id": 70,
+                "stamp_count": 5,
+                "description": ""
+            }
+        ]
+    },
+    "16": {
+        "name": "Chaud Devant",
+        "description": "##Don't fall through!##",
+        "display": "Jeux : Chaud Devant",
+        "polaroids": [
+            {
+                "polaroid_id": 22,
+                "stamp_count": 1,
+                "description": "thinice_A"
+            },
+            {
+                "polaroid_id": 23,
+                "stamp_count": 5,
+                "description": "thinice_B"
+            },
+            {
+                "polaroid_id": 24,
+                "stamp_count": 9,
+                "description": "thinice_C"
+            }
+        ]
+    },
+    "46": {
+        "name": "D\u00e9fenseur de Syst\u00e8me",
+        "description": "D\u00e9fenseur de Syst\u00e8me",
+        "display": "Jeux : D\u00e9fenseur De Syst\u00e8me",
+        "polaroids": [
+            {
+                "polaroid_id": 53,
+                "stamp_count": 1,
+                "description": "systemdefender_1"
+            },
+            {
+                "polaroid_id": 54,
+                "stamp_count": 5,
+                "description": "systemdefender_2"
+            },
+            {
+                "polaroid_id": 55,
+                "stamp_count": 14,
+                "description": "systemdefender_3"
+            }
+        ]
+    },
+    "52": {
+        "name": "Glaglasticot",
+        "description": "Glaglasticot",
+        "display": "Jeux : Glaglasticot",
+        "polaroids": [
+            {
+                "polaroid_id": 62,
+                "stamp_count": 1,
+                "description": "ice_fishing_1"
+            },
+            {
+                "polaroid_id": 63,
+                "stamp_count": 5,
+                "description": "ice_fishing_2"
+            },
+            {
+                "polaroid_id": 64,
+                "stamp_count": 10,
+                "description": "ice_fishing_3"
+            }
+        ]
+    },
+    "22": {
+        "name": "Missions",
+        "description": "Missions ASP 1 \u00e0 11",
+        "display": "Jeux : Missions",
+        "polaroids": [
+            {
+                "polaroid_id": 35,
+                "stamp_count": 1,
+                "description": "Agent proudly walking away from a happy Aunt Arcti"
+            },
+            {
+                "polaroid_id": 36,
+                "stamp_count": 11,
+                "description": "Agent talking to Rookie and G, Herbert n HQ screen"
+            },
+            {
+                "polaroid_id": 37,
+                "stamp_count": 22,
+                "description": "Penguin and puffle swimming in foreground, Shockto"
+            }
+        ]
+    },
+    "50": {
+        "name": "Op\u00e9ration Boulons",
+        "description": "##Bits and Bolts Stamps##",
+        "display": "Jeux : Op\u00e9ration Boulons",
+        "polaroids": [
+            {
+                "polaroid_id": 59,
+                "stamp_count": 1,
+                "description": "bitsandbolts1"
+            },
+            {
+                "polaroid_id": 60,
+                "stamp_count": 2,
+                "description": "bitsandbolts2"
+            },
+            {
+                "polaroid_id": 61,
+                "stamp_count": 3,
+                "description": "bitsandbolts3"
+            }
+        ]
+    },
+    "54": {
+        "name": "Pizzatron",
+        "description": "Badges Pizzatron",
+        "display": "Jeux : Pizzatron",
+        "polaroids": [
+            {
+                "polaroid_id": 65,
+                "stamp_count": 1,
+                "description": "Pizzatron_1"
+            },
+            {
+                "polaroid_id": 66,
+                "stamp_count": 5,
+                "description": "Pizzatron_2"
+            },
+            {
+                "polaroid_id": 67,
+                "stamp_count": 10,
+                "description": "Pizzatron_3"
+            }
+        ]
+    },
+    "15": {
+        "name": "Prendre la Vague",
+        "description": "##Stamps related to surfing##",
+        "display": "Jeux : Prendre La Vague",
+        "polaroids": [
+            {
+                "polaroid_id": 25,
+                "stamp_count": 1,
+                "description": "catchinwaves_A"
+            },
+            {
+                "polaroid_id": 26,
+                "stamp_count": 10,
+                "description": "catchinwaves_B"
+            },
+            {
+                "polaroid_id": 27,
+                "stamp_count": 22,
+                "description": "catchinwaves_C"
+            }
+        ]
+    },
+    "57": {
+        "name": "Roule Puffle",
+        "description": "Roule Puffle",
+        "display": "Jeux : Roule Puffle",
+        "polaroids": [
+            {
+                "polaroid_id": 71,
+                "stamp_count": 1,
+                "description": "rollerscape1"
+            },
+            {
+                "polaroid_id": 72,
+                "stamp_count": 5,
+                "description": "rollerscape2"
+            },
+            {
+                "polaroid_id": 73,
+                "stamp_count": 11,
+                "description": "rollerscape3"
+            }
+        ]
+    },
+    "19": {
+        "name": "SOS Puffles !",
+        "description": "##Puffle Rescue Stamps##",
+        "display": "Jeux : SOS Puffles !",
+        "polaroids": [
+            {
+                "polaroid_id": 33,
+                "stamp_count": 1,
+                "description": "Penguin jumping onto ice block, puffle in backgrou"
+            },
+            {
+                "polaroid_id": 32,
+                "stamp_count": 15,
+                "description": "Penguin riding mine cart, puffle on cliff in backg"
+            },
+            {
+                "polaroid_id": 34,
+                "stamp_count": 27,
+                "description": "Penguin and puffle swimming in foreground, Shockto"
+            }
+        ]
+    },
+    "58": {
+        "name": "Smoothie Smash",
+        "description": "Smoothie Smash",
+        "display": "Jeux : Smoothie Smash",
+        "polaroids": [
+            {
+                "polaroid_id": 74,
+                "stamp_count": 1,
+                "description": "smoothie_smash _1"
+            },
+            {
+                "polaroid_id": 75,
+                "stamp_count": 6,
+                "description": "smoothie_smash _2"
+            },
+            {
+                "polaroid_id": 76,
+                "stamp_count": 12,
+                "description": "smoothie_smash _3"
+            }
+        ]
+    },
+    "28": {
+        "name": "Surf Mines",
+        "description": "Badges Surf des Mines",
+        "display": "Jeux : Surf Mines",
+        "polaroids": [
+            {
+                "polaroid_id": 38,
+                "stamp_count": 1,
+                "description": "Penguin standing on cart"
+            },
+            {
+                "polaroid_id": 39,
+                "stamp_count": 6,
+                "description": "Penguin Holding Black Puffle"
+            },
+            {
+                "polaroid_id": 40,
+                "stamp_count": 12,
+                "description": "penguin doing handstand on cart"
+            }
+        ]
+    },
+    "26": {
+        "name": "Le Grand Jour",
+        "description": "Jeu Wii 'Le Grand Jour'",
+        "display": "Jeux Vid\u00e9os : Le Grand Jour",
+        "polaroids": [
+            {
+                "polaroid_id": 28,
+                "stamp_count": 1,
+                "description": "Red Team Party"
+            },
+            {
+                "polaroid_id": 29,
+                "stamp_count": 7,
+                "description": "Java Sack Race"
+            },
+            {
+                "polaroid_id": 51,
+                "stamp_count": 14,
+                "description": "Sports Celebration"
+            }
+        ]
+    },
+    "23": {
+        "name": "F\u00eate",
+        "description": "##Party Stamps##",
+        "display": "\u00c9v\u00e8nements : F\u00eate",
+        "polaroids": [
+            {
+                "polaroid_id": 30,
+                "stamp_count": 1,
+                "description": "Party at the Stadium"
+            },
+            {
+                "polaroid_id": 31,
+                "stamp_count": 2,
+                "description": "4 penguins celebrating"
+            },
+            {
+                "polaroid_id": 52,
+                "stamp_count": 12,
+                "description": "coinsforchange_1"
+            }
+        ]
+    },
+    "6": {
+        "name": "Personnages",
+        "description": "Personnages",
+        "display": "\u00c9v\u00e8nements : Personnages",
+        "polaroids": [
+            {
+                "polaroid_id": 10,
+                "stamp_count": 1,
+                "description": "Characters_A"
+            },
+            {
+                "polaroid_id": 11,
+                "stamp_count": 4,
+                "description": "Characters_B"
+            },
+            {
+                "polaroid_id": 12,
+                "stamp_count": 7,
+                "description": "Characters_C"
+            }
+        ]
+    }
+}

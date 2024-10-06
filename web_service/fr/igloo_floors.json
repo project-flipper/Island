@@ -1,0 +1,146 @@
+{
+    "0": {
+        "igloo_floor_id": 0,
+        "label": "La R\u00e9novation de Sol",
+        "prompt": "La R\u00e9novation de Sol",
+        "cost": 20
+    },
+    "1": {
+        "igloo_floor_id": 1,
+        "label": "Le Sol Terracotta",
+        "prompt": "Le Sol Terracotta",
+        "cost": 680
+    },
+    "2": {
+        "igloo_floor_id": 2,
+        "label": "Le Plancher en \u00c9rable",
+        "prompt": "Le Plancher en \u00c9rable",
+        "cost": 620
+    },
+    "3": {
+        "igloo_floor_id": 3,
+        "label": "La Moquette Verte",
+        "prompt": "La Moquette Verte",
+        "cost": 530
+    },
+    "4": {
+        "igloo_floor_id": 4,
+        "label": "La Moquette Bordeaux",
+        "prompt": "La Moquette Bordeaux",
+        "cost": 530
+    },
+    "5": {
+        "igloo_floor_id": 5,
+        "label": "Le Damier Noir et Blanc",
+        "prompt": "Le Damier Noir et Blanc",
+        "cost": 510
+    },
+    "6": {
+        "igloo_floor_id": 6,
+        "label": "Le Linol\u00e9um Diamant Bleu",
+        "prompt": "Le Linol\u00e9um Diamant Bleu",
+        "cost": 540
+    },
+    "7": {
+        "igloo_floor_id": 7,
+        "label": "La Piste de Danse",
+        "prompt": "La Piste de Danse",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_floor_id": 8,
+        "label": "Le Sol Pas de Danse",
+        "prompt": "Le Sol Pas de Danse",
+        "cost": 280
+    },
+    "9": {
+        "igloo_floor_id": 9,
+        "label": "Le Plancher en Bambou",
+        "prompt": "Le Plancher en Bambou",
+        "cost": 370
+    },
+    "10": {
+        "igloo_floor_id": 10,
+        "label": "Terre et Feuilles",
+        "prompt": "Terre et Feuilles",
+        "cost": 400
+    },
+    "11": {
+        "igloo_floor_id": 11,
+        "label": "La Moquette Bleue",
+        "prompt": "La Moquette Bleue",
+        "cost": 530
+    },
+    "12": {
+        "igloo_floor_id": 12,
+        "label": "Le Tourbillon",
+        "prompt": "Le Tourbillon",
+        "cost": 750
+    },
+    "13": {
+        "igloo_floor_id": 13,
+        "label": "Le Plancher en Cerisier",
+        "prompt": "Le Plancher en Cerisier",
+        "cost": 620
+    },
+    "14": {
+        "igloo_floor_id": 14,
+        "label": "La Pelouse Bidon",
+        "prompt": "La Pelouse Bidon",
+        "cost": 700
+    },
+    "15": {
+        "igloo_floor_id": 15,
+        "label": "La Moquette Noire",
+        "prompt": "La Moquette Noire",
+        "cost": 530
+    },
+    "16": {
+        "igloo_floor_id": 16,
+        "label": "Le Carrelage Fonc\u00e9",
+        "prompt": "Le Carrelage Fonc\u00e9",
+        "cost": 800
+    },
+    "17": {
+        "igloo_floor_id": 17,
+        "label": "La Moquette Rose",
+        "prompt": "La Moquette Rose",
+        "cost": 530
+    },
+    "18": {
+        "igloo_floor_id": 18,
+        "label": "Le Sol en Sable",
+        "prompt": "Le Sol en Sable",
+        "cost": 400
+    },
+    "19": {
+        "igloo_floor_id": 19,
+        "label": "Le Sol Ciel Bleu",
+        "prompt": "Le Sol Ciel Bleu",
+        "cost": 530
+    },
+    "20": {
+        "igloo_floor_id": 20,
+        "label": "Le Sol Rues Pav\u00e9es",
+        "prompt": "Le Sol Rues Pav\u00e9es",
+        "cost": 1200
+    },
+    "21": {
+        "igloo_floor_id": 21,
+        "label": "Le Sol Enneig\u00e9",
+        "prompt": "Le Sol Enneig\u00e9",
+        "cost": 400
+    },
+    "22": {
+        "igloo_floor_id": 22,
+        "label": "La Moquette Vert Pomme",
+        "prompt": "La Moquette Vert Pomme",
+        "cost": 530
+    },
+    "23": {
+        "igloo_floor_id": 23,
+        "label": "Le Sol Tatami",
+        "prompt": "Le Sol Tatami\n",
+        "cost": 750
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "0": {
+        "igloo_floor_id": 0,
+        "label": "Bodenabriss",
+        "prompt": "Bodenabriss",
+        "cost": 20
+    },
+    "1": {
+        "igloo_floor_id": 1,
+        "label": "Terrakotta-Kacheln",
+        "prompt": "Terrakotta-Kacheln",
+        "cost": 680
+    },
+    "2": {
+        "igloo_floor_id": 2,
+        "label": "Parkettboden",
+        "prompt": "Parkettboden",
+        "cost": 620
+    },
+    "3": {
+        "igloo_floor_id": 3,
+        "label": "Gr\u00fcner Teppich\n",
+        "prompt": "Gr\u00fcner Teppich\n",
+        "cost": 530
+    },
+    "4": {
+        "igloo_floor_id": 4,
+        "label": "Weinroter Teppich",
+        "prompt": "Weinroter Teppich",
+        "cost": 530
+    },
+    "5": {
+        "igloo_floor_id": 5,
+        "label": "Schwarz-Wei\u00dfe Kacheln\n",
+        "prompt": "Schwarz-Wei\u00dfe Kacheln\n",
+        "cost": 510
+    },
+    "6": {
+        "igloo_floor_id": 6,
+        "label": "Linoleumboden\n",
+        "prompt": "Linoleumboden\n",
+        "cost": 540
+    },
+    "7": {
+        "igloo_floor_id": 7,
+        "label": "Tanzfl\u00e4che",
+        "prompt": "Tanzfl\u00e4che",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_floor_id": 8,
+        "label": "Aufgemalte Tanzschritte",
+        "prompt": "Aufgemalte Tanzschritte",
+        "cost": 280
+    },
+    "9": {
+        "igloo_floor_id": 9,
+        "label": "Bambus-Boden",
+        "prompt": "Bambus-Boden",
+        "cost": 370
+    },
+    "10": {
+        "igloo_floor_id": 10,
+        "label": "Erde & Bl\u00e4tter\n",
+        "prompt": "Erde & Bl\u00e4tter\n",
+        "cost": 400
+    },
+    "11": {
+        "igloo_floor_id": 11,
+        "label": "Blauer Kunstrasen",
+        "prompt": "Blauer Kunstrasen",
+        "cost": 530
+    },
+    "12": {
+        "igloo_floor_id": 12,
+        "label": "Whirlpool\n",
+        "prompt": "Whirlpool\n",
+        "cost": 750
+    },
+    "13": {
+        "igloo_floor_id": 13,
+        "label": "Kirschholz\n",
+        "prompt": "Kirschholz\n",
+        "cost": 620
+    },
+    "14": {
+        "igloo_floor_id": 14,
+        "label": "Kunstrasen",
+        "prompt": "Kunstrasen",
+        "cost": 700
+    },
+    "15": {
+        "igloo_floor_id": 15,
+        "label": "Schwarzer Teppich",
+        "prompt": "Schwarzer Teppich",
+        "cost": 530
+    },
+    "16": {
+        "igloo_floor_id": 16,
+        "label": "Dunkle Steinkacheln",
+        "prompt": "Dunkle Steinkacheln",
+        "cost": 800
+    },
+    "17": {
+        "igloo_floor_id": 17,
+        "label": "Rosafarbener Teppich",
+        "prompt": "Rosafarbener Teppich",
+        "cost": 530
+    },
+    "18": {
+        "igloo_floor_id": 18,
+        "label": "Sandboden\n",
+        "prompt": "Sandboden\n",
+        "cost": 400
+    },
+    "19": {
+        "igloo_floor_id": 19,
+        "label": "Sommerhimmel-Boden",
+        "prompt": "Sommerhimmel-Boden",
+        "cost": 530
+    },
+    "20": {
+        "igloo_floor_id": 20,
+        "label": "Kopfsteinpflaster",
+        "prompt": "Kopfsteinpflaster",
+        "cost": 1200
+    },
+    "21": {
+        "igloo_floor_id": 21,
+        "label": "Schneeboden",
+        "prompt": "Schneeboden",
+        "cost": 400
+    },
+    "22": {
+        "igloo_floor_id": 22,
+        "label": "Limettengr\u00fcner Teppich",
+        "prompt": "Limettengr\u00fcner Teppich",
+        "cost": 530
+    },
+    "23": {
+        "igloo_floor_id": 23,
+        "label": "Gewebte Reismatte",
+        "prompt": "Gewebte Reismatte",
+        "cost": 750
+    }
+}

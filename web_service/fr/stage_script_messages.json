@@ -1,0 +1,222 @@
+[
+    {
+        "note": "Squidzoid contre Shadow Guy & Gamma Gal"
+    },
+    {
+        "name": "Reporter",
+        "message": "Vous \u00eates en direct !"
+    },
+    {
+        "name": "Reporter",
+        "message": "Dites-nous ce qui se passe !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Il y a un monstre g\u00e9ant !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Oh non ! Deux !!!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "GRRR ! MOI FAIM !"
+    },
+    {
+        "name": "Reporter",
+        "message": "GLOUPS ! Ils vont manger la ville toute enti\u00e8re !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Qui va nous sauver maintenant ?"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "La ville a besoin de notre aide !"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Super m\u00e9ga transformation de costume !"
+    },
+    {
+        "note": "(Les h\u00e9ros enfilent leurs super costumes)"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Hourra ! Les h\u00e9ros sont l\u00e0 !"
+    },
+    {
+        "name": "Reporter",
+        "message": "Qui d'autre pourrait nous sauver\u00a0?"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Pas un geste, Squidzoid et Melmonst !"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Vous avez assez mang\u00e9 !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "BLARRG ! VOUS NE POUVEZ PAS NOUS ARR\u00caTER !"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Ouais ? ONDE RAYON PLASMA !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "RROOOOAAAARR !"
+    },
+    {
+        "name": "Reporter",
+        "message": "Les super-h\u00e9ros utilisent leurs pouvoirs !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Ouais ! Allez-y, nos h\u00e9ros !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "MIS\u00c9RABLES MOUCHERONS !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "VOUS NE POUVEZ RIEN CONTRE NOUS !"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Ha ouais ? Et \u00e7a alors ?! BRUME MYSTIQUE !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "GRROOOWLL !"
+    },
+    {
+        "name": "Reporter",
+        "message": "H\u00e9 ! Squidzoid tente de s'\u00e9chapper."
+    },
+    {
+        "name": "Reporter",
+        "message": "Mais Melmonst reste l\u00e0 !"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Pas tr\u00e8s fid\u00e8le comme partenaire."
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Tu as raison. Et il dit pas grand-chose."
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "On ne peut pas avoir des monstres dans toute la ville !"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Vite ! Combinons nos pouvoirs !"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Pour la justice !"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Pour la libert\u00e9 !!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Pour l'amour des pizzas avec un suppl\u00e9ment d'olives !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "NON ! C'EST IMPOSSIBLE ! GRRAAA !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Il est en train de se transformer en pingouin !"
+    },
+    {
+        "note": "(Squidzoid se transforme en pingouin)"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Je suis redevenu un pingouin !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Que s'est-il pass\u00e9 ?"
+    },
+    {
+        "name": "Reporter",
+        "message": "Tu es devenu Squidzoid !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Et tu t'es mis \u00e0 manger la ville !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Oh ! J'avais un app\u00e9tit d\u2019ogre !"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Mais il reste encore Melmonst !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Hmm... il a l'air comme coinc\u00e9 l\u00e0-haut."
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Il est inoffensif !"
+    },
+    {
+        "name": "T\u00e9moin",
+        "message": "Il fait un bel ornement."
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "On dirait que notre travail ici est termin\u00e9 !"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Allons manger une pizza au poisson."
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Avec un suppl\u00e9ment d'olives, s'il vous pla\u00eet !"
+    },
+    {
+        "name": "Reporter",
+        "message": "La ville est sauv\u00e9e !"
+    },
+    {
+        "name": "Reporter",
+        "message": "Chers t\u00e9l\u00e9spectateurs, bonsoir."
+    },
+    {
+        "note": "FIN !"
+    },
+    {
+        "name": "Metteur en Sc\u00e8ne",
+        "message": "ACTION !"
+    },
+    {
+        "name": "Metteur en Sc\u00e8ne",
+        "message": "On reprend !"
+    },
+    {
+        "name": "Metteur en Sc\u00e8ne",
+        "message": "Tout le monde en place !"
+    },
+    {
+        "name": "Metteur en Sc\u00e8ne",
+        "message": "Plus d'effets sp\u00e9ciaux !"
+    },
+    {
+        "name": "Metteur en Sc\u00e8ne",
+        "message": "Bravo ! Excellent jeu d'acteur !"
+    }
+]

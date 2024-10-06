@@ -1,0 +1,482 @@
+{
+    "0": {
+        "igloo_id": 0,
+        "name": "##Igloo Removal##",
+        "cost": 0
+    },
+    "1": {
+        "igloo_id": 1,
+        "name": "L'Igloo Modeste",
+        "cost": 1500
+    },
+    "2": {
+        "igloo_id": 2,
+        "name": "L'Igloo Rose Bonbon",
+        "cost": 1500
+    },
+    "3": {
+        "igloo_id": 3,
+        "name": "Igloo bleu de luxe",
+        "cost": 4000
+    },
+    "4": {
+        "igloo_id": 4,
+        "name": "Grand Igloo Rose Bonbon",
+        "cost": 4000
+    },
+    "5": {
+        "igloo_id": 5,
+        "name": "L'Igloo Secret en Pierre",
+        "cost": 2000
+    },
+    "6": {
+        "igloo_id": 6,
+        "name": "L'Igloo Standard",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_id": 8,
+        "name": "L'Igloo Secret de Luxe en Pierre",
+        "cost": 5000
+    },
+    "9": {
+        "igloo_id": 9,
+        "name": "L'Igloo de Luxe Standard",
+        "cost": 3000
+    },
+    "10": {
+        "igloo_id": 10,
+        "name": "La Hutte en Bambou",
+        "cost": 3200
+    },
+    "11": {
+        "igloo_id": 11,
+        "name": "Cabane en Rondins",
+        "cost": 4100
+    },
+    "12": {
+        "igloo_id": 12,
+        "name": "Le Gymnase",
+        "cost": 4800
+    },
+    "13": {
+        "igloo_id": 13,
+        "name": "L'Igloo \u00e0 Deux Niveaux",
+        "cost": 4600
+    },
+    "14": {
+        "igloo_id": 14,
+        "name": "L'Igloo \u00e0 Deux Niveaux Rose Bonbon",
+        "cost": 4600
+    },
+    "15": {
+        "igloo_id": 15,
+        "name": "La Boule \u00e0 Neige",
+        "cost": 3700
+    },
+    "16": {
+        "igloo_id": 16,
+        "name": "Le Palais des Glaces",
+        "cost": 2400
+    },
+    "17": {
+        "igloo_id": 17,
+        "name": "Igloo de neige sur deux niveaux",
+        "cost": 4600
+    },
+    "18": {
+        "igloo_id": 18,
+        "name": "Le Bocal \u00e0 Poissons",
+        "cost": 2400
+    },
+    "19": {
+        "igloo_id": 19,
+        "name": "La Tente",
+        "cost": 2700
+    },
+    "20": {
+        "igloo_id": 20,
+        "name": "L'Igloo Citrouille",
+        "cost": 2700
+    },
+    "21": {
+        "igloo_id": 21,
+        "name": "L'Igloo avec Jardin",
+        "cost": 4200
+    },
+    "22": {
+        "igloo_id": 22,
+        "name": "Le Palais de Glace Rose",
+        "cost": 2400
+    },
+    "23": {
+        "igloo_id": 23,
+        "name": "Igloo Navire",
+        "cost": 4300
+    },
+    "24": {
+        "igloo_id": 24,
+        "name": "L'Igloo Dojo",
+        "cost": 1300
+    },
+    "25": {
+        "igloo_id": 25,
+        "name": "Maison Pain d'Epice",
+        "cost": 2100
+    },
+    "26": {
+        "igloo_id": 26,
+        "name": "L'Igloo Restaurant",
+        "cost": 4800
+    },
+    "27": {
+        "igloo_id": 27,
+        "name": "Igloo avec Jardin",
+        "cost": 4500
+    },
+    "28": {
+        "igloo_id": 28,
+        "name": "L'Igloo Th\u00e9\u00e2tre",
+        "cost": 4600
+    },
+    "29": {
+        "igloo_id": 29,
+        "name": "La Tente de Cirque",
+        "cost": 3000
+    },
+    "30": {
+        "igloo_id": 30,
+        "name": "L'Igloo avec Cour Enneig\u00e9e",
+        "cost": 3000
+    },
+    "31": {
+        "igloo_id": 31,
+        "name": "La Caverne",
+        "cost": 1500
+    },
+    "32": {
+        "igloo_id": 32,
+        "name": "L'Igloo Vert Tr\u00e8fle",
+        "cost": 2050
+    },
+    "33": {
+        "igloo_id": 33,
+        "name": "Le Palais des Glaces Gris",
+        "cost": 2400
+    },
+    "35": {
+        "igloo_id": 35,
+        "name": "La Chaumi\u00e8re Douillette",
+        "cost": 2500
+    },
+    "36": {
+        "igloo_id": 36,
+        "name": "La Belle Demeure",
+        "cost": 2500
+    },
+    "37": {
+        "igloo_id": 37,
+        "name": "L'Igloo Deux Pi\u00e8ces",
+        "cost": 2300
+    },
+    "38": {
+        "igloo_id": 38,
+        "name": "Le Palais des Ombres",
+        "cost": 1800
+    },
+    "39": {
+        "igloo_id": 39,
+        "name": "La Tani\u00e8re du Dragon",
+        "cost": 3000
+    },
+    "40": {
+        "igloo_id": 40,
+        "name": "La Crique de Sir\u00e8ne",
+        "cost": 3030
+    },
+    "41": {
+        "igloo_id": 41,
+        "name": "La Bouche de Baleine",
+        "cost": 2700
+    },
+    "42": {
+        "igloo_id": 42,
+        "name": "L'Igloo Chasse aux Bonbons",
+        "cost": 2000
+    },
+    "43": {
+        "igloo_id": 43,
+        "name": "Maison Pain d'\u00c9pice de Luxe",
+        "cost": 0
+    },
+    "45": {
+        "igloo_id": 45,
+        "name": "##Invisible Snowy##",
+        "cost": 0
+    },
+    "46": {
+        "igloo_id": 46,
+        "name": "##Invisible Beach##",
+        "cost": 0
+    },
+    "47": {
+        "igloo_id": 47,
+        "name": "##Invisible Forest##",
+        "cost": 0
+    },
+    "48": {
+        "igloo_id": 48,
+        "name": "##Invisible Mountain##",
+        "cost": 0
+    },
+    "49": {
+        "igloo_id": 49,
+        "name": "L'Igloo Naufrag\u00e9",
+        "cost": 900
+    },
+    "50": {
+        "igloo_id": 50,
+        "name": "La Tani\u00e8re Sauvage",
+        "cost": 900
+    },
+    "51": {
+        "igloo_id": 51,
+        "name": "Le Manoir M\u00e9di\u00e9val",
+        "cost": 1200
+    },
+    "52": {
+        "igloo_id": 52,
+        "name": "L'Igloo Hangar",
+        "cost": 950
+    },
+    "53": {
+        "igloo_id": 53,
+        "name": "Cabane Ananas",
+        "cost": 0
+    },
+    "54": {
+        "igloo_id": 54,
+        "name": "La Tani\u00e8re des T\u00e9n\u00e8bres",
+        "cost": 1500
+    },
+    "55": {
+        "igloo_id": 55,
+        "name": "Le Palais du Pingouin Givre",
+        "cost": 2000
+    },
+    "56": {
+        "igloo_id": 56,
+        "name": "La Maison Bonbons et Pain d'\u00c9pice",
+        "cost": 2500
+    },
+    "57": {
+        "igloo_id": 57,
+        "name": "Le Loft de Luxe",
+        "cost": 4000
+    },
+    "58": {
+        "igloo_id": 58,
+        "name": "Le Loft de Luxe VIP",
+        "cost": 4500
+    },
+    "59": {
+        "igloo_id": 59,
+        "name": "##Invisible Age of Dinosaurs##",
+        "cost": 0
+    },
+    "60": {
+        "igloo_id": 60,
+        "name": "La Cabane Puffle",
+        "cost": 0
+    },
+    "61": {
+        "igloo_id": 61,
+        "name": "La Base Secr\u00e8te",
+        "cost": 1600
+    },
+    "62": {
+        "igloo_id": 62,
+        "name": "L'Igloo Base Imp\u00e9riale",
+        "cost": 1000
+    },
+    "63": {
+        "igloo_id": 63,
+        "name": "L'Igloo Plage",
+        "cost": 1500
+    },
+    "64": {
+        "igloo_id": 64,
+        "name": "L'Igloo Gymnase",
+        "cost": 0
+    },
+    "65": {
+        "igloo_id": 65,
+        "name": "Le Repaire Magique",
+        "cost": 1500
+    },
+    "66": {
+        "igloo_id": 66,
+        "name": "Le Ch\u00e2teau Hant\u00e9",
+        "cost": 2000
+    },
+    "67": {
+        "igloo_id": 67,
+        "name": "L'Igloo Tourbillon Sucr\u00e9",
+        "cost": 0
+    },
+    "68": {
+        "igloo_id": 68,
+        "name": "L'Igloo Gare",
+        "cost": 1100
+    },
+    "69": {
+        "igloo_id": 69,
+        "name": "L'Igloo Chapiteau",
+        "cost": 1000
+    },
+    "70": {
+        "igloo_id": 70,
+        "name": "L'Avion de ligne CP",
+        "cost": 1200
+    },
+    "71": {
+        "igloo_id": 71,
+        "name": "L'Igloo Cabane Perch\u00e9e",
+        "cost": 1500
+    },
+    "72": {
+        "igloo_id": 72,
+        "name": "##Invisible Distant Planet##",
+        "cost": 0
+    },
+    "73": {
+        "igloo_id": 73,
+        "name": "L'Igloo D\u00f4me Spatial",
+        "cost": 2000
+    },
+    "74": {
+        "igloo_id": 74,
+        "name": "Le Terrain de Foot Invisible",
+        "cost": 0
+    },
+    "75": {
+        "igloo_id": 75,
+        "name": "L'Igloo Bus de Tourn\u00e9e",
+        "cost": 1800
+    },
+    "76": {
+        "igloo_id": 76,
+        "name": "L'Igloo Palais de Glace",
+        "cost": 0
+    },
+    "77": {
+        "igloo_id": 77,
+        "name": "Le Gymnase des Requins",
+        "cost": 1500
+    },
+    "78": {
+        "igloo_id": 78,
+        "name": "L'Igloo Salle de Classe",
+        "cost": 0
+    },
+    "79": {
+        "igloo_id": 79,
+        "name": "L'Igloo Caverne des Fant\u00f4mes",
+        "cost": 1800
+    },
+    "80": {
+        "igloo_id": 80,
+        "name": "##Invisible Undersea##",
+        "cost": 0
+    },
+    "81": {
+        "igloo_id": 81,
+        "name": "##Invisible Merry Walrus Iceberg##",
+        "cost": 0
+    },
+    "82": {
+        "igloo_id": 82,
+        "name": "Repaire d'Ezra",
+        "cost": 1800
+    },
+    "83": {
+        "igloo_id": 83,
+        "name": "L'Igloo Vaisseau",
+        "cost": 0
+    },
+    "84": {
+        "igloo_id": 84,
+        "name": "La Sc\u00e8ne du Spectacle de Talent",
+        "cost": 1500
+    },
+    "85": {
+        "igloo_id": 85,
+        "name": "La Cabane de Puffle Rouge",
+        "cost": 1000
+    },
+    "86": {
+        "igloo_id": 86,
+        "name": "La Cabane de Puffle Orange",
+        "cost": 1000
+    },
+    "87": {
+        "igloo_id": 87,
+        "name": "La Cabane de Puffle Jaune",
+        "cost": 1000
+    },
+    "88": {
+        "igloo_id": 88,
+        "name": "La Cabane de Puffle Verte",
+        "cost": 1000
+    },
+    "89": {
+        "igloo_id": 89,
+        "name": "La Cabane de Puffle Bleue",
+        "cost": 1000
+    },
+    "90": {
+        "igloo_id": 90,
+        "name": "La Cabane de Puffle Violette",
+        "cost": 1000
+    },
+    "91": {
+        "igloo_id": 91,
+        "name": "La Cabane de Puffle Noire",
+        "cost": 1000
+    },
+    "92": {
+        "igloo_id": 92,
+        "name": "La Cabane de Puffle Blanche",
+        "cost": 1000
+    },
+    "93": {
+        "igloo_id": 93,
+        "name": "La Cabane de Puffle Marron",
+        "cost": 1000
+    },
+    "94": {
+        "igloo_id": 94,
+        "name": "La Cabane de Puffle Rose",
+        "cost": 1000
+    },
+    "95": {
+        "igloo_id": 95,
+        "name": "La Cabane de Puffle Or",
+        "cost": 1000
+    },
+    "96": {
+        "igloo_id": 96,
+        "name": "La Cabane de Puffle Arc-en-ciel",
+        "cost": 1000
+    },
+    "97": {
+        "igloo_id": 97,
+        "name": "L'Igloo Palais de Printemps",
+        "cost": 0
+    },
+    "98": {
+        "igloo_id": 98,
+        "name": "L'Igloo Th\u00e9\u00e2tre",
+        "cost": 1500
+    }
+}

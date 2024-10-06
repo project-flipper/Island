@@ -1,0 +1,3049 @@
+[
+    {
+        "name": "Actividades",
+        "description": "##Doing things in-game##",
+        "parent_group_id": 0,
+        "display": "Actividades",
+        "group_id": 7,
+        "stamps": [
+            {
+                "stamp_id": 488,
+                "name": "3 gemas",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana gemas de Fuego, Agua y Nieve",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 489,
+                "name": "A excavar",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Sal de paseo con tu puffle y halla tesoros",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 491,
+                "name": "A todo color",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Halla tesoros con puffles de todos los colores",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 197,
+                "name": "Agente de operaciones",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana 1 medalla de la EPF",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 198,
+                "name": "Agente especial",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana 5 medallas de la EPF",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 28,
+                "name": "Anfitri\u00f3n ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Consigue que 30 ping\u00fcinos vayan a tu fiesta.",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 494,
+                "name": "Cofre de tesoros",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Haz que tu puffle halle un tesoro mientras excava",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 199,
+                "name": "Cuerpo especial",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana 10 medallas de la EPF",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 200,
+                "name": "Defensor de elite",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gana 25 medallas de la EPF",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 30,
+                "name": "Encuentro",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Re\u00fane 10 ninjas negros en el Dojo",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 16,
+                "name": "Fiesta",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Fiesta en la Disco con 10 ping\u00fcinos",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 17,
+                "name": "Fiesta en mi igl\u00fa",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz que 10 ping\u00fcinos vayan a tu fiesta.",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 493,
+                "name": "Gran tesoro",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Halla 50 monedas en una excavaci\u00f3n puffl\u00edstica",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 201,
+                "name": "Guardi\u00e1n de la isla",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana 50 medallas de la EPF",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 29,
+                "name": "Hockey\n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Arma un equipo de 5 ping\u00fcinos con camisetas iguales",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 23,
+                "name": "Megaadornado",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Llena tu igl\u00fa con 99 art\u00edculos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 22,
+                "name": "Pista llena",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Baila en la Disco con 25 ping\u00fcinos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 490,
+                "name": "Primera vez",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Mira c\u00f3mo el puffle de otro halla su primer tesoro",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 21,
+                "name": "Puffle-due\u00f1o",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Adopta y cuida a 16 puffles",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 10,
+                "name": "Subterr\u00e1neo",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Encuentra la entrada al subterr\u00e1neo",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 25,
+                "name": "Superequipo ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Arma un equipo de 5 ping\u00fcinos con camisetas iguales",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 495,
+                "name": "Tesoro delicioso",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Haz que tu puffle encuentre su comida favorita",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 492,
+                "name": "Todo el d\u00eda",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Encuentra tesoros 5 veces en un mismo d\u00eda",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 15,
+                "name": "Todos lados",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Ping\u00fcinea por 30 salas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 14,
+                "name": "\u00a1183 d\u00edas! ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Ingresa con 183 d\u00edas, \u00a1o m\u00e1s!",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 20,
+                "name": "\u00a1365 d\u00edas!",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Ingresa con 365 d\u00edas, \u00a1o m\u00e1s!",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 12,
+                "name": "\u00a1A nadar!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Zamb\u00fallete con un patito de hule",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 26,
+                "name": "\u00a1A taladrar el Iceberg!",
+                "is_member": 0,
+                "rank": 3,
+                "description": "\u00a130 ping\u00fcinos a excavar en el Iceberg!",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 9,
+                "name": "\u00a1Al Teatro!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Maneja el Switchbox 3000",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 13,
+                "name": "\u00a1Al blanco!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Acierta al blanco 10 veces seguidas",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 27,
+                "name": "\u00a1La batalla!",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Arroja nieve al Fuerte con 5 ping\u00fcinos del mismo color",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 19,
+                "name": "\u00a1Pizzero!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Sirve 5 pizzas, con delantal y emotic\u00f3n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 18,
+                "name": "\u00a1Sirve caf\u00e9!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Sirve 5 caf\u00e9s, \u00a1con delantal y emotic\u00f3n!",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 24,
+                "name": "\u00a1Sonor\u00edfico! ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Forma una banda completa en el Faro",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 11,
+                "name": "\u00a1Una fotito!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Usa la c\u00e1mara en la cima de la Monta\u00f1a",
+                "rank_token": "##easy##"
+            }
+        ]
+    },
+    {
+        "name": "Eventos",
+        "description": "Eventos",
+        "parent_group_id": 0,
+        "display": "Eventos",
+        "group_id": 5,
+        "stamps": []
+    },
+    {
+        "name": "Fiesta",
+        "description": "##Party Stamps##",
+        "parent_group_id": 5,
+        "display": "Eventos : Fiesta",
+        "group_id": 23,
+        "stamps": [
+            {
+                "stamp_id": 183,
+                "name": "Acertijo fiestero",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Resuelve un acertijo en una fiesta ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 439,
+                "name": "Alpinista",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Alcanza la cima de una monta\u00f1a",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 332,
+                "name": "Batalla de comida",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Arroja tu almuerzo en un lugar donde hay alimentos",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 188,
+                "name": "B\u00fasqueda del tesoro",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz una b\u00fasqueda del tesoro completa",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 185,
+                "name": "Campe\u00f3n del blanco ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Acierta al blanco 50 veces en alguna fiesta",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 189,
+                "name": "Construcci\u00f3n",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Lleva tu taladro a una fiesta y \u00fanete a la construcci\u00f3n.",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 444,
+                "name": "Dulce o travesura",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Visita 10 Igl\u00fas \"Dulce o travesura\" en la Fiesta de Noche de Brujas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 193,
+                "name": "Encuentra el camino",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Descifra un laberinto en una fiesta",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 292,
+                "name": "Mar abierto",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Navega fuera de la isla en un bote",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 360,
+                "name": "Noble Caballero",
+                "is_member": 1,
+                "rank": 2,
+                "description": "V\u00edstete de caballero en la Fiesta Medieval ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 438,
+                "name": "Ping\u00fci-acr\u00f3bata",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa una pista con obst\u00e1culos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 190,
+                "name": "Ping\u00fci-explorador",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Explora todas las salas decoradas de la isla\n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 191,
+                "name": "Ping\u00fci-voluntario ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Dona para colaborar con una causa de Coins For Change",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 364,
+                "name": "Ping\u00fcinada de \u00e1rboles",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz que 10 o m\u00e1s amigos se disfracen de \u00e1rboles",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 184,
+                "name": "Puesto de aperitivos",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Sirve aperitivos de un puesto con un emotic\u00f3n de comida",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 330,
+                "name": "Puffle de fiesta",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Lleva a tu puffle hasta su respectiva sala de la fiesta",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 187,
+                "name": "Pur\u00e9 de monstruos",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Ponte un disfraz de monstruo para la Fiesta de Noche de Brujas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 182,
+                "name": "Sala sonriente",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz que 10 ping\u00fcinos sonr\u00edan en una sala",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 440,
+                "name": "Snowboarder",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Baila con tu snowboard en una fiesta",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 294,
+                "name": "Voluntario del a\u00f1o",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Dona 5000 monedas a Coins For Change ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 296,
+                "name": "Voluntario \u00e9pico",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Dona 10.000 monedas a Coins For Change",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 186,
+                "name": "\u00a1A celebrar!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Sopla las velitas del pastel aniversario de la isla",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 426,
+                "name": "\u00a1M\u00fasica, maestro! ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Resuelve un acertijo musical en una fiesta",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 362,
+                "name": "\u00a1Piensa en verde!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Recicla 10 objetos en la Planta de reciclaje",
+                "rank_token": "##easy##"
+            }
+        ]
+    },
+    {
+        "name": "Personajes",
+        "description": "Personajes",
+        "parent_group_id": 5,
+        "display": "Eventos : Personajes",
+        "group_id": 6,
+        "stamps": [
+            {
+                "stamp_id": 36,
+                "name": "Bob, el Bajista",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Bob",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 31,
+                "name": "DJ Cadence ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Cadence",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 448,
+                "name": "EP",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Comparte la sala con EP",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 32,
+                "name": "Franky",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Franky\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 34,
+                "name": "G Billy",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Gbilly",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 8,
+                "name": "Gary",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Gary, el Ping\u00fcino Artefacto",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 466,
+                "name": "Herbert",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Comparte la sala con Herbert",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 35,
+                "name": "Petey K",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Comparte la sala con Petey K",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 7,
+                "name": "Rockhopper ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Comparte la sala con Rockhopper",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 358,
+                "name": "Rookie",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Comparte la sala con Rookie",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 290,
+                "name": "Sensei",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Comparte la sala con el Sensei",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 33,
+                "name": "T\u00eda Arctic",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Comparte la sala con T\u00eda Arctic",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Juegos",
+        "description": "##Parent group only##",
+        "parent_group_id": 0,
+        "display": "Juegos",
+        "group_id": 8,
+        "stamps": []
+    },
+    {
+        "name": "Aqua grabber",
+        "description": "##Aqua Grabber related stamps##",
+        "parent_group_id": 8,
+        "display": "Juegos : Aqua Grabber",
+        "group_id": 13,
+        "stamps": [
+            {
+                "stamp_id": 85,
+                "name": "Aire dulce",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa el modo aire comprimido dulce",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 84,
+                "name": "Aire marisco",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa el modo aire comprimido de mariscos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 73,
+                "name": "Aqua Puffle",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Lleva a tu puffle rosa a bucear",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 91,
+                "name": "Cangretesoro",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Captura todo el tesoro del cangrejo",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 72,
+                "name": "Descubridor",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Descubre al calamar",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 76,
+                "name": "Dulce genio ",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa los niveles dulces sin perder vidas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 87,
+                "name": "Dulce presi\u00f3n",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Domina el modo aire comprimido dulce sin perder una vida",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 83,
+                "name": "Dulce tesoro",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Descubre el tesoro en Mar dulce",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 89,
+                "name": "Dulce ya",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa Mar dulce en modo contrarreloj",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 74,
+                "name": "Dulce \u00e9xito",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa todos los niveles dulces\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 75,
+                "name": "Exi-marisco",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa los niveles de mariscos\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 78,
+                "name": "Fluffy",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Atrapa al pez amarillo y vuelve a la red",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 79,
+                "name": "Lombricita",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Atrapa una lombriz y vuelve a la red",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 86,
+                "name": "Mari-presi\u00f3n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Domina aire comprimido de mariscos sin perder una vida",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 88,
+                "name": "Marisco ya",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa Mar de mariscos en modo contrarreloj",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 77,
+                "name": "Marismaestro",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa Mar de mariscos sin perder vidas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 82,
+                "name": "Maristesoro",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Descubre el tesoro en Mar de mariscos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 92,
+                "name": "Mullet ",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Captura el gran pez rojo y vuelve a la red",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 81,
+                "name": "Perlitas\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recoge todas las perlas blancas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 80,
+                "name": "\u00a1Burbuja ya!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recoge la burbujita del puffle rosa",
+                "rank_token": "##medium##"
+            }
+        ]
+    },
+    {
+        "name": "Aventuras en jet-pack",
+        "description": "##All stamps for flying##",
+        "parent_group_id": 8,
+        "display": "Juegos : Aventuras En Jet-pack",
+        "group_id": 11,
+        "stamps": [
+            {
+                "stamp_id": 48,
+                "name": "Cayendo",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Recoge un combustible mientras caes",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 41,
+                "name": "Combustible 2",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Recoge todo el combustible en el nivel 2",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 38,
+                "name": "Combustible1",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Recoge todo el combustible en el nivel 1",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 42,
+                "name": "Combustible3",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Recoge todo el combustible en el nivel 3",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 43,
+                "name": "Combustible4",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Recoge todo el combustible en el nivel 4",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 44,
+                "name": "Combustible5",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Recoge todo el combustible en el nivel 5",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 205,
+                "name": "Impulso puffl\u00edstico",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Cuando se agota el combustible, tu puffle verde recoge una lata",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 39,
+                "name": "Jet-pack 5",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa 5 niveles",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 45,
+                "name": "L\u00edder de vidas",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Recoge dos vidas m\u00e1s",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 204,
+                "name": "Megapuffle ",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Tu puffle verde recoge 450 monedas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 46,
+                "name": "Moneditas",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Recoge 650 monedas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 202,
+                "name": "Puffle piloto ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Trae un puffle verde al juego",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 203,
+                "name": "Superpuffle ",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Tu puffle verde recoge 200 monedas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 47,
+                "name": "Todito",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Recoge todo el combustible en un juego",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 37,
+                "name": "\u00a1A despegar!",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Despega pero vuelve a la salida",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 49,
+                "name": "\u00a1Capit\u00e1n!",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Encuentra todas las vidas en un juego",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 40,
+                "name": "\u00a1Choque!",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Toca tierra con tu jet-pack en el Bosque",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 50,
+                "name": "\u00a1Piloto! ",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Completa el juego sin juntar monedas",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Barra espacial",
+        "description": "##Astro Barrier related stamps##",
+        "parent_group_id": 8,
+        "display": "Juegos : Barra Espacial",
+        "group_id": 14,
+        "stamps": [
+            {
+                "stamp_id": 57,
+                "name": "10 y m\u00e1s",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa 10 niveles sin errar ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 58,
+                "name": "20 y m\u00e1s",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa 20 niveles sin errar ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 60,
+                "name": "30 y m\u00e1s",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa 30 niveles sin errar",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 52,
+                "name": "5 y m\u00e1s",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa 5 niveles sin errar ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 53,
+                "name": "Espacio40",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa 40 niveles",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 51,
+                "name": "Espacio5",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa 5 niveles",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 59,
+                "name": "Experto",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa todos los niveles expertos  ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 54,
+                "name": "La nave",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Usa un superdisparo con una nave",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 56,
+                "name": "Secreto",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa todos los niveles secretos  ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 55,
+                "name": "Una m\u00e1s",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Usa un superdisparo y gana una vida",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 61,
+                "name": "Una vida m\u00e1s\n",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Junta 8 vidas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 62,
+                "name": "\u00a1El Maestro!",
+                "is_member": 1,
+                "rank": 4,
+                "description": "\u00a125 niveles m\u00e1s Secreto y Experto!",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Burbupuffle",
+        "description": "Burbupuffle",
+        "parent_group_id": 8,
+        "display": "Juegos : Burbupuffle",
+        "group_id": 57,
+        "stamps": [
+            {
+                "stamp_id": 434,
+                "name": "Acertijo extremo",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa el nivel 12",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 427,
+                "name": "Aperitivo de regalo ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Come un puffito de regalo",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 430,
+                "name": "Aperitivo r\u00e1pido",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Come todos los pufitos que desaparecen en un nivel",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 435,
+                "name": "Burbumaestro",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa el nivel 17",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 436,
+                "name": "Burbu\u00e9pico",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa el nivel 22",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 431,
+                "name": "Comida r\u00e1pida",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Come todos los puffitos que desaparecen en un grupo de niveles",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 432,
+                "name": "En la burbuja",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa el nivel 4",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 428,
+                "name": "Fest\u00edn de puffitos",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Come todos los puffitos de un grupo de niveles",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 437,
+                "name": "Maestro del hielo ",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa el \u00faltimo nivel",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 429,
+                "name": "Mordida a tiempo",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Come un puffito que desaparece",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 433,
+                "name": "Profesional del acertijo",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa el nivel 8",
+                "rank_token": "##easy##"
+            }
+        ]
+    },
+    {
+        "name": "B\u00fasqueda del tesoro",
+        "description": "Estampillas de B\u00fasqueda del tesoro",
+        "parent_group_id": 8,
+        "display": "Juegos : B\u00fasqueda Del Tesoro",
+        "group_id": 56,
+        "stamps": [
+            {
+                "stamp_id": 422,
+                "name": "As de las gemas\n",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Descubre 2 gemas en solo 7 jugadas",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 416,
+                "name": "Coleccionista",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Obt\u00e9n 8 monedas en una sola partida \n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 418,
+                "name": "Diamante en bruto",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Halla un tesoro at\u00edpico\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 414,
+                "name": "El poder de la gema\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Descubre 2 gemas en una sola partida\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 420,
+                "name": "Experto en gemas",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Descubre una gema en 3 jugadas\n",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Card-jitsu",
+        "description": "##Card-Jitsu Original##",
+        "parent_group_id": 8,
+        "display": "Juegos : Card-jitsu",
+        "group_id": 38,
+        "stamps": [
+            {
+                "stamp_id": 232,
+                "name": "Buen alumno \n ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Llega a mitad de camino. Obt\u00e9n tu cintur\u00f3n azul ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 246,
+                "name": "Carta del Sensei ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Descubre la Carta poderosa del Sensei",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 248,
+                "name": "Dojo completo \n",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana 9 partidas en una ronda ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 244,
+                "name": "Elemento \u00fanico  ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana un partido con 3 cartas del mismo elemento ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 240,
+                "name": "Maestro en batallas ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gana 25 partidos ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 236,
+                "name": "Maestro ninja  ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Derrota al Sensei y convi\u00e9rtete en ninja ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 230,
+                "name": "Saltamontes",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Comienza tu viaje y obt\u00e9n el cintur\u00f3n blanco ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 234,
+                "name": "Verdadero ninja \n ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Demuestra tus dotes de ninja y obt\u00e9n el cintur\u00f3n negro ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 242,
+                "name": "Victoria elemental ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana un partido con 3 elementos distintos ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 238,
+                "name": "Victoria perfecta  ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana sin que tu adversario obtenga ninguna carta ",
+                "rank_token": "##medium##"
+            }
+        ]
+    },
+    {
+        "name": "Card-jitsu Agua",
+        "description": "##Card-Jitsu Water##",
+        "parent_group_id": 8,
+        "display": "Juegos : Card-jitsu Agua",
+        "group_id": 34,
+        "stamps": [
+            {
+                "stamp_id": 286,
+                "name": "Al borde ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Ac\u00e9rcate al l\u00edmite dos veces y a\u00fan as\u00ed, gana el partido ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 274,
+                "name": "Ca\u00edda acuosa ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "\u00a1Zamb\u00fallete! C\u00e1ete de la cascada",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 276,
+                "name": "Experto en agua ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana 100 partidos ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 278,
+                "name": "Mitad acu\u00e1tica ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana el abrigo, \u00a1y recorre el 50% de tu viaje de Ninja de Agua! ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 284,
+                "name": "Ninja de Agua ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Derrota al Sensei y convi\u00e9rtete en Ninja de Agua ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 288,
+                "name": "Saltando baldosas ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "En un partido, salta 28 baldosas de cualquier elemento ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 282,
+                "name": "Traje de agua ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa tu traje de agua ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 270,
+                "name": "\u00a1Gongo! ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana un partido, \u00a1y haz sonar el gongo! ",
+                "rank_token": "##easy##"
+            }
+        ]
+    },
+    {
+        "name": "Card-jitsu Fuego",
+        "description": "##Card-Jitsu Fire##",
+        "parent_group_id": 8,
+        "display": "Juegos : Card-jitsu Fuego",
+        "group_id": 32,
+        "stamps": [
+            {
+                "stamp_id": 260,
+                "name": "Defensa m\u00e1xima ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gana un partido sin perder ninguna energ\u00eda ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 266,
+                "name": "Energ\u00eda m\u00e1xima ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana 3 puntos de energ\u00eda en un partido ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 268,
+                "name": "Experto en fuego ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana 50 partidos ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 256,
+                "name": "Mitad fuego ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana el abrigo, \u00a1y recorre el 50% de tu viaje de Ninja de Fuego!",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 264,
+                "name": "Ninja de Fuego \n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Derrota al Sensei, \u00a1y convi\u00e9rtete en Ninja de Fuego! ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 252,
+                "name": "Precalentamiento ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana 10 batallas de fuego ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 254,
+                "name": "Punto de fuego  ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana una energ\u00eda en un partido ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 262,
+                "name": "Traje de fuego",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa tu traje de fuego ",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Card-jitsu Nieve",
+        "description": "##Card-Jitsu Snow##",
+        "parent_group_id": 8,
+        "display": "Juegos : Card-jitsu Nieve",
+        "group_id": 60,
+        "stamps": [
+            {
+                "stamp_id": 485,
+                "name": "3 Combos",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Juega 3 Combos de Cartas poderosas en una batalla",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 467,
+                "name": "3 Combos ninja",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Juega 1 Carta poderosa a la vez que los otros ninjas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 468,
+                "name": "4 Combos ninja",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Juega 1 Carta poderosa a la vez que otros ninjas y el Sensei",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 486,
+                "name": "Batalla final",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Derrota al Maestro de la Nieve",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 483,
+                "name": "Combo Explosi\u00f3n Fuego",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Da\u00f1a 3 luchadores con 1 Carta poderosa en un combo",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 477,
+                "name": "Cura 15 veces",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Cura a un ninja 15 veces en una batalla",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 481,
+                "name": "Envi\u00f3n de ola",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Aumenta los ataques ninja con 1 combo poderoso de Agua",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 479,
+                "name": "Escudo de nieve",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Protege ninjas con un Combo poderoso de Nieve",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 482,
+                "name": "Explosi\u00f3n de fuego",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Da\u00f1a 3 luchadores con 1 Carta poderosa",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 478,
+                "name": "Gran salvaci\u00f3n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Cura a todos los ninjas con 1 Carta poderosa de nieve",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 480,
+                "name": "Maremoto",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Da\u00f1a a 3 luchadores con 1 Carta poderosa de Agua",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 471,
+                "name": "Ninja de Agua ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana 3 rondas como Ninja de Agua",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 470,
+                "name": "Ninja de Fuego \n",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Gana 3 rondas como Ninja de Fuego",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 469,
+                "name": "Ninja de Nieve",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Gana 3 rondas como Ninja de Nieve",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 484,
+                "name": "Pro en Cartas poderosas",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Juega 3 Cartas poderosas en una batalla",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 487,
+                "name": "Pro en Nieve",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana la gema. Recorre m\u00e1s de la mitad de tu viaje de Nieve",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 476,
+                "name": "Resurgimiento",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gana luego de que todos los ninjas hayan ca\u00eddo y revivido",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 474,
+                "name": "Revivir",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Revive a un ninja",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 472,
+                "name": "Salud completa",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Alcanza una salud plena en una Ronda extra",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 473,
+                "name": "Victoria extra",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Derrota a todos los luchadores en una ronda extra",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 475,
+                "name": "\u00a1Arriba y acci\u00f3n!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz que te revivan y gana la batalla",
+                "rank_token": "##medium##"
+            }
+        ]
+    },
+    {
+        "name": "Carrito surfero",
+        "description": "Estampillas de Carrito surfero",
+        "parent_group_id": 8,
+        "display": "Juegos : Carrito Surfero",
+        "group_id": 28,
+        "stamps": [
+            {
+                "stamp_id": 220,
+                "name": "Derrapa en la Mina ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Derrapa en 8 curvas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 226,
+                "name": "D\u00fao fant\u00e1stico ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Haz 20 trucos con tu puffle ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 212,
+                "name": "Equilibrista ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Recupera el equilibrio ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 208,
+                "name": "Experto en carrito ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gana 250 monedas en un solo juego ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 224,
+                "name": "Giro perfecto ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Gira 20 veces seguidas sin chocar ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 210,
+                "name": "Maestro en carrito ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana 350 monedas en un solo juego ",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 214,
+                "name": "Maravilla min\u00edstica ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 10 trucos en el carrito",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 216,
+                "name": "Piecito filoso ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 10 trucos fuera del carrito ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 228,
+                "name": "Poder puffl\u00edstico",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recupera el equilibrio con tu puffle ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 206,
+                "name": "Pro carr\u00edstico",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Gana 150 monedas en un solo juego ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 218,
+                "name": "Supertrucos ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 14 trucos diferentes ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 222,
+                "name": "Surf sobre ruedas ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Surfea 8 curvas",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Defensor del sistema",
+        "description": "Defensor del sistema",
+        "parent_group_id": 8,
+        "display": "Juegos : Defensor Del Sistema",
+        "group_id": 46,
+        "stamps": [
+            {
+                "stamp_id": 312,
+                "name": "As en t\u00e1ctica",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Destruye 250 enemigos sin que te causen da\u00f1o",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 328,
+                "name": "Ataque protob\u00f3tico",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Protege el servidor principal de la EPF del PUG",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 300,
+                "name": "Destructor de basura",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Destruye 100 enemigos en 1 nivel ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 306,
+                "name": "Experto en t\u00e1ctica",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Destruye 100 enemigos sin que te causen da\u00f1o ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 298,
+                "name": "Listo para la acci\u00f3n",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa el tutorial de G ",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 310,
+                "name": "Maestro estratega",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Destruye 250 enemigos sin hacer mejoras ",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 308,
+                "name": "Maestro mec\u00e1nico",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Llena todos los huecos vac\u00edos con un ca\u00f1\u00f3n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 304,
+                "name": "Monoca\u00f1\u00f3n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa el juego con un solo tipo de ca\u00f1\u00f3n ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 443,
+                "name": "Rastrea a Herbert ",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Completa el nivel \"Rastrea a Herbert\"",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 320,
+                "name": "Sobrecarga de enemigos",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Protege el servidor principal de la EPF de los robots malignos",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 326,
+                "name": "TrioBots de prueba",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Protege el sistema de la EPF de los robots de prueba\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 322,
+                "name": "\u00a1Herbert ataca!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa el nivel \"\u00a1Herbert ataca!\"",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 324,
+                "name": "\u00a1Klutzy ataca!",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Protege el sistema de la EPF de Klutzy",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 302,
+                "name": "\u00c9xito estrat\u00e9gico",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Destruye 100 enemigos sin mejorar tus ca\u00f1ones ",
+                "rank_token": "##medium##"
+            }
+        ]
+    },
+    {
+        "name": "Hielo fino",
+        "description": "##Don't fall through!##",
+        "parent_group_id": 8,
+        "display": "Juegos : Hielo Fino",
+        "group_id": 16,
+        "stamps": [
+            {
+                "stamp_id": 63,
+                "name": "1 bolsa de monedas",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Recoge una bolsa con monedas",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 67,
+                "name": "10 Bolsas",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Recoge 10 bolsas con monedas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 64,
+                "name": "3 Bolsas",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recoge 3 bolsas con monedas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 65,
+                "name": "6 Bolsas",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recoge 6 bolsas con monedas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 68,
+                "name": "Hela-bono",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Derrite 480 bloques de hielo",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 69,
+                "name": "Hela-camino",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Pon los bloques en la posici\u00f3n correcta",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 71,
+                "name": "Maestro del hielo ",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Domina todos los laberintos",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 66,
+                "name": "Tesoro helado",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Encuentra la sala del tesoro ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 70,
+                "name": "\u00a1Todas!",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Recoge todas las bolsas de los niveles",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Misiones",
+        "description": "Misiones APS 1 a 11",
+        "parent_group_id": 8,
+        "display": "Juegos : Misiones",
+        "group_id": 22,
+        "stamps": [
+            {
+                "stamp_id": 172,
+                "name": "Bander\u00edn",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 7",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 176,
+                "name": "Caja de chocolates",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 9",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 168,
+                "name": "Caja de pizza",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 5",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 164,
+                "name": "Carta agradecimiento",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 3",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 162,
+                "name": "Carta de G",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 2",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 160,
+                "name": "Carta de T\u00eda Arctic ",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 1",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 178,
+                "name": "Empleado del mes",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 10",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 180,
+                "name": "Igl\u00fa burbuja de cristal",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 11",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 174,
+                "name": "Lindo regalo",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 8",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 159,
+                "name": "Medalla Misi\u00f3n 1",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa En busca de los puffles perdidos",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 177,
+                "name": "Medalla Misi\u00f3n 10",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa Escuadr\u00f3n de ping\u00fcinos",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 179,
+                "name": "Medalla Misi\u00f3n 11",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa El villano vegetariano",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 161,
+                "name": "Medalla Misi\u00f3n 2",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa La misi\u00f3n secreta del agente G",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 163,
+                "name": "Medalla Misi\u00f3n 3",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa El caso de las monedas desaparecidas",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 165,
+                "name": "Medalla Misi\u00f3n 4",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa Rescate en la nieve",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 167,
+                "name": "Medalla Misi\u00f3n 5",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa El misterioso manojo blanco",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 169,
+                "name": "Medalla Misi\u00f3n 6",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa Preguntas para un cangrejo",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 171,
+                "name": "Medalla Misi\u00f3n 7",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa Operaci\u00f3n reloj",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 173,
+                "name": "Medalla Misi\u00f3n 8",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa Temblores misteriosos",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 175,
+                "name": "Medalla Misi\u00f3n 9",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa El esp\u00eda secreto",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 170,
+                "name": "Planos",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 6",
+                "rank_token": "##none specified##"
+            },
+            {
+                "stamp_id": 166,
+                "name": "Premio ping\u00fci-habilidad",
+                "is_member": 0,
+                "rank": 0,
+                "description": "Completa la tarea secreta de la Misi\u00f3n 4",
+                "rank_token": "##none specified##"
+            }
+        ]
+    },
+    {
+        "name": "Olas con onda",
+        "description": "##Stamps related to surfing##",
+        "parent_group_id": 8,
+        "display": "Juegos : Olas Con Onda",
+        "group_id": 15,
+        "stamps": [
+            {
+                "stamp_id": 95,
+                "name": "Flip f\u00e1cil",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Haz un flip",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 97,
+                "name": "Floater f\u00e1cil",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Haz un combo de 100 puntos (floater)",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 104,
+                "name": "Giro f\u00e1cil",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Haz 3 giros",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 98,
+                "name": "Graduado",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Termina la clase de surf",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 110,
+                "name": "Gran salto",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Salta la altura de 20 ping\u00fcinos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 111,
+                "name": "Gran tubo",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Haz un combo de 5000 puntos con un tubo",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 112,
+                "name": "Muchos giros",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Haz 10 giros",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 109,
+                "name": "M\u00e1s flips",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Haz 10 flips",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 107,
+                "name": "M\u00e1s floaters",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Haz un combo de 1200 puntos (floater)",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 108,
+                "name": "Primer lugar",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Queda primero en una competici\u00f3n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 93,
+                "name": "Primer truco",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Domina tu primer truco en la tabla",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 100,
+                "name": "Puffle-podio",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Finaliza en 1\u00b0, 2\u00b0 o 3\u00b0 lugar con tu puffle",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 102,
+                "name": "Salto f\u00e1cil",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Salta la altura de 8 ping\u00fcinos",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 114,
+                "name": "Sobrevivir",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Completa el modo Supervivencia",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 106,
+                "name": "Superfloater",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz un combo de 700 puntos (floater)",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 105,
+                "name": "Supergiro",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 7 giros ",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 103,
+                "name": "Supertubo",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz un combo de 1000 puntos con un tubo",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 94,
+                "name": "Surf puffl\u00edstico",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Lleva a tu puffle rojo a una clase \n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 101,
+                "name": "Triple flip",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Salta y haz un flip 3 veces",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 99,
+                "name": "Truqu\u00edsimo",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Domina 13 trucos diferentes",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 96,
+                "name": "Tubo f\u00e1cil",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Haz un combo de 100 puntos con un tubo",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 113,
+                "name": "\u00a1Tibur\u00f3n!",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Visualiza al tibur\u00f3n",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Pesca hielo",
+        "description": "Pesca hielo",
+        "parent_group_id": 8,
+        "display": "Juegos : Pesca Hielo",
+        "group_id": 52,
+        "stamps": [
+            {
+                "stamp_id": 382,
+                "name": "Apezionado",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Atrapa 45 peces sin equivocarte\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 390,
+                "name": "As del anzuelo\n",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Pesca 15 peces grises y a Mullet sin perder gusanos\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 372,
+                "name": "Bocado de pez\n",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Dale de comer un pez a un tibur\u00f3n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 380,
+                "name": "Corte cangrejo\n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Haz que 3 cangrejos corten tu l\u00ednea y llega al final\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 384,
+                "name": "Materia gris\n",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Atrapa 15 peces grises\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 388,
+                "name": "Pesca veloz\n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Atrapa 63 peces en menos de 5 minutos\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 376,
+                "name": "Peztupendo\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Atrapa 15 peces sin equivocarte\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 386,
+                "name": "Premio Mullet\n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Captura a Mullet\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 374,
+                "name": "Rey en shock\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Recibe 3 shocks del aguaviva y llega al final\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 378,
+                "name": "Sin gusanos\n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Termina el juego sin perder ning\u00fan gusano\n",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Pizzatron",
+        "description": "Estampillas de Pizzatron",
+        "parent_group_id": 8,
+        "display": "Juegos : Pizzatron",
+        "group_id": 54,
+        "stamps": [
+            {
+                "stamp_id": 400,
+                "name": "Cacao en grano \n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 3 pizzas de confites y chocolate\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 402,
+                "name": "Calamar ardiente \n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Prepara 3 pizzas de salsa picante y calamares\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 406,
+                "name": "Chef de pizzas",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Prepara 30 pizzas sin equivocarte\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 410,
+                "name": "Chef de postres",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Prepara 40 pizzas dulces sin equivocarte\n\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 392,
+                "name": "Fiasco pizzero ",
+                "is_member": 0,
+                "rank": 1,
+                "description": "\u00a1Caos en la cocina! Prepara 3 pizzas mal\n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 396,
+                "name": "Gorro de cocinero\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Prepara 20 pizzas sin equivocarte\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 408,
+                "name": "Maestro pizzero\n",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Prepara 40 pizzas sin equivocarte\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 398,
+                "name": "Mar de especias\n",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Haz 3 pizzas de salsa picante y camarones\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 404,
+                "name": "Mundo dulce \n",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Haz 3 pizzas de salsa de fresa y malvaviscos\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 394,
+                "name": "Solo postres \n",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Juega a Pizzatron en el Modo dulce \n",
+                "rank_token": "##easy##"
+            }
+        ]
+    },
+    {
+        "name": "Puffle al viento",
+        "description": "Puffle al viento",
+        "parent_group_id": 8,
+        "display": "Juegos : Puffle Al Viento",
+        "group_id": 48,
+        "stamps": [
+            {
+                "stamp_id": 340,
+                "name": "Ataque cangrejo",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Derrota a un cangrejefe una vez\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 344,
+                "name": "Batalla de cangrejos",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Derrota a 6 cangrejefes en una partida",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 334,
+                "name": "Ca\u00f1\u00f3n para armar",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Obt\u00e9n la primera pieza del ca\u00f1\u00f3n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 338,
+                "name": "Ca\u00f1\u00f3n \u00e9pico ",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Construye el ca\u00f1\u00f3n \u00e9pico",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 342,
+                "name": "Choque de cangrejos",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Derrota a 3 cangrejefes en una partida",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 336,
+                "name": "Lanzamiento listo",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Construye un ca\u00f1\u00f3n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 348,
+                "name": "Lanzamiento supers\u00f3nico",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa los 36 niveles en menos de 25 min.",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 346,
+                "name": "Lanzamiento veloz",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa los 36 niveles en menos de 35 min.",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 352,
+                "name": "Turbo r\u00e9cord",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa un nivel en el modo Turbo",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 354,
+                "name": "Turbobatalla",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Derrota al cangrejo en el modo Turbo",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 356,
+                "name": "Turbomaestro",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Completa los 36 niveles en el modo Turbo",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 350,
+                "name": "Velocidad de la luz",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Completa los 36 niveles en menos de 18 min.",
+                "rank_token": "##extreme##"
+            }
+        ]
+    },
+    {
+        "name": "Pur\u00e9 de frutas",
+        "description": "Pur\u00e9 de frutas",
+        "parent_group_id": 8,
+        "display": "Juegos : Pur\u00e9 De Frutas",
+        "group_id": 58,
+        "stamps": [
+            {
+                "stamp_id": 459,
+                "name": "Aplasta frutas",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Aplasta 20 frutas correctas seguidas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 463,
+                "name": "Aplastador pro",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Aplasta 50 frutas correctas seguidas",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 451,
+                "name": "Batido de frutas",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Prepara una bebida para Rockhopper",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 452,
+                "name": "Bayas inteligentes",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Prepara una bebida para T\u00eda Arctic",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 453,
+                "name": "Bayas polares",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Prepara una bebida para Herbert",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 457,
+                "name": "Deflector",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Juega 2 min. en el Modo supervivencia sin perder",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 458,
+                "name": "Energizante",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa 20 recetas en una partida",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 450,
+                "name": "Frutas exprimidas",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Completa 5 recetas en una partida",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 460,
+                "name": "Guerrero frutal",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Resiste 4 min. en el Modo supervivencia",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 465,
+                "name": "H\u00e9roe frutal",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Resiste 4 min. en el Modo supervivencia",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 464,
+                "name": "Maestro frutal",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Resiste 8 min. en el Modo supervivencia",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 456,
+                "name": "Poder frutal",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Resiste 2 min. en el Modo supervivencia",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 454,
+                "name": "Pur\u00e9 sabroso",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa 10 recetas en una partida",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 455,
+                "name": "Salpic\u00f3n frutal",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Aplasta 10 frutas correctas seguidas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 462,
+                "name": "Silbido frutal",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Completa 30 recetas en una partida",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 461,
+                "name": "Sobreviviente frutal ",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Juega 3 min. en el Modo supervivencia sin perder",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Rescata puffles",
+        "description": "Estampillas de Rescata puffles",
+        "parent_group_id": 8,
+        "display": "Juegos : Rescata Puffles",
+        "group_id": 19,
+        "stamps": [
+            {
+                "stamp_id": 132,
+                "name": "1 bolsa de monedas",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Encuentra 1 bolsa de monedas en niveles de nieve",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 155,
+                "name": "1 burbumoneda",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Encuentra 1 bolsa de monedas emburbujada en niveles acu\u00e1ticos\n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 152,
+                "name": "10 niveles de agua",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Alcanza 10 niveles de agua con 5 vidas completas",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 133,
+                "name": "2 bolsas de monedas ",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Encuentra 2 bolsas de monedas en niveles de nieve",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 156,
+                "name": "2 burbumonedas\n",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Encuentra 2 bolsas de monedas emburbujadas en niveles acu\u00e1ticos\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 153,
+                "name": "20 niveles de agua",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Alcanza 20 niveles de agua con 5 vidas completas",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 134,
+                "name": "3 Bolsas",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Encuentra 3 bolsas de monedas en niveles de nieve",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 157,
+                "name": "3 burbumonedas",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Encuentra 3 bolsas de monedas emburbujadas en niveles acu\u00e1ticos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 154,
+                "name": "30 niveles de agua",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Alcanza 30 niveles de agua con 5 vidas completas\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 144,
+                "name": "Atrapada de experto",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Atrapa 3 bolsas de caf\u00e9 antes de que caigan",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 141,
+                "name": "Atrapada veloz",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Atrapa 1 bolsa de caf\u00e9 antes de que caiga",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 148,
+                "name": "Casi casi",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Esquiva la bola de nieve gigante\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 147,
+                "name": "Ca\u00f1\u00f3n extremo",
+                "is_member": 1,
+                "rank": 4,
+                "description": "Destruye 15 ca\u00f1ones de bolas de nieve en niveles de la cueva",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 145,
+                "name": "Ca\u00f1\u00f3n f\u00e1cil",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Destruye 8 ca\u00f1ones de bolas nieve, en niveles de la cueva\n",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 135,
+                "name": "Estudiante de la nieve",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Completa 3 niveles de nieve en no m\u00e1s de 70 movimientos",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 137,
+                "name": "H\u00e9roe de la nieve\n",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Completa 9 niveles de nieve en no m\u00e1s de 270 movimientos\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 136,
+                "name": "Maestro de la nieve",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Completa 6 niveles de nieve en no m\u00e1s de 160 movimientos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 138,
+                "name": "Monedas de la cueva",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Encuentra monedas ocultas en el nivel 1 de la cueva",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 139,
+                "name": "Monedas de la cueva extra",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Encuentra monedas ocultas en el nivel 4 de la cueva",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 140,
+                "name": "Monedas de la cueva max",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Encuentra monedas ocultas en el nivel 7 de la cueva\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 150,
+                "name": "Rescate expr\u00e9s",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Completa 10 niveles de agua en 30 segundos c/u",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 151,
+                "name": "Rescate extremo\n",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Completa 20 niveles de agua en 30 segundos c/u\n",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 149,
+                "name": "Rescate veloz",
+                "is_member": 1,
+                "rank": 1,
+                "description": "Completa 5 niveles de agua en 30 segundos c/u",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 130,
+                "name": "SOS 30",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Rescata 30 puffles en niveles de nieve",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 131,
+                "name": "SOS 60",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Rescata 60 puffles en niveles de nieve",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 142,
+                "name": "Superatrapada",
+                "is_member": 1,
+                "rank": 2,
+                "description": "Atrapa 2 bolsas de caf\u00e9 antes de que caigan",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 146,
+                "name": "Superca\u00f1\u00f3n",
+                "is_member": 1,
+                "rank": 3,
+                "description": "Destruye 12 ca\u00f1ones de bolas de nieve en niveles de la cueva\n",
+                "rank_token": "##hard##"
+            }
+        ]
+    },
+    {
+        "name": "Videojuegos",
+        "description": "Estampillas de videojuegos ",
+        "parent_group_id": 0,
+        "display": "Videojuegos",
+        "group_id": 25,
+        "stamps": []
+    },
+    {
+        "name": "D\u00eda de juegos",
+        "description": "Juego para Wii \"D\u00eda de juegos\"",
+        "parent_group_id": 25,
+        "display": "Videojuegos : D\u00eda De Juegos",
+        "group_id": 26,
+        "stamps": [
+            {
+                "stamp_id": 125,
+                "name": "2 vs. 2",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Obt\u00e9n el 1\u00b0 puesto en todos los partidos 2 vs. 2",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 126,
+                "name": "2 vs. 2 Max",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana todos los partidos 2 vs. 2 contra la Wii en el nivel Dif\u00edcil\n",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 122,
+                "name": "Choca y rebota",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana un partido en modo 4 jugadores sin que te derriben",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 120,
+                "name": "Coleccionista",
+                "is_member": 0,
+                "rank": 3,
+                "description": "Consigue todos los art\u00edculos",
+                "rank_token": "##hard##"
+            },
+            {
+                "stamp_id": 119,
+                "name": "Conquista la isla",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Conquista la isla con todos los equipos",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 124,
+                "name": "Equilibrio ping\u00fcino",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Carga 30 sacos en el modo 4 jugadores",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 123,
+                "name": "Ping-puffle",
+                "is_member": 0,
+                "rank": 2,
+                "description": "Juega en el modo 4 jugadores sin que se te caiga ning\u00fan puffle",
+                "rank_token": "##medium##"
+            },
+            {
+                "stamp_id": 128,
+                "name": "Ping\u00fcino al arco",
+                "is_member": 0,
+                "rank": 4,
+                "description": "Gana un partido sin que el disco entre en tu arco",
+                "rank_token": "##extreme##"
+            },
+            {
+                "stamp_id": 121,
+                "name": "Ping\u00fcino remoto",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Carga otro ping\u00fcino a tu Control remoto Wii",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 127,
+                "name": "Puffle blanco",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Alimenta a un puffle blanco en Puffito al blanco\n",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 118,
+                "name": "Victoria Amarilla",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Conquista la isla con el Equipo amarillo",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 116,
+                "name": "Victoria Azul\n",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Conquista la isla con el Equipo azul",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 115,
+                "name": "Victoria Roja",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Conquista la isla con el Equipo rojo",
+                "rank_token": "##easy##"
+            },
+            {
+                "stamp_id": 117,
+                "name": "Victoria Verde",
+                "is_member": 0,
+                "rank": 1,
+                "description": "Conquista la isla con el Equipo verde",
+                "rank_token": "##easy##"
+            }
+        ]
+    }
+]

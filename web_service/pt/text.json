@@ -1,0 +1,93 @@
+﻿{
+    "dynamic": {
+        "D1": "estáo disponível!",
+        "D2": "está disponível!",
+        "D3": "estáo online!",
+        "D4": "está online!",
+        "D5": "Você tem {0} pedidos de amizade!",
+        "D6": "quer ser seu amigo!",
+        "D7": "Deixar de ser Melhor Amigo",
+        "D8": "Agora você é amigo de {0}",
+        "D9": "Amigos",
+        "D10": "Ser Melhor Amigo",
+        "D11": "Escolha seus melhores amigos.",
+        "D12": "Você tem {0} novos amigos!",
+        "D14": "Esta sala está lotada.",
+        "D15": "Offline",
+        "D17": "Não foi possível encontrar este jogador. Tente outro nome.",
+        "D18": "Ops! Você não pode se adicionar a sua lista de amigos.",
+        "D19": "{0} já é seu amigo. Tente outro nome.",
+        "D20": "{0} já está na sua Lista de Ignorados. Vá para configurações para remover de sua Lista de Ignorados.",
+        "D21": "novos amigos!",
+        "D22": "Iglu",
+        "D23": "Online",
+        "D24": "My Penguin",
+        "D25": "está conectado!",
+        "D26": "Seus pais ou responsáveis precisam ativar a sua conta para que você possa adicionar amigos.",
+        "D27": "Sobre a Ativação"
+    },
+    "S1": {
+        "h": "Amigos"
+    },
+    "S2": {
+        "t": "Fechar Janela"
+    },
+    "S3": {
+        "h": "Encontre um Jogador"
+    },
+    "S4": {
+        "t": "Procurar amigo"
+    },
+    "S5": {
+        "h": "Achar"
+    },
+    "S6": {
+        "t": "Reconectando..."
+    },
+    "S7": {
+        "t": "Mostrar Cartão do Pinguim"
+    },
+    "S8": {
+        "h": "+ Adicionar"
+    },
+    "S9": {
+        "h": "Não, obrigado"
+    },
+    "S10": {
+        "t": "Encontrar Amigo em Jogo"
+    },
+    "S11": {
+        "h": "Aceito"
+    },
+    "S12": {
+        "a": "*",
+        "t": "Ser Melhor Amigo"
+    },
+    "S14": {
+        "h": "Offline"
+    },
+    "S15": {
+        "t": "Subir"
+    },
+    "S16": {
+        "t": "Descer"
+    },
+    "S17": {
+        "a": "Avatar"
+    },
+    "S18": {
+        "t": "Mover Painel"
+    },
+    "S19": {
+        "t": "Amigos"
+    },
+    "S20": {
+        "t": "Subir/Descer"
+    },
+    "S21": {
+        "h": "Digite o nome"
+    },
+    "S22": {
+        "t": "Adicionar"
+    }
+}

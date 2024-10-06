@@ -1,0 +1,51 @@
+{
+    "0": {
+        "title": "##LETTER FROM THE EDITOR##",
+        "path": "news/papers/20170322",
+        "issue": "Edici\u00f3n #566",
+        "date": "22 de marzo de 2017",
+        "key": "current_news"
+    },
+    "1": {
+        "title": "SIGAN PING\u00dcINEANDO",
+        "path": "news/papers/20170201",
+        "issue": "Edici\u00f3n #565",
+        "date": "01 de febrero de 2017",
+        "key": "old_news0"
+    },
+    "2": {
+        "title": "\u00a1A\u00d1O NUEVO, NUEVO HORIZONTE!",
+        "path": "news/papers/20170104",
+        "issue": "Edici\u00f3n #564",
+        "date": "04 de enero de 2017",
+        "key": "old_news1"
+    },
+    "3": {
+        "title": "\u00a1MONEDAS EN CAMINO!",
+        "path": "news/papers/20161214",
+        "issue": "Edici\u00f3n #563",
+        "date": "14 de diciembre de 2016",
+        "key": "old_news2"
+    },
+    "4": {
+        "title": "VUELVEN LAS TRADICIONES NAVIDE\u00d1AS",
+        "path": "news/papers/20161130",
+        "issue": "Edici\u00f3n #562",
+        "date": "30 de noviembre de 2016",
+        "key": "old_news3"
+    },
+    "5": {
+        "title": "C\u00d3MO ESCRIBIR UN \u00c9XITO",
+        "path": "news/papers/20161116",
+        "issue": "Edici\u00f3n #561",
+        "date": "16 de noviembre de 2016",
+        "key": "old_news4"
+    },
+    "6": {
+        "title": "\u00a1LA BANDA HA REGRESADO!",
+        "path": "news/papers/20161102",
+        "issue": "Edici\u00f3n #560",
+        "date": "02 de noviembre de 2016",
+        "key": "old_news5"
+    }
+}

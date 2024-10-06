@@ -1,0 +1,1939 @@
+[
+    {
+        "message": "Hola",
+        "id": 1,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "Hola",
+                "id": 100,
+                "parent_id": 1,
+                "menu": [
+                    {
+                        "message": "Hola amigos",
+                        "id": 101,
+                        "parent_id": 100
+                    },
+                    {
+                        "message": "Hola a todos",
+                        "id": 102,
+                        "parent_id": 100
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "message": "Ok",
+        "id": 22,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "Saludos",
+                "id": 120,
+                "parent_id": 22,
+                "menu": [
+                    {
+                        "message": "Saludos a todos",
+                        "id": 121,
+                        "parent_id": 120
+                    },
+                    {
+                        "message": "Felicidades, ping\u00fcino",
+                        "id": 122,
+                        "parent_id": 120
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "Bienvenido",
+                "id": 130,
+                "parent_id": 22,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "\u00a1Bienvenido a mi igl\u00fa!",
+                        "id": 131,
+                        "parent_id": 130
+                    },
+                    {
+                        "message": "\u00a1Bienvenido de nuevo!",
+                        "id": 132,
+                        "parent_id": 130
+                    }
+                ]
+            },
+            {
+                "message": "\u00bfQu\u00e9 tal?",
+                "id": 140,
+                "parent_id": 22
+            },
+            {
+                "message": "\u00bfQu\u00e9 hay de nuevo?",
+                "id": 150,
+                "parent_id": 22,
+                "menu": [
+                    {
+                        "message": "\u00bfC\u00f3mo est\u00e1s hoy?",
+                        "id": 151,
+                        "parent_id": 150
+                    },
+                    {
+                        "message": "\u00bfC\u00f3mo va todo?",
+                        "id": 152,
+                        "parent_id": 150
+                    },
+                    {
+                        "message": "\u00bfQu\u00e9 cuentas?",
+                        "id": 153,
+                        "parent_id": 150
+                    }
+                ]
+            },
+            {
+                "message": "Buen d\u00eda",
+                "id": 160,
+                "parent_id": 22,
+                "menu": [
+                    {
+                        "message": "Buen d\u00eda",
+                        "id": 161,
+                        "parent_id": 160
+                    },
+                    {
+                        "message": "Buenas tardes",
+                        "id": 162,
+                        "parent_id": 160
+                    },
+                    {
+                        "message": "Buenas noches",
+                        "id": 163,
+                        "parent_id": 160
+                    },
+                    {
+                        "message": "\u00a1Qu\u00e9 duermas bien!",
+                        "id": 164,
+                        "parent_id": 160
+                    }
+                ]
+            },
+            {
+                "message": "Payaso",
+                "id": 170,
+                "parent_id": 22,
+                "menu": [
+                    {
+                        "message": "Oa",
+                        "id": 171,
+                        "parent_id": 170
+                    },
+                    {
+                        "message": "\u00bfQu\u00e9 onda?",
+                        "id": 172,
+                        "parent_id": 170
+                    },
+                    {
+                        "message": "ABORRRDO!!!",
+                        "id": 173,
+                        "parent_id": 170
+                    },
+                    {
+                        "message": "\u00a1Adelante, agente!",
+                        "id": 174,
+                        "parent_id": 170
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "message": "Adi\u00f3s",
+        "id": 2,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "M\u00e1s tarde",
+                "id": 210,
+                "parent_id": 2,
+                "menu": [
+                    {
+                        "message": "Nos vemos ma\u00f1ana",
+                        "id": 211,
+                        "parent_id": 210
+                    },
+                    {
+                        "message": "Nos vemos m\u00e1s tarde",
+                        "id": 212,
+                        "parent_id": 210
+                    }
+                ]
+            },
+            {
+                "message": "Adi\u00f3s",
+                "id": 220,
+                "parent_id": 2
+            },
+            {
+                "message": "Ya vuelvo",
+                "id": 230,
+                "parent_id": 2
+            },
+            {
+                "message": "Me tengo que ir",
+                "id": 240,
+                "parent_id": 2
+            },
+            {
+                "message": "Despedida",
+                "id": 250,
+                "parent_id": 2,
+                "menu": [
+                    {
+                        "message": "Cu\u00eddate",
+                        "id": 251,
+                        "parent_id": 250
+                    },
+                    {
+                        "message": "\u00a1Que tengas un buen d\u00eda!",
+                        "id": 252,
+                        "parent_id": 250
+                    },
+                    {
+                        "message": "\u00a1Buena suerte!",
+                        "id": 253,
+                        "parent_id": 250
+                    },
+                    {
+                        "message": "\u00a1P\u00e1sala bien!",
+                        "id": 254,
+                        "parent_id": 250
+                    },
+                    {
+                        "message": "Nos vemos",
+                        "id": 255,
+                        "parent_id": 250
+                    },
+                    {
+                        "message": "\u00a1Hasta pronto!",
+                        "id": 256,
+                        "parent_id": 250
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "\u00a1Paz!",
+                "id": 260,
+                "parent_id": 2
+            }
+        ]
+    },
+    {
+        "message": "amigo",
+        "id": 3,
+        "parent_id": null,
+        "wide": 2,
+        "menu": [
+            {
+                "message": "\u00bfQuieres ser mi amigo?",
+                "id": 300,
+                "parent_id": 3
+            },
+            {
+                "message": "S\u00edganme",
+                "id": 310,
+                "parent_id": 3,
+                "menu": [
+                    {
+                        "message": "Ven a mi igl\u00fa",
+                        "id": 311,
+                        "parent_id": 310
+                    },
+                    {
+                        "message": "\u00a1Hay fiesta en mi igl\u00fa!",
+                        "id": 312,
+                        "parent_id": 310
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "Me gusta ...",
+                "id": 320,
+                "parent_id": 3,
+                "menu": [
+                    {
+                        "message": "\u00a1Me gusta tu ropa!",
+                        "id": 321,
+                        "parent_id": 320
+                    },
+                    {
+                        "message": "\u00a1Me gusta tu igl\u00fa!",
+                        "id": 322,
+                        "parent_id": 320
+                    },
+                    {
+                        "message": "\u00a1Me gustan tus puffles!",
+                        "id": 323,
+                        "parent_id": 320
+                    },
+                    {
+                        "message": "\u00a1Me gusta tu cabello!",
+                        "id": 324,
+                        "parent_id": 320
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "Gracias",
+                "id": 330,
+                "parent_id": 3,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "Gracias por jugar conmigo",
+                        "id": 331,
+                        "parent_id": 330
+                    },
+                    {
+                        "message": "Gracias por tu visita",
+                        "id": 332,
+                        "parent_id": 330
+                    },
+                    {
+                        "message": "No, gracias ",
+                        "id": 333,
+                        "parent_id": 330
+                    }
+                ]
+            },
+            {
+                "message": "No hay problema",
+                "id": 340,
+                "parent_id": 3
+            },
+            {
+                "message": "Eres ...",
+                "id": 350,
+                "parent_id": 3,
+                "menu": [
+                    {
+                        "message": "\u00a1Eres genial!",
+                        "id": 351,
+                        "parent_id": 350
+                    },
+                    {
+                        "message": "\u00a1Tienes mucha onda!",
+                        "id": 352,
+                        "parent_id": 350
+                    },
+                    {
+                        "message": "\u00a1Eres gracioso!",
+                        "id": 353,
+                        "parent_id": 350
+                    },
+                    {
+                        "message": "\u00a1Eres payaso!",
+                        "id": 354,
+                        "parent_id": 350
+                    },
+                    {
+                        "message": "\u00a1Eres incre\u00edble!",
+                        "id": 355,
+                        "parent_id": 350
+                    },
+                    {
+                        "message": "\u00a1Eres un buen amigo!",
+                        "id": 356,
+                        "parent_id": 350
+                    }
+                ]
+            },
+            {
+                "message": "Igl\u00fa",
+                "id": 360,
+                "parent_id": 3,
+                "menu": [
+                    {
+                        "message": "\u00a1Qu\u00e9 buen igl\u00fa!",
+                        "id": 361,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "\u00a1Qu\u00e9 linda decoraci\u00f3n!",
+                        "id": 362,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "\u00a1Guau, qu\u00e9 buen dise\u00f1o!",
+                        "id": 363,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "Me encanta tu igl\u00fa",
+                        "id": 364,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "\u00a1Qu\u00e9 buena fiesta!",
+                        "id": 365,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "\u00a1Gracias por venir a mi fiesta!",
+                        "id": 366,
+                        "parent_id": 360
+                    },
+                    {
+                        "message": "Tus puffles parecen tener hambre",
+                        "id": 367,
+                        "parent_id": 360
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "Disculpa",
+                "id": 370,
+                "parent_id": 3,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "Disculpa, estoy ocupado",
+                        "id": 371,
+                        "parent_id": 370
+                    },
+                    {
+                        "message": "Disculpa, me tengo que ir",
+                        "id": 372,
+                        "parent_id": 370
+                    },
+                    {
+                        "message": "Por favor, perd\u00f3name",
+                        "id": 373,
+                        "parent_id": 370
+                    },
+                    {
+                        "message": "Te perdono",
+                        "id": 374,
+                        "parent_id": 370
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "message": "Preguntas",
+        "id": 4,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "\u00bfCu\u00e1l es?",
+                "id": 400,
+                "parent_id": 4,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "\u00bfCu\u00e1l es tu animal favorito?",
+                        "id": 401,
+                        "parent_id": 400
+                    },
+                    {
+                        "message": "\u00bfCu\u00e1l es su juego favorito?",
+                        "id": 402,
+                        "parent_id": 400
+                    },
+                    {
+                        "message": "\u00bfCu\u00e1l es tu deporte favorito?",
+                        "id": 403,
+                        "parent_id": 400
+                    },
+                    {
+                        "message": "\u00bfCu\u00e1l es tu m\u00fasica favorita?",
+                        "id": 405,
+                        "parent_id": 400
+                    },
+                    {
+                        "message": "\u00bfTienes alg\u00fan pasatiempo?",
+                        "id": 407,
+                        "parent_id": 400
+                    }
+                ]
+            },
+            {
+                "message": "\u00bfD\u00f3nde?",
+                "id": 410,
+                "parent_id": 4,
+                "menu": [
+                    {
+                        "message": "\u00bfAd\u00f3nde quieren ir?",
+                        "id": 412,
+                        "parent_id": 410
+                    },
+                    {
+                        "message": "\u00bfAd\u00f3nde vas?",
+                        "id": 413,
+                        "parent_id": 410
+                    },
+                    {
+                        "message": "\u00bfD\u00f3nde encontraste eso?",
+                        "id": 414,
+                        "parent_id": 410
+                    },
+                    {
+                        "message": "\u00bfD\u00f3nde encontraste ese pin?",
+                        "id": 415,
+                        "parent_id": 410
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "\u00bfCu\u00e1ndo?",
+                "id": 420,
+                "parent_id": 4,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "\u00bfCu\u00e1ndo es tu fiesta?",
+                        "id": 421,
+                        "parent_id": 420
+                    },
+                    {
+                        "message": "\u00bfCu\u00e1ndo es el ensayo?",
+                        "id": 422,
+                        "parent_id": 420
+                    }
+                ]
+            },
+            {
+                "message": "\u00bfC\u00f3mo est\u00e1s hoy?",
+                "id": 430,
+                "parent_id": 4
+            },
+            {
+                "message": "\u00bfPuedo contratar un tour?",
+                "id": 450,
+                "parent_id": 4
+            },
+            {
+                "message": "EPF",
+                "id": 460,
+                "parent_id": 4,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "Psss, quiero unirme a la EPF, \u00bfd\u00f3nde es el cuartel?",
+                        "id": 461,
+                        "parent_id": 460
+                    }
+                ]
+            }
+        ],
+        "wide": 2
+    },
+    {
+        "message": "Respuestas",
+        "id": 5,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "Animales",
+                "id": 10000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Gatos",
+                        "id": 10100,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Le\u00f3n",
+                                "id": 10101,
+                                "parent_id": 10100
+                            },
+                            {
+                                "message": "Tigre",
+                                "id": 10102,
+                                "parent_id": 10100
+                            },
+                            {
+                                "message": "Leopardo",
+                                "id": 10103,
+                                "parent_id": 10100
+                            },
+                            {
+                                "message": "Chita",
+                                "id": 10104,
+                                "parent_id": 10100
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Perros",
+                        "id": 10200,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Beagle",
+                                "id": 10201,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Collie",
+                                "id": 10202,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "D\u00e1lmata",
+                                "id": 10203,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Caniche",
+                                "id": 10204,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Cocker spaniel",
+                                "id": 10205,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Pastor",
+                                "id": 10206,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Terrier",
+                                "id": 10207,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Labrador",
+                                "id": 10208,
+                                "parent_id": 10200
+                            },
+                            {
+                                "message": "Lobo",
+                                "id": 10209,
+                                "parent_id": 10200
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Caballos",
+                        "id": 10300,
+                        "parent_id": 10000
+                    },
+                    {
+                        "message": "Reptiles",
+                        "id": 10400,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Lagarto",
+                                "id": 10410,
+                                "parent_id": 10400
+                            },
+                            {
+                                "message": "Tortuga inflable",
+                                "id": 10420,
+                                "parent_id": 10400
+                            },
+                            {
+                                "message": "V\u00edbora",
+                                "id": 10430,
+                                "parent_id": 10400
+                            }
+                        ]
+                    },
+                    {
+                        "message": "H\u00e1mster",
+                        "id": 10500,
+                        "parent_id": 10000
+                    },
+                    {
+                        "message": "Mono",
+                        "id": 10600,
+                        "parent_id": 10000
+                    },
+                    {
+                        "message": "Oso",
+                        "id": 10700,
+                        "parent_id": 10000
+                    },
+                    {
+                        "message": "Pez",
+                        "id": 10800,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Pez de colores",
+                                "id": 10810,
+                                "parent_id": 10800
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Aves",
+                        "id": 10900,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Ping\u00fcino",
+                                "id": 10901,
+                                "parent_id": 10900
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Elefantes",
+                        "id": 11000,
+                        "parent_id": 10000
+                    },
+                    {
+                        "message": "Puffles",
+                        "id": 12000,
+                        "parent_id": 10000,
+                        "menu": [
+                            {
+                                "message": "Qu\u00e9 lindos puffles",
+                                "id": 12001,
+                                "parent_id": 12000
+                            },
+                            {
+                                "message": "\u00a1Qu\u00e9 onda tienen tus puffles!",
+                                "id": 12002,
+                                "parent_id": 12000
+                            },
+                            {
+                                "message": "Tus puffles tienen hambre",
+                                "id": 12003,
+                                "parent_id": 12000
+                            },
+                            {
+                                "message": "\u00bfSacamos a pasear a los puffles? ",
+                                "id": 12004,
+                                "parent_id": 12000
+                            }
+                        ],
+                        "wide": 2
+                    }
+                ]
+            },
+            {
+                "message": "Juegos",
+                "id": 50000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Barra espacial",
+                        "id": 51100,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Aqua grabber",
+                        "id": 51150,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Atrapabolsas",
+                        "id": 51300,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Carrito surfero",
+                        "id": 51320,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Olas con onda",
+                        "id": 51321,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "4 en fila",
+                        "id": 51330,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Saltos acu\u00e1ticos",
+                        "id": 51200,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Pesca hielo",
+                        "id": 51350,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Aventuras en jet-pack",
+                        "id": 51360,
+                        "parent_id": 50000
+                    },
+                    {
+                        "message": "Mancala",
+                        "id": 51400,
+                        "parent_id": 50000
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "M\u00e1s juegos",
+                "id": 52000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Pizzatron 3000",
+                        "id": 51450,
+                        "parent_id": 52000
+                    },
+                    {
+                        "message": "Carrera de trineos",
+                        "id": 51500,
+                        "parent_id": 52000
+                    },
+                    {
+                        "message": "Fuga de puffles",
+                        "id": 51600,
+                        "parent_id": 52000
+                    },
+                    {
+                        "message": "Hielo fino",
+                        "id": 51700,
+                        "parent_id": 52000
+                    },
+                    {
+                        "message": "B\u00fasqueda del tesoro",
+                        "id": 51750,
+                        "parent_id": 52000
+                    },
+                    {
+                        "message": "SuperDJ",
+                        "id": 100245,
+                        "parent_id": 52000
+                    }
+                ]
+            },
+            {
+                "message": "Deportes",
+                "id": 20000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Hockey",
+                        "id": 20100,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "Bal\u00f3n de b\u00e9isbol",
+                        "id": 20200,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "Baloncesto",
+                        "id": 20300,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "F\u00fatbol americano",
+                        "id": 20400,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "F\u00fatbol",
+                        "id": 20500,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "Voleibol",
+                        "id": 20600,
+                        "parent_id": 20000
+                    },
+                    {
+                        "message": "Deportes agua",
+                        "id": 20700,
+                        "parent_id": 20000,
+                        "menu": [
+                            {
+                                "message": "Esqu\u00ed acu\u00e1tico",
+                                "id": 20710,
+                                "parent_id": 20700
+                            },
+                            {
+                                "message": "Tabla de wakeboard\r\n",
+                                "id": 20720,
+                                "parent_id": 20700
+                            },
+                            {
+                                "message": "Esqu\u00ed con flotador",
+                                "id": 20730,
+                                "parent_id": 20700
+                            },
+                            {
+                                "message": "Nataci\u00f3n",
+                                "id": 20740,
+                                "parent_id": 20700
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Deportes invierno",
+                        "id": 20800,
+                        "parent_id": 20000,
+                        "menu": [
+                            {
+                                "message": "Esqu\u00ed",
+                                "id": 20810,
+                                "parent_id": 20800,
+                                "menu": [
+                                    {
+                                        "message": "De fondo",
+                                        "id": 20811,
+                                        "parent_id": 20810
+                                    },
+                                    {
+                                        "message": "Alpino",
+                                        "id": 20812,
+                                        "parent_id": 20810
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Trineo",
+                                "id": 20820,
+                                "parent_id": 20800
+                            },
+                            {
+                                "message": "Snowboard",
+                                "id": 20830,
+                                "parent_id": 20800
+                            },
+                            {
+                                "message": "Patinaje",
+                                "id": 20840,
+                                "parent_id": 20800
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Aventuras",
+                        "id": 20900,
+                        "parent_id": 20000,
+                        "menu": [
+                            {
+                                "message": "Caminata",
+                                "id": 20910,
+                                "parent_id": 20900
+                            },
+                            {
+                                "message": "Alpinismo",
+                                "id": 20920,
+                                "parent_id": 20900
+                            },
+                            {
+                                "message": "Pesca",
+                                "id": 20930,
+                                "parent_id": 20900
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "message": "M\u00fasica",
+                "id": 40000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Country",
+                        "id": 41000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Jazz",
+                        "id": 42000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Rap",
+                        "id": 43000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Hip-Hop",
+                        "id": 44000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Cl\u00e1sica",
+                        "id": 45000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Pop",
+                        "id": 46000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Rock",
+                        "id": 47000,
+                        "parent_id": 40000
+                    },
+                    {
+                        "message": "Electr\u00f3nica",
+                        "id": 48000,
+                        "parent_id": 40000
+                    }
+                ]
+            },
+            {
+                "message": "Pasatiempos",
+                "id": 60000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Lectura",
+                        "id": 61000,
+                        "parent_id": 60000,
+                        "menu": [
+                            {
+                                "message": "Ficci\u00f3n",
+                                "id": 61100,
+                                "parent_id": 61000
+                            },
+                            {
+                                "message": "No ficci\u00f3n",
+                                "id": 61200,
+                                "parent_id": 61000
+                            },
+                            {
+                                "message": "C\u00f3mics",
+                                "id": 61300,
+                                "parent_id": 61000
+                            },
+                            {
+                                "message": "Revistas",
+                                "id": 61400,
+                                "parent_id": 61000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Internet",
+                        "id": 62000,
+                        "parent_id": 60000
+                    },
+                    {
+                        "message": "Bailar",
+                        "id": 63000,
+                        "parent_id": 60000,
+                        "menu": [
+                            {
+                                "message": "Ballet",
+                                "id": 63100,
+                                "parent_id": 63000
+                            },
+                            {
+                                "message": "Zapateo",
+                                "id": 63200,
+                                "parent_id": 63000
+                            },
+                            {
+                                "message": "Jazz",
+                                "id": 63300,
+                                "parent_id": 63000
+                            },
+                            {
+                                "message": "Hip-hop",
+                                "id": 63400,
+                                "parent_id": 63000
+                            },
+                            {
+                                "message": "Baile moderno",
+                                "id": 63500,
+                                "parent_id": 63000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Gimnasia",
+                        "id": 64000,
+                        "parent_id": 60000
+                    },
+                    {
+                        "message": "Artes marciales",
+                        "id": 65000,
+                        "parent_id": 60000,
+                        "menu": [
+                            {
+                                "message": "Karate",
+                                "id": 65100,
+                                "parent_id": 65000
+                            },
+                            {
+                                "message": "Yudo",
+                                "id": 65200,
+                                "parent_id": 65000
+                            },
+                            {
+                                "message": "Taekwondo",
+                                "id": 65300,
+                                "parent_id": 65000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Escuchar m\u00fasica",
+                        "id": 66000,
+                        "parent_id": 60000
+                    },
+                    {
+                        "message": "Tomar clases de m\u00fasica",
+                        "id": 67000,
+                        "parent_id": 60000,
+                        "menu": [
+                            {
+                                "message": "Tocar el piano",
+                                "id": 67100,
+                                "parent_id": 67000
+                            },
+                            {
+                                "message": "Tocar la guitarra",
+                                "id": 67200,
+                                "parent_id": 67000
+                            },
+                            {
+                                "message": "Tocar la bater\u00eda",
+                                "id": 67300,
+                                "parent_id": 67000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Manualidades",
+                        "id": 68000,
+                        "parent_id": 60000
+                    },
+                    {
+                        "message": "Salir",
+                        "id": 69000,
+                        "parent_id": 60000
+                    }
+                ],
+                "wide": 2
+            },
+            {
+                "message": "Lugar",
+                "id": 80000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Estados Unidos",
+                        "id": 81000,
+                        "parent_id": 80000
+                    },
+                    {
+                        "message": "Canad\u00e1",
+                        "id": 82000,
+                        "parent_id": 80000
+                    },
+                    {
+                        "message": "M\u00e9xico",
+                        "id": 82100,
+                        "parent_id": 80000
+                    },
+                    {
+                        "message": "Am\u00e9rica Central",
+                        "id": 82200,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "Costa Rica",
+                                "id": 82201,
+                                "parent_id": 82200
+                            },
+                            {
+                                "message": "Hait\u00ed",
+                                "id": 82202,
+                                "parent_id": 82200
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Europa",
+                        "id": 83000,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "Reino Unido",
+                                "id": 83010,
+                                "parent_id": 83000,
+                                "menu": [
+                                    {
+                                        "message": "Inglaterra",
+                                        "id": 83011,
+                                        "parent_id": 83010
+                                    },
+                                    {
+                                        "message": "Escocia",
+                                        "id": 83012,
+                                        "parent_id": 83010
+                                    },
+                                    {
+                                        "message": "Gales",
+                                        "id": 83013,
+                                        "parent_id": 83010
+                                    },
+                                    {
+                                        "message": "Irlanda",
+                                        "id": 83014,
+                                        "parent_id": 83010
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Francia",
+                                "id": 83020,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Alemania",
+                                "id": 83030,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Espa\u00f1a",
+                                "id": 83040,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Italia",
+                                "id": 83050,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Polonia",
+                                "id": 83060,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Suiza",
+                                "id": 83070,
+                                "parent_id": 83000
+                            },
+                            {
+                                "message": "Grecia",
+                                "id": 83080,
+                                "parent_id": 83000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Asia",
+                        "id": 84000,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "China",
+                                "id": 84010,
+                                "parent_id": 84000
+                            },
+                            {
+                                "message": "India",
+                                "id": 84020,
+                                "parent_id": 84000
+                            },
+                            {
+                                "message": "Indonesia",
+                                "id": 84030,
+                                "parent_id": 84000
+                            },
+                            {
+                                "message": "Jap\u00f3n",
+                                "id": 84040,
+                                "parent_id": 84000
+                            },
+                            {
+                                "message": "Rusia",
+                                "id": 84050,
+                                "parent_id": 84000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Australia",
+                        "id": 85000,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "Nueva Gales del Sur",
+                                "id": 85010,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": "Territorio del Norte",
+                                "id": 85020,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": "Queensland",
+                                "id": 85030,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": " Meridional",
+                                "id": 85040,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": "Tasmania",
+                                "id": 85050,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": "Victoria",
+                                "id": 85060,
+                                "parent_id": 85000
+                            },
+                            {
+                                "message": " Occidental",
+                                "id": 85070,
+                                "parent_id": 85000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "\u00c1frica",
+                        "id": 86000,
+                        "parent_id": 80000
+                    },
+                    {
+                        "message": "Medio oriente",
+                        "id": 87000,
+                        "parent_id": 80000
+                    },
+                    {
+                        "message": "Am\u00e9rica del Sur",
+                        "id": 88000,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "Argentina",
+                                "id": 88010,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Brasil",
+                                "id": 88020,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Chile",
+                                "id": 88030,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Uruguay",
+                                "id": 88040,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Paraguay",
+                                "id": 88050,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Ecuador",
+                                "id": 88060,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Per\u00fa",
+                                "id": 88070,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Colombia",
+                                "id": 88080,
+                                "parent_id": 88000
+                            },
+                            {
+                                "message": "Venezuela",
+                                "id": 88090,
+                                "parent_id": 88000
+                            }
+                        ]
+                    },
+                    {
+                        "message": "Club Penguin",
+                        "id": 89000,
+                        "parent_id": 80000,
+                        "menu": [
+                            {
+                                "message": "Centro",
+                                "id": 89010,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "Cafeter\u00eda",
+                                        "id": 89011,
+                                        "parent_id": 89010
+                                    },
+                                    {
+                                        "message": "Biblioteca",
+                                        "id": 89012,
+                                        "parent_id": 89010
+                                    },
+                                    {
+                                        "message": "Disco",
+                                        "id": 89013,
+                                        "parent_id": 89010
+                                    },
+                                    {
+                                        "message": "Living",
+                                        "id": 89014,
+                                        "parent_id": 89010
+                                    },
+                                    {
+                                        "message": "Tienda de regalos",
+                                        "id": 89015,
+                                        "parent_id": 89010
+                                    },
+                                    {
+                                        "message": "Sala de calderas",
+                                        "id": 89016,
+                                        "parent_id": 89010
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Centro de esqu\u00ed",
+                                "id": 89020,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "E.P.F.",
+                                        "id": 100154,
+                                        "parent_id": 89020
+                                    },
+                                    {
+                                        "message": "Refugio puffl\u00edstico",
+                                        "id": 100326,
+                                        "parent_id": 89020
+                                    },
+                                    {
+                                        "message": "\u00c1tico misterioso",
+                                        "id": 100327,
+                                        "parent_id": 89020
+                                    },
+                                    {
+                                        "message": "Monta\u00f1a",
+                                        "id": 89024,
+                                        "parent_id": 89020
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Plaza",
+                                "id": 89030,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "Tienda de mascotas",
+                                        "id": 89031,
+                                        "parent_id": 89030
+                                    },
+                                    {
+                                        "message": "El Centro Comercial",
+                                        "id": 100330,
+                                        "parent_id": 89030
+                                    },
+                                    {
+                                        "message": "Pizzer\u00eda",
+                                        "id": 89032,
+                                        "parent_id": 89030
+                                    },
+                                    {
+                                        "message": "Bosque",
+                                        "id": 89034,
+                                        "parent_id": 89030
+                                    },
+                                    {
+                                        "message": "Bah\u00eda",
+                                        "id": 89035,
+                                        "parent_id": 89030
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Playa",
+                                "id": 89040,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "Faro",
+                                        "id": 89041,
+                                        "parent_id": 89040
+                                    },
+                                    {
+                                        "message": "Mirador",
+                                        "id": 89042,
+                                        "parent_id": 89040
+                                    },
+                                    {
+                                        "message": "Migrator",
+                                        "id": 89043,
+                                        "parent_id": 89040
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Subterr\u00e1neo",
+                                "id": 89050,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "Piscina subterr\u00e1nea",
+                                        "id": 89051,
+                                        "parent_id": 89050
+                                    },
+                                    {
+                                        "message": "Mina",
+                                        "id": 89052,
+                                        "parent_id": 89050
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Otro",
+                                "id": 89080,
+                                "parent_id": 89000,
+                                "menu": [
+                                    {
+                                        "message": "Muelle",
+                                        "id": 89081,
+                                        "parent_id": 89080
+                                    },
+                                    {
+                                        "message": "Fuerte nevado",
+                                        "id": 89082,
+                                        "parent_id": 89080
+                                    },
+                                    {
+                                        "message": "Estadio",
+                                        "id": 89083,
+                                        "parent_id": 89080
+                                    },
+                                    {
+                                        "message": "Iceberg",
+                                        "id": 89084,
+                                        "parent_id": 89080
+                                    },
+                                    {
+                                        "message": "Caba\u00f1a de la Mina",
+                                        "id": 89085,
+                                        "parent_id": 89080
+                                    }
+                                ]
+                            },
+                            {
+                                "message": "Tu igl\u00fa",
+                                "id": 89086,
+                                "parent_id": 89000
+                            },
+                            {
+                                "message": "Mi igl\u00fa",
+                                "id": 89087,
+                                "parent_id": 89000
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "message": "Humor",
+                "id": 90000,
+                "parent_id": 5,
+                "menu": [
+                    {
+                        "message": "Muy bien",
+                        "id": 90100,
+                        "parent_id": 90000
+                    },
+                    {
+                        "message": "\u00a1Excelente! ",
+                        "id": 90200,
+                        "parent_id": 90000
+                    },
+                    {
+                        "message": "Bien",
+                        "id": 90300,
+                        "parent_id": 90000
+                    },
+                    {
+                        "message": "M\u00e1s o menos",
+                        "id": 90400,
+                        "parent_id": 90000
+                    }
+                ]
+            },
+            {
+                "message": "Ni\u00f1o",
+                "id": 99998,
+                "parent_id": 5
+            },
+            {
+                "message": "Ni\u00f1a",
+                "id": 99999,
+                "parent_id": 5
+            }
+        ]
+    },
+    {
+        "message": "Juegos",
+        "id": 6,
+        "action": "game",
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "\u00bfQuieres jugar?",
+                "id": 600,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00bfQuieres correr una Carrera de trineos?",
+                "id": 601,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00bfQuieres jugar al Mancala?",
+                "id": 602,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00bfQuieres jugar a 4 en fila?",
+                "id": 603,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00bfQuieres jugar al hockey?",
+                "id": 604,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00a1Buen juego!",
+                "id": 620,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00a1Qu\u00e9 jugada!",
+                "id": 630,
+                "parent_id": 6
+            },
+            {
+                "message": "\u00bfQuieres jugar otra vez?",
+                "id": 640,
+                "parent_id": 6
+            },
+            {
+                "message": "T\u00fa la llevas",
+                "id": 650,
+                "parent_id": 6,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "\u00a1Tocado, t\u00fa la traes!",
+                        "id": 651,
+                        "parent_id": 650
+                    },
+                    {
+                        "message": "\u00a1T\u00fa la llevas!",
+                        "id": 652,
+                        "parent_id": 650
+                    }
+                ]
+            },
+            {
+                "message": "\u00a1Escondidas!",
+                "id": 660,
+                "parent_id": 6,
+                "menu": [
+                    {
+                        "message": "\u00a1Te encontr\u00e9!",
+                        "id": 661,
+                        "parent_id": 660
+                    },
+                    {
+                        "message": "\u00a1All\u00e1 voy!",
+                        "id": 662,
+                        "parent_id": 660
+                    },
+                    {
+                        "message": "\u00a1Me encontraste!",
+                        "id": 663,
+                        "parent_id": 660
+                    },
+                    {
+                        "message": "\u00a110, 9, 8, 7, 6, 5, 4, 3, 2, 1!",
+                        "id": 664,
+                        "parent_id": 660
+                    }
+                ],
+                "wide": 2
+            }
+        ],
+        "wide": 2
+    },
+    {
+        "message": "Actividades",
+        "id": 7,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "Contar un chiste",
+                "id": 701,
+                "action": "joke",
+                "parent_id": 7
+            },
+            {
+                "message": "Dar un tour",
+                "id": 702,
+                "action": "tour",
+                "parent_id": 7
+            },
+            {
+                "message": "Concurso",
+                "id": 736,
+                "parent_id": 7,
+                "menu": [
+                    {
+                        "message": "Concurso en mi igl\u00fa",
+                        "id": 737,
+                        "parent_id": 736
+                    }
+                ]
+            },
+            {
+                "message": "\u00a1Colores!",
+                "id": 738,
+                "parent_id": 7,
+                "wide": 2,
+                "menu": [
+                    {
+                        "message": "\u00a1H\u00e1ganse todos rojos!",
+                        "id": 739,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos amarillos!",
+                        "id": 740,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos azules!",
+                        "id": 741,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos verdes!",
+                        "id": 742,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos rosas!",
+                        "id": 743,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos negros!",
+                        "id": 744,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos violetas!",
+                        "id": 745,
+                        "parent_id": 738
+                    },
+                    {
+                        "message": "\u00a1H\u00e1ganse todos naranjas!",
+                        "id": 746,
+                        "parent_id": 738
+                    }
+                ]
+            },
+            {
+                "message": "Tiempo",
+                "id": 750,
+                "parent_id": 7,
+                "menu": [
+                    {
+                        "message": "En 5 minutos",
+                        "id": 751,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "En 10 minutos",
+                        "id": 752,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "En 15 minutos",
+                        "id": 753,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "En 30 minutos",
+                        "id": 754,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "En una hora",
+                        "id": 755,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "Hoy",
+                        "id": 756,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "Ma\u00f1ana",
+                        "id": 757,
+                        "parent_id": 750
+                    },
+                    {
+                        "message": "Ayer",
+                        "id": 758,
+                        "parent_id": 750
+                    }
+                ]
+            },
+            {
+                "message": "D\u00edas semana",
+                "id": 790,
+                "parent_id": 7,
+                "menu": [
+                    {
+                        "message": "Lunes",
+                        "id": 791,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "Martes",
+                        "id": 792,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "Mi\u00e9rcoles",
+                        "id": 793,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "Jueves",
+                        "id": 794,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "Viernes",
+                        "id": 795,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "S\u00e1bado",
+                        "id": 796,
+                        "parent_id": 790
+                    },
+                    {
+                        "message": "Domingo",
+                        "id": 797,
+                        "parent_id": 790
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "message": "\u00a1Au!",
+        "id": 8,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "Eso no me gusta",
+                "id": 801,
+                "parent_id": 8
+            },
+            {
+                "message": "Por favor, vete",
+                "id": 802,
+                "parent_id": 8
+            },
+            {
+                "message": "\u00a1Deja de hacer eso!",
+                "id": 803,
+                "parent_id": 8
+            },
+            {
+                "message": "Olv\u00eddalo",
+                "id": 804,
+                "parent_id": 8
+            },
+            {
+                "message": "\u00a1Aaaaaah!",
+                "id": 805,
+                "parent_id": 8
+            },
+            {
+                "message": "\u00a1Por mis barbas!",
+                "id": 806,
+                "parent_id": 8
+            }
+        ]
+    },
+    {
+        "message": "\u00a1Hurra!",
+        "id": 10,
+        "parent_id": null,
+        "menu": [
+            {
+                "message": "\u00a1Guauu!",
+                "id": 851,
+                "parent_id": 10
+            },
+            {
+                "message": "\u00a1Muy bien!",
+                "id": 852,
+                "parent_id": 10
+            },
+            {
+                "message": "\u00a1Eso es!",
+                "id": 853,
+                "parent_id": 10
+            },
+            {
+                "message": "\u00a1Buena actuaci\u00f3n!",
+                "id": 854,
+                "parent_id": 10
+            },
+            {
+                "message": "\u00a1Buen trabajo!",
+                "id": 855,
+                "parent_id": 10
+            }
+        ]
+    },
+    {
+        "message": "S\u00ed",
+        "id": 20,
+        "parent_id": null
+    },
+    {
+        "message": "No",
+        "id": 21,
+        "parent_id": null
+    }
+]

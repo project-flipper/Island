@@ -1,0 +1,482 @@
+{
+    "0": {
+        "igloo_id": 0,
+        "name": "##Igloo Removal##",
+        "cost": 0
+    },
+    "1": {
+        "igloo_id": 1,
+        "name": "Einfaches Iglu",
+        "cost": 1500
+    },
+    "2": {
+        "igloo_id": 2,
+        "name": "Zuckerwatte-Iglu",
+        "cost": 1500
+    },
+    "3": {
+        "igloo_id": 3,
+        "name": "Blaues Luxus-Iglu",
+        "cost": 4000
+    },
+    "4": {
+        "igloo_id": 4,
+        "name": "Gro\u00dfes Zuckerwatte-Iglu",
+        "cost": 4000
+    },
+    "5": {
+        "igloo_id": 5,
+        "name": "Geheimes Stein-Iglu",
+        "cost": 2000
+    },
+    "6": {
+        "igloo_id": 6,
+        "name": "Schnee-Iglu",
+        "cost": 1000
+    },
+    "8": {
+        "igloo_id": 8,
+        "name": "Geheimes Luxus-Stein-Iglu",
+        "cost": 5000
+    },
+    "9": {
+        "igloo_id": 9,
+        "name": "Luxus-Schnee-Iglu",
+        "cost": 3000
+    },
+    "10": {
+        "igloo_id": 10,
+        "name": "Bambush\u00fctte",
+        "cost": 3200
+    },
+    "11": {
+        "igloo_id": 11,
+        "name": "Blockhaus",
+        "cost": 4100
+    },
+    "12": {
+        "igloo_id": 12,
+        "name": "Fitnessstudio",
+        "cost": 4800
+    },
+    "13": {
+        "igloo_id": 13,
+        "name": "Zwei-Ebenen-Iglu",
+        "cost": 4600
+    },
+    "14": {
+        "igloo_id": 14,
+        "name": "Zwei-Ebenen-Zucker-Iglu",
+        "cost": 4600
+    },
+    "15": {
+        "igloo_id": 15,
+        "name": "Schneekugel-Iglu",
+        "cost": 3700
+    },
+    "16": {
+        "igloo_id": 16,
+        "name": "Eis-Schloss",
+        "cost": 2400
+    },
+    "17": {
+        "igloo_id": 17,
+        "name": "Zwei-Ebenen-Schnee-Iglu",
+        "cost": 4600
+    },
+    "18": {
+        "igloo_id": 18,
+        "name": "Fischglas",
+        "cost": 2400
+    },
+    "19": {
+        "igloo_id": 19,
+        "name": "Zelt",
+        "cost": 2700
+    },
+    "20": {
+        "igloo_id": 20,
+        "name": "Halloween-Iglu",
+        "cost": 2700
+    },
+    "21": {
+        "igloo_id": 21,
+        "name": "Garten-Iglu",
+        "cost": 4200
+    },
+    "22": {
+        "igloo_id": 22,
+        "name": "Rosa Eispalast",
+        "cost": 2400
+    },
+    "23": {
+        "igloo_id": 23,
+        "name": "Schiff-Iglu",
+        "cost": 4300
+    },
+    "24": {
+        "igloo_id": 24,
+        "name": "Dojo-Iglu",
+        "cost": 1300
+    },
+    "25": {
+        "igloo_id": 25,
+        "name": "Lebkuchenhaus",
+        "cost": 2100
+    },
+    "26": {
+        "igloo_id": 26,
+        "name": "Restaurant-Iglu",
+        "cost": 4800
+    },
+    "27": {
+        "igloo_id": 27,
+        "name": "Baumhaus-Iglu",
+        "cost": 4500
+    },
+    "28": {
+        "igloo_id": 28,
+        "name": "Theater-Iglu",
+        "cost": 4600
+    },
+    "29": {
+        "igloo_id": 29,
+        "name": "Zirkuszelt",
+        "cost": 3000
+    },
+    "30": {
+        "igloo_id": 30,
+        "name": "Verschneites Garten-Iglu",
+        "cost": 3000
+    },
+    "31": {
+        "igloo_id": 31,
+        "name": "H\u00f6hlen-Iglu",
+        "cost": 1500
+    },
+    "32": {
+        "igloo_id": 32,
+        "name": "Gr\u00fcnes Klee-Iglu",
+        "cost": 2050
+    },
+    "33": {
+        "igloo_id": 33,
+        "name": "Graues Eisschloss",
+        "cost": 2400
+    },
+    "35": {
+        "igloo_id": 35,
+        "name": "Gem\u00fctliches H\u00e4uschen",
+        "cost": 2500
+    },
+    "36": {
+        "igloo_id": 36,
+        "name": "Landsitz-Iglu",
+        "cost": 2500
+    },
+    "37": {
+        "igloo_id": 37,
+        "name": "Zwei-Zimmer-Iglu",
+        "cost": 2300
+    },
+    "38": {
+        "igloo_id": 38,
+        "name": "Schatten-Schloss",
+        "cost": 1800
+    },
+    "39": {
+        "igloo_id": 39,
+        "name": "Drachenh\u00f6hle",
+        "cost": 3000
+    },
+    "40": {
+        "igloo_id": 40,
+        "name": "Unterwasser-Nische",
+        "cost": 3030
+    },
+    "41": {
+        "igloo_id": 41,
+        "name": "##Whale's Mouth##",
+        "cost": 2700
+    },
+    "42": {
+        "igloo_id": 42,
+        "name": "\u201eS\u00fc\u00dfes oder Saures\u201c-Iglu",
+        "cost": 2000
+    },
+    "43": {
+        "igloo_id": 43,
+        "name": "Luxus-Lebkuchenhaus",
+        "cost": 0
+    },
+    "45": {
+        "igloo_id": 45,
+        "name": "##Invisible Snowy##",
+        "cost": 0
+    },
+    "46": {
+        "igloo_id": 46,
+        "name": "##Invisible Beach##",
+        "cost": 0
+    },
+    "47": {
+        "igloo_id": 47,
+        "name": "##Invisible Forest##",
+        "cost": 0
+    },
+    "48": {
+        "igloo_id": 48,
+        "name": "##Invisible Mountain##",
+        "cost": 0
+    },
+    "49": {
+        "igloo_id": 49,
+        "name": "Schiffswrack-Iglu",
+        "cost": 900
+    },
+    "50": {
+        "igloo_id": 50,
+        "name": "Wildnis-H\u00f6hle",
+        "cost": 900
+    },
+    "51": {
+        "igloo_id": 51,
+        "name": "Mittelalterliches Herrenhaus",
+        "cost": 1200
+    },
+    "52": {
+        "igloo_id": 52,
+        "name": "Lagerhalle",
+        "cost": 950
+    },
+    "53": {
+        "igloo_id": 53,
+        "name": "Ananas-Iglu",
+        "cost": 0
+    },
+    "54": {
+        "igloo_id": 54,
+        "name": "Gruselige H\u00f6hle",
+        "cost": 1500
+    },
+    "55": {
+        "igloo_id": 55,
+        "name": "Frostbeulen-Palast",
+        "cost": 2000
+    },
+    "56": {
+        "igloo_id": 56,
+        "name": "Lebkuchenhaus",
+        "cost": 2500
+    },
+    "57": {
+        "igloo_id": 57,
+        "name": "Penthouse",
+        "cost": 4000
+    },
+    "58": {
+        "igloo_id": 58,
+        "name": "VIP-Penthouse",
+        "cost": 4500
+    },
+    "59": {
+        "igloo_id": 59,
+        "name": "##Invisible Age of Dinosaurs##",
+        "cost": 0
+    },
+    "60": {
+        "igloo_id": 60,
+        "name": "Puffle-Baumhaus",
+        "cost": 0
+    },
+    "61": {
+        "igloo_id": 61,
+        "name": "Geheimbasis",
+        "cost": 1600
+    },
+    "62": {
+        "igloo_id": 62,
+        "name": "Imperiales Iglu",
+        "cost": 1000
+    },
+    "63": {
+        "igloo_id": 63,
+        "name": "Strand-Party-Iglu",
+        "cost": 1500
+    },
+    "64": {
+        "igloo_id": 64,
+        "name": "Fitness-Iglu",
+        "cost": 0
+    },
+    "65": {
+        "igloo_id": 65,
+        "name": "Magischer Unterschlupf",
+        "cost": 1500
+    },
+    "66": {
+        "igloo_id": 66,
+        "name": "Unheimliches Schloss",
+        "cost": 2000
+    },
+    "67": {
+        "igloo_id": 67,
+        "name": "S\u00fc\u00dfigkeiten-Iglu",
+        "cost": 0
+    },
+    "68": {
+        "igloo_id": 68,
+        "name": "Bahnhof-Iglu",
+        "cost": 1100
+    },
+    "69": {
+        "igloo_id": 69,
+        "name": "Kirmes-Iglu",
+        "cost": 1000
+    },
+    "70": {
+        "igloo_id": 70,
+        "name": "CP-Flugzeug",
+        "cost": 1200
+    },
+    "71": {
+        "igloo_id": 71,
+        "name": "Puffle-Baumhaus",
+        "cost": 1500
+    },
+    "72": {
+        "igloo_id": 72,
+        "name": "##Invisible Distant Planet##",
+        "cost": 0
+    },
+    "73": {
+        "igloo_id": 73,
+        "name": "Weltraum-Iglu",
+        "cost": 2000
+    },
+    "74": {
+        "igloo_id": 74,
+        "name": "Unsichtbares Fu\u00dfballfeld",
+        "cost": 0
+    },
+    "75": {
+        "igloo_id": 75,
+        "name": "Tourbus-Iglu",
+        "cost": 1800
+    },
+    "76": {
+        "igloo_id": 76,
+        "name": "Eispalast-Iglu",
+        "cost": 0
+    },
+    "77": {
+        "igloo_id": 77,
+        "name": "Fitnessr\u00e4ume der Haie",
+        "cost": 1500
+    },
+    "78": {
+        "igloo_id": 78,
+        "name": "Schuliglu",
+        "cost": 0
+    },
+    "79": {
+        "igloo_id": 79,
+        "name": "Geisterh\u00f6hlen-Iglu",
+        "cost": 1800
+    },
+    "80": {
+        "igloo_id": 80,
+        "name": "##Invisible Undersea##",
+        "cost": 0
+    },
+    "81": {
+        "igloo_id": 81,
+        "name": "##Invisible Merry Walrus Iceberg##",
+        "cost": 0
+    },
+    "82": {
+        "igloo_id": 82,
+        "name": "Ezras Versteck",
+        "cost": 1800
+    },
+    "83": {
+        "igloo_id": 83,
+        "name": "Raumschiff-Iglu",
+        "cost": 0
+    },
+    "84": {
+        "igloo_id": 84,
+        "name": "Talentshow-B\u00fchne",
+        "cost": 1500
+    },
+    "85": {
+        "igloo_id": 85,
+        "name": "Rotes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "86": {
+        "igloo_id": 86,
+        "name": "Oranges Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "87": {
+        "igloo_id": 87,
+        "name": "Gelbes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "88": {
+        "igloo_id": 88,
+        "name": "Gr\u00fcnes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "89": {
+        "igloo_id": 89,
+        "name": "Blaues Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "90": {
+        "igloo_id": 90,
+        "name": "Lila Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "91": {
+        "igloo_id": 91,
+        "name": "Schwarzes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "92": {
+        "igloo_id": 92,
+        "name": "Wei\u00dfes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "93": {
+        "igloo_id": 93,
+        "name": "Braunes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "94": {
+        "igloo_id": 94,
+        "name": "Rosa Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "95": {
+        "igloo_id": 95,
+        "name": "Goldenes Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "96": {
+        "igloo_id": 96,
+        "name": "Regenbogen-Puffle-Baumhaus",
+        "cost": 1000
+    },
+    "97": {
+        "igloo_id": 97,
+        "name": "Eispalast-Iglu-Anstecker",
+        "cost": 0
+    },
+    "98": {
+        "igloo_id": 98,
+        "name": "B\u00fchneniglu",
+        "cost": 1500
+    }
+}

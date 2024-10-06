@@ -1,0 +1,51 @@
+{
+    "0": {
+        "title": "##LETTER FROM THE EDITOR##",
+        "path": "news/papers/20170322",
+        "issue": "Ausgabe 566",
+        "date": "22. M\u00e4rz 2017",
+        "key": "current_news"
+    },
+    "1": {
+        "title": "##WADDLING ON##",
+        "path": "news/papers/20170201",
+        "issue": "Ausgabe 565",
+        "date": "01. Februar 2017",
+        "key": "old_news0"
+    },
+    "2": {
+        "title": "##NEW YEAR, NEW HORIZON!##",
+        "path": "news/papers/20170104",
+        "issue": "Ausgabe 564",
+        "date": "04. Januar 2017",
+        "key": "old_news1"
+    },
+    "3": {
+        "title": "##COINS COMING IN!##",
+        "path": "news/papers/20161214",
+        "issue": "Ausgabe 563",
+        "date": "14. Dezember 2016",
+        "key": "old_news2"
+    },
+    "4": {
+        "title": "##HOLIDAY TRADITION RETURNS##",
+        "path": "news/papers/20161130",
+        "issue": "Ausgabe 562",
+        "date": "30. November 2016",
+        "key": "old_news3"
+    },
+    "5": {
+        "title": "SO SCHREIBT MAN EINEN HIT",
+        "path": "news/papers/20161116",
+        "issue": "Ausgabe 561",
+        "date": "16. November 2016",
+        "key": "old_news4"
+    },
+    "6": {
+        "title": "##THE BAND IS BACK!##",
+        "path": "news/papers/20161102",
+        "issue": "Ausgabe 560",
+        "date": "02. November 2016",
+        "key": "old_news5"
+    }
+}

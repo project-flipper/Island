@@ -1,0 +1,66 @@
+{
+    "1": {
+        "igloo_location_id": 1,
+        "label": "Original",
+        "prompt": "##Defaul##",
+        "igloo_id": 45,
+        "name": "Default",
+        "cost": 0
+    },
+    "2": {
+        "igloo_location_id": 2,
+        "label": "Playa",
+        "prompt": "Playa",
+        "igloo_id": 46,
+        "name": "Beach",
+        "cost": 2800
+    },
+    "3": {
+        "igloo_location_id": 3,
+        "label": "Bosque",
+        "prompt": "Bosque",
+        "igloo_id": 47,
+        "name": "Forest",
+        "cost": 2700
+    },
+    "4": {
+        "igloo_location_id": 4,
+        "label": "Monta\u00f1a",
+        "prompt": "Monta\u00f1a",
+        "igloo_id": 48,
+        "name": "Mountain",
+        "cost": 2800
+    },
+    "5": {
+        "igloo_location_id": 5,
+        "label": "Era de los dinosaurios",
+        "prompt": "Era de los dinosaurios",
+        "igloo_id": 59,
+        "name": "Age Of Dinosaurs",
+        "cost": 0
+    },
+    "6": {
+        "igloo_location_id": 6,
+        "label": "Planeta lejano",
+        "prompt": "Planeta lejano",
+        "igloo_id": 72,
+        "name": "Distant Planet",
+        "cost": 1800
+    },
+    "7": {
+        "igloo_location_id": 7,
+        "label": "Estadio de f\u00fatbol",
+        "prompt": "Estadio de f\u00fatbol",
+        "igloo_id": 74,
+        "name": "Soccer Pitch",
+        "cost": 1800
+    },
+    "8": {
+        "igloo_location_id": 8,
+        "label": "Fondo del mar",
+        "prompt": "Fondo del mar",
+        "igloo_id": 80,
+        "name": "Undersea",
+        "cost": 1800
+    }
+}

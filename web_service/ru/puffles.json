@@ -1,0 +1,62 @@
+{
+    "0": {
+        "puffle_id": 0,
+        "description": "\u0421\u0438\u043d\u0438\u0439",
+        "color": 3394815
+    },
+    "1": {
+        "puffle_id": 1,
+        "description": "\u0420\u043e\u0437\u043e\u0432\u044b\u0439",
+        "color": 16764159
+    },
+    "2": {
+        "puffle_id": 2,
+        "description": "\u0427\u0451\u0440\u043d\u044b\u0439",
+        "color": 6710886
+    },
+    "3": {
+        "puffle_id": 3,
+        "description": "\u0417\u0435\u043b\u0451\u043d\u044b\u0439",
+        "color": 3394560
+    },
+    "4": {
+        "puffle_id": 4,
+        "description": "\u0421\u0438\u0440\u0435\u043d\u0435\u0432\u044b\u0439",
+        "color": 11362246
+    },
+    "5": {
+        "puffle_id": 5,
+        "description": "\u041a\u0440\u0430\u0441\u043d\u044b\u0439",
+        "color": 15615044
+    },
+    "6": {
+        "puffle_id": 6,
+        "description": "\u0416\u0451\u043b\u0442\u044b\u0439",
+        "color": 16776960
+    },
+    "7": {
+        "puffle_id": 7,
+        "description": "\u0411\u0435\u043b\u044b\u0439",
+        "color": 16777198
+    },
+    "8": {
+        "puffle_id": 8,
+        "description": "\u041e\u0440\u0430\u043d\u0436\u0435\u0432\u044b\u0439",
+        "color": 16750848
+    },
+    "9": {
+        "puffle_id": 9,
+        "description": "\u041a\u043e\u0440\u0438\u0447\u043d\u0435\u0432\u044b\u0439",
+        "color": 7489821
+    },
+    "10": {
+        "puffle_id": 10,
+        "description": "\u0420\u0430\u0434\u0443\u0436\u043d\u044b\u0439",
+        "color": 0
+    },
+    "11": {
+        "puffle_id": 11,
+        "description": "##Gold##",
+        "color": 0
+    }
+}

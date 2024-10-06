@@ -1,0 +1,222 @@
+[
+    {
+        "note": "Squidzoid vs. Shadow Guy & Gamma Gal"
+    },
+    {
+        "name": "Reporter",
+        "message": "Nachrichten - Live!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Erz\u00e4hl uns bitte, was passiert ist!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Da ist ein gigantisches Monster!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Nein! Da sind zwei!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "KNURR! ICH HUNGRIG!"
+    },
+    {
+        "name": "Reporter",
+        "message": "SCHLUCK! Sie werden die ganze Stadt auffressen!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Wer wird uns jetzt retten?"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Die Stadt braucht unsere Hilfe!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Super-Kost\u00fcm \u2013 Mega-Transformation!"
+    },
+    {
+        "note": "(Die Helden wechseln in ihre Super-Outfits.)"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Hurra! Die Helden sind da!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Nat\u00fcrlich! Wer sonst k\u00f6nnte den Tag retten?"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Stehenbleiben, Squizoid und Melmonst!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Ihr habt beide genug gefressen!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "GRRR! IHR K\u00d6NNT UNS NICHT AUFHALTEN!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Oh, ja? PLASMA-GL\u00dcHWELLE!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "AAAARRRRRRRR!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Die Superhelden benutzen ihre K\u00e4fte!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Ein Hoch auf die Superhelden! Gut gemacht!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "IHR MICKRIGEN HELDEN!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "IHR SEID KEINE GEGNER F\u00dcR UNS!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Nehmt dies! SHADOW-WELLE!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "KNURRR!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Wartet! Squizoid l\u00e4uft davon!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Aber Melmonst bleibt!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Das ist aber kein zuverl\u00e4ssiger Kumpan."
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Du hast Recht. Und er redet nicht wirklich viel."
+    },
+    {
+        "name": "Zeuge",
+        "message": "Wir k\u00f6nnen nicht \u00fcberall in der Stadt Monster haben!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Schnell hin! Mit unseren vereinten Kr\u00e4ften!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "F\u00fcr die Gerechtigkeit!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "F\u00fcr die Freiheit!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "F\u00fcr die Liebe zu Pizza mit extra Oliven!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "NEIN! DAS IST UNM\u00d6GLICH! GRRR!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Er verwandelt sich in einen Pinguin!"
+    },
+    {
+        "note": "(Squidzoid verwandelt sich in einen Pinguin.)"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Hey, ich bin wieder ein Pinguin."
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Was ist passiert?"
+    },
+    {
+        "name": "Reporter",
+        "message": "Du wurdest in einen Squidzoid verwandelt!"
+    },
+    {
+        "name": "Zeuge",
+        "message": "Du hast angefangen, Teile der Stadt zu fressen!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Oh! Ich hatte einen Monster-Hunger!"
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Aber Melmonst ist immer noch da!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Hmm ... sieht aus, als stecke er dort fest."
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Es geht keine Gefahr von ihm aus."
+    },
+    {
+        "name": "Zeuge",
+        "message": "Er macht sich gut als Ornament!"
+    },
+    {
+        "name": "Gamma Gal",
+        "message": "Ich glaube, unsere Arbeit ist hier erledigt!"
+    },
+    {
+        "name": "Squidzoid",
+        "message": "Lasst uns eine Fisch-Pizza bestellen."
+    },
+    {
+        "name": "Shadow Guy",
+        "message": "Mit extra Oliven, bitte!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Die Stadt ist gerettet!"
+    },
+    {
+        "name": "Reporter",
+        "message": "Ich gebe zur\u00fcck an das Sendezentrum."
+    },
+    {
+        "note": "ENDE"
+    },
+    {
+        "name": "Direktor",
+        "message": "ACTION!"
+    },
+    {
+        "name": "Regisseur",
+        "message": "Von vorne, bitte!"
+    },
+    {
+        "name": "Regisseur",
+        "message": "Auf die Pl\u00e4tze bitte!"
+    },
+    {
+        "name": "Regisseur",
+        "message": "Spezialeffekte, bitte!"
+    },
+    {
+        "name": "Regisseur",
+        "message": "Bravo! Fantastische Schauspielerei!"
+    }
+]

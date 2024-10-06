@@ -1,0 +1,66 @@
+{
+    "1": {
+        "igloo_location_id": 1,
+        "label": "##Default##",
+        "prompt": "##Defaul##",
+        "igloo_id": 45,
+        "name": "Default",
+        "cost": 0
+    },
+    "2": {
+        "igloo_location_id": 2,
+        "label": "Praia",
+        "prompt": "Praia",
+        "igloo_id": 46,
+        "name": "Beach",
+        "cost": 2800
+    },
+    "3": {
+        "igloo_location_id": 3,
+        "label": "Floresta",
+        "prompt": "Floresta",
+        "igloo_id": 47,
+        "name": "Forest",
+        "cost": 2700
+    },
+    "4": {
+        "igloo_location_id": 4,
+        "label": "Montanha",
+        "prompt": "Montanha",
+        "igloo_id": 48,
+        "name": "Mountain",
+        "cost": 2800
+    },
+    "5": {
+        "igloo_location_id": 5,
+        "label": "Era dos Dinossauros",
+        "prompt": "Era dos Dinossauros",
+        "igloo_id": 59,
+        "name": "Age Of Dinosaurs",
+        "cost": 0
+    },
+    "6": {
+        "igloo_location_id": 6,
+        "label": "Planeta Distante",
+        "prompt": "Planeta Distante",
+        "igloo_id": 72,
+        "name": "Distant Planet",
+        "cost": 1800
+    },
+    "7": {
+        "igloo_location_id": 7,
+        "label": "Campo de Futebol",
+        "prompt": "Campo de Futebol",
+        "igloo_id": 74,
+        "name": "Soccer Pitch",
+        "cost": 1800
+    },
+    "8": {
+        "igloo_location_id": 8,
+        "label": "Fundo do Mar",
+        "prompt": "Fundo do Mar",
+        "igloo_id": 80,
+        "name": "Undersea",
+        "cost": 1800
+    }
+}

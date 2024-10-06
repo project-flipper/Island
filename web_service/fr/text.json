@@ -1,0 +1,93 @@
+﻿{
+    "dynamic": {
+        "D1": "sont maintenant disponible !",
+        "D2": "est maintenant disponible !",
+        "D3": "sont en ligne !",
+        "D4": "est en ligne !",
+        "D5": "Tu as {0} demandes d'ami !",
+        "D6": "veut être ton ami",
+        "D7": "Ne plus être meilleurs amis",
+        "D8": "Tu es maintenant ami avec {0}",
+        "D9": "Amis",
+        "D10": "Être meilleurs amis",
+        "D11": "Choisis tes meilleurs amis.",
+        "D12": "Tu as {0} nouveaux amis !",
+        "D14": "Désolé, cette salle est complète.",
+        "D15": "Hors ligne",
+        "D17": "Impossible de trouver ce joueur. Essaie avec un autre nom.",
+        "D18": "Oups ! Tu ne peux pas t'ajouter à ta propre liste de copains.",
+        "D19": "{0} est déjà ton ami. Essaie avec un autre nom.",
+        "D20": "{0} est déjà dans ta Liste d'Ignorés. Va dans les paramètres pour l'enlever de la liste.",
+        "D21": "nouveaux amis !",
+        "D22": "Igloo",
+        "D23": "En ligne",
+        "D24": "Appli",
+        "D25": "est connecté !",
+        "D26": "Tes parents doivent activer ton compte avant que tu puisses ajouter des amis.",
+        "D27": "À propos de l'activation"
+    },
+    "S1": {
+        "h": "Amis"
+    },
+    "S2": {
+        "t": "Fermer fenêtre"
+    },
+    "S3": {
+        "h": "Trouver un joueur"
+    },
+    "S4": {
+        "t": "Chercher un ami"
+    },
+    "S5": {
+        "h": "Trouver"
+    },
+    "S6": {
+        "t": "Reconnexion en cours…"
+    },
+    "S7": {
+        "t": "Afficher carte de joueur"
+    },
+    "S8": {
+        "h": "+ Ajouter ami"
+    },
+    "S9": {
+        "h": "Non merci"
+    },
+    "S10": {
+        "t": "Rejoindre copain en jeu"
+    },
+    "S11": {
+        "h": "Accepté"
+    },
+    "S12": {
+        "a": "*",
+        "t": "Être meilleurs amis"
+    },
+    "S14": {
+        "h": "Hors ligne"
+    },
+    "S15": {
+        "t": "Monter"
+    },
+    "S16": {
+        "t": "Descendre"
+    },
+    "S17": {
+        "a": "Avatar"
+    },
+    "S18": {
+        "t": "Déplace la fenêtre"
+    },
+    "S19": {
+        "t": "Liste de copains"
+    },
+    "S20": {
+        "t": "Monter/Descendre"
+    },
+    "S21": {
+        "h": "Taper un nom"
+    },
+    "S22": {
+        "t": "Ajouter ami"
+    }
+}
