@@ -1,5 +1,4 @@
 from contextlib import asynccontextmanager
-from typing import Callable
 
 import redis.asyncio as redis_async
 from fastapi import FastAPI
