@@ -11,6 +11,7 @@ class ItemTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     type: Mapped[int] = mapped_column(SmallInteger, default=1)
     cost: Mapped[int] = mapped_column(Integer, default=0)
+    layer: Mapped[int] = mapped_column(SmallInteger, default=1)
     member: Mapped[bool] = mapped_column(default=False)
     bait: Mapped[bool] = mapped_column(default=False)
     epf: Mapped[bool] = mapped_column(default=False)
