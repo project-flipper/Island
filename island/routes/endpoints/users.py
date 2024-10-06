@@ -27,9 +27,9 @@ router = APIRouter()
 
 @router.put("/")
 async def create_user(r: HTTPResponse, create_form: CreateUser) -> Response[int]:
-    if (
-        (create_form.token is None and SKIP_RECAPTCHA_ON_DEVELOPMENT is not True)
-        or (create_form.token is not None and not await verify_google_recaptcha(create_form.token))
+    if (create_form.token is None and SKIP_RECAPTCHA_ON_DEVELOPMENT is not True) or (
+        create_form.token is not None
+        and not await verify_google_recaptcha(create_form.token)
     ):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
