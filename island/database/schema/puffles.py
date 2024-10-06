@@ -4,6 +4,7 @@ from sqlalchemy import String, SmallInteger, Integer, ForeignKey, ARRAY
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
+
 class PuffleTable(Base):
     __tablename__ = "puffles"
 
@@ -12,6 +13,7 @@ class PuffleTable(Base):
     description: Mapped[str] = mapped_column(String(256))
     color: Mapped[int] = mapped_column(Integer)
     member: Mapped[bool] = mapped_column(default=False)
+
 
 class PuffleItemTable(Base):
     __tablename__ = "puffle_items"

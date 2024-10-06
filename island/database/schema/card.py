@@ -4,6 +4,7 @@ from sqlalchemy import String, SmallInteger, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
+
 class CardTable(Base):
     __tablename__ = "cards"
 

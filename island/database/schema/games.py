@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, Integer, String
 from island.database import Base
 
+
 class GameTable(Base):
     __tablename__ = "games"
 

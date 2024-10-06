@@ -4,6 +4,7 @@ from sqlalchemy import String, ForeignKey, SmallInteger
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
+
 class StampTable(Base):
     __tablename__ = "stamps"
 
@@ -16,12 +17,8 @@ class StampTable(Base):
 
     @property
     def rank_token(self) -> str:
-        return {
-            1: 'easy',
-            2: 'medium',
-            3: 'hard',
-            4: 'extreme'
-        }.get(self.rank, '')
+        return {1: "easy", 2: "medium", 3: "hard", 4: "extreme"}.get(self.rank, "")
+
 
 class StampCollectionTable(Base):
     __tablename__ = "stamps_collection"

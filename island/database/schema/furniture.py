@@ -4,6 +4,7 @@ from sqlalchemy import SmallInteger, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
+
 class FurnitureTable(Base):
     __tablename__ = "furniture"
 

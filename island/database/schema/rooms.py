@@ -4,6 +4,7 @@ from sqlalchemy import String, SmallInteger, Integer, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 from island.database import Base
 
+
 class RoomTable(Base):
     __tablename__ = "rooms"
 
@@ -17,7 +18,9 @@ class RoomTable(Base):
     path: Mapped[str] = mapped_column(String(256))
     max_users: Mapped[int] = mapped_column(Integer, default=100)
     jump_enabled: Mapped[bool] = mapped_column(default=False)
-    required_item: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"), nullable=True)
+    required_item: Mapped[int] = mapped_column(
+        Integer, ForeignKey("items.id"), nullable=True
+    )
     safe_start_x: Mapped[int] = mapped_column(Integer)
     safe_end_x: Mapped[int] = mapped_column(Integer)
     safe_start_y: Mapped[int] = mapped_column(Integer)
