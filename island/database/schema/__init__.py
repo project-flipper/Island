@@ -1,6 +1,7 @@
 from .igloo import IglooTable, IglooFloorTable, IglooLocationTable
 from .game_strings import GameStringsTable
 from .furniture import FurnitureTable
+from .mascots import MascotTable
 from .avatar import AvatarTable
 from .world import WorldTable
 from .games import GameTable
@@ -24,4 +25,5 @@ __all__ = (
     'IglooLocationTable',
     'JokeTable',
     'ItemTable',
+    'MascotTable',
 )
