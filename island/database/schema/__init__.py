@@ -1,6 +1,10 @@
+from .game_strings import GameStringsTable
+from .furniture import FurnitureTable
 from .avatar import AvatarTable
-from .ban import BanTable
-from .user import UserTable
 from .world import WorldTable
+from .games import GameTable
+from .card import CardTable
+from .user import UserTable
+from .ban import BanTable
 
-__all__ = ('AvatarTable', 'BanTable', 'UserTable', 'WorldTable')
+__all__ = ('AvatarTable', 'BanTable', 'UserTable', 'WorldTable', 'CardTable', 'FurnitureTable', 'GameStringsTable', 'GameTable')
