@@ -12,4 +12,3 @@ async def get_global_config(config: str) -> FileResponse:
 @router.get("/{locale}/{config}.json")
 async def get_local_config(locale: str, config: str) -> FileResponse:
     return FileResponse(f"web_service/{locale}/{config}.json")
-

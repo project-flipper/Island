@@ -41,6 +41,7 @@ SPAWN_ROOMS = [
 async def send_packet_to_room(room_id: int, op: str, d: Any):
     pass
 
+
 def get_safe_coordinates(room_id: int) -> tuple[float, float]:
     return 800, 800
 
