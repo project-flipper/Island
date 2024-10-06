@@ -14,5 +14,5 @@ class CardTable(Base):
     element: Mapped[int] = mapped_column(SmallInteger, default=0)
     color: Mapped[str] = mapped_column(String(1), default="b")
     value: Mapped[list[int]] = mapped_column(SmallInteger, default=2)
-    language: Mapped[int] = mapped_column(Integer, default=1)
     description: Mapped[str] = mapped_column(String(256), default="")
+    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)

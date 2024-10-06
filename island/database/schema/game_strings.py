@@ -10,4 +10,4 @@ class GameStringsTable(Base):
     key: Mapped[str] = mapped_column(Text, primary_key=True)
     value: Mapped[str] = mapped_column(Text)
     category: Mapped[str] = mapped_column(String(256))
-    language: Mapped[int] = mapped_column(SmallInteger, default=1)
+    language: Mapped[int] = mapped_column(SmallInteger, primary_key=True)
