@@ -1,11 +1,11 @@
 from .igloo import IglooTable, IglooFloorTable, IglooLocationTable
 from .polaroids import PolaroidTable, PolaroidCollectionTable
-from .postcards import PostcardTable, PostcardCollectionTable
 from .stamps import StampTable, StampCollectionTable
-from .game import GameStringsTable, GameOptionsTable
 from .puffles import PuffleTable, PuffleItemTable
 from .furniture import FurnitureTable
+from .postcards import PostcardTable
 from .tour import TourMessagesTable
+from .game import GameOptionsTable
 from .mascots import MascotTable
 from .avatar import AvatarTable
 from .world import WorldTable
@@ -24,7 +24,6 @@ __all__ = (
     "WorldTable",
     "CardTable",
     "FurnitureTable",
-    "GameStringsTable",
     "GameOptionsTable",
     "GameTable",
     "IglooTable",
@@ -36,7 +35,6 @@ __all__ = (
     "PolaroidTable",
     "PolaroidCollectionTable",
     "PostcardTable",
-    "PostcardCollectionTable",
     "PuffleTable",
     "PuffleItemTable",
     "RoomTable",
