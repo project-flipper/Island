@@ -14,6 +14,7 @@ from island.database import ASYNC_SESSION, Base
 if TYPE_CHECKING:
     from island.database.schema.ban import BanTable
     from island.database.schema.avatar import AvatarTable
+    from island.database.schema.mascots import MascotTable
 
 
 class UserTable(Base):
@@ -34,9 +35,11 @@ class UserTable(Base):
     )
 
     avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
+    mascot_id: Mapped[int] = mapped_column(ForeignKey("mascots.id"), nullable=True)
 
     bans: Mapped[list[BanTable]] = relationship(back_populates="user", lazy="selectin")
     avatar: Mapped[AvatarTable] = relationship(back_populates="user", lazy="joined")
+    mascot: Mapped[MascotTable] = relationship(back_populates="user", lazy="joined")
 
     @property
     def scopes(self) -> list[Scope]:

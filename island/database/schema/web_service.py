@@ -1,7 +1,9 @@
 from pydantic import BaseModel
 
+
 class MascotOptions(BaseModel):
     igrator_active: bool
+
 
 class PartyOptions(BaseModel):
     fair_ticket_active: bool
@@ -11,14 +13,18 @@ class PartyOptions(BaseModel):
     showPartyAnnouncement: bool
     party_icon_active: bool
 
+
 class IglooOptions(BaseModel):
     contestRunning: bool
+
 
 class IslandOptions(BaseModel):
     isDaytime: bool
 
+
 class OopsTest(BaseModel):
     testEnabled: bool
+
 
 class GeneralConfig(BaseModel):
     mascot_options: MascotOptions
@@ -27,6 +33,7 @@ class GeneralConfig(BaseModel):
     oops_test: OopsTest
     island_options: IslandOptions
     party_dates: dict[str, str]
+
 
 class RoomConfig(BaseModel):
     room_id: int
@@ -47,6 +54,7 @@ class RoomConfig(BaseModel):
     safe_end_x: int
     safe_start_y: int
     safe_end_y: int
+
 
 class PaperItemConfig(BaseModel):
     paper_item_id: int
@@ -69,6 +77,7 @@ class PaperItemConfig(BaseModel):
     exclusive: int | None
     is_bait: bool | None
     is_game_achievable: bool | None
+
 
 class GameConfig(BaseModel):
     game_key: str
