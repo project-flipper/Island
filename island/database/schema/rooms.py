@@ -14,6 +14,7 @@ class RoomTable(Base):
     short_name: Mapped[str] = mapped_column(String(256))
     display_name: Mapped[str] = mapped_column(String(256))
     path: Mapped[str] = mapped_column(String(256))
+    spawn: Mapped[bool] = mapped_column(default=False)
     member: Mapped[bool] = mapped_column(default=False)
     jump_enabled: Mapped[bool] = mapped_column(default=False)
     music_id: Mapped[int] = mapped_column(Integer)
