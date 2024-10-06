@@ -12,8 +12,8 @@ from island.models.user import User
 
 class RoomJoinData(BaseModel):
     room_id: int
-    x: float
-    y: float
+    x: float | None = None
+    y: float | None = None
 
 
 class RoomJoinResponse(BaseModel):
@@ -41,6 +41,9 @@ SPAWN_ROOMS = [
 async def send_packet_to_room(room_id: int, op: str, d: Any):
     pass
 
+def get_safe_coordinates(room_id: int) -> tuple[float, float]:
+    return 800, 800
+
 
 @packet_handlers.register("room:join")
 async def handle_room_join(
@@ -48,6 +51,10 @@ async def handle_room_join(
     packet: Packet[RoomJoinData],
     user: Annotated[UserTable, Depends(get_current_user)],
 ):
+    safe = get_safe_coordinates(packet.d.room_id)
+    x = packet.d.x or safe[0]
+    y = packet.d.y or safe[1]
+
     await send_packet(
         ws,
         "room:join",
@@ -56,8 +63,8 @@ async def handle_room_join(
             players=[
                 Player(
                     user=await User.from_table(user),
-                    x=packet.d.x,
-                    y=packet.d.y,
+                    x=x,
+                    y=y,
                     action=DEFAULT_ACTION,
                 )
             ],
@@ -71,3 +78,20 @@ async def handle_room_spawn(
 ):
     room_id = random.choice(SPAWN_ROOMS)
     # TODO: get available rooms and dispatch a room:join with a safe x, y from crumbs
+    safe = get_safe_coordinates(room_id)
+
+    await send_packet(
+        ws,
+        "room:join",
+        RoomJoinResponse(
+            room_id=room_id,
+            players=[
+                Player(
+                    user=await User.from_table(user),
+                    x=safe[0],
+                    y=safe[1],
+                    action=DEFAULT_ACTION,
+                )
+            ],
+        ),
+    )

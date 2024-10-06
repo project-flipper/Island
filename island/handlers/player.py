@@ -15,9 +15,7 @@ async def handle_player_action(
         Action(
             player_id=user_id,
             frame=packet.d.frame,
-            from_x=packet.d.from_x,
-            from_y=packet.d.from_y,
-            destination_x=packet.d.destination_x,
-            destination_y=packet.d.destination_y,
+            x=packet.d.x,
+            y=packet.d.y,
         ),
     )
