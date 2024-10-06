@@ -3,6 +3,7 @@ from .polaroids import PolaroidTable, PolaroidCollectionTable
 from .postcards import PostcardTable, PostcardCollectionTable
 from .stamps import StampTable, StampCollectionTable
 from .puffles import PuffleTable, PuffleItemTable
+from .penguins import PenguinColorTable
 from .newspapers import NewspaperTable
 from .furniture import FurnitureTable
 from .tour import TourMessagesTable
@@ -44,4 +45,5 @@ __all__ = (
     'StampTable',
     'StampCollectionTable',
     'TourMessagesTable',
+    'PenguinColorTable',
 )
