@@ -9,6 +9,5 @@ class PostcardTable(Base):
     __tablename__ = "postcards"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    collection_id: Mapped[int] = mapped_column(ForeignKey("postcards_collection.id"))
     subject: Mapped[str] = mapped_column(String(256))
     in_catalog: Mapped[bool] = mapped_column(default=False)
