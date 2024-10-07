@@ -5,7 +5,6 @@ from sqlalchemy.engine.url import URL, make_url
 from starlette.config import Config
 from starlette.datastructures import CommaSeparatedStrings, Secret
 
-from island.core.constants.type import IslandType
 from island.core.logging import InterceptHandler
 from island.core.constants.token import JWTTokenType
 
@@ -84,7 +83,6 @@ SKIP_RECAPTCHA_ON_DEVELOPMENT = config(
 )
 
 # General
-ISLAND_TYPE = config("ISLAND_TYPE", cast=IslandType, default=IslandType.REST)
 I18N_DEFAULT_LOCALE = config("I18N_DEFAULT_LOCALE", cast=str, default="en")
 I18N_DIR = config("I18N_DIR", cast=str, default="./config/locale")
 FASTAPI_EVENTS_MIDDLEWARE_ID = config(
@@ -92,12 +90,6 @@ FASTAPI_EVENTS_MIDDLEWARE_ID = config(
 )
 ENVIRONMENT_TYPE = config("ENVIRONMENT_TYPE", cast=str, default="dev")
 IS_DEVELOPMENT_MODE = ENVIRONMENT_TYPE == "dev"
-
-# World
-WORLD_ID = config("WORLD_ID", cast=int, default=0)
-WORLD_PACKETS_MIDDLEWARE_ID = config(
-    "WORLD_PACKETS_MIDDLEWARE_ID", cast=int, default=id("world-packets")
-)
 
 logging.getLogger().handlers = [InterceptHandler()]
 LOGGERS = ("uvicorn.asgi", "uvicorn.access")

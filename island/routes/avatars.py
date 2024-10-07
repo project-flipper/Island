@@ -1,9 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi import Response as HTTPResponse
 from fastapi import status
-from sqlalchemy import select
 
-from island.database import ASYNC_SESSION
 from island.database.schema.user import UserTable
 from island.models import Error
 
