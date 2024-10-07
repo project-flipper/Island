@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 from sqlalchemy import select
-from starlette.endpoints import WebSocketEndpoint
 
 from island.core.constants.scope import Scope
 from island.database import ASYNC_SESSION

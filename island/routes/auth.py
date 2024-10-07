@@ -5,13 +5,9 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.param_functions import Form
 from fastapi.security import OAuth2PasswordRequestForm
-from sqlalchemy import func, select
-from sqlalchemy.orm import joinedload
 
 from island.core.config import ACCESS_TOKEN_EXPIRE_MINUTES
 from island.core.constants.scope import Scope
-from island.database import ASYNC_SESSION
-from island.database.schema.ban import BanTable
 from island.database.schema.user import UserTable
 from island.models import Error
 from island.models.errors.ban import BanError
