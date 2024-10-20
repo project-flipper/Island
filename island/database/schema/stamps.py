@@ -28,7 +28,7 @@ class StampCollectionTable(Base):
     name: Mapped[str] = mapped_column(String(256))
     display_name: Mapped[str] = mapped_column(String(256))
     description: Mapped[str] = mapped_column(String(256))
-    parent_id: Mapped[int] = mapped_column(ForeignKey("stamps_collection.id"))
+    parent_id: Mapped[int] = mapped_column(ForeignKey("stamps_collection.id"), nullable=True)
 
     stamps: Mapped["StampTable"] = relationship(
         "StampTable", back_populates="collection"
