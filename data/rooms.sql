@@ -1,3 +1,5 @@
+-- TODO: Populate "spawn" column with correct values
+
 INSERT INTO rooms (id, key, name, short_name, display_name, music_id, member, path, max_users, jump_enabled, required_item, safe_start_x, safe_end_x, safe_start_y, safe_end_y, spawn) VALUES
  (100, 'town', 'Town Center', 'Town', 'Town Center', 581, False, '2013/town/Town', 120, False, null, 427, 1247, 553, 809, true),
  (110, 'coffee', 'Coffee Shop', 'Coffee Shop', 'Coffee Shop', 429, False, '2013/coffee/Coffee', 80, False, null, 427, 1247, 553, 809, true),

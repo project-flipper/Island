@@ -1,3 +1,5 @@
+-- TODO: Import "bait", "epf", "tour" and "treasure" from houdini
+
 INSERT INTO items (id, name, type, cost, layer, member, bait, epf, tour, treasure) VALUES
  (1, 'Blue', 1, 20, 15, False, false, false, false, false),
  (2, 'Green', 1, 20, 15, False, false, false, false, false),

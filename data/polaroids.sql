@@ -1,3 +1,5 @@
+-- TODO: Populate "earnable_by_client" boolean
+
 INSERT INTO polaroids_collection (id, name, description, display) VALUES
  (7, 'Activities', 'Doing things in-game', 'Activities'),
  (6, 'Characters', 'Characters', 'Events : Characters'),
