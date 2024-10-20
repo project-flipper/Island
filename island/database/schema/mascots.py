@@ -16,7 +16,7 @@ class MascotTable(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(256))
     title: Mapped[str] = mapped_column(String(256))
-    gift_id: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"))
+    gift_id: Mapped[int] = mapped_column(Integer, ForeignKey("items.id"), nullable=True)
 
     gift: Mapped[ItemTable] = relationship("ItemTable")
     user: Mapped[UserTable] = relationship("UserTable", back_populates="mascot")
