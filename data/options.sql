@@ -8,5 +8,4 @@ INSERT INTO game_options (key, value) VALUES
  ('party_options.party_icon_active', 'true'),
  ('igloo_options.contestRunning', 'false'),
  ('oops_test.testEnabled', 'true'),
- ('island_options.isDaytime', 'true'),
- ('party_dates.20170201', '2017-01-30');
+ ('island_options.isDaytime', 'true');
