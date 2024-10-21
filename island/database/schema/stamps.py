@@ -15,6 +15,7 @@ class StampTable(Base):
     member: Mapped[bool] = mapped_column(default=False)
     rank: Mapped[StampRank] = mapped_column(Enum(StampRank))
     description: Mapped[str] = mapped_column(String(256))
+    earnable_by_client: Mapped[bool] = mapped_column(default=False)
 
     collection: Mapped["StampCollectionTable"] = relationship(
         "StampCollectionTable", back_populates="stamps"

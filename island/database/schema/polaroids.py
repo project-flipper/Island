@@ -12,7 +12,6 @@ class PolaroidTable(Base):
     collection_id: Mapped[int] = mapped_column(ForeignKey("polaroids_collection.id"))
     stamp_count: Mapped[int] = mapped_column(SmallInteger)
     description: Mapped[str] = mapped_column(String(256))
-    earnable_by_client: Mapped[bool] = mapped_column(default=False)
 
     collection: Mapped["PolaroidCollectionTable"] = relationship(
         "PolaroidCollectionTable", back_populates="polaroids"
