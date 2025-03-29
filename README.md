@@ -1,10 +1,10 @@
 # Island
-Server backend for [ClubPenguin](https://github.com/clubpenguin-html5/ClubPenguin).
+Server backend for [ClubPenguin](https://github.com/project-flipper/ClubPenguin).
 
 # Setup
 Install **Python 3.7+** and **virtualenv** if you haven't already. Clone the github repo into a local directory using this command (it is recommended to use SSH):
 ```bash
-git clone git@github.com:clubpenguin-html5/Island.git 
+git clone git@github.com:project-flipper/Island.git 
 ```
 
 Then move into the `island` directory (`cd ./island`) and setup a virtualenv (`python3 -m virtualenv env`).
@@ -24,7 +24,7 @@ poetry install
 ```
 
 ## Database
-Install PostgreSQL server, create a file `.env` in same directory as `main.py` and add in the database details (ref: https://github.com/clubpenguin-html5/Island/blob/main/island/database/__init__.py)
+Install PostgreSQL server, create a file `.env` in same directory as `main.py` and add in the database details (ref: https://github.com/project-flipper/Island/blob/main/island/database/__init__.py)
 
 Setup the database by running the following command
 
