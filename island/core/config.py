@@ -41,7 +41,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = config(
 )  # seconds
 DEFAULT_TOKEN_EXPIRE = config("DEFAULT_TOKEN_EXPIRE", cast=int, default=15 * 60)
 JWT_ALGORITHM = config(
-    "DEFAULT_TOKEN_EXPIRE", cast=JWTTokenType, default=JWTTokenType.HS256
+    "JWT_ALGORITHM", cast=JWTTokenType, default=JWTTokenType.HS256
 )
 
 # Database config
