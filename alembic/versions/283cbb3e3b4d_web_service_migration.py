@@ -145,7 +145,7 @@ def upgrade() -> None:
     )
     op.create_table('puffles',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-    sa.Column('parent_id', sa.Integer(), nullable=False),
+    sa.Column('parent_id', sa.Integer(), nullable=True),
     sa.Column('description', sa.String(length=256), nullable=False),
     sa.Column('color', sa.Integer(), nullable=False),
     sa.Column('member', sa.Boolean(), nullable=False),
