@@ -9,7 +9,7 @@ class PuffleTable(Base):
     __tablename__ = "puffles"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    parent_id: Mapped[int] = mapped_column(Integer, ForeignKey("puffles.id"))
+    parent_id: Mapped[int] = mapped_column(Integer, ForeignKey("puffles.id"), nullable=True)
     description: Mapped[str] = mapped_column(String(256))
     color: Mapped[int] = mapped_column(Integer)
     member: Mapped[bool] = mapped_column(default=False)
